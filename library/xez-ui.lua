@@ -1,13 +1,35 @@
+--[[
+    xEz UI Library v2.4
+    Author: ZenLunarDev
+
+    API (v2.4):
+      local UI = loadstring(...)()
+      local Win = UI:Make({ Title = "My Hub", Subtitle = "v1" })
+      local Tab = Win:AddTab({ Name = "Main", Icon = "◇" })
+      local Sec = Tab:AddSection({ Name = "General", Side = "Left" })
+      Sec:Button({ Name = "Click", Callback = function() end })
+
+    Aliases (เพื่อความเข้ากันได้):
+      UI:Window       = UI:Make
+      UI:CreateWindow = UI:Make
+      Win:Tab         = Win:AddTab
+      Tab:Section     = Tab:AddSection
+
+    Demo:
+      UI:Demo()
+]]
+
 local xEz = {
-    Version  = "2.3.0",
+    Version  = "2.4.0",
     Folder   = "xEzUI",
     Options  = {},
     Themes   = {},
     Theme    = "Dark",
 }
 
+--==========================================================================
 -- SERVICES
-
+--==========================================================================
 local function getService(name)
     local ok, s = pcall(function()
         if cloneref then return cloneref(game:GetService(name)) end
@@ -26,9 +48,9 @@ local Players      = getService("Players")
 local LP = Players.LocalPlayer
 local isStudio = RunService:IsStudio()
 
-
+--==========================================================================
 -- PARENT (PlayerGui only)
-
+--==========================================================================
 local function getGuiParent()
     local pg = LP:FindFirstChildOfClass("PlayerGui")
     if pg then return pg end
@@ -39,9 +61,9 @@ local function getGuiParent()
     return nil
 end
 
-
+--==========================================================================
 -- THEMES
-
+--==========================================================================
 xEz.Themes = {
     Dark = {
         Background = Color3.fromRGB(17, 17, 20), Surface = Color3.fromRGB(24, 24, 28),
@@ -97,9 +119,9 @@ function xEz:GetTheme()
     return self.Themes[self.Theme] or self.Themes.Dark
 end
 
-
+--==========================================================================
 -- HELPERS
-
+--==========================================================================
 local function mk(class, props)
     local o = Instance.new(class)
     for k, v in pairs(props or {}) do
@@ -168,18 +190,15 @@ local function fmtNumber(n, precision)
     return string.format("%.2f", n)
 end
 
-
+--==========================================================================
 -- UI OBJECT
-
+--==========================================================================
 local UI = {}
 
-function UI:Notify(cfg)
-    if self._window and type(self._window.Notify) == "function" then
-        return self._window:Notify(cfg)
-    end
-end
-
-function UI:Window(cfg)
+--==========================================================================
+-- MAIN WINDOW CREATOR  (uses safe name "Make")
+--==========================================================================
+function UI:Make(cfg)
     cfg = cfg or {}
     local theme = self:GetTheme()
     local win = { _tabs = {}, _settings = cfg }
@@ -243,7 +262,6 @@ function UI:Window(cfg)
     corner(root, 14)
     stroke(root, theme.Border, 0.4)
 
-    -- Accent bar
     mk("Frame", {
         Name = "Accent", BackgroundColor3 = theme.Accent,
         BorderSizePixel = 0, Size = UDim2.new(1, 0, 0, 2),
@@ -251,7 +269,6 @@ function UI:Window(cfg)
         ZIndex = 3, Parent = root,
     })
 
-    -- Topbar
     local topbar = mk("Frame", {
         Name = "Topbar", BackgroundTransparency = 1,
         Size = UDim2.new(1, 0, 0, 54),
@@ -300,7 +317,6 @@ function UI:Window(cfg)
     local themeBtn = winBtn("◐", -38, theme.SurfaceHigh)
     local closeBtn = winBtn("×", -8, theme.Danger)
 
-    -- Sidebar
     local sidebar = mk("Frame", {
         Name = "Sidebar", BackgroundColor3 = theme.Surface,
         BorderSizePixel = 0, Position = UDim2.fromOffset(0, 54),
@@ -313,7 +329,6 @@ function UI:Window(cfg)
         Position = UDim2.fromScale(1, 0), Parent = sidebar,
     })
 
-    -- Profile
     local profile = mk("Frame", {
         Name = "Profile", BackgroundColor3 = theme.SurfaceHigh,
         BorderSizePixel = 0, Size = UDim2.new(1, -16, 0, 60),
@@ -330,10 +345,10 @@ function UI:Window(cfg)
     corner(avatar, 22)
 
     task.spawn(function()
-        local ok, img = pcall(function()
+        local ok2, img = pcall(function()
             return Players:GetUserThumbnailAsync(LP.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size100x100)
         end)
-        if ok and img then
+        if ok2 and img then
             pcall(function() avatar.Image = img end)
         end
     end)
@@ -353,7 +368,6 @@ function UI:Window(cfg)
         Parent = profile,
     })
 
-    -- Tabs
     local tabScroll = mk("ScrollingFrame", {
         Name = "Tabs", BackgroundTransparency = 1, BorderSizePixel = 0,
         ScrollBarThickness = 2, ScrollBarImageColor3 = theme.Border,
@@ -367,7 +381,6 @@ function UI:Window(cfg)
         Parent = tabScroll,
     })
 
-    -- Content
     local content = mk("Frame", {
         Name = "Content", BackgroundTransparency = 1,
         Position = UDim2.new(0, 180, 0, 54),
@@ -376,7 +389,6 @@ function UI:Window(cfg)
         ZIndex = 1, Parent = root,
     })
 
-    -- Drag
     local dragging, dragStart, startPos
     topbar.InputBegan:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
@@ -395,17 +407,16 @@ function UI:Window(cfg)
         end
     end)
 
-    -- Entrance
     root.Size = UDim2.fromOffset(winSize.X.Offset * 0.85, winSize.Y.Offset * 0.85)
     tween(root, TweenInfo.new(0.28, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Size = winSize })
 
-    
+    --==========================================================================
     -- WINDOW API
-    
+    --==========================================================================
     win.Root = root
     win.Screen = screen
 
-    function win:Tab(tabCfg)
+    function win:AddTab(tabCfg)
         tabCfg = tabCfg or {}
         local btn = mk("TextButton", {
             Name = "Tab", BackgroundColor3 = theme.Background,
@@ -478,7 +489,7 @@ function UI:Window(cfg)
         if #win._tabs == 1 then activate() end
 
         --==== SECTION ====
-        function tab:Section(secCfg)
+        function tab:AddSection(secCfg)
             secCfg = secCfg or {}
             local isRight = secCfg.Side == "Right" or secCfg.Side == "right"
             local secHolder = mk("Frame", {
@@ -1265,9 +1276,9 @@ function UI:Window(cfg)
         return tab
     end
 
-    
+    --==========================================================================
     -- WINDOW CONTROLS
-    
+    --==========================================================================
     local minimized = false
     local cachedSize = winSize
 
@@ -1293,7 +1304,6 @@ function UI:Window(cfg)
         screen:Destroy()
     end)
 
-    -- Toggle key
     local toggleKey = cfg.ToggleKey or Enum.KeyCode.RightControl
     UserInput.InputBegan:Connect(function(input, gpe)
         if gpe then return end
@@ -1302,9 +1312,9 @@ function UI:Window(cfg)
         end
     end)
 
-    
+    --==========================================================================
     -- NOTIFY
-    
+    --==========================================================================
     function win:Notify(ncfg)
         ncfg = ncfg or {}
         local n = mk("Frame", {
@@ -1359,9 +1369,16 @@ function UI:Window(cfg)
     return win
 end
 
+--==========================================================================
+-- SAFE ALIASES (bypass executor name conflicts)
+--==========================================================================
+UI.Window       = UI.Make
+UI.CreateWindow = UI.Make
+UI.NewWindow    = UI.Make
 
+--==========================================================================
 -- CONFIG
-
+--==========================================================================
 function xEz:SaveConfig(name)
     if isStudio or not writefile then return false, "No filesystem" end
     if not isfolder(self.Folder) then makefolder(self.Folder) end
@@ -1405,22 +1422,22 @@ function xEz:ListConfigs()
     return out
 end
 
-
--- DEMO
-
+--==========================================================================
+-- DEMO  (uses Make instead of Window)
+--==========================================================================
 function xEz:Demo()
-    local Win = xEz:Window({
+    local Win = self:Make({
         Title = "xEz UI",
-        Subtitle = "v" .. xEz.Version .. " • Minimal",
+        Subtitle = "v" .. self.Version .. " • Minimal",
         Size = UDim2.fromOffset(760, 520),
     })
     if not Win then return nil end
 
-    local MainTab = Win:Tab({ Name = "Main", Icon = "◇" })
-    local VisualTab = Win:Tab({ Name = "Visual", Icon = "◈" })
-    local ConfigTab = Win:Tab({ Name = "Config", Icon = "◆" })
+    local MainTab   = Win:AddTab({ Name = "Main", Icon = "◇" })
+    local VisualTab = Win:AddTab({ Name = "Visual", Icon = "◈" })
+    local ConfigTab = Win:AddTab({ Name = "Config", Icon = "◆" })
 
-    local gen = MainTab:Section({ Name = "GENERAL", Side = "Left" })
+    local gen = MainTab:AddSection({ Name = "GENERAL", Side = "Left" })
     gen:Button({ Name = "Simple Button", Callback = function()
         Win:Notify({ Title = "Clicked", Description = "Button pressed!", Lifetime = 2 })
     end })
@@ -1430,13 +1447,13 @@ function xEz:Demo()
     gen:Slider({ Name = "Speed", Min = 0, Max = 100, Default = 50, Flag = "demoSlider" })
     gen:Input({ Name = "Username", Placeholder = "Type here...", Flag = "demoInput" })
 
-    local misc = MainTab:Section({ Name = "MISC", Side = "Right" })
+    local misc = MainTab:AddSection({ Name = "MISC", Side = "Right" })
     misc:Keybind({ Name = "Toggle Key", Default = Enum.KeyCode.T, Flag = "demoKey" })
     misc:Dropdown({ Name = "Mode", Options = { "Normal", "Fast", "Ultra" }, Default = "Normal", Flag = "demoMode" })
     misc:Dropdown({ Name = "Features", Multi = true, Options = { "A", "B", "C", "D" }, Default = { "A", "C" }, Flag = "demoMulti" })
     misc:Colorpicker({ Name = "Accent Color", Default = Color3.fromRGB(120, 160, 255), Flag = "demoColor" })
 
-    local anim = VisualTab:Section({ Name = "ANIMATION", Side = "Left" })
+    local anim = VisualTab:AddSection({ Name = "ANIMATION", Side = "Left" })
     anim:Button({ Name = "Show Notification", Callback = function()
         Win:Notify({ Title = "Hello!", Description = "Animated notification.", Lifetime = 3 })
     end })
@@ -1445,7 +1462,7 @@ function xEz:Demo()
         Body = "Minimal flat design with accent lines, ripples, and smooth tweens.",
     })
 
-    local th = VisualTab:Section({ Name = "THEME", Side = "Right" })
+    local th = VisualTab:AddSection({ Name = "THEME", Side = "Right" })
     for _, name in ipairs({ "Dark", "Light", "Midnight", "Ocean", "Sunset", "Rose" }) do
         th:Button({ Name = "Theme: " .. name, Callback = function()
             xEz.Theme = name
@@ -1453,7 +1470,7 @@ function xEz:Demo()
         end })
     end
 
-    local cfgSec = ConfigTab:Section({ Name = "CONFIG SYSTEM", Side = "Left" })
+    local cfgSec = ConfigTab:AddSection({ Name = "CONFIG SYSTEM", Side = "Left" })
     local cfgName = cfgSec:Input({ Name = "Config Name", Placeholder = "myconfig" })
     cfgSec:Button({ Name = "Save", Callback = function()
         local ok, err = xEz:SaveConfig(cfgName:Get())
@@ -1467,4 +1484,10 @@ function xEz:Demo()
     return Win
 end
 
-return xEz
+--==========================================================================
+-- RETURN
+--==========================================================================
+-- return UI (safe - has Window, CreateWindow, Make methods)
+UI._internal = xEz  -- keep xEz accessible via UI._internal
+
+return UI
