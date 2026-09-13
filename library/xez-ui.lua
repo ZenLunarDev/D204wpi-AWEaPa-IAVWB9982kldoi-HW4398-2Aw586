@@ -1,15 +1,12 @@
 --[[
-    xEz UI Library v2.5
+    xEz UI Library v2.6 (COMPLETE)
     Author: ZenLunarDev
 
     API:
       local UI = loadstring(...)()
-      local Win = UI:Make({ Title = "My Hub" })
-      -- Aliases: UI:Window(...), UI:CreateWindow(...)
-      local Tab = Win:AddTab({ Name = "Main" })
-      -- Aliases: Win:Tab(...)
+      local Win = UI:Make({ Title = "My Hub", Subtitle = "v1" })
+      local Tab = Win:AddTab({ Name = "Main", Icon = "◇" })
       local Sec = Tab:AddSection({ Name = "General", Side = "Left" })
-      -- Aliases: Tab:Section(...)
       Sec:Button({ Name = "Click", Callback = function() end })
 
     Demo:
@@ -17,7 +14,7 @@
 ]]
 
 local xEz = {
-    Version  = "2.5.0",
+    Version  = "2.6.0",
     Folder   = "xEzUI",
     Options  = {},
     Themes   = {},
@@ -66,48 +63,54 @@ xEz.Themes = {
         Background = Color3.fromRGB(17, 17, 20), Surface = Color3.fromRGB(24, 24, 28),
         SurfaceHigh = Color3.fromRGB(32, 32, 38), Border = Color3.fromRGB(48, 48, 56),
         Text = Color3.fromRGB(240, 240, 245), TextDim = Color3.fromRGB(150, 150, 162),
-        Accent = Color3.fromRGB(120, 160, 255), AccentDim = Color3.fromRGB(70, 95, 160),
-        Success = Color3.fromRGB(90, 210, 140), Warning = Color3.fromRGB(250, 190, 70),
+        Accent = Color3.fromRGB(120, 160, 255),
+        Success = Color3.fromRGB(90, 210, 140),
+        Warning = Color3.fromRGB(250, 190, 70),
         Danger = Color3.fromRGB(245, 100, 100),
     },
     Light = {
         Background = Color3.fromRGB(245, 245, 248), Surface = Color3.fromRGB(255, 255, 255),
         SurfaceHigh = Color3.fromRGB(240, 240, 245), Border = Color3.fromRGB(220, 220, 228),
         Text = Color3.fromRGB(25, 25, 35), TextDim = Color3.fromRGB(120, 120, 135),
-        Accent = Color3.fromRGB(80, 110, 240), AccentDim = Color3.fromRGB(180, 195, 250),
-        Success = Color3.fromRGB(50, 170, 100), Warning = Color3.fromRGB(230, 160, 40),
+        Accent = Color3.fromRGB(80, 110, 240),
+        Success = Color3.fromRGB(50, 170, 100),
+        Warning = Color3.fromRGB(230, 160, 40),
         Danger = Color3.fromRGB(220, 70, 70),
     },
     Midnight = {
         Background = Color3.fromRGB(10, 12, 22), Surface = Color3.fromRGB(16, 18, 32),
         SurfaceHigh = Color3.fromRGB(24, 28, 46), Border = Color3.fromRGB(40, 46, 70),
         Text = Color3.fromRGB(225, 230, 245), TextDim = Color3.fromRGB(130, 140, 170),
-        Accent = Color3.fromRGB(140, 100, 255), AccentDim = Color3.fromRGB(80, 60, 150),
-        Success = Color3.fromRGB(80, 200, 180), Warning = Color3.fromRGB(240, 180, 90),
+        Accent = Color3.fromRGB(140, 100, 255),
+        Success = Color3.fromRGB(80, 200, 180),
+        Warning = Color3.fromRGB(240, 180, 90),
         Danger = Color3.fromRGB(240, 90, 130),
     },
     Ocean = {
         Background = Color3.fromRGB(12, 22, 30), Surface = Color3.fromRGB(18, 32, 42),
         SurfaceHigh = Color3.fromRGB(26, 44, 58), Border = Color3.fromRGB(40, 70, 90),
         Text = Color3.fromRGB(220, 240, 245), TextDim = Color3.fromRGB(130, 170, 185),
-        Accent = Color3.fromRGB(70, 200, 220), AccentDim = Color3.fromRGB(40, 110, 130),
-        Success = Color3.fromRGB(90, 220, 170), Warning = Color3.fromRGB(250, 200, 90),
+        Accent = Color3.fromRGB(70, 200, 220),
+        Success = Color3.fromRGB(90, 220, 170),
+        Warning = Color3.fromRGB(250, 200, 90),
         Danger = Color3.fromRGB(240, 110, 120),
     },
     Sunset = {
         Background = Color3.fromRGB(28, 18, 22), Surface = Color3.fromRGB(38, 24, 28),
         SurfaceHigh = Color3.fromRGB(50, 32, 38), Border = Color3.fromRGB(80, 50, 60),
         Text = Color3.fromRGB(250, 235, 235), TextDim = Color3.fromRGB(190, 150, 160),
-        Accent = Color3.fromRGB(255, 140, 90), AccentDim = Color3.fromRGB(160, 80, 50),
-        Success = Color3.fromRGB(200, 220, 130), Warning = Color3.fromRGB(255, 200, 100),
+        Accent = Color3.fromRGB(255, 140, 90),
+        Success = Color3.fromRGB(200, 220, 130),
+        Warning = Color3.fromRGB(255, 200, 100),
         Danger = Color3.fromRGB(255, 110, 110),
     },
     Rose = {
         Background = Color3.fromRGB(24, 14, 20), Surface = Color3.fromRGB(34, 20, 28),
         SurfaceHigh = Color3.fromRGB(46, 28, 38), Border = Color3.fromRGB(74, 46, 60),
         Text = Color3.fromRGB(250, 230, 240), TextDim = Color3.fromRGB(180, 140, 160),
-        Accent = Color3.fromRGB(255, 120, 180), AccentDim = Color3.fromRGB(160, 70, 120),
-        Success = Color3.fromRGB(160, 220, 180), Warning = Color3.fromRGB(250, 200, 140),
+        Accent = Color3.fromRGB(255, 120, 180),
+        Success = Color3.fromRGB(160, 220, 180),
+        Warning = Color3.fromRGB(250, 200, 140),
         Danger = Color3.fromRGB(255, 100, 130),
     },
 }
@@ -193,7 +196,7 @@ end
 local UI = {}
 
 --==========================================================================
--- MAKE WINDOW
+-- MAKE WINDOW (local function, assigned to UI.* later)
 --==========================================================================
 local function MakeWindow(cfg)
     cfg = cfg or {}
@@ -1269,13 +1272,13 @@ local function MakeWindow(cfg)
         end
 
         tab.AddSection = AddSection
-        tab.Section    = AddSection  -- alias
+        tab.Section    = AddSection
 
         return tab
     end
 
     win.AddTab = AddTab
-    win.Tab    = AddTab  -- alias
+    win.Tab    = AddTab
 
     --==========================================================================
     -- WINDOW CONTROLS
@@ -1371,7 +1374,7 @@ local function MakeWindow(cfg)
 end
 
 --==========================================================================
--- PUBLIC METHOD (uses dot, not colon - safe for all call styles)
+-- PUBLIC METHODS (assigned AFTER MakeWindow definition)
 --==========================================================================
 UI.Make         = MakeWindow
 UI.Window       = MakeWindow
@@ -1486,4 +1489,7 @@ UI.Demo = function(self)
     return Win
 end
 
+--==========================================================================
+-- RETURN
+--==========================================================================
 return UI
