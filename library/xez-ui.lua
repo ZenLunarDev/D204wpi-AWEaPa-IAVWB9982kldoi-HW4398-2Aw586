@@ -1,26 +1,23 @@
 --[[
-    xEz UI Library v2.4
+    xEz UI Library v2.5
     Author: ZenLunarDev
 
-    API (v2.4):
+    API:
       local UI = loadstring(...)()
-      local Win = UI:Make({ Title = "My Hub", Subtitle = "v1" })
-      local Tab = Win:AddTab({ Name = "Main", Icon = "◇" })
+      local Win = UI:Make({ Title = "My Hub" })
+      -- Aliases: UI:Window(...), UI:CreateWindow(...)
+      local Tab = Win:AddTab({ Name = "Main" })
+      -- Aliases: Win:Tab(...)
       local Sec = Tab:AddSection({ Name = "General", Side = "Left" })
+      -- Aliases: Tab:Section(...)
       Sec:Button({ Name = "Click", Callback = function() end })
-
-    Aliases (เพื่อความเข้ากันได้):
-      UI:Window       = UI:Make
-      UI:CreateWindow = UI:Make
-      Win:Tab         = Win:AddTab
-      Tab:Section     = Tab:AddSection
 
     Demo:
       UI:Demo()
 ]]
 
 local xEz = {
-    Version  = "2.4.0",
+    Version  = "2.5.0",
     Folder   = "xEzUI",
     Options  = {},
     Themes   = {},
@@ -115,8 +112,8 @@ xEz.Themes = {
     },
 }
 
-function xEz:GetTheme()
-    return self.Themes[self.Theme] or self.Themes.Dark
+local function getTheme()
+    return xEz.Themes[xEz.Theme] or xEz.Themes.Dark
 end
 
 --==========================================================================
@@ -196,11 +193,11 @@ end
 local UI = {}
 
 --==========================================================================
--- MAIN WINDOW CREATOR  (uses safe name "Make")
+-- MAKE WINDOW
 --==========================================================================
-function UI:Make(cfg)
+local function MakeWindow(cfg)
     cfg = cfg or {}
-    local theme = self:GetTheme()
+    local theme = getTheme()
     local win = { _tabs = {}, _settings = cfg }
 
     local parent = getGuiParent()
@@ -231,7 +228,6 @@ function UI:Make(cfg)
         return nil
     end
 
-    -- Notifications layer
     local notifyLayer = mk("Frame", {
         Name = "Notifications", BackgroundTransparency = 1,
         Size = UDim2.fromScale(1, 1), ZIndex = 100, Parent = screen,
@@ -245,7 +241,6 @@ function UI:Make(cfg)
     })
     padding(notifyLayer, 12, 12, 12, 12)
 
-    -- Root
     local winSize = cfg.Size or UDim2.fromOffset(760, 520)
     local root = mk("Frame", {
         Name = "Root",
@@ -286,7 +281,7 @@ function UI:Make(cfg)
     })
     mk("TextLabel", {
         Name = "Subtitle", BackgroundTransparency = 1,
-        Text = cfg.Subtitle or "v" .. self.Version,
+        Text = cfg.Subtitle or "v" .. xEz.Version,
         Font = Enum.Font.Gotham, TextSize = 11,
         TextColor3 = theme.TextDim, TextXAlignment = Enum.TextXAlignment.Left,
         Position = UDim2.fromOffset(0, 30), Size = UDim2.new(1, -120, 0, 14),
@@ -416,7 +411,7 @@ function UI:Make(cfg)
     win.Root = root
     win.Screen = screen
 
-    function win:AddTab(tabCfg)
+    local function AddTab(tabCfg)
         tabCfg = tabCfg or {}
         local btn = mk("TextButton", {
             Name = "Tab", BackgroundColor3 = theme.Background,
@@ -489,7 +484,7 @@ function UI:Make(cfg)
         if #win._tabs == 1 then activate() end
 
         --==== SECTION ====
-        function tab:AddSection(secCfg)
+        local function AddSection(secCfg)
             secCfg = secCfg or {}
             local isRight = secCfg.Side == "Right" or secCfg.Side == "right"
             local secHolder = mk("Frame", {
@@ -1273,8 +1268,14 @@ function UI:Make(cfg)
             return sec
         end
 
+        tab.AddSection = AddSection
+        tab.Section    = AddSection  -- alias
+
         return tab
     end
+
+    win.AddTab = AddTab
+    win.Tab    = AddTab  -- alias
 
     --==========================================================================
     -- WINDOW CONTROLS
@@ -1370,20 +1371,21 @@ function UI:Make(cfg)
 end
 
 --==========================================================================
--- SAFE ALIASES (bypass executor name conflicts)
+-- PUBLIC METHOD (uses dot, not colon - safe for all call styles)
 --==========================================================================
-UI.Window       = UI.Make
-UI.CreateWindow = UI.Make
-UI.NewWindow    = UI.Make
+UI.Make         = MakeWindow
+UI.Window       = MakeWindow
+UI.CreateWindow = MakeWindow
+UI.NewWindow    = MakeWindow
 
 --==========================================================================
 -- CONFIG
 --==========================================================================
-function xEz:SaveConfig(name)
+xEz.SaveConfig = function(self, name)
     if isStudio or not writefile then return false, "No filesystem" end
-    if not isfolder(self.Folder) then makefolder(self.Folder) end
+    if not isfolder(xEz.Folder) then makefolder(xEz.Folder) end
     local data = {}
-    for flag, opt in pairs(self.Options) do
+    for flag, opt in pairs(xEz.Options) do
         local ok, val = pcall(function()
             if opt.Get then return opt:Get() end
             return opt.Value
@@ -1392,28 +1394,28 @@ function xEz:SaveConfig(name)
     end
     local ok, encoded = pcall(function() return HttpService:JSONEncode(data) end)
     if not ok then return false, "Encode failed" end
-    writefile(self.Folder .. "/" .. name .. ".json", encoded)
+    writefile(xEz.Folder .. "/" .. name .. ".json", encoded)
     return true
 end
 
-function xEz:LoadConfig(name)
+xEz.LoadConfig = function(self, name)
     if isStudio or not readfile then return false, "No filesystem" end
-    local path = self.Folder .. "/" .. name .. ".json"
+    local path = xEz.Folder .. "/" .. name .. ".json"
     if not isfile(path) then return false, "Not found" end
     local ok, decoded = pcall(function() return HttpService:JSONDecode(readfile(path)) end)
     if not ok then return false, "Decode failed" end
     for flag, val in pairs(decoded) do
-        local opt = self.Options[flag]
+        local opt = xEz.Options[flag]
         if opt and opt.Set then pcall(function() opt:Set(val) end) end
     end
     return true
 end
 
-function xEz:ListConfigs()
+xEz.ListConfigs = function(self)
     if isStudio or not listfiles then return {} end
-    if not isfolder(self.Folder) then return {} end
+    if not isfolder(xEz.Folder) then return {} end
     local out = {}
-    for _, f in ipairs(listfiles(self.Folder)) do
+    for _, f in ipairs(listfiles(xEz.Folder)) do
         if f:sub(-5) == ".json" then
             local n = f:match("([^/\\]+)%.json$")
             if n then table.insert(out, n) end
@@ -1423,12 +1425,12 @@ function xEz:ListConfigs()
 end
 
 --==========================================================================
--- DEMO  (uses Make instead of Window)
+-- DEMO
 --==========================================================================
-function xEz:Demo()
-    local Win = self:Make({
+UI.Demo = function(self)
+    local Win = MakeWindow({
         Title = "xEz UI",
-        Subtitle = "v" .. self.Version .. " • Minimal",
+        Subtitle = "v" .. xEz.Version .. " • Minimal",
         Size = UDim2.fromOffset(760, 520),
     })
     if not Win then return nil end
@@ -1483,11 +1485,5 @@ function xEz:Demo()
 
     return Win
 end
-
---==========================================================================
--- RETURN
---==========================================================================
--- return UI (safe - has Window, CreateWindow, Make methods)
-UI._internal = xEz  -- keep xEz accessible via UI._internal
 
 return UI
