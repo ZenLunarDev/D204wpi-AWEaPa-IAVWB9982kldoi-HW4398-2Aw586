@@ -1,16 +1,17 @@
 --[[
-    xEz Hub v1.2.0
+    xEz Hub v1.3.0
     Build a Boat
     Key System: "xEzShop :3"
 
     - By ZenLunarDev
 
-    Changelog v1.2.0:
-    - Config save/load
-    - Panic keybind (default RightShift)
-    - Version check on startup
-    - Fixed waitForNewCharacter bug (GodMode kill issue)
-    - GodMode temporary disable during respawn kill
+    Changelog v1.3.0:
+    - Crystal Cave Secret Treasure auto-solver (portal maze paths)
+    - Stage detection & current stage tracking
+    - Chest price calculation & Gold validation
+    - Wild West & Toxic Waste secret auto-collect
+    - Gold gain tracking per stage
+    - Trench Stage removed (temporarily disabled in game)
 ]]
 
 
@@ -19,7 +20,7 @@
 
 local SCRIPT_URL = "https://raw.githubusercontent.com/ZenLunarDev/D204wpi-AWEaPa-IAVWB9982kldoi-HW4398-2Aw586/refs/heads/main/main.lua"
 local VERSION_URL = "https://raw.githubusercontent.com/ZenLunarDev/D204wpi-AWEaPa-IAVWB9982kldoi-HW4398-2Aw586/refs/heads/main/version.json"
-local SCRIPT_VERSION = "1.2.0"
+local SCRIPT_VERSION = "1.3.0"
 local DISCORD_URL = "https://discord.gg/7MA4RK5aUU"
 local CREATOR_NAME = "ZenLunarDev"
 local CONFIG_FILE = "xEzHub_config.json"
@@ -69,6 +70,42 @@ if not Fluent then
 end
 
 
+-- GAME CONSTANTS
+
+
+-- Chest prices (formula: 5 * 3^n where n is rarity level) [citation:15]
+local CHEST_PRICES = {
+    ["Common Chest"] = 5,
+    ["Uncommon Chest"] = 15,
+    ["Rare Chest"] = 45,
+    ["Epic Chest"] = 135,
+    ["Legendary Chest"] = 405,
+}
+
+-- Crystal Cave portal paths [citation:1][citation:4]
+local CRYSTAL_PORTAL_PATHS = {
+    orange = { "green", "gray" },
+    white = { "yellow", "cyan", "black" },
+    yellow = { "green", "white", "purple" },
+}
+
+-- Stage hazard flags
+local STAGE_HAZARDS = {
+    ["BedroomStage"] = { biplane = true },
+    ["CrystalCaveStage"] = { stalactite = true, laser = true },
+    ["TrenchStage"] = { stalagmite = true, mushroom = true },  -- temporarily removed [citation:12]
+}
+
+-- Tool prices in Shop (for reference) [citation:22]
+local TOOL_PRICES = {
+    ["Paint Tool"] = 1500,
+    ["Binding Tool"] = 2000,
+    ["Property Tool"] = 2500,
+    ["Scaling Tool"] = 5000,
+    ["Trowel Tool"] = 7500,
+}
+
+
 -- STATE
 
 
@@ -96,6 +133,7 @@ local State = {
     AntiKick = false,
     AutoBuyChest = false,
     SelectedChest = "Common Chest",
+    AutoBuyCount = 1,
     AntiAFK = true,
     AntiAFKKey = true,
     AutoRejoin = true,
@@ -112,6 +150,18 @@ local State = {
     WebhookNotify = false,
     WebhookRichEmbed = true,
     PanicKey = "RightShift",
+
+    -- v1.3.0 additions
+    AutoCrystalCave = false,
+    AutoWildWestSecret = false,
+    AutoToxicWasteSecret = false,
+    TrackGoldGain = true,
+    CurrentStage = "",
+    LastGoldValue = 0,
+    TotalGoldGained = 0,
+    StageRewards = {},  -- {[stageName] = goldGained}
+
+    -- stats
     WinsCount = 0,
     FailsCount = 0,
     SessionStart = tick(),
@@ -132,10 +182,11 @@ local State = {
 local SAVEABLE_KEYS = {
     "FarmSpeed", "MaxSpeedMode", "StepDelay", "ChestDelay", "ResetDelay", "PostResetDelay",
     "GravityZero", "FlightHeight", "WalkSpeed", "JumpPower", "InfJump", "NoClip", "Fly",
-    "FlySpeed", "AntiFling", "AntiKick", "SelectedChest", "AntiAFK", "AntiAFKKey",
+    "FlySpeed", "AntiFling", "AntiKick", "SelectedChest", "AutoBuyCount", "AntiAFK", "AntiAFKKey",
     "AutoRejoin", "StaffDetector", "AntiDisconnect", "RejoinDelay", "BlackScreen",
     "MemoryCleanup", "FpsBoost", "RenderDistance", "LowGraphics", "ShowNotifications",
-    "WebhookURL", "WebhookNotify", "WebhookRichEmbed", "PanicKey"
+    "WebhookURL", "WebhookNotify", "WebhookRichEmbed", "PanicKey",
+    "AutoCrystalCave", "AutoWildWestSecret", "AutoToxicWasteSecret", "TrackGoldGain"
 }
 
 local function saveConfig()
@@ -177,7 +228,6 @@ local function requestSave()
     end)
 end
 
--- โหลด config ก่อนสร้าง UI
 loadConfig()
 
 
@@ -358,8 +408,68 @@ local function getPing()
     return 0
 end
 
+-- v1.3.0: Get current Gold from leaderstats
+local function getCurrentGold()
+    local leaderstats = LocalPlayer:FindFirstChild("leaderstats")
+    if not leaderstats then return 0 end
+    local gold = leaderstats:FindFirstChild("Gold")
+        or leaderstats:FindFirstChild("gold")
+        or leaderstats:FindFirstChild("Cash")
+    if gold and type(gold.Value) == "number" then
+        return gold.Value
+    end
+    return 0
+end
 
--- FIXED waitForNewCharacter (v1.2.0)
+-- v1.3.0: Get current stage name
+local function getCurrentStageName()
+    local stages = Workspace:FindFirstChild("BoatStages")
+    if not stages then return nil end
+    local normal = stages:FindFirstChild("NormalStages")
+    if not normal then return nil end
+    local hrp = getRoot()
+    if not hrp then return nil end
+
+    local closestStage = nil
+    local closestDist = math.huge
+
+    for _, stage in ipairs(normal:GetChildren()) do
+        if stage:IsA("Model") and stage.Name ~= "TheEnd" then
+            local part = stage:FindFirstChildOfClass("BasePart")
+            if part then
+                local dist = (hrp.Position - part.Position).Magnitude
+                if dist < closestDist and dist < 800 then
+                    closestDist = dist
+                    closestStage = stage.Name
+                end
+            end
+        end
+    end
+
+    return closestStage
+end
+
+-- v1.3.0: Track Gold gain
+local function trackGoldGain()
+    if not State.TrackGoldGain then return end
+    local currentGold = getCurrentGold()
+    if currentGold > State.LastGoldValue then
+        local gained = currentGold - State.LastGoldValue
+        State.TotalGoldGained = State.TotalGoldGained + gained
+
+        local stageName = State.CurrentStage ~= "" and State.CurrentStage or "Unknown"
+        if not State.StageRewards[stageName] then
+            State.StageRewards[stageName] = 0
+        end
+        State.StageRewards[stageName] = State.StageRewards[stageName] + gained
+
+        addLog(string.format("Gold +%d (stage: %s)", gained, stageName))
+    end
+    State.LastGoldValue = currentGold
+end
+
+
+-- FIXED waitForNewCharacter
 
 
 local function waitForNewCharacter(timeout, opts)
@@ -373,7 +483,6 @@ local function waitForNewCharacter(timeout, opts)
     local oldPos       = oldRoot and oldRoot.Position
     local startTick    = tick()
 
-    -- ถ้าต้องการ respawn จริง แต่ character ยังไม่ตาย → รอให้ตายก่อน (สูงสุด 5 วิ)
     if requireRespawn then
         local dieWait = 0
         while oldHumanoid
@@ -388,7 +497,6 @@ local function waitForNewCharacter(timeout, opts)
     while tick() - startTick < timeout do
         local character = LocalPlayer.Character
 
-        -- กรณีได้ character instance ใหม่
         if character and character ~= oldCharacter then
             local humanoid = character:FindFirstChildOfClass("Humanoid")
             local hrp = character:FindFirstChild("HumanoidRootPart")
@@ -397,7 +505,6 @@ local function waitForNewCharacter(timeout, opts)
             end
         end
 
-        -- กรณี instance เดิม แต่ respawn แล้ว (ตำแหน่งเปลี่ยน + HP เต็ม)
         if character and character == oldCharacter then
             local humanoid = character:FindFirstChildOfClass("Humanoid")
             local hrp = character:FindFirstChild("HumanoidRootPart")
@@ -454,7 +561,7 @@ local function nextElementId(prefix)
 end
 
 
--- FLUENT TAB ADAPTER (with auto-save)
+-- FLUENT TAB ADAPTER
 
 
 local function wrapTab(tab)
@@ -555,6 +662,7 @@ local function wrapTab(tab)
 end
 
 local TabMain = wrapTab(FluentWindow:AddTab({ Title = "หลัก", Icon = "house" }))
+local TabSecrets = wrapTab(FluentWindow:AddTab({ Title = "Secret", Icon = "gem" }))
 local TabSettings = wrapTab(FluentWindow:AddTab({ Title = "ตั้งค่า", Icon = "settings-2" }))
 local TabStats = wrapTab(FluentWindow:AddTab({ Title = "สถิติ", Icon = "chart-no-axes-combined" }))
 local TabProfile = wrapTab(FluentWindow:AddTab({ Title = "โปรไฟล์", Icon = "user-round" }))
@@ -1021,8 +1129,10 @@ local function panicStop()
     State.GodMode = false
     State.AutoCollectCoin = false
     State.AutoSkipWave = false
+    State.AutoCrystalCave = false
+    State.AutoWildWestSecret = false
+    State.AutoToxicWasteSecret = false
 
-    -- stop loops
     FarmToken = FarmToken + 1
     State.IsFarming = false
     BuyToken = BuyToken + 1
@@ -1153,7 +1263,7 @@ local function sendWebhook(title, description, color)
                     fields = {
                         { name = "User", value = tostring(LocalPlayer.Name), inline = true },
                         { name = "Wins", value = tostring(State.WinsCount), inline = true },
-                        { name = "Speed", value = tostring(State.FarmSpeed), inline = true }
+                        { name = "Gold Gained", value = tostring(State.TotalGoldGained), inline = true }
                     },
                     footer = { text = "xEz Hub v" .. SCRIPT_VERSION },
                     timestamp = DateTime.now():ToIsoDate()
@@ -1326,7 +1436,302 @@ local function triggerChest()
 end
 
 
--- AUTO FARM (with fixed respawn logic)
+-- SECRET: CRYSTAL CAVE
+
+
+-- Find crystals on cave walls to shoot
+local function findCrystalCaveCrystals()
+    local stages = Workspace:FindFirstChild("BoatStages")
+    if not stages then return {} end
+    local normal = stages:FindFirstChild("NormalStages")
+    if not normal then return {} end
+    local crystalStage = normal:FindFirstChild("CrystalCaveStage")
+    if not crystalStage then return {} end
+
+    local crystals = {}
+    for _, obj in ipairs(crystalStage:GetDescendants()) do
+        if obj:IsA("BasePart") and obj.Name:lower():find("crystal") then
+            table.insert(crystals, obj)
+        end
+    end
+    return crystals
+end
+
+-- Shoot crystals with equipped cannon/tool
+local function shootCrystalAt(crystalPart)
+    if not crystalPart or not crystalPart.Parent then return false end
+    local hrp = getRoot()
+    if not hrp then return false end
+
+    -- Equip a tool that can shoot (Cannon, Hand Cannon, etc.)
+    local backpack = LocalPlayer:FindFirstChild("Backpack")
+    if not backpack then return false end
+
+    local shootTool = nil
+    for _, tool in ipairs(backpack:GetChildren()) do
+        if tool:IsA("Tool") and (tool.Name:lower():find("cannon") or tool.Name:lower():find("gun")) then
+            shootTool = tool
+            break
+        end
+    end
+
+    if not shootTool then
+        notify("Crystal Cave", "ไม่พบ Cannon ในกระเป๋า", 3)
+        return false
+    end
+
+    local humanoid = getHumanoid()
+    if humanoid then
+        pcall(function()
+            humanoid:EquipTool(shootTool)
+        end)
+        task.wait(0.2)
+    end
+
+    -- Aim and activate tool
+    local toolHandle = shootTool:FindFirstChild("Handle")
+    if toolHandle then
+        pcall(function()
+            local direction = (crystalPart.Position - hrp.Position).Unit
+            hrp.CFrame = CFrame.new(hrp.Position, hrp.Position + direction)
+        end)
+    end
+
+    pcall(function()
+        shootTool:Activate()
+    end)
+
+    task.wait(0.3)
+    return true
+end
+
+-- Detect if player is inside the secret area (teleported by lasers)
+local function isInCrystalSecretArea()
+    local hrp = getRoot()
+    if not hrp then return false end
+    -- Secret area is typically below or separated from main cave
+    -- Check if player Y is significantly different from normal stage level
+    local crystalStage = Workspace:FindFirstChild("BoatStages")
+    if not crystalStage then return false end
+    local normal = crystalStage:FindFirstChild("NormalStages")
+    if not normal then return false end
+    local cave = normal:FindFirstChild("CrystalCaveStage")
+    if not cave then return false end
+    local part = cave:FindFirstChildOfClass("BasePart")
+    if not part then return false end
+
+    local dist = (hrp.Position - part.Position).Magnitude
+    -- Secret area is far from the main cave entrance
+    return dist > 500
+end
+
+-- Find portals in the secret area
+local function findPortalsInSecretArea()
+    local portals = {}
+    local hrp = getRoot()
+    if not hrp then return portals end
+
+    -- Search for Portal parts in workspace near player
+    for _, obj in ipairs(Workspace:GetDescendants()) do
+        if obj:IsA("BasePart") and obj.Name:lower():find("portal") then
+            local dist = (hrp.Position - obj.Position).Magnitude
+            if dist < 1000 then
+                table.insert(portals, obj)
+            end
+        end
+    end
+    return portals
+end
+
+-- Find portal by color name
+local function findPortalByColor(colorName)
+    local portals = findPortalsInSecretArea()
+    for _, portal in ipairs(portals) do
+        local name = portal.Name:lower()
+        if name:find(colorName:lower()) then
+            return portal
+        end
+    end
+    return nil
+end
+
+-- Move through portal path
+local function traversePortalPath(portalColors)
+    for _, colorName in ipairs(portalColors) do
+        local portal = findPortalByColor(colorName)
+        if portal then
+            local hrp = getRoot()
+            if hrp then
+                pcall(function()
+                    hrp.CFrame = portal.CFrame + Vector3.new(0, 3, 0)
+                end)
+                task.wait(0.5)
+            end
+        end
+    end
+end
+
+-- Find crystals in secret area
+local function findSecretCrystals()
+    local crystals = {}
+    local hrp = getRoot()
+    if not hrp then return crystals end
+
+    for _, obj in ipairs(Workspace:GetDescendants()) do
+        if obj:IsA("BasePart")
+            and obj.Name:lower():find("crystal")
+            and (hrp.Position - obj.Position).Magnitude < 1000 then
+            -- Check if not a wall crystal (those are usually larger)
+            local size = obj.Size
+            if size.X < 10 and size.Y < 10 and size.Z < 10 then
+                table.insert(crystals, obj)
+            end
+        end
+    end
+    return crystals
+end
+
+-- Auto-solve Crystal Cave Secret
+local function autoSolveCrystalCave()
+    if not State.AutoCrystalCave then return end
+    if not isInCrystalSecretArea() then
+        notify("Crystal Cave", "ยังไม่เข้าโซนลับ — ยิงคริสตัลก่อน", 3)
+        return
+    end
+
+    notify("Crystal Cave", "เริ่มแก้ปริศนา Portal", 3)
+    addLog("Crystal Cave solver started")
+
+    -- Paths from wiki [citation:1][citation:4]
+    local paths = {
+        { name = "orange", portals = { "green", "gray" } },
+        { name = "white", portals = { "yellow", "cyan", "black" } },
+        { name = "yellow", portals = { "green", "white", "purple" } },
+    }
+
+    for _, path in ipairs(paths) do
+        if not State.AutoCrystalCave then break end
+        notify("Crystal Cave", "ไปเก็บ " .. path.name, 2)
+        traversePortalPath(path.portals)
+
+        -- Find and pick up crystal
+        local crystals = findSecretCrystals()
+        for _, crystal in ipairs(crystals) do
+            local hrp = getRoot()
+            if hrp then
+                pcall(function()
+                    firetouchinterest(hrp, crystal, 0)
+                    task.wait(0.1)
+                    firetouchinterest(hrp, crystal, 1)
+                end)
+            end
+        end
+        task.wait(1)
+    end
+
+    notify("Crystal Cave", "เสร็จสิ้น — นำคริสตัลไปใส่", 3)
+    addLog("Crystal Cave solver finished")
+end
+
+-- Auto-detect and shoot Crystal Cave crystals
+local function autoShootCrystalCave()
+    local stageName = getCurrentStageName()
+    if stageName ~= "CrystalCaveStage" then return end
+
+    local crystals = findCrystalCaveCrystals()
+    if #crystals == 0 then return end
+
+    notify("Crystal Cave", "ยิงคริสตัล " .. #crystals .. " อัน", 3)
+
+    local shotCount = 0
+    for _, crystal in ipairs(crystals) do
+        if shotCount >= 10 then break end
+        if shootCrystalAt(crystal) then
+            shotCount = shotCount + 1
+        end
+        task.wait(0.2)
+    end
+
+    addLog("Shot " .. shotCount .. " crystals in Crystal Cave")
+end
+
+
+-- SECRET: WILD WEST (walk into cave) [citation:14]
+
+
+local function autoCollectWildWestSecret()
+    if not State.AutoWildWestSecret then return end
+    local stageName = getCurrentStageName()
+    if stageName ~= "WildWestStage" then return end
+
+    local stages = Workspace:FindFirstChild("BoatStages")
+    if not stages then return end
+    local normal = stages:FindFirstChild("NormalStages")
+    if not normal then return end
+    local wildWest = normal:FindFirstChild("WildWestStage")
+    if not wildWest then return end
+
+    -- Find cave entrance on right side
+    local hrp = getRoot()
+    if not hrp then return end
+
+    -- Cave is on the right side of the stage
+    local stagePart = wildWest:FindFirstChildOfClass("BasePart")
+    if stagePart then
+        local cavePos = stagePart.Position + Vector3.new(100, 0, 0)  -- right side
+        pcall(function()
+            hrp.CFrame = CFrame.new(cavePos)
+        end)
+        task.wait(0.5)
+    end
+
+    -- Fire touch on secret chest if found
+    for _, obj in ipairs(wildWest:GetDescendants()) do
+        if obj:IsA("BasePart") and obj.Name:lower():find("treasure") then
+            pcall(function()
+                firetouchinterest(hrp, obj, 0)
+                task.wait(0.05)
+                firetouchinterest(hrp, obj, 1)
+            end)
+            addLog("Wild West secret collected")
+            notify("Wild West", "เก็บ Secret แล้ว", 2)
+            break
+        end
+    end
+end
+
+
+-- SECRET: TOXIC WASTE (shoot wall) [citation:12]
+
+
+local function autoCollectToxicWasteSecret()
+    if not State.AutoToxicWasteSecret then return end
+    local stageName = getCurrentStageName()
+    if stageName ~= "ToxicWasteStage" then return end
+
+    local stages = Workspace:FindFirstChild("BoatStages")
+    if not stages then return end
+    local normal = stages:FindFirstChild("NormalStages")
+    if not normal then return end
+    local toxic = normal:FindFirstChild("ToxicWasteStage")
+    if not toxic then return end
+
+    -- Find rock walls to shoot
+    for _, obj in ipairs(toxic:GetDescendants()) do
+        if obj:IsA("BasePart") and obj.Name:lower():find("rock") then
+            local hrp = getRoot()
+            if hrp and (hrp.Position - obj.Position).Magnitude < 200 then
+                shootCrystalAt(obj)  -- reuse shoot function
+                task.wait(0.3)
+            end
+        end
+    end
+
+    addLog("Toxic Waste secret attempt")
+end
+
+
+-- AUTO FARM
 
 
 local function startAutoFarm()
@@ -1349,6 +1754,20 @@ local function startAutoFarm()
             task.wait(0.5)
         else
             State.CurrentRunStart = tick()
+            State.CurrentStage = getCurrentStageName() or "Unknown"
+            trackGoldGain()
+
+            -- v1.3.0: Auto secret collectors
+            if State.AutoCrystalCave then
+                autoShootCrystalCave()
+            end
+            if State.AutoWildWestSecret then
+                autoCollectWildWestSecret()
+            end
+            if State.AutoToxicWasteSecret then
+                autoCollectToxicWasteSecret()
+            end
+
             moveTo(Waypoints[1])
             if not stillActive() then break end
             if not safeWait(State.StepDelay, myToken, stillActive) then break end
@@ -1370,6 +1789,7 @@ local function startAutoFarm()
                     end)
                 end
                 if not safeWait(0.2, myToken, stillActive) then break end
+                trackGoldGain()
                 local runTime = tick() - State.CurrentRunStart
                 table.insert(State.RunTimes, runTime)
                 if #State.RunTimes > 50 then table.remove(State.RunTimes, 1) end
@@ -1392,7 +1812,6 @@ local function startAutoFarm()
             if not safeWait(State.ResetDelay, myToken, stillActive) then break end
             if not stillActive() then break end
 
-            -- FIXED: GodMode ปิดชั่วคราวตอน kill
             Workspace.Gravity = GRAVITY_NORMAL
 
             if State.GodMode and Connections.GodMode then
@@ -1415,7 +1834,6 @@ local function startAutoFarm()
                 Workspace.Gravity = 0
             end
 
-            -- เปิด GodMode กลับหลัง respawn
             if State.GodMode and stillActive() then
                 task.defer(function()
                     if State.GodMode then toggleGodMode(true) end
@@ -1447,7 +1865,7 @@ local function stopAutoFarm()
 end
 
 
--- AUTO BUY
+-- AUTO BUY (with Gold validation)
 
 
 local function buyChest(chestName, count)
@@ -1460,6 +1878,17 @@ local function buyChest(chestName, count)
         return false
     end
     isBuyWarned = false
+
+    -- v1.3.0: Check Gold before buying [citation:15]
+    local pricePerChest = CHEST_PRICES[chestName] or 5
+    local totalNeeded = pricePerChest * count
+    local currentGold = getCurrentGold()
+
+    if currentGold < totalNeeded then
+        notify("Shop", string.format("Gold ไม่พอ (มี %d, ต้องใช้ %d)", currentGold, totalNeeded), 5)
+        return false
+    end
+
     local amount = math.max(1, tonumber(count) or 1)
     local successCount = 0
     for _ = 1, amount do
@@ -1477,7 +1906,7 @@ local function startAutoBuy()
     local myToken = BuyToken
     local failCount = 0
     while State.AutoBuyChest and myToken == BuyToken do
-        local ok = buyChest(State.SelectedChest, 1)
+        local ok = buyChest(State.SelectedChest, State.AutoBuyCount)
         if not ok then
             failCount = failCount + 1
             if failCount >= 5 then
@@ -1591,6 +2020,24 @@ task.spawn(function()
 end)
 
 
+-- GOLD TRACKING LOOP
+
+
+task.spawn(function()
+    while true do
+        task.wait(2)
+        if State.TrackGoldGain then
+            trackGoldGain()
+            local stageName = getCurrentStageName()
+            if stageName and stageName ~= State.CurrentStage then
+                State.CurrentStage = stageName
+                addLog("Entered stage: " .. stageName)
+            end
+        end
+    end
+end)
+
+
 -- STATS UPDATER
 
 
@@ -1630,6 +2077,12 @@ task.spawn(function()
             if StatsLabels.Respawns then
                 StatsLabels.Respawns:SetTitle("เกิดใหม่: " .. tostring(State.RespawnCount))
             end
+            if StatsLabels.Gold then
+                StatsLabels.Gold:SetTitle("Gold รวม: +" .. tostring(State.TotalGoldGained))
+            end
+            if StatsLabels.CurrentStage then
+                StatsLabels.CurrentStage:SetTitle("Stage: " .. (State.CurrentStage ~= "" and State.CurrentStage or "-"))
+            end
             if StatsLabels.Log then
                 local logText = ""
                 local start = math.max(1, #State.SessionLog - 9)
@@ -1654,10 +2107,11 @@ end)
 TabProfile:Paragraph({
     Title = "โปรไฟล์ผู้เล่น",
     Desc = string.format(
-        "%s (@%s)\nUserId: %d",
+        "%s (@%s)\nUserId: %d\nGold: %d",
         tostring(LocalPlayer.DisplayName),
         tostring(LocalPlayer.Name),
-        LocalPlayer.UserId
+        LocalPlayer.UserId,
+        getCurrentGold()
     )
 })
 
@@ -1810,6 +2264,12 @@ TabMain:Dropdown({
     Callback = function(value) State.SelectedChest = value end
 })
 
+TabMain:Slider({
+    Title = "จำนวนที่ซื้อต่อครั้ง",
+    Value = { Min = 1, Max = 999, Default = State.AutoBuyCount },
+    Callback = function(value) State.AutoBuyCount = value end
+})
+
 TabMain:Button({
     Title = "ซื้อ 1",
     Callback = function() buyChest(State.SelectedChest, 1) end
@@ -1891,6 +2351,66 @@ TabMain:Toggle({
 TabMain:Button({
     Title = "เปลี่ยนห้อง",
     Callback = function() task.spawn(serverHop) end
+})
+
+
+-- SECRET TAB (v1.3.0)
+
+
+TabSecrets:Paragraph({
+    Title = "Secret Treasure",
+    Desc = "เก็บสมบัติลับใน Build a Boat\n(Crystal Cave, Wild West, Toxic Waste)",
+})
+
+TabSecrets:Section({ Title = "Crystal Cave" })
+
+TabSecrets:Toggle({
+    Title = "Crystal Cave Auto-Solver",
+    Desc = "ยิงคริสตัล + แก้ Portal Maze อัตโนมัติ",
+    Default = State.AutoCrystalCave,
+    Callback = function(value)
+        State.AutoCrystalCave = value
+        if value then
+            notify("Crystal Cave", "เปิด Auto-Solver — จะทำงานเมื่อเจอ Stage", 3)
+        end
+    end
+})
+
+TabSecrets:Button({
+    Title = "แก้ปริศนาทันที (ถ้าอยู่ในโซนลับ)",
+    Callback = function()
+        task.spawn(autoSolveCrystalCave)
+    end
+})
+
+TabSecrets:Paragraph({
+    Title = "Portal Paths",
+    Desc = "Orange: green → gray\nWhite: yellow → cyan → black\nYellow: green → white → purple",
+})
+
+TabSecrets:Section({ Title = "Wild West" })
+
+TabSecrets:Toggle({
+    Title = "Wild West Secret Auto-Collect",
+    Desc = "เดินเข้าไปในถ้ำด้านขวาเพื่อเก็บ Small Treasure",
+    Default = State.AutoWildWestSecret,
+    Callback = function(value) State.AutoWildWestSecret = value end
+})
+
+TabSecrets:Section({ Title = "Toxic Waste" })
+
+TabSecrets:Toggle({
+    Title = "Toxic Waste Secret Auto-Collect",
+    Desc = "ยิงกำแพงหินเพื่อได้ Ultra Thrusters",
+    Default = State.AutoToxicWasteSecret,
+    Callback = function(value) State.AutoToxicWasteSecret = value end
+})
+
+TabSecrets:Section({ Title = "ข้อมูล" })
+
+TabSecrets:Paragraph({
+    Title = "รางวัล Secret",
+    Desc = "Crystal Cave: 4 Portals + 200 Gold + Medium Treasure\nWild West: 30 Neon Blocks + Small Treasure\nToxic Waste: 2 Ultra Thrusters + 175 Gold",
 })
 
 
@@ -2165,6 +2685,8 @@ StatsLabels.AvgTime = TabStats:Paragraph({ Title = "เฉลี่ย: 0.0s", D
 StatsLabels.Ping = TabStats:Paragraph({ Title = "ปิง: 0ms", Desc = "" })
 StatsLabels.Speed = TabStats:Paragraph({ Title = "ความเร็ว: 900", Desc = "" })
 StatsLabels.Respawns = TabStats:Paragraph({ Title = "เกิดใหม่: 0", Desc = "" })
+StatsLabels.Gold = TabStats:Paragraph({ Title = "Gold รวม: +0", Desc = "" })
+StatsLabels.CurrentStage = TabStats:Paragraph({ Title = "Stage: -", Desc = "" })
 
 TabStats:Button({
     Title = "ล้างสถิติ",
@@ -2175,7 +2697,31 @@ TabStats:Button({
         State.RunTimes = {}
         State.BestRunTime = 0
         State.RespawnCount = 0
+        State.TotalGoldGained = 0
+        State.StageRewards = {}
         notify("สถิติ", "ล้างสถิติแล้ว", 2)
+    end
+})
+
+TabStats:Section({ Title = "Gold Tracking" })
+
+TabStats:Toggle({
+    Title = "ติดตาม Gold ที่ได้",
+    Default = State.TrackGoldGain,
+    Callback = function(value) State.TrackGoldGain = value end
+})
+
+TabStats:Button({
+    Title = "แสดงสรุป Gold ตาม Stage",
+    Callback = function()
+        local summary = "Gold ที่ได้แต่ละ Stage:\n"
+        for stage, gold in pairs(State.StageRewards) do
+            summary = summary .. string.format("- %s: +%d\n", stage, gold)
+        end
+        if next(State.StageRewards) == nil then
+            summary = "ยังไม่มีข้อมูล"
+        end
+        notify("Gold Summary", summary, 10)
     end
 })
 
@@ -2334,6 +2880,7 @@ addLog("Session started")
 print("[xEz Hub] v" .. SCRIPT_VERSION .. " loaded. Fluent UI Dark Edition.")
 print("[xEz Hub] Discord: " .. DISCORD_URL)
 print("[xEz Hub] Panic key: " .. State.PanicKey)
+print("[xEz Hub] Secret features: Crystal Cave / Wild West / Toxic Waste")
 
 
 -- CLEANUP ON CLOSE
@@ -2341,6 +2888,19 @@ print("[xEz Hub] Panic key: " .. State.PanicKey)
 
 game:BindToClose(function()
     saveConfig()
+    local summary = string.format(
+        "Session: %s | Wins: %d | Fails: %d | Rate: %.1f%% | Best: %.1fs | Gold: +%d",
+        formatUptime(tick() - State.SessionStart),
+        State.WinsCount,
+        State.FailsCount,
+        State.WinsCount / math.max(1, State.WinsCount + State.FailsCount) * 100,
+        State.BestRunTime,
+        State.TotalGoldGained
+    )
+    print("[xEz Hub] " .. summary)
+    if State.WebhookNotify then
+        sendWebhook("Session End", summary, 15158332)
+    end
 end)
 
 
