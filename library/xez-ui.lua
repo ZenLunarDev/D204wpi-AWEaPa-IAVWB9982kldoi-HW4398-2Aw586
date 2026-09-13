@@ -1,167 +1,196 @@
+--[[
+    xEz UI Library v2.1 (Fixed)
+    Minimal + 3D UI
+    Author: ZenLunarDev
+
+    Fixes v2.1:
+      • Robust gethui / CoreGui / PlayerGui fallback chain
+      • Safe service loader (works in every executor)
+      • Window shows immediately (no "invisible tween start")
+      • ZIndex layering fixed
+      • Full pcall error reporting
+      • Debug mode: UI:Debug(true) prints every step
+]]
+
 local xEz = {
-    Version  = "2.0.0",
+    Version  = "2.1.0",
     Folder   = "xEzUI",
     Options  = {},
     Themes   = {},
     Theme    = "Dark",
     _active  = nil,
+    _debug   = false,
 }
 
-local Svc = setmetatable({}, {
-    __index = function(self, name)
-        local ok, s = pcall(function()
-            return cloneref and cloneref(game:GetService(name)) or game:GetService(name)
-        end)
-        if ok then rawset(self, name, s); return s end
-        return nil
+--==========================================================================
+-- DEBUG
+--==========================================================================
+local function log(...)
+    if xEz._debug then
+        print("[xEzUI]", ...)
     end
-})
+end
 
-local TweenService  = Svc.TweenService
-local RunService    = Svc.RunService
-local UserInput     = Svc.UserInputService
-local HttpService   = Svc.HttpService
-local Players       = Svc.Players
-local ContentProv   = Svc.ContentProvider
-local Lighting      = Svc.Lighting
-local Workspace     = Svc.Workspace
+function xEz:Debug(v) self._debug = v end
+
+--==========================================================================
+-- SAFE SERVICES
+--==========================================================================
+local function getService(name)
+    local ok, s = pcall(function()
+        if cloneref then
+            return cloneref(game:GetService(name))
+        end
+        return game:GetService(name)
+    end)
+    if ok and s then return s end
+    return game:GetService(name)
+end
+
+local TweenService  = getService("TweenService")
+local RunService    = getService("RunService")
+local UserInput     = getService("UserInputService")
+local HttpService   = getService("HttpService")
+local Players       = getService("Players")
+local ContentProv   = getService("ContentProvider")
+local Lighting      = getService("Lighting")
+local Workspace     = getService("Workspace")
 
 local LP = Players.LocalPlayer
 local isStudio = RunService:IsStudio()
 
+log("Services loaded. Studio:", isStudio)
 
+--==========================================================================
+-- SAFE GUI PARENT
+--==========================================================================
+local function getGuiParent()
+    -- 1. Try gethui (executor-specific)
+    if gethui then
+        local ok, hui = pcall(gethui)
+        if ok and hui and typeof(hui) == "Instance" then
+            log("Parent: gethui()")
+            return hui
+        end
+    end
+
+    -- 2. Try CoreGui (some executors allow)
+    local ok, cg = pcall(function() return getService("CoreGui") end)
+    if ok and cg then
+        -- Test write access
+        local test = Instance.new("Folder")
+        local testOk = pcall(function() test.Parent = cg end)
+        test:Destroy()
+        if testOk then
+            log("Parent: CoreGui")
+            return cg
+        end
+    end
+
+    -- 3. Fallback: PlayerGui (always works)
+    log("Parent: PlayerGui")
+    return LP:WaitForChild("PlayerGui", 10)
+end
+
+--==========================================================================
 -- THEMES
-
+--==========================================================================
 xEz.Themes = {
     Dark = {
-        Background      = Color3.fromRGB(17, 17, 20),
-        Surface         = Color3.fromRGB(24, 24, 28),
-        SurfaceHigh     = Color3.fromRGB(32, 32, 38),
-        Border          = Color3.fromRGB(48, 48, 56),
-        Text            = Color3.fromRGB(240, 240, 245),
-        TextDim         = Color3.fromRGB(150, 150, 162),
-        Accent          = Color3.fromRGB(120, 160, 255),
-        AccentDim       = Color3.fromRGB(70, 95, 160),
-        Success         = Color3.fromRGB(90, 210, 140),
-        Warning         = Color3.fromRGB(250, 190, 70),
-        Danger          = Color3.fromRGB(245, 100, 100),
-        Shadow          = Color3.fromRGB(0, 0, 0),
-        Blur            = true,
+        Background = Color3.fromRGB(17, 17, 20), Surface = Color3.fromRGB(24, 24, 28),
+        SurfaceHigh = Color3.fromRGB(32, 32, 38), Border = Color3.fromRGB(48, 48, 56),
+        Text = Color3.fromRGB(240, 240, 245), TextDim = Color3.fromRGB(150, 150, 162),
+        Accent = Color3.fromRGB(120, 160, 255), AccentDim = Color3.fromRGB(70, 95, 160),
+        Success = Color3.fromRGB(90, 210, 140), Warning = Color3.fromRGB(250, 190, 70),
+        Danger = Color3.fromRGB(245, 100, 100),
     },
     Light = {
-        Background      = Color3.fromRGB(245, 245, 248),
-        Surface         = Color3.fromRGB(255, 255, 255),
-        SurfaceHigh     = Color3.fromRGB(240, 240, 245),
-        Border          = Color3.fromRGB(220, 220, 228),
-        Text            = Color3.fromRGB(25, 25, 35),
-        TextDim         = Color3.fromRGB(120, 120, 135),
-        Accent          = Color3.fromRGB(80, 110, 240),
-        AccentDim       = Color3.fromRGB(180, 195, 250),
-        Success         = Color3.fromRGB(50, 170, 100),
-        Warning         = Color3.fromRGB(230, 160, 40),
-        Danger          = Color3.fromRGB(220, 70, 70),
-        Shadow          = Color3.fromRGB(180, 180, 190),
-        Blur            = false,
+        Background = Color3.fromRGB(245, 245, 248), Surface = Color3.fromRGB(255, 255, 255),
+        SurfaceHigh = Color3.fromRGB(240, 240, 245), Border = Color3.fromRGB(220, 220, 228),
+        Text = Color3.fromRGB(25, 25, 35), TextDim = Color3.fromRGB(120, 120, 135),
+        Accent = Color3.fromRGB(80, 110, 240), AccentDim = Color3.fromRGB(180, 195, 250),
+        Success = Color3.fromRGB(50, 170, 100), Warning = Color3.fromRGB(230, 160, 40),
+        Danger = Color3.fromRGB(220, 70, 70),
     },
     Midnight = {
-        Background      = Color3.fromRGB(10, 12, 22),
-        Surface         = Color3.fromRGB(16, 18, 32),
-        SurfaceHigh     = Color3.fromRGB(24, 28, 46),
-        Border          = Color3.fromRGB(40, 46, 70),
-        Text            = Color3.fromRGB(225, 230, 245),
-        TextDim         = Color3.fromRGB(130, 140, 170),
-        Accent          = Color3.fromRGB(140, 100, 255),
-        AccentDim       = Color3.fromRGB(80, 60, 150),
-        Success         = Color3.fromRGB(80, 200, 180),
-        Warning         = Color3.fromRGB(240, 180, 90),
-        Danger          = Color3.fromRGB(240, 90, 130),
-        Shadow          = Color3.fromRGB(0, 0, 0),
-        Blur            = true,
+        Background = Color3.fromRGB(10, 12, 22), Surface = Color3.fromRGB(16, 18, 32),
+        SurfaceHigh = Color3.fromRGB(24, 28, 46), Border = Color3.fromRGB(40, 46, 70),
+        Text = Color3.fromRGB(225, 230, 245), TextDim = Color3.fromRGB(130, 140, 170),
+        Accent = Color3.fromRGB(140, 100, 255), AccentDim = Color3.fromRGB(80, 60, 150),
+        Success = Color3.fromRGB(80, 200, 180), Warning = Color3.fromRGB(240, 180, 90),
+        Danger = Color3.fromRGB(240, 90, 130),
     },
     Ocean = {
-        Background      = Color3.fromRGB(12, 22, 30),
-        Surface         = Color3.fromRGB(18, 32, 42),
-        SurfaceHigh     = Color3.fromRGB(26, 44, 58),
-        Border          = Color3.fromRGB(40, 70, 90),
-        Text            = Color3.fromRGB(220, 240, 245),
-        TextDim         = Color3.fromRGB(130, 170, 185),
-        Accent          = Color3.fromRGB(70, 200, 220),
-        AccentDim       = Color3.fromRGB(40, 110, 130),
-        Success         = Color3.fromRGB(90, 220, 170),
-        Warning         = Color3.fromRGB(250, 200, 90),
-        Danger          = Color3.fromRGB(240, 110, 120),
-        Shadow          = Color3.fromRGB(0, 0, 0),
-        Blur            = true,
+        Background = Color3.fromRGB(12, 22, 30), Surface = Color3.fromRGB(18, 32, 42),
+        SurfaceHigh = Color3.fromRGB(26, 44, 58), Border = Color3.fromRGB(40, 70, 90),
+        Text = Color3.fromRGB(220, 240, 245), TextDim = Color3.fromRGB(130, 170, 185),
+        Accent = Color3.fromRGB(70, 200, 220), AccentDim = Color3.fromRGB(40, 110, 130),
+        Success = Color3.fromRGB(90, 220, 170), Warning = Color3.fromRGB(250, 200, 90),
+        Danger = Color3.fromRGB(240, 110, 120),
     },
     Sunset = {
-        Background      = Color3.fromRGB(28, 18, 22),
-        Surface         = Color3.fromRGB(38, 24, 28),
-        SurfaceHigh     = Color3.fromRGB(50, 32, 38),
-        Border          = Color3.fromRGB(80, 50, 60),
-        Text            = Color3.fromRGB(250, 235, 235),
-        TextDim         = Color3.fromRGB(190, 150, 160),
-        Accent          = Color3.fromRGB(255, 140, 90),
-        AccentDim       = Color3.fromRGB(160, 80, 50),
-        Success         = Color3.fromRGB(200, 220, 130),
-        Warning         = Color3.fromRGB(255, 200, 100),
-        Danger          = Color3.fromRGB(255, 110, 110),
-        Shadow          = Color3.fromRGB(0, 0, 0),
-        Blur            = true,
+        Background = Color3.fromRGB(28, 18, 22), Surface = Color3.fromRGB(38, 24, 28),
+        SurfaceHigh = Color3.fromRGB(50, 32, 38), Border = Color3.fromRGB(80, 50, 60),
+        Text = Color3.fromRGB(250, 235, 235), TextDim = Color3.fromRGB(190, 150, 160),
+        Accent = Color3.fromRGB(255, 140, 90), AccentDim = Color3.fromRGB(160, 80, 50),
+        Success = Color3.fromRGB(200, 220, 130), Warning = Color3.fromRGB(255, 200, 100),
+        Danger = Color3.fromRGB(255, 110, 110),
     },
     Rose = {
-        Background      = Color3.fromRGB(24, 14, 20),
-        Surface         = Color3.fromRGB(34, 20, 28),
-        SurfaceHigh     = Color3.fromRGB(46, 28, 38),
-        Border          = Color3.fromRGB(74, 46, 60),
-        Text            = Color3.fromRGB(250, 230, 240),
-        TextDim         = Color3.fromRGB(180, 140, 160),
-        Accent          = Color3.fromRGB(255, 120, 180),
-        AccentDim       = Color3.fromRGB(160, 70, 120),
-        Success         = Color3.fromRGB(160, 220, 180),
-        Warning         = Color3.fromRGB(250, 200, 140),
-        Danger          = Color3.fromRGB(255, 100, 130),
-        Shadow          = Color3.fromRGB(0, 0, 0),
-        Blur            = true,
+        Background = Color3.fromRGB(24, 14, 20), Surface = Color3.fromRGB(34, 20, 28),
+        SurfaceHigh = Color3.fromRGB(46, 28, 38), Border = Color3.fromRGB(74, 46, 60),
+        Text = Color3.fromRGB(250, 230, 240), TextDim = Color3.fromRGB(180, 140, 160),
+        Accent = Color3.fromRGB(255, 120, 180), AccentDim = Color3.fromRGB(160, 70, 120),
+        Success = Color3.fromRGB(160, 220, 180), Warning = Color3.fromRGB(250, 200, 140),
+        Danger = Color3.fromRGB(255, 100, 130),
     },
 }
 
-function xEz:GetTheme() return self.Themes[self.Theme] end
+function xEz:GetTheme() return self.Themes[self.Theme] or self.Themes.Dark end
 
-
--- UTILITIES
-
-local function mk(class, props, children)
+--==========================================================================
+-- HELPERS
+--==========================================================================
+local function mk(class, props)
     local o = Instance.new(class)
-    for k, v in pairs(props or {}) do o[k] = v end
-    for _, c in ipairs(children or {}) do c.Parent = o end
+    for k, v in pairs(props or {}) do
+        local ok, err = pcall(function() o[k] = v end)
+        if not ok then log("Failed to set", k, "on", class, ":", err) end
+    end
     return o
 end
 
-local function corner(obj, r) return mk("UICorner", { CornerRadius = UDim.new(0, r or 8), Parent = obj }) end
+local function corner(obj, r)
+    return mk("UICorner", { CornerRadius = UDim.new(0, r or 8), Parent = obj })
+end
+
 local function stroke(obj, col, t, thick)
     return mk("UIStroke", {
-        Color = col, Transparency = t or 0, Thickness = thick or 1,
-        ApplyStrokeMode = Enum.ApplyStrokeMode.Border, Parent = obj
+        Color = col or Color3.new(1, 1, 1),
+        Transparency = t or 0,
+        Thickness = thick or 1,
+        ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+        Parent = obj,
     })
 end
+
 local function padding(obj, l, r, t, b)
     return mk("UIPadding", {
         PaddingLeft = UDim.new(0, l or 0), PaddingRight = UDim.new(0, r or 0),
         PaddingTop = UDim.new(0, t or 0), PaddingBottom = UDim.new(0, b or 0),
-        Parent = obj
+        Parent = obj,
     })
 end
-local function list(obj, pad, dir)
-    return mk("UIListLayout", {
-        Padding = UDim.new(0, pad or 6), SortOrder = Enum.SortOrder.LayoutOrder,
-        FillDirection = dir or Enum.FillDirection.Vertical, Parent = obj
-    })
-end
+
 local function tween(obj, info, goal)
-    local t = TweenService:Create(obj, info, goal)
-    t:Play()
-    return t
+    local ok, t = pcall(function()
+        local tw = TweenService:Create(obj, info, goal)
+        tw:Play()
+        return tw
+    end)
+    return ok and t or nil
 end
+
 local function ripple(button, x, y, color)
     local r = mk("Frame", {
         Name = "Ripple",
@@ -180,61 +209,44 @@ local function ripple(button, x, y, color)
         Size = UDim2.fromOffset(size, size),
         BackgroundTransparency = 1,
     })
-    task.delay(0.5, function() if r and r.Parent then r:Destroy() end end)
+    task.delay(0.5, function()
+        if r and r.Parent then r:Destroy() end
+    end)
 end
+
 local function fmtNumber(n, precision)
     if precision then return string.format("%." .. precision .. "f", n) end
     if n == math.floor(n) then return tostring(math.floor(n)) end
     return string.format("%.2f", n)
 end
-local function isTouch() return UserInput.TouchEnabled and not UserInput.KeyboardEnabled end
-local function isConsole() return UserInput.GamepadEnabled and not UserInput.KeyboardEnabled end
 
-
--- 3D UI (Floating Glass Panels in Workspace)
-
-local ThreeD = {
-    Enabled = false,
-    Panels = {},
-    Folder = nil,
-}
+--==========================================================================
+-- 3D UI
+--==========================================================================
+local ThreeD = { Enabled = false, Panels = {}, Folder = nil }
 
 function ThreeD:init()
-    if self.Folder then return end
+    if self.Folder and self.Folder.Parent then return end
     self.Folder = mk("Folder", { Name = "xEzUI_3D", Parent = Workspace })
-    local cam = Workspace.CurrentCamera
-    if cam then
-        cam:GetPropertyChangedSignal("CFrame"):Connect(function()
-            if not ThreeD.Enabled then return end
-            ThreeD:updateAll()
-        end)
-    end
+    log("3D folder created")
 end
 
 function ThreeD:createPanel(size, offset)
     self:init()
     local part = mk("Part", {
         Name = "xEzPanel",
-        Anchored = true,
-        CanCollide = false,
-        CanQuery = false,
-        CastShadow = false,
-        Material = Enum.Material.Glass,
-        Transparency = 0.15,
+        Anchored = true, CanCollide = false, CanQuery = false, CastShadow = false,
+        Material = Enum.Material.Glass, Transparency = 0.3,
         Color = Color3.fromRGB(20, 20, 28),
-        Size = size,
-        Parent = self.Folder,
+        Size = size, Parent = self.Folder,
     })
-    corner(part)
     local surface = mk("SurfaceGui", {
-        Face = Enum.NormalId.Front,
-        AlwaysOnTop = true,
-        LightInfluence = 0,
-        PixelsPerStud = 50,
+        Face = Enum.NormalId.Front, AlwaysOnTop = true,
+        LightInfluence = 0, PixelsPerStud = 50,
         SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud,
         Parent = part,
     })
-    table.insert(self.Panels, { part = part, gui = surface, offset = offset or Vector3.new(0, 0, -5) })
+    table.insert(self.Panels, { part = part, gui = surface, offset = offset or Vector3.new(0, 0, -8) })
     return part, surface
 end
 
@@ -251,77 +263,110 @@ end
 
 function ThreeD:setEnabled(v)
     self.Enabled = v
-    if self.Folder then
-        self.Folder.Parent = v and Workspace or nil
+    if v then
+        self:init()
+        self.Folder.Parent = Workspace
+        self:updateAll()
+    else
+        if self.Folder then self.Folder.Parent = nil end
     end
-    if v then self:updateAll() end
 end
 
-
--- MAIN UI OBJECT
-
+--==========================================================================
+-- WINDOW
+--==========================================================================
 local UI = {}
 
-function UI:_parent()
-    if isStudio then return LP:WaitForChild("PlayerGui") end
-    return (gethui and gethui()) or LP:WaitForChild("PlayerGui")
-end
-
 function UI:Notify(cfg)
-    if not self._window then return end
-    return self._window:Notify(cfg)
+    if self._window then return self._window:Notify(cfg) end
 end
-
-
--- WINDOW
 
 function UI:Window(cfg)
     cfg = cfg or {}
     local theme = self:GetTheme()
     local win = { _tabs = {}, _settings = cfg }
 
-    local parent = self:_parent()
-    local old = parent:FindFirstChild("xEzUI")
-    if old then old:Destroy() end
+    -- Get parent safely
+    local parent = getGuiParent()
+    if not parent then
+        warn("[xEzUI] Cannot find GUI parent!")
+        return nil
+    end
 
-    local screen = mk("ScreenGui", {
-        Name = "xEzUI", ResetOnSpawn = false, IgnoreGuiInset = true,
-        DisplayOrder = 999, ZIndexBehavior = Enum.ZIndexBehavior.Sibling,
-        Parent = parent,
-    })
+    -- Remove old instance
+    local ok = pcall(function()
+        local old = parent:FindFirstChild("xEzUI")
+        if old then old:Destroy() end
+    end)
 
-    -- Notification layer
+    -- Create ScreenGui
+    local screen
+    local ok, err = pcall(function()
+        screen = mk("ScreenGui", {
+            Name = "xEzUI",
+            ResetOnSpawn = false,
+            IgnoreGuiInset = true,
+            DisplayOrder = 999999,
+            ZIndexBehavior = Enum.ZIndexBehavior.Sibling,
+            Parent = parent,
+        })
+    end)
+
+    if not ok or not screen then
+        warn("[xEzUI] Failed to create ScreenGui:", err)
+        return nil
+    end
+
+    log("ScreenGui created, parent:", parent:GetFullName())
+
+    -- Notifications layer
     local notifyLayer = mk("Frame", {
         Name = "Notifications", BackgroundTransparency = 1,
         Size = UDim2.fromScale(1, 1), ZIndex = 100, Parent = screen,
     })
-    local nl = mk("UIListLayout", {
-        Padding = UDim.new(0, 8), HorizontalAlignment = Enum.HorizontalAlignment.Right,
+    mk("UIListLayout", {
+        Padding = UDim.new(0, 8),
+        HorizontalAlignment = Enum.HorizontalAlignment.Right,
         VerticalAlignment = Enum.VerticalAlignment.Bottom,
-        SortOrder = Enum.SortOrder.LayoutOrder, Parent = notifyLayer,
+        SortOrder = Enum.SortOrder.LayoutOrder,
+        Parent = notifyLayer,
     })
     padding(notifyLayer, 12, 12, 12, 12)
 
-    -- Root window
+    -- Root
+    local winSize = cfg.Size or UDim2.fromOffset(760, 520)
     local root = mk("Frame", {
-        Name = "Root", AnchorPoint = Vector2.new(0.5, 0.5),
+        Name = "Root",
+        AnchorPoint = Vector2.new(0.5, 0.5),
         Position = UDim2.fromScale(0.5, 0.5),
-        Size = cfg.Size or UDim2.fromOffset(760, 520),
+        Size = winSize,
         BackgroundColor3 = theme.Background,
-        BorderSizePixel = 0, ClipsDescendants = true, Parent = screen,
+        BorderSizePixel = 0,
+        ClipsDescendants = true,
+        Visible = true,
+        ZIndex = 1,
+        Parent = screen,
     })
     corner(root, 14)
     stroke(root, theme.Border, 0.4)
+
+    log("Root created, size:", tostring(winSize))
+
+    -- Accent bar (ZIndex 3 so it's on top of topbar)
     local accent = mk("Frame", {
         Name = "Accent", BackgroundColor3 = theme.Accent,
         BorderSizePixel = 0, Size = UDim2.new(1, 0, 0, 2),
-        Position = UDim2.fromScale(0, 0), Parent = root,
+        Position = UDim2.fromScale(0, 0),
+        ZIndex = 3,
+        Parent = root,
     })
 
-    -- Top bar
+    -- Topbar
     local topbar = mk("Frame", {
         Name = "Topbar", BackgroundTransparency = 1,
-        Size = UDim2.new(1, 0, 0, 54), Parent = root,
+        Size = UDim2.new(1, 0, 0, 54),
+        ZIndex = 2,
+        Parent = root,
     })
     padding(topbar, 16, 16, 0, 0)
 
@@ -331,7 +376,7 @@ function UI:Window(cfg)
         Font = Enum.Font.GothamBold, TextSize = 15,
         TextColor3 = theme.Text, TextXAlignment = Enum.TextXAlignment.Left,
         Position = UDim2.fromOffset(0, 10), Size = UDim2.new(1, -120, 0, 20),
-        Parent = topbar,
+        ZIndex = 2, Parent = topbar,
     })
     local subtitle = mk("TextLabel", {
         Name = "Subtitle", BackgroundTransparency = 1,
@@ -339,7 +384,7 @@ function UI:Window(cfg)
         Font = Enum.Font.Gotham, TextSize = 11,
         TextColor3 = theme.TextDim, TextXAlignment = Enum.TextXAlignment.Left,
         Position = UDim2.fromOffset(0, 30), Size = UDim2.new(1, -120, 0, 14),
-        Parent = topbar,
+        ZIndex = 2, Parent = topbar,
     })
 
     -- Window buttons
@@ -351,7 +396,7 @@ function UI:Window(cfg)
             BorderSizePixel = 0, Text = sym,
             Font = Enum.Font.GothamBold, TextSize = 14,
             TextColor3 = theme.Text, AutoButtonColor = false,
-            Parent = topbar,
+            ZIndex = 3, Parent = topbar,
         })
         corner(b, 7)
         b.MouseEnter:Connect(function()
@@ -371,7 +416,8 @@ function UI:Window(cfg)
     local sidebar = mk("Frame", {
         Name = "Sidebar", BackgroundColor3 = theme.Surface,
         BorderSizePixel = 0, Position = UDim2.fromOffset(0, 54),
-        Size = UDim2.new(0, 180, 1, -54), Parent = root,
+        Size = UDim2.new(0, 180, 1, -54),
+        ZIndex = 2, Parent = root,
     })
     local sidebarBorder = mk("Frame", {
         Name = "Border", BackgroundColor3 = theme.Border,
@@ -379,7 +425,7 @@ function UI:Window(cfg)
         Position = UDim2.fromScale(1, 0), Parent = sidebar,
     })
 
-    -- Profile card
+    -- Profile
     local profile = mk("Frame", {
         Name = "Profile", BackgroundColor3 = theme.SurfaceHigh,
         BorderSizePixel = 0, Size = UDim2.new(1, -16, 0, 60),
@@ -394,6 +440,7 @@ function UI:Window(cfg)
         Position = UDim2.fromOffset(8, 8), Parent = profile,
     })
     corner(avatar, 22)
+
     task.spawn(function()
         local ok, img = pcall(function()
             return Players:GetUserThumbnailAsync(LP.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size100x100)
@@ -416,7 +463,7 @@ function UI:Window(cfg)
         Parent = profile,
     })
 
-    -- Tab list
+    -- Tabs scroller
     local tabScroll = mk("ScrollingFrame", {
         Name = "Tabs", BackgroundTransparency = 1, BorderSizePixel = 0,
         ScrollBarThickness = 2, ScrollBarImageColor3 = theme.Border,
@@ -424,14 +471,22 @@ function UI:Window(cfg)
         Position = UDim2.fromOffset(8, 76),
         Size = UDim2.new(1, -16, 1, -84), Parent = sidebar,
     })
-    list(tabScroll, 4)
+    mk("UIListLayout", {
+        Padding = UDim.new(0, 4),
+        SortOrder = Enum.SortOrder.LayoutOrder,
+        Parent = tabScroll,
+    })
 
     -- Content
     local content = mk("Frame", {
         Name = "Content", BackgroundTransparency = 1,
         Position = UDim2.new(0, 180, 0, 54),
-        Size = UDim2.new(1, -180, 1, -54), Parent = root,
+        Size = UDim2.new(1, -180, 1, -54),
+        ClipsDescendants = true,
+        ZIndex = 1, Parent = root,
     })
+
+    log("Sidebar + Content created")
 
     -- Drag
     local dragging, dragStart, startPos
@@ -452,19 +507,13 @@ function UI:Window(cfg)
         end
     end)
 
-    -- Cross-platform: gamepad navigation
-    if isConsole() then
-        local sel = mk("UIStroke", {
-            Color = theme.Accent, Thickness = 2, Transparency = 0.3,
-            ApplyStrokeMode = Enum.ApplyStrokeMode.Border, Parent = root,
-        })
-    end
+    -- Entrance animation (from small to full — but visible immediately)
+    root.Size = UDim2.fromOffset(winSize.X.Offset * 0.85, winSize.Y.Offset * 0.85)
+    tween(root, TweenInfo.new(0.28, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Size = winSize })
 
-    -- Animate in
-    root.Size = UDim2.fromOffset(0, 0)
-    tween(root, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Size = cfg.Size or UDim2.fromOffset(760, 520) })
-
-    -- Window API
+    --==========================================================================
+    -- WINDOW API
+    --==========================================================================
     win.Root = root
     win.Screen = screen
 
@@ -484,7 +533,7 @@ function UI:Window(cfg)
             Parent = btn,
         })
         corner(accentLine, 2)
-        local icon = mk("TextLabel", {
+        local iconLbl = mk("TextLabel", {
             BackgroundTransparency = 1, Text = tabCfg.Icon or "",
             Font = Enum.Font.GothamBold, TextSize = 13, TextColor3 = theme.TextDim,
             Position = UDim2.fromOffset(14, 0), Size = UDim2.fromOffset(18, 36),
@@ -505,25 +554,26 @@ function UI:Window(cfg)
             Size = UDim2.fromScale(1, 1), Visible = false, Parent = content,
         })
         padding(page, 16, 16, 14, 16)
-
-        local pageList = mk("UIListLayout", {
-            Padding = UDim.new(0, 12), SortOrder = Enum.SortOrder.LayoutOrder,
+        mk("UIListLayout", {
+            Padding = UDim.new(0, 12),
+            SortOrder = Enum.SortOrder.LayoutOrder,
             Parent = page,
         })
 
-        local tab = { _btn = btn, _page = page, _window = win, _theme = theme, _sections = {} }
+        local tab = { _btn = btn, _page = page, _window = win, _theme = theme }
 
         local function activate()
             for _, t in ipairs(win._tabs) do
                 t._page.Visible = false
                 tween(t._btn, TweenInfo.new(0.2), { BackgroundTransparency = 1 })
-                tween(t._btn:FindFirstChild("Accent"), TweenInfo.new(0.2), { BackgroundTransparency = 1 })
+                local a = t._btn:FindFirstChild("Accent")
+                if a then tween(a, TweenInfo.new(0.2), { BackgroundTransparency = 1 }) end
             end
             page.Visible = true
             tween(btn, TweenInfo.new(0.2), { BackgroundTransparency = 0 })
             tween(accentLine, TweenInfo.new(0.2), { BackgroundTransparency = 0 })
             tween(label, TweenInfo.new(0.2), { TextColor3 = theme.Text })
-            tween(icon, TweenInfo.new(0.2), { TextColor3 = theme.Accent })
+            tween(iconLbl, TweenInfo.new(0.2), { TextColor3 = theme.Accent })
         end
 
         btn.MouseButton1Click:Connect(activate)
@@ -539,7 +589,9 @@ function UI:Window(cfg)
         table.insert(win._tabs, tab)
         if #win._tabs == 1 then activate() end
 
-        -- Tab API
+        --==========================================================================
+        -- SECTION
+        --==========================================================================
         function tab:Section(secCfg)
             secCfg = secCfg or {}
             local isRight = secCfg.Side == "Right" or secCfg.Side == "right"
@@ -549,14 +601,14 @@ function UI:Window(cfg)
                 Position = isRight and UDim2.new(0.5, 6, 0, 0) or UDim2.fromOffset(0, 0),
                 Parent = page,
             })
-            local secList = mk("UIListLayout", {
-                Padding = UDim.new(0, 10), SortOrder = Enum.SortOrder.LayoutOrder,
+            mk("UIListLayout", {
+                Padding = UDim.new(0, 10),
+                SortOrder = Enum.SortOrder.LayoutOrder,
                 Parent = secHolder,
             })
 
-            local sec = { _holder = secHolder, _list = secList, _tab = tab, _theme = theme }
+            local sec = { _holder = secHolder, _theme = theme }
 
-            -- Section card
             local card = mk("Frame", {
                 Name = "Section", BackgroundColor3 = theme.Surface,
                 BorderSizePixel = 0, Size = UDim2.new(1, 0, 0, 0),
@@ -564,31 +616,24 @@ function UI:Window(cfg)
             })
             corner(card, 10)
             stroke(card, theme.Border, 0.5)
-
-            local cardPad = padding(card, 14, 14, 12, 12)
-            local cardList = mk("UIListLayout", {
-                Padding = UDim.new(0, 8), SortOrder = Enum.SortOrder.LayoutOrder,
+            padding(card, 14, 14, 12, 12)
+            mk("UIListLayout", {
+                Padding = UDim.new(0, 8),
+                SortOrder = Enum.SortOrder.LayoutOrder,
                 Parent = card,
             })
-
-            sec._card = card
-            sec._cardList = cardList
 
             if secCfg.Name then
                 local secName = mk("TextLabel", {
                     BackgroundTransparency = 1, Text = secCfg.Name,
                     Font = Enum.Font.GothamBold, TextSize = 11, TextColor3 = theme.TextDim,
-                    TextXAlignment = Enum.TextXAlignment.Left, TextTransparency = 0.2,
+                    TextXAlignment = Enum.TextXAlignment.Left,
                     Size = UDim2.new(1, 0, 0, 16), Parent = card,
                 })
                 secName.LayoutOrder = -9999
             end
 
-            
-            -- ELEMENTS
-            
-
-            -- BUTTON
+            --==== BUTTON ====
             function sec:Button(cfg)
                 cfg = cfg or {}
                 local b = mk("TextButton", {
@@ -610,8 +655,8 @@ function UI:Window(cfg)
                     BackgroundTransparency = 1, Text = cfg.Name or "Button",
                     Font = Enum.Font.GothamMedium, TextSize = 12, TextColor3 = theme.Text,
                     Size = UDim2.new(1, -24, 1, 0), Position = UDim2.fromOffset(12, 0),
-                    TextXAlignment = Enum.TextXAlignment.Left, TextTruncate = Enum.TextTruncate.AtEnd,
-                    Parent = b,
+                    TextXAlignment = Enum.TextXAlignment.Left,
+                    TextTruncate = Enum.TextTruncate.AtEnd, Parent = b,
                 })
                 local bIcon = mk("TextLabel", {
                     BackgroundTransparency = 1, Text = "›",
@@ -643,12 +688,11 @@ function UI:Window(cfg)
                 function api:SetText(t) bText.Text = t end
                 function api:SetVisible(v) b.Visible = v end
                 function api:Destroy() b:Destroy() end
-
                 if cfg.Flag then xEz.Options[cfg.Flag] = api end
                 return api
             end
 
-            -- TOGGLE
+            --==== TOGGLE ====
             function sec:Toggle(cfg)
                 cfg = cfg or {}
                 local state = cfg.Default == true
@@ -659,11 +703,12 @@ function UI:Window(cfg)
                 local label = mk("TextLabel", {
                     BackgroundTransparency = 1, Text = cfg.Name or "Toggle",
                     Font = Enum.Font.GothamMedium, TextSize = 12, TextColor3 = theme.Text,
-                    Size = UDim2.new(1, -60, 1, 0), TextXAlignment = Enum.TextXAlignment.Left,
+                    Size = UDim2.new(1, -60, 1, 0),
+                    TextXAlignment = Enum.TextXAlignment.Left,
                     TextTruncate = Enum.TextTruncate.AtEnd, Parent = row,
                 })
                 if cfg.Description then
-                    local desc = mk("TextLabel", {
+                    mk("TextLabel", {
                         BackgroundTransparency = 1, Text = cfg.Description,
                         Font = Enum.Font.Gotham, TextSize = 10, TextColor3 = theme.TextDim,
                         Size = UDim2.new(1, -60, 0, 14), Position = UDim2.fromOffset(0, 18),
@@ -711,13 +756,12 @@ function UI:Window(cfg)
                 function api:Get() return state end
                 function api:SetVisible(v) row.Visible = v end
                 function api:Destroy() row:Destroy() end
-
                 if cfg.Flag then xEz.Options[cfg.Flag] = api end
                 if cfg.Callback and cfg.RunOnStart ~= false then task.spawn(cfg.Callback, state) end
                 return api
             end
 
-            -- SLIDER
+            --==== SLIDER ====
             function sec:Slider(cfg)
                 cfg = cfg or {}
                 local minV = cfg.Min or 0
@@ -733,15 +777,15 @@ function UI:Window(cfg)
                 local label = mk("TextLabel", {
                     BackgroundTransparency = 1, Text = cfg.Name or "Slider",
                     Font = Enum.Font.GothamMedium, TextSize = 12, TextColor3 = theme.Text,
-                    Size = UDim2.new(1, -80, 0, 18), TextXAlignment = Enum.TextXAlignment.Left,
-                    Parent = row,
+                    Size = UDim2.new(1, -80, 0, 18),
+                    TextXAlignment = Enum.TextXAlignment.Left, Parent = row,
                 })
                 local valLabel = mk("TextLabel", {
                     BackgroundTransparency = 1, Text = fmtNumber(cur, precision),
                     Font = Enum.Font.GothamBold, TextSize = 12, TextColor3 = theme.Accent,
                     AnchorPoint = Vector2.new(1, 0), Position = UDim2.new(1, 0, 0, 0),
-                    Size = UDim2.fromOffset(80, 18), TextXAlignment = Enum.TextXAlignment.Right,
-                    Parent = row,
+                    Size = UDim2.fromOffset(80, 18),
+                    TextXAlignment = Enum.TextXAlignment.Right, Parent = row,
                 })
 
                 local track = mk("Frame", {
@@ -752,7 +796,8 @@ function UI:Window(cfg)
                 corner(track, 3)
                 local fill = mk("Frame", {
                     Name = "Fill", BackgroundColor3 = theme.Accent,
-                    BorderSizePixel = 0, Size = UDim2.new((cur - minV) / (maxV - minV), 0, 1, 0),
+                    BorderSizePixel = 0,
+                    Size = UDim2.new((cur - minV) / (maxV - minV), 0, 1, 0),
                     Parent = track,
                 })
                 corner(fill, 3)
@@ -806,13 +851,12 @@ function UI:Window(cfg)
                 function api:Get() return cur end
                 function api:SetVisible(v) row.Visible = v end
                 function api:Destroy() row:Destroy() end
-
                 if cfg.Flag then xEz.Options[cfg.Flag] = api end
                 if cfg.Callback and cfg.RunOnStart ~= false then task.spawn(cfg.Callback, cur) end
                 return api
             end
 
-            -- INPUT
+            --==== INPUT ====
             function sec:Input(cfg)
                 cfg = cfg or {}
                 local row = mk("Frame", {
@@ -822,8 +866,8 @@ function UI:Window(cfg)
                 local label = mk("TextLabel", {
                     BackgroundTransparency = 1, Text = cfg.Name or "Input",
                     Font = Enum.Font.GothamMedium, TextSize = 12, TextColor3 = theme.Text,
-                    Size = UDim2.new(1, 0, 0, 16), TextXAlignment = Enum.TextXAlignment.Left,
-                    Parent = row,
+                    Size = UDim2.new(1, 0, 0, 16),
+                    TextXAlignment = Enum.TextXAlignment.Left, Parent = row,
                 })
                 local box = mk("TextBox", {
                     Name = "Box", BackgroundColor3 = theme.SurfaceHigh,
@@ -855,12 +899,11 @@ function UI:Window(cfg)
                 function api:Get() return box.Text end
                 function api:SetVisible(v) row.Visible = v end
                 function api:Destroy() row:Destroy() end
-
                 if cfg.Flag then xEz.Options[cfg.Flag] = api end
                 return api
             end
 
-            -- KEYBIND
+            --==== KEYBIND ====
             function sec:Keybind(cfg)
                 cfg = cfg or {}
                 local row = mk("Frame", {
@@ -870,8 +913,8 @@ function UI:Window(cfg)
                 local label = mk("TextLabel", {
                     BackgroundTransparency = 1, Text = cfg.Name or "Keybind",
                     Font = Enum.Font.GothamMedium, TextSize = 12, TextColor3 = theme.Text,
-                    Size = UDim2.new(1, -100, 1, 0), TextXAlignment = Enum.TextXAlignment.Left,
-                    Parent = row,
+                    Size = UDim2.new(1, -100, 1, 0),
+                    TextXAlignment = Enum.TextXAlignment.Left, Parent = row,
                 })
                 local bindBox = mk("TextButton", {
                     Name = "Bind", BackgroundColor3 = theme.SurfaceHigh,
@@ -931,12 +974,11 @@ function UI:Window(cfg)
                 function api:Get() return current end
                 function api:SetVisible(v) row.Visible = v end
                 function api:Destroy() keyConn:Disconnect(); row:Destroy() end
-
                 if cfg.Flag then xEz.Options[cfg.Flag] = api end
                 return api
             end
 
-            -- DROPDOWN
+            --==== DROPDOWN ====
             function sec:Dropdown(cfg)
                 cfg = cfg or {}
                 local multi = cfg.Multi == true
@@ -956,14 +998,14 @@ function UI:Window(cfg)
                     ClipsDescendants = true, Parent = card,
                 })
                 corner(row, 8)
-                local rowStroke = stroke(row, theme.Border, 0.5)
+                stroke(row, theme.Border, 0.5)
 
                 local header = mk("TextButton", {
                     Name = "Header", BackgroundTransparency = 1, Text = "",
                     Size = UDim2.new(1, 0, 0, 34), AutoButtonColor = false,
                     Parent = row,
                 })
-                local label = mk("TextLabel", {
+                mk("TextLabel", {
                     BackgroundTransparency = 1, Text = cfg.Name or "Dropdown",
                     Font = Enum.Font.GothamMedium, TextSize = 12, TextColor3 = theme.Text,
                     Size = UDim2.new(1, -50, 1, 0), Position = UDim2.fromOffset(12, 0),
@@ -973,7 +1015,8 @@ function UI:Window(cfg)
                     BackgroundTransparency = 1, Text = "",
                     Font = Enum.Font.Gotham, TextSize = 10, TextColor3 = theme.Accent,
                     AnchorPoint = Vector2.new(1, 0.5), Position = UDim2.new(1, -28, 0.5, 0),
-                    Size = UDim2.fromOffset(80, 14), TextXAlignment = Enum.TextXAlignment.Right,
+                    Size = UDim2.fromOffset(80, 14),
+                    TextXAlignment = Enum.TextXAlignment.Right,
                     TextTruncate = Enum.TextTruncate.AtEnd, Parent = header,
                 })
                 local arrow = mk("TextLabel", {
@@ -990,7 +1033,8 @@ function UI:Window(cfg)
                 })
                 padding(listHolder, 6, 6, 0, 6)
                 mk("UIListLayout", {
-                    Padding = UDim.new(0, 2), SortOrder = Enum.SortOrder.LayoutOrder,
+                    Padding = UDim.new(0, 2),
+                    SortOrder = Enum.SortOrder.LayoutOrder,
                     Parent = listHolder,
                 })
 
@@ -1024,18 +1068,12 @@ function UI:Window(cfg)
                             Parent = ob,
                         })
                         corner(check, 6)
-                        local ot = mk("TextLabel", {
+                        mk("TextLabel", {
                             BackgroundTransparency = 1, Text = tostring(opt),
                             Font = Enum.Font.Gotham, TextSize = 11, TextColor3 = theme.Text,
                             Size = UDim2.new(1, -30, 1, 0), Position = UDim2.fromOffset(26, 0),
                             TextXAlignment = Enum.TextXAlignment.Left, Parent = ob,
                         })
-
-                        local function refresh()
-                            tween(check, TweenInfo.new(0.15), {
-                                BackgroundColor3 = selected[opt] and theme.Accent or theme.Border
-                            })
-                        end
 
                         ob.MouseEnter:Connect(function()
                             tween(ob, TweenInfo.new(0.15), { BackgroundTransparency = 0.2 })
@@ -1045,8 +1083,8 @@ function UI:Window(cfg)
                         end)
                         ob.MouseButton1Click:Connect(function()
                             if multi then
-                                selected[opt] = not selected[opt] or nil
-                                refresh()
+                                selected[opt] = (not selected[opt]) or nil
+                                check.BackgroundColor3 = selected[opt] and theme.Accent or theme.Border
                                 updateValueLabel()
                                 if cfg.Callback then
                                     local out = {}
@@ -1063,7 +1101,12 @@ function UI:Window(cfg)
                                 check.BackgroundColor3 = theme.Accent
                                 updateValueLabel()
                                 if cfg.Callback then task.spawn(cfg.Callback, opt) end
-                                header:Activate()  -- close
+                                -- close
+                                open = false
+                                tween(row, TweenInfo.new(0.2, Enum.EasingStyle.Quart), {
+                                    Size = UDim2.new(1, 0, 0, 34)
+                                })
+                                tween(arrow, TweenInfo.new(0.2), { Rotation = 0 })
                             end
                         end)
 
@@ -1123,12 +1166,11 @@ function UI:Window(cfg)
                 end
                 function api:SetVisible(v) row.Visible = v end
                 function api:Destroy() row:Destroy() end
-
                 if cfg.Flag then xEz.Options[cfg.Flag] = api end
                 return api
             end
 
-            -- COLORPICKER
+            --==== COLORPICKER ====
             function sec:Colorpicker(cfg)
                 cfg = cfg or {}
                 local current = cfg.Default or Color3.fromRGB(120, 160, 255)
@@ -1136,11 +1178,11 @@ function UI:Window(cfg)
                     Name = "Colorpicker", BackgroundTransparency = 1,
                     Size = UDim2.new(1, 0, 0, 34), Parent = card,
                 })
-                local label = mk("TextLabel", {
+                mk("TextLabel", {
                     BackgroundTransparency = 1, Text = cfg.Name or "Color",
                     Font = Enum.Font.GothamMedium, TextSize = 12, TextColor3 = theme.Text,
-                    Size = UDim2.new(1, -50, 1, 0), TextXAlignment = Enum.TextXAlignment.Left,
-                    Parent = row,
+                    Size = UDim2.new(1, -50, 1, 0),
+                    TextXAlignment = Enum.TextXAlignment.Left, Parent = row,
                 })
                 local swatch = mk("TextButton", {
                     Name = "Swatch", BackgroundColor3 = current,
@@ -1165,18 +1207,20 @@ function UI:Window(cfg)
                     stroke(popup, theme.Border, 0.3)
                     padding(popup, 10, 10, 10, 10)
 
-                    local R, G, B = math.floor(current.R * 255), math.floor(current.G * 255), math.floor(current.B * 255)
+                    local R = math.floor(current.R * 255)
+                    local G = math.floor(current.G * 255)
+                    local B = math.floor(current.B * 255)
 
                     local function mkSlider(name, val, cb)
                         local holder = mk("Frame", {
                             BackgroundTransparency = 1, Size = UDim2.new(1, 0, 0, 30),
                             Parent = popup,
                         })
-                        local nl = mk("TextLabel", {
+                        mk("TextLabel", {
                             BackgroundTransparency = 1, Text = name,
                             Font = Enum.Font.GothamBold, TextSize = 10, TextColor3 = theme.TextDim,
-                            Size = UDim2.fromOffset(20, 30), TextXAlignment = Enum.TextXAlignment.Left,
-                            Parent = holder,
+                            Size = UDim2.fromOffset(20, 30),
+                            TextXAlignment = Enum.TextXAlignment.Left, Parent = holder,
                         })
                         local t = mk("Frame", {
                             BackgroundColor3 = theme.SurfaceHigh, BorderSizePixel = 0,
@@ -1193,8 +1237,8 @@ function UI:Window(cfg)
                             BackgroundTransparency = 1, Text = tostring(val),
                             Font = Enum.Font.GothamBold, TextSize = 10, TextColor3 = theme.Text,
                             AnchorPoint = Vector2.new(1, 0.5), Position = UDim2.new(1, 0, 0.5, 0),
-                            Size = UDim2.fromOffset(40, 14), TextXAlignment = Enum.TextXAlignment.Right,
-                            Parent = holder,
+                            Size = UDim2.fromOffset(40, 14),
+                            TextXAlignment = Enum.TextXAlignment.Right, Parent = holder,
                         })
                         local drag = false
                         local function setFromX(x)
@@ -1215,7 +1259,9 @@ function UI:Window(cfg)
                             end
                         end)
                         UserInput.InputEnded:Connect(function(i)
-                            if i.UserInputType == Enum.UserInputType.MouseButton1 or i.UserInputType == Enum.UserInputType.Touch then drag = false end
+                            if i.UserInputType == Enum.UserInputType.MouseButton1 or i.UserInputType == Enum.UserInputType.Touch then
+                                drag = false
+                            end
                         end)
                     end
 
@@ -1231,16 +1277,19 @@ function UI:Window(cfg)
                 end)
 
                 local api = { Value = current }
-                function api:Set(c) current = c; swatch.BackgroundColor3 = c; if cfg.Callback then task.spawn(cfg.Callback, c) end end
+                function api:Set(c)
+                    current = c
+                    swatch.BackgroundColor3 = c
+                    if cfg.Callback then task.spawn(cfg.Callback, c) end
+                end
                 function api:Get() return current end
                 function api:SetVisible(v) row.Visible = v end
                 function api:Destroy() row:Destroy() end
-
                 if cfg.Flag then xEz.Options[cfg.Flag] = api end
                 return api
             end
 
-            -- PARAGRAPH
+            --==== PARAGRAPH ====
             function sec:Paragraph(cfg)
                 cfg = cfg or {}
                 local holder = mk("Frame", {
@@ -1253,8 +1302,8 @@ function UI:Window(cfg)
                 local hLbl = mk("TextLabel", {
                     BackgroundTransparency = 1, Text = cfg.Header or "Header",
                     Font = Enum.Font.GothamBold, TextSize = 12, TextColor3 = theme.Text,
-                    Size = UDim2.new(1, 0, 0, 16), TextXAlignment = Enum.TextXAlignment.Left,
-                    Parent = holder,
+                    Size = UDim2.new(1, 0, 0, 16),
+                    TextXAlignment = Enum.TextXAlignment.Left, Parent = holder,
                 })
                 local body = mk("TextLabel", {
                     BackgroundTransparency = 1, Text = cfg.Body or "",
@@ -1274,7 +1323,7 @@ function UI:Window(cfg)
                 return api
             end
 
-            -- HEADER / LABEL / DIVIDER
+            --==== HEADER / LABEL / DIVIDER / SPACE ====
             function sec:Header(cfg)
                 cfg = cfg or {}
                 local h = mk("TextLabel", {
@@ -1295,8 +1344,8 @@ function UI:Window(cfg)
                     BackgroundTransparency = 1, Text = cfg.Text or cfg.Name or "",
                     Font = Enum.Font.Gotham, TextSize = 11, TextColor3 = theme.TextDim,
                     TextWrapped = true, TextXAlignment = Enum.TextXAlignment.Left,
-                    Size = UDim2.new(1, 0, 0, 0), AutomaticSize = Enum.AutomaticSize.Y,
-                    Parent = card,
+                    Size = UDim2.new(1, 0, 0, 0),
+                    AutomaticSize = Enum.AutomaticSize.Y, Parent = card,
                 })
                 local api = {}
                 function api:Set(t) l.Text = t end
@@ -1328,11 +1377,11 @@ function UI:Window(cfg)
         return tab
     end
 
-    
-    -- WINDOW API
-    
+    --==========================================================================
+    -- WINDOW CONTROLS
+    --==========================================================================
     local minimized = false
-    local cachedSize = cfg.Size or UDim2.fromOffset(760, 520)
+    local cachedSize = winSize
 
     minBtn.MouseButton1Click:Connect(function()
         minimized = not minimized
@@ -1347,7 +1396,7 @@ function UI:Window(cfg)
         local idx = table.find(keys, xEz.Theme) or 1
         idx = (idx % #keys) + 1
         xEz.Theme = keys[idx]
-        win:Notify({ Title = "Theme", Description = "Changed to " .. xEz.Theme, Lifetime = 2 })
+        win:Notify({ Title = "Theme", Description = "Changed to " .. xEz.Theme .. " (reload to apply)", Lifetime = 2 })
     end)
 
     closeBtn.MouseButton1Click:Connect(function()
@@ -1356,7 +1405,7 @@ function UI:Window(cfg)
         screen:Destroy()
     end)
 
-    -- Keybind toggle
+    -- Toggle key
     local toggleKey = cfg.ToggleKey or Enum.KeyCode.RightControl
     UserInput.InputBegan:Connect(function(input, gpe)
         if gpe then return end
@@ -1365,9 +1414,9 @@ function UI:Window(cfg)
         end
     end)
 
-    
+    --==========================================================================
     -- NOTIFY
-    
+    --==========================================================================
     function win:Notify(ncfg)
         ncfg = ncfg or {}
         local n = mk("Frame", {
@@ -1377,20 +1426,20 @@ function UI:Window(cfg)
             Parent = notifyLayer,
         })
         corner(n, 10)
-        local ns = stroke(n, theme.Border, 0.3)
-        local accentBar = mk("Frame", {
+        stroke(n, theme.Border, 0.3)
+        mk("Frame", {
             Name = "Accent", BackgroundColor3 = theme.Accent,
             BorderSizePixel = 0, Size = UDim2.new(0, 3, 1, 0),
             Parent = n,
         })
-        local nPad = padding(n, 14, 14, 12, 12)
-        local nTitle = mk("TextLabel", {
+        padding(n, 14, 14, 12, 12)
+        mk("TextLabel", {
             BackgroundTransparency = 1, Text = ncfg.Title or "Notice",
             Font = Enum.Font.GothamBold, TextSize = 12, TextColor3 = theme.Text,
             TextXAlignment = Enum.TextXAlignment.Left,
             Size = UDim2.new(1, 0, 0, 16), Parent = n,
         })
-        local nBody = mk("TextLabel", {
+        mk("TextLabel", {
             BackgroundTransparency = 1, Text = ncfg.Description or "",
             Font = Enum.Font.Gotham, TextSize = 11, TextColor3 = theme.TextDim,
             TextWrapped = true, TextXAlignment = Enum.TextXAlignment.Left,
@@ -1399,7 +1448,7 @@ function UI:Window(cfg)
             AutomaticSize = Enum.AutomaticSize.Y, Parent = n,
         })
 
-        n.Position = UDim2.new(1, 300, 1, 0)
+        n.Position = UDim2.new(1, 300, 1, -#notifyLayer:GetChildren() * 60 - 60)
         tween(n, TweenInfo.new(0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {
             Position = UDim2.new(1, 0, 1, -#notifyLayer:GetChildren() * 60 - 60)
         })
@@ -1419,24 +1468,23 @@ function UI:Window(cfg)
 
     win._window = win
     UI._window = win
+    log("Window ready! Tabs:", #win._tabs)
     return win
 end
 
-
+--==========================================================================
 -- CONFIG
-
+--==========================================================================
 function xEz:SaveConfig(name)
     if isStudio or not writefile then return false, "No filesystem" end
     if not isfolder(self.Folder) then makefolder(self.Folder) end
     local data = {}
     for flag, opt in pairs(self.Options) do
-        if opt.Class ~= "Toggle" or true then
-            local ok, val = pcall(function()
-                if opt.Get then return opt:Get() end
-                return opt.Value
-            end)
-            if ok then data[flag] = val end
-        end
+        local ok, val = pcall(function()
+            if opt.Get then return opt:Get() end
+            return opt.Value
+        end)
+        if ok then data[flag] = val end
     end
     local ok, encoded = pcall(function() return HttpService:JSONEncode(data) end)
     if not ok then return false, "Encode failed" end
@@ -1470,29 +1518,29 @@ function xEz:ListConfigs()
     return out
 end
 
-
--- 3D UI API
-
 function xEz:Enable3D(v)
     ThreeD:setEnabled(v)
     return ThreeD
 end
 
-
+--==========================================================================
 -- DEMO
-
+--==========================================================================
 function xEz:Demo()
     local Win = xEz:Window({
         Title = "xEz UI",
         Subtitle = "v" .. xEz.Version .. " • Minimal",
         Size = UDim2.fromOffset(760, 520),
     })
+    if not Win then
+        warn("[xEzUI] Window creation failed!")
+        return nil
+    end
 
     local MainTab = Win:Tab({ Name = "Main", Icon = "◇" })
     local VisualTab = Win:Tab({ Name = "Visual", Icon = "◈" })
     local ConfigTab = Win:Tab({ Name = "Config", Icon = "◆" })
 
-    --==== Main ====
     local gen = MainTab:Section({ Name = "GENERAL", Side = "Left" })
     gen:Button({ Name = "Simple Button", Callback = function()
         Win:Notify({ Title = "Clicked", Description = "Button pressed!", Lifetime = 2 })
@@ -1500,37 +1548,23 @@ function xEz:Demo()
     gen:Toggle({ Name = "Feature Toggle", Default = false, Callback = function(v)
         Win:Notify({ Title = "Toggle", Description = tostring(v), Lifetime = 2 })
     end, Flag = "demoToggle" })
-    gen:Slider({ Name = "Speed", Min = 0, Max = 100, Default = 50, Callback = function(v)
-        -- print(v)
-    end, Flag = "demoSlider" })
+    gen:Slider({ Name = "Speed", Min = 0, Max = 100, Default = 50, Flag = "demoSlider" })
     gen:Input({ Name = "Username", Placeholder = "Type here...", Flag = "demoInput" })
 
     local misc = MainTab:Section({ Name = "MISC", Side = "Right" })
     misc:Keybind({ Name = "Toggle Key", Default = Enum.KeyCode.T, Flag = "demoKey" })
-    misc:Dropdown({ Name = "Mode", Options = { "Normal", "Fast", "Ultra" }, Default = "Normal",
-        Callback = function(v) print("mode:", v) end, Flag = "demoMode" })
-    misc:Dropdown({ Name = "Features", Multi = true, Options = { "A", "B", "C", "D" },
-        Default = { "A", "C" }, Callback = function(v) print("features:", table.concat(v, ",")) end,
-        Flag = "demoMulti" })
-    misc:Colorpicker({ Name = "Accent Color", Default = Color3.fromRGB(120, 160, 255),
-        Flag = "demoColor" })
+    misc:Dropdown({ Name = "Mode", Options = { "Normal", "Fast", "Ultra" }, Default = "Normal", Flag = "demoMode" })
+    misc:Dropdown({ Name = "Features", Multi = true, Options = { "A", "B", "C", "D" }, Default = { "A", "C" }, Flag = "demoMulti" })
+    misc:Colorpicker({ Name = "Accent Color", Default = Color3.fromRGB(120, 160, 255), Flag = "demoColor" })
 
-    --==== Visual ====
     local anim = VisualTab:Section({ Name = "ANIMATION", Side = "Left" })
     anim:Button({ Name = "Show Notification", Callback = function()
-        Win:Notify({
-            Title = "Hello!",
-            Description = "This is an animated notification with slide-in effect.",
-            Lifetime = 3,
-        })
+        Win:Notify({ Title = "Hello!", Description = "Animated notification.", Lifetime = 3 })
     end })
     anim:Paragraph({
-        Header = "About This Library",
-        Body = "Minimal flat design with accent lines, ripples, and smooth tweens everywhere. 6 themes. Cross-platform. 3D mode toggle.",
+        Header = "About",
+        Body = "Minimal flat design with accent lines, ripples, and smooth tweens.",
     })
-    anim:Divider()
-    anim:Header({ Name = "HEADER TEXT" })
-    anim:Label({ Text = "A simple label with wrapped text." })
 
     local th = VisualTab:Section({ Name = "THEME", Side = "Right" })
     for _, name in ipairs({ "Dark", "Light", "Midnight", "Ocean", "Sunset", "Rose" }) do
@@ -1540,7 +1574,6 @@ function xEz:Demo()
         end })
     end
 
-    --==== Config ====
     local cfgSec = ConfigTab:Section({ Name = "CONFIG SYSTEM", Side = "Left" })
     local cfgName = cfgSec:Input({ Name = "Config Name", Placeholder = "myconfig" })
     cfgSec:Button({ Name = "Save", Callback = function()
@@ -1553,9 +1586,7 @@ function xEz:Demo()
     end })
 
     local threeSec = ConfigTab:Section({ Name = "3D MODE", Side = "Right" })
-    local three3D = false
     threeSec:Toggle({ Name = "Enable 3D UI", Default = false, Callback = function(v)
-        three3D = v
         xEz:Enable3D(v)
         if v then
             ThreeD:createPanel(Vector3.new(8, 4.5, 0.1), Vector3.new(0, 0, -8))
@@ -1566,12 +1597,11 @@ function xEz:Demo()
     return Win
 end
 
--- Preload
+-- Preload assets
 task.spawn(function()
     pcall(function()
         ContentProv:PreloadAsync({
             "rbxassetid://12187365364",
-            "rbxassetid://18824089198",
         })
     end)
 end)
