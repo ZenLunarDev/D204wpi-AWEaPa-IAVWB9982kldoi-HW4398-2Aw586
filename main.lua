@@ -10,7 +10,7 @@
 -- CONFIG
 
 
-local SCRIPT_URL = "https://raw.githubusercontent.com/ZenLunarDev/ddddada/main/xEz_Hub.lua"
+local SCRIPT_URL = "https://raw.githubusercontent.com/ZenLunarDev/D204wpi-AWEaPa-IAVWB9982kldoi-HW4398-2Aw586/refs/heads/main/main.lua"
 local SCRIPT_VERSION = "1.0.0"
 local DISCORD_URL = "https://discord.gg/7MA4RK5aUU"
 local CREATOR_NAME = "ZenLunarDev"
