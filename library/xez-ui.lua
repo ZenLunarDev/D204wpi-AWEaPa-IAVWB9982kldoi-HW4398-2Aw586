@@ -6,10 +6,6 @@ local xEz = {
     Theme    = "Dark",
 }
 
-if xEz then xEz = nil end
-if getgenv().xEz then getgenv().xEz = nil end
-
-
 -- SERVICES
 
 local function getService(name)
