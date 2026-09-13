@@ -1,0 +1,4 @@
+{
+  "version": "1.2.0",
+  "notes": "Config save/load, Panic keybind, Version check, fixed respawn bug"
+}

@@ -1,9 +1,16 @@
 --[[
-    xEz Hub v1.1.0
+    xEz Hub v1.2.0
     Build a Boat
     Key System: "xEzShop :3"
 
     - By ZenLunarDev
+
+    Changelog v1.2.0:
+    - Config save/load
+    - Panic keybind (default RightShift)
+    - Version check on startup
+    - Fixed waitForNewCharacter bug (GodMode kill issue)
+    - GodMode temporary disable during respawn kill
 ]]
 
 
@@ -11,9 +18,11 @@
 
 
 local SCRIPT_URL = "https://raw.githubusercontent.com/ZenLunarDev/D204wpi-AWEaPa-IAVWB9982kldoi-HW4398-2Aw586/refs/heads/main/main.lua"
-local SCRIPT_VERSION = "1.1.0"
+local VERSION_URL = "https://raw.githubusercontent.com/ZenLunarDev/D204wpi-AWEaPa-IAVWB9982kldoi-HW4398-2Aw586/refs/heads/main/version.json"
+local SCRIPT_VERSION = "1.2.0"
 local DISCORD_URL = "https://discord.gg/7MA4RK5aUU"
 local CREATOR_NAME = "ZenLunarDev"
+local CONFIG_FILE = "xEzHub_config.json"
 
 
 -- SAFE INIT
@@ -48,7 +57,7 @@ local LocalPlayer = Players.LocalPlayer
 local GRAVITY_NORMAL = Workspace.Gravity
 
 
--- LOAD
+-- LOAD FLUENT
 
 
 local Fluent = loadstring(game:HttpGet(
@@ -59,8 +68,6 @@ if not Fluent then
     error("[xEz Hub] Cannot load Fluent UI")
 end
 
--- KEY UI IS HANDLED BY key.lua
--- main.lua intentionally creates only ONE Fluent window.
 
 -- STATE
 
@@ -104,6 +111,7 @@ local State = {
     WebhookURL = "",
     WebhookNotify = false,
     WebhookRichEmbed = true,
+    PanicKey = "RightShift",
     WinsCount = 0,
     FailsCount = 0,
     SessionStart = tick(),
@@ -118,8 +126,59 @@ local State = {
 }
 
 
--- ข้อความภาษาไทย
+-- CONFIG SAVE / LOAD
 
+
+local SAVEABLE_KEYS = {
+    "FarmSpeed", "MaxSpeedMode", "StepDelay", "ChestDelay", "ResetDelay", "PostResetDelay",
+    "GravityZero", "FlightHeight", "WalkSpeed", "JumpPower", "InfJump", "NoClip", "Fly",
+    "FlySpeed", "AntiFling", "AntiKick", "SelectedChest", "AntiAFK", "AntiAFKKey",
+    "AutoRejoin", "StaffDetector", "AntiDisconnect", "RejoinDelay", "BlackScreen",
+    "MemoryCleanup", "FpsBoost", "RenderDistance", "LowGraphics", "ShowNotifications",
+    "WebhookURL", "WebhookNotify", "WebhookRichEmbed", "PanicKey"
+}
+
+local function saveConfig()
+    if not writefile then return false end
+    local data = {}
+    for _, key in ipairs(SAVEABLE_KEYS) do
+        data[key] = State[key]
+    end
+    data._version = SCRIPT_VERSION
+    data._savedAt = os.time()
+    local ok = pcall(function()
+        writefile(CONFIG_FILE, HttpService:JSONEncode(data))
+    end)
+    return ok
+end
+
+local function loadConfig()
+    if not isfile or not readfile then return false end
+    if not isfile(CONFIG_FILE) then return false end
+    local ok, data = pcall(function()
+        return HttpService:JSONDecode(readfile(CONFIG_FILE))
+    end)
+    if not ok or type(data) ~= "table" then return false end
+    for _, key in ipairs(SAVEABLE_KEYS) do
+        if data[key] ~= nil then
+            State[key] = data[key]
+        end
+    end
+    return true
+end
+
+local savePending = false
+local function requestSave()
+    if savePending then return end
+    savePending = true
+    task.delay(2, function()
+        savePending = false
+        saveConfig()
+    end)
+end
+
+-- โหลด config ก่อนสร้าง UI
+loadConfig()
 
 
 -- WAYPOINTS
@@ -299,13 +358,59 @@ local function getPing()
     return 0
 end
 
-local function waitForNewCharacter(timeout)
+
+-- FIXED waitForNewCharacter (v1.2.0)
+
+
+local function waitForNewCharacter(timeout, opts)
     timeout = timeout or 15
-    local start = tick()
-    while tick() - start < timeout do
-        if isCharacterReady() then return true end
+    opts = opts or {}
+    local requireRespawn = opts.requireRespawn ~= false
+
+    local oldCharacter = LocalPlayer.Character
+    local oldHumanoid  = oldCharacter and oldCharacter:FindFirstChildOfClass("Humanoid")
+    local oldRoot      = oldCharacter and oldCharacter:FindFirstChild("HumanoidRootPart")
+    local oldPos       = oldRoot and oldRoot.Position
+    local startTick    = tick()
+
+    -- ถ้าต้องการ respawn จริง แต่ character ยังไม่ตาย → รอให้ตายก่อน (สูงสุด 5 วิ)
+    if requireRespawn then
+        local dieWait = 0
+        while oldHumanoid
+            and oldHumanoid.Parent
+            and oldHumanoid.Health > 0
+            and dieWait < 5 do
+            task.wait(0.1)
+            dieWait = dieWait + 0.1
+        end
+    end
+
+    while tick() - startTick < timeout do
+        local character = LocalPlayer.Character
+
+        -- กรณีได้ character instance ใหม่
+        if character and character ~= oldCharacter then
+            local humanoid = character:FindFirstChildOfClass("Humanoid")
+            local hrp = character:FindFirstChild("HumanoidRootPart")
+            if humanoid and humanoid.Health > 0 and hrp then
+                return true
+            end
+        end
+
+        -- กรณี instance เดิม แต่ respawn แล้ว (ตำแหน่งเปลี่ยน + HP เต็ม)
+        if character and character == oldCharacter then
+            local humanoid = character:FindFirstChildOfClass("Humanoid")
+            local hrp = character:FindFirstChild("HumanoidRootPart")
+            if humanoid and humanoid.Health > 0 and hrp then
+                if not oldPos or (hrp.Position - oldPos).Magnitude > 3 then
+                    return true
+                end
+            end
+        end
+
         task.wait(0.1)
     end
+
     return false
 end
 
@@ -330,8 +435,7 @@ end
 
 
 -- CREATE FLUENT WINDOW
--- Important: main.lua creates exactly ONE Fluent window.
--- The key UI is a separate non-Fluent ScreenGui in key.lua.
+
 
 local FluentWindow = Fluent:CreateWindow({
     Title = "xEz Hub",
@@ -349,64 +453,10 @@ local function nextElementId(prefix)
     return string.format("xEz_%s_%d", prefix, ElementCounter)
 end
 
-local TitleIconMap = {
-    ["ฟาร์มอัตโนมัติ"] = "bot",
-    ["ฟาร์ม 24 ชม."] = "infinity",
-    ["กันตาย"] = "shield-check",
-    ["เก็บเหรียญอัตโนมัติ"] = "coins",
-    ["ข้ามด่านอัตโนมัติ"] = "skip-forward",
-    ["ความเร็วเดิน"] = "person-standing",
-    ["แรงกระโดด"] = "arrow-up",
-    ["กระโดดไม่จำกัด"] = "refresh-cw",
-    ["ทะลุของ"] = "scan",
-    ["บิน"] = "send",
-    ["ความเร็วบิน"] = "gauge",
-    ["รีเซ็ตตัวละคร"] = "rotate-ccw",
-    ["ชนิดกล่อง"] = "package",
-    ["ซื้อ 1"] = "shopping-cart",
-    ["ซื้อ 100"] = "shopping-basket",
-    ["ซื้อ 999"] = "boxes",
-    ["ซื้อวน"] = "repeat-2",
-    ["กันหลุด"] = "wifi-off",
-    ["กันหลุด (กด K)"] = "keyboard",
-    ["กันเตะ"] = "ban",
-    ["กันกระเด็น"] = "shield",
-    ["จับแอดมิน"] = "user-round-check",
-    ["เข้าห้องเดิม"] = "log-in",
-    ["เปลี่ยนห้อง"] = "shuffle",
-    ["โหมดเร็วสุด"] = "zap",
-    ["ความเร็วฟาร์ม"] = "gauge",
-    ["หน่วงตอนบิน"] = "timer",
-    ["หน่วงหลังเปิดกล่อง"] = "timer-reset",
-    ["หน่วงก่อนตาย"] = "hourglass",
-    ["หน่วงหลังเกิด"] = "history",
-    ["ปิดแรงโน้มถ่วง"] = "orbit",
-    ["ความสูงบิน"] = "move-vertical",
-    ["จอดำ"] = "monitor-off",
-    ["ล้างแรม"] = "memory-stick",
-    ["เพิ่ม FPS"] = "activity",
-    ["กราฟิกต่ำ"] = "image-down",
-    ["ล้างแรมตอนนี้"] = "trash-2",
-    ["ล้างสถิติ"] = "rotate-ccw",
-    ["ล้างบันทึก"] = "notebook-pen",
-    ["เปิดเว็บฮุค"] = "webhook",
-    ["ส่งแบบละเอียด"] = "file-text",
-    ["ทดสอบเว็บฮุค"] = "send",
-    ["เข้าร่วม Discord"] = "message-circle",
-    ["คัดลอกลิงก์ Discord"] = "copy",
-}
 
-local function resolveIcon(title, fallback)
-    local t = tostring(title or "")
-    for prefix, icon in pairs(TitleIconMap) do
-        if t:find(prefix, 1, true) then
-            return icon
-        end
-    end
-    return fallback or "circle"
-end
+-- FLUENT TAB ADAPTER (with auto-save)
 
--- Compatibility adapter: keeps the original feature code readable while using Fluent's API.
+
 local function wrapTab(tab)
     local adapter = {}
 
@@ -437,7 +487,10 @@ local function wrapTab(tab)
             Title = title,
             Description = config.Desc or config.Description or "",
             Default = config.Default == true,
-            Callback = config.Callback
+            Callback = function(value)
+                if config.Callback then config.Callback(value) end
+                requestSave()
+            end
         })
     end
 
@@ -454,7 +507,10 @@ local function wrapTab(tab)
             Min = min,
             Max = max,
             Rounding = 0,
-            Callback = config.Callback
+            Callback = function(v)
+                if config.Callback then config.Callback(v) end
+                requestSave()
+            end
         })
     end
 
@@ -473,7 +529,10 @@ local function wrapTab(tab)
             Values = values,
             Multi = false,
             Default = selected,
-            Callback = config.Callback
+            Callback = function(v)
+                if config.Callback then config.Callback(v) end
+                requestSave()
+            end
         })
     end
 
@@ -485,7 +544,10 @@ local function wrapTab(tab)
             Placeholder = config.Placeholder or "",
             Numeric = false,
             Finished = false,
-            Callback = config.Callback
+            Callback = function(text)
+                if config.Callback then config.Callback(text) end
+                requestSave()
+            end
         })
     end
 
@@ -498,7 +560,10 @@ local TabStats = wrapTab(FluentWindow:AddTab({ Title = "สถิติ", Icon =
 local TabProfile = wrapTab(FluentWindow:AddTab({ Title = "โปรไฟล์", Icon = "user-round" }))
 local TabCredits = wrapTab(FluentWindow:AddTab({ Title = "เครดิต", Icon = "badge-check" }))
 
--- Player profile: real Roblox thumbnail URL + actual player data.
+
+-- PROFILE CARD
+
+
 local ProfileGui
 local ProfileCard
 
@@ -544,12 +609,11 @@ local function createProfileCard()
     avatarCorner.Parent = avatar
 
     local ok, imageUrl = pcall(function()
-        local url = Players:GetUserThumbnailAsync(
+        return Players:GetUserThumbnailAsync(
             LocalPlayer.UserId,
             Enum.ThumbnailType.HeadShot,
             Enum.ThumbnailSize.Size150x150
         )
-        return url
     end)
     if ok and imageUrl then
         avatar.Image = imageUrl
@@ -592,29 +656,7 @@ local function createProfileCard()
 end
 
 createProfileCard()
--- PROFILE TAB
-TabProfile:Paragraph({
-    Title = "โปรไฟล์ผู้เล่น",
-    Desc = string.format(
-        "%s (@%s)\nUserId: %d\nAvatar: Roblox HeadShot thumbnail",
-        tostring(LocalPlayer.DisplayName),
-        tostring(LocalPlayer.Name),
-        LocalPlayer.UserId
-    ),
-    Image = "user-round"
-})
-TabProfile:Button({
-    Title = "คัดลอก UserId",
-    Desc = tostring(LocalPlayer.UserId),
-    Callback = function()
-        pcall(function()
-            if setclipboard then
-                setclipboard(tostring(LocalPlayer.UserId))
-            end
-        end)
-        notify("โปรไฟล์", "คัดลอก UserId แล้ว", 2)
-    end
-})
+
 
 -- BLACK SCREEN
 
@@ -952,6 +994,83 @@ Connections.JumpRequest = UserInputService.JumpRequest:Connect(function()
 end)
 
 
+-- PANIC KEYBIND
+
+
+local PanicKeyMap = {
+    ["RightShift"] = Enum.KeyCode.RightShift,
+    ["LeftShift"]  = Enum.KeyCode.LeftShift,
+    ["F1"] = Enum.KeyCode.F1,
+    ["F2"] = Enum.KeyCode.F2,
+    ["F3"] = Enum.KeyCode.F3,
+    ["F4"] = Enum.KeyCode.F4,
+    ["F5"] = Enum.KeyCode.F5,
+    ["F6"] = Enum.KeyCode.F6,
+    ["F7"] = Enum.KeyCode.F7,
+    ["F8"] = Enum.KeyCode.F8,
+    ["Delete"] = Enum.KeyCode.Delete,
+    ["End"]    = Enum.KeyCode.End,
+}
+
+local function panicStop()
+    State.AutoFarm = false
+    State.Farm24_7 = false
+    State.AutoBuyChest = false
+    State.Fly = false
+    State.NoClip = false
+    State.GodMode = false
+    State.AutoCollectCoin = false
+    State.AutoSkipWave = false
+
+    -- stop loops
+    FarmToken = FarmToken + 1
+    State.IsFarming = false
+    BuyToken = BuyToken + 1
+
+    if currentTween then
+        pcall(function() currentTween:Cancel() end)
+        currentTween = nil
+    end
+
+    if Connections.FlyLoop then
+        Connections.FlyLoop:Disconnect()
+        Connections.FlyLoop = nil
+    end
+    if Connections.NoClip then
+        Connections.NoClip:Disconnect()
+        Connections.NoClip = nil
+        restoreCollision()
+    end
+    if Connections.GodMode then
+        Connections.GodMode:Disconnect()
+        Connections.GodMode = nil
+    end
+    if Connections.AntiFlingLoop then
+        Connections.AntiFlingLoop:Disconnect()
+        Connections.AntiFlingLoop = nil
+    end
+
+    local hrp = getRoot()
+    if hrp then
+        local bv = hrp:FindFirstChild("xEzFlyVelocity")
+        if bv then bv:Destroy() end
+    end
+
+    Workspace.Gravity = GRAVITY_NORMAL
+    isFlying = false
+    notify("PANIC", "หยุดทุกอย่างแล้ว — toggle ใหม่เพื่อใช้งานต่อ", 5)
+    addLog("PANIC triggered")
+end
+
+UserInputService.InputBegan:Connect(function(input, gpe)
+    if gpe then return end
+    local key = PanicKeyMap[State.PanicKey]
+    if key and input.KeyCode == key then
+        panicStop()
+    end
+end)
+
+
 -- SERVER HOP
 
 
@@ -1041,7 +1160,8 @@ local function sendWebhook(title, description, color)
                 }
             }
         }
-    else        payloadTable = { content = "**" .. title .. "**\n" .. description }
+    else
+        payloadTable = { content = "**" .. title .. "**\n" .. description }
     end
     local encodeSuccess, payload = pcall(function()
         return HttpService:JSONEncode(payloadTable)
@@ -1093,7 +1213,7 @@ local function checkPlayerForStaff(player)
     if detectedStaff[player.UserId] then return end
     if not isStaff(player) then return end
     detectedStaff[player.UserId] = true
-    notify("แอดมิน", "เจอแอดมิน" .. ": " .. player.Name, 5)
+    notify("แอดมิน", "เจอแอดมิน: " .. player.Name, 5)
     task.delay(1, function()
         if State.StaffDetector then
             serverHop()
@@ -1112,7 +1232,7 @@ task.spawn(function()
 end)
 
 
--- FLIGHT
+-- MOVE / FLIGHT TO
 
 
 local function moveTo(targetCFrame, timeout)
@@ -1206,13 +1326,11 @@ local function triggerChest()
 end
 
 
--- AUTO FARM
+-- AUTO FARM (with fixed respawn logic)
 
 
 local function startAutoFarm()
-    if State.IsFarming then
-        return
-    end
+    if State.IsFarming then return end
     FarmToken += 1
     local myToken = FarmToken
     local function stillActive()
@@ -1224,7 +1342,7 @@ local function startAutoFarm()
     State.IsFarming = true
     while stillActive() do
         if not isCharacterReady() then
-            waitForNewCharacter(15)
+            waitForNewCharacter(15, { requireRespawn = false })
         end
         if not stillActive() then break end
         if not isCharacterReady() then
@@ -1260,7 +1378,7 @@ local function startAutoFarm()
                 end
                 if chestOpened then
                     State.WinsCount += 1
-                    notify("ฟาร์ม", "รอบที่" .. " " .. State.WinsCount .. " (" .. string.format("%.1f", runTime) .. "s)", 2)
+                    notify("ฟาร์ม", "รอบที่ " .. State.WinsCount .. " (" .. string.format("%.1f", runTime) .. "s)", 2)
                     if State.WebhookNotify then
                         task.spawn(function()
                             sendWebhook("Farm Complete", "Round " .. State.WinsCount, 65280)
@@ -1273,18 +1391,37 @@ local function startAutoFarm()
             if not stillActive() then break end
             if not safeWait(State.ResetDelay, myToken, stillActive) then break end
             if not stillActive() then break end
+
+            -- FIXED: GodMode ปิดชั่วคราวตอน kill
             Workspace.Gravity = GRAVITY_NORMAL
-            if isCharacterReady() then
-                local h = getHumanoid()
-                if h and h.Parent and h.Health > 0 then
-                    pcall(function() h.Health = 0 end)
-                end
+
+            if State.GodMode and Connections.GodMode then
+                Connections.GodMode:Disconnect()
+                Connections.GodMode = nil
             end
-            waitForNewCharacter(15)
+
+            local h = getHumanoid()
+            if h and h.Parent then
+                pcall(function()
+                    h.MaxHealth = 100
+                    h.Health = 0
+                end)
+            end
+
+            waitForNewCharacter(15, { requireRespawn = true })
+
             if not safeWait(State.PostResetDelay, myToken, stillActive) then break end
             if State.GravityZero and stillActive() then
                 Workspace.Gravity = 0
             end
+
+            -- เปิด GodMode กลับหลัง respawn
+            if State.GodMode and stillActive() then
+                task.defer(function()
+                    if State.GodMode then toggleGodMode(true) end
+                end)
+            end
+
             if State.MemoryCleanup and tick() - State.LastCleanup > 300 then
                 State.LastCleanup = tick()
                 pcall(function() collectgarbage("collect") end)
@@ -1464,34 +1601,34 @@ task.spawn(function()
         local ok, err = pcall(function()
             task.wait(1)
             if StatsLabels.Uptime then
-                StatsLabels.Uptime:SetTitle("เวลาเปิด" .. ": " .. formatUptime(tick() - State.SessionStart))
+                StatsLabels.Uptime:SetTitle("เวลาเปิด: " .. formatUptime(tick() - State.SessionStart))
             end
             if StatsLabels.Wins then
-                StatsLabels.Wins:SetTitle("ชนะ" .. ": " .. tostring(State.WinsCount))
+                StatsLabels.Wins:SetTitle("ชนะ: " .. tostring(State.WinsCount))
             end
             if StatsLabels.Fails then
-                StatsLabels.Fails:SetTitle("พลาด" .. ": " .. tostring(State.FailsCount))
+                StatsLabels.Fails:SetTitle("พลาด: " .. tostring(State.FailsCount))
             end
             if StatsLabels.Rate then
                 local total = State.WinsCount + State.FailsCount
                 local rate = total > 0 and math.floor((State.WinsCount / total) * 100) or 0
-                StatsLabels.Rate:SetTitle("อัตราสำเร็จ" .. ": " .. rate .. "%")
+                StatsLabels.Rate:SetTitle("อัตราสำเร็จ: " .. rate .. "%")
             end
             if StatsLabels.BestTime then
-                StatsLabels.BestTime:SetTitle("เร็วสุด" .. ": " .. string.format("%.1f", State.BestRunTime) .. "s")
+                StatsLabels.BestTime:SetTitle("เร็วสุด: " .. string.format("%.1f", State.BestRunTime) .. "s")
             end
             if StatsLabels.AvgTime then
-                StatsLabels.AvgTime:SetTitle("เฉลี่ย" .. ": " .. string.format("%.1f", getAverageRunTime()) .. "s")
+                StatsLabels.AvgTime:SetTitle("เฉลี่ย: " .. string.format("%.1f", getAverageRunTime()) .. "s")
             end
             if StatsLabels.Ping then
-                StatsLabels.Ping:SetTitle("ปิง" .. ": " .. getPing() .. "ms")
+                StatsLabels.Ping:SetTitle("ปิง: " .. getPing() .. "ms")
             end
             if StatsLabels.Speed then
                 local speedText = State.MaxSpeedMode and "MAX" or tostring(State.FarmSpeed)
-                StatsLabels.Speed:SetTitle("ความเร็ว" .. ": " .. speedText)
+                StatsLabels.Speed:SetTitle("ความเร็ว: " .. speedText)
             end
             if StatsLabels.Respawns then
-                StatsLabels.Respawns:SetTitle("เกิดใหม่" .. ": " .. tostring(State.RespawnCount))
+                StatsLabels.Respawns:SetTitle("เกิดใหม่: " .. tostring(State.RespawnCount))
             end
             if StatsLabels.Log then
                 local logText = ""
@@ -1499,7 +1636,9 @@ task.spawn(function()
                 for i = start, #State.SessionLog do
                     logText = logText .. State.SessionLog[i].time .. " | " .. State.SessionLog[i].message .. "\n"
                 end
-                StatsLabels.Log:SetDesc(logText)
+                pcall(function()
+                    StatsLabels.Log:SetDesc(logText)
+                end)
             end
         end)
         if not ok then
@@ -1509,13 +1648,39 @@ task.spawn(function()
 end)
 
 
+-- PROFILE TAB
+
+
+TabProfile:Paragraph({
+    Title = "โปรไฟล์ผู้เล่น",
+    Desc = string.format(
+        "%s (@%s)\nUserId: %d",
+        tostring(LocalPlayer.DisplayName),
+        tostring(LocalPlayer.Name),
+        LocalPlayer.UserId
+    )
+})
+
+TabProfile:Button({
+    Title = "คัดลอก UserId",
+    Desc = tostring(LocalPlayer.UserId),
+    Callback = function()
+        pcall(function()
+            if setclipboard then
+                setclipboard(tostring(LocalPlayer.UserId))
+            end
+        end)
+        notify("โปรไฟล์", "คัดลอก UserId แล้ว", 2)
+    end
+})
+
+
 -- MAIN TAB
 
 
 TabMain:Paragraph({
     Title = "xEz Hub v" .. SCRIPT_VERSION,
     Desc = "ฟาร์ม Build a Boat อัตโนมัติ",
-    Image = "circle"
 })
 
 TabMain:Toggle({
@@ -1578,7 +1743,7 @@ TabMain:Section({ Title = "การเคลื่อนที่" })
 
 TabMain:Slider({
     Title = "ความเร็วเดิน",
-    Value = { Min = 16, Max = 250, Default = 16 },
+    Value = { Min = 16, Max = 250, Default = State.WalkSpeed },
     Callback = function(value)
         State.WalkSpeed = value
         local h = getHumanoid()
@@ -1588,7 +1753,7 @@ TabMain:Slider({
 
 TabMain:Slider({
     Title = "แรงกระโดด",
-    Value = { Min = 50, Max = 300, Default = 50 },
+    Value = { Min = 50, Max = 300, Default = State.JumpPower },
     Callback = function(value)
         State.JumpPower = value
         local h = getHumanoid()
@@ -1598,13 +1763,13 @@ TabMain:Slider({
 
 TabMain:Toggle({
     Title = "กระโดดไม่จำกัด",
-    Default = false,
+    Default = State.InfJump,
     Callback = function(value) State.InfJump = value end
 })
 
 TabMain:Toggle({
     Title = "ทะลุของ",
-    Default = false,
+    Default = State.NoClip,
     Callback = function(value)
         State.NoClip = value
         toggleNoClip(value)
@@ -1612,8 +1777,8 @@ TabMain:Toggle({
 })
 
 TabMain:Toggle({
-    Title = "บิน" .. " (WASD + Space/Ctrl)",
-    Default = false,
+    Title = "บิน (WASD + Space/Ctrl)",
+    Default = State.Fly,
     Callback = function(value)
         State.Fly = value
         toggleFly(value)
@@ -1622,7 +1787,7 @@ TabMain:Toggle({
 
 TabMain:Slider({
     Title = "ความเร็วบิน",
-    Value = { Min = 30, Max = 500, Default = 100 },
+    Value = { Min = 30, Max = 500, Default = State.FlySpeed },
     Callback = function(value) State.FlySpeed = value end
 })
 
@@ -1641,7 +1806,7 @@ TabMain:Section({ Title = "ซื้อกล่อง" })
 TabMain:Dropdown({
     Title = "ชนิดกล่อง",
     Values = { "Common Chest", "Uncommon Chest", "Rare Chest", "Epic Chest", "Legendary Chest" },
-    Value = 1,
+    Value = State.SelectedChest,
     Callback = function(value) State.SelectedChest = value end
 })
 
@@ -1673,29 +1838,29 @@ TabMain:Section({ Title = "ระบบกัน" })
 
 TabMain:Toggle({
     Title = "กันหลุด",
-    Default = true,
+    Default = State.AntiAFK,
     Callback = function(value)
         State.AntiAFK = value
         toggleAntiAFK(value)
     end
 })
 
-toggleAntiAFK(true)
+toggleAntiAFK(State.AntiAFK)
 
 TabMain:Toggle({
     Title = "กันหลุด (กด K)",
-    Default = true,
+    Default = State.AntiAFKKey,
     Callback = function(value)
         State.AntiAFKKey = value
         toggleAntiAFKKey(value)
     end
 })
 
-toggleAntiAFKKey(true)
+toggleAntiAFKKey(State.AntiAFKKey)
 
 TabMain:Toggle({
     Title = "กันเตะ",
-    Default = false,
+    Default = State.AntiKick,
     Callback = function(value)
         State.AntiKick = value
         toggleAntiKick(value)
@@ -1704,7 +1869,7 @@ TabMain:Toggle({
 
 TabMain:Toggle({
     Title = "กันกระเด็น",
-    Default = false,
+    Default = State.AntiFling,
     Callback = function(value)
         State.AntiFling = value
         toggleAntiFling(value)
@@ -1713,13 +1878,13 @@ TabMain:Toggle({
 
 TabMain:Toggle({
     Title = "จับแอดมิน",
-    Default = true,
+    Default = State.StaffDetector,
     Callback = function(value) State.StaffDetector = value end
 })
 
 TabMain:Toggle({
     Title = "เข้าห้องเดิม",
-    Default = true,
+    Default = State.AutoRejoin,
     Callback = function(value) State.AutoRejoin = value end
 })
 
@@ -1735,15 +1900,62 @@ TabMain:Button({
 TabSettings:Paragraph({
     Title = "ตั้งค่า",
     Desc = "ปรับความเร็ว หน่วง และอื่นๆ",
-    Image = "circle"
 })
 
+TabSettings:Section({ Title = "Config" })
+
+TabSettings:Button({
+    Title = "บันทึก Config ตอนนี้",
+    Callback = function()
+        if saveConfig() then
+            notify("Config", "บันทึกแล้ว", 2)
+        else
+            notify("Config", "บันทึกไม่สำเร็จ (executor ไม่รองรับ writefile)", 3)
+        end
+    end
+})
+
+TabSettings:Button({
+    Title = "โหลด Config",
+    Callback = function()
+        if loadConfig() then
+            notify("Config", "โหลดแล้ว (บางค่าต้องรีสตาร์ทสคริปต์)", 3)
+        else
+            notify("Config", "ไม่พบไฟล์ config", 2)
+        end
+    end
+})
+
+TabSettings:Button({
+    Title = "ลบ Config",
+    Callback = function()
+        pcall(function()
+            if delfile and isfile and isfile(CONFIG_FILE) then
+                delfile(CONFIG_FILE)
+            end
+        end)
+        notify("Config", "ลบแล้ว", 2)
+    end
+})
+
+TabSettings:Section({ Title = "ความปลอดภัย" })
+
+TabSettings:Dropdown({
+    Title = "ปุ่มหยุดฉุกเฉิน",
+    Values = { "RightShift", "LeftShift", "F1", "F2", "F3", "F4", "F5",
+               "F6", "F7", "F8", "Delete", "End" },
+    Value = State.PanicKey,
+    Callback = function(value)
+        State.PanicKey = value
+        notify("Panic", "ตั้งปุ่มเป็น " .. value, 2)
+    end
+})
 
 TabSettings:Section({ Title = "ปรับความเร็ว" })
 
 TabSettings:Toggle({
     Title = "โหมดเร็วสุด",
-    Default = false,
+    Default = State.MaxSpeedMode,
     Callback = function(value)
         State.MaxSpeedMode = value
         if value then notify("Speed", "เปิดโหมดเร็วสุด", 2)
@@ -1752,8 +1964,8 @@ TabSettings:Toggle({
 })
 
 TabSettings:Slider({
-    Title = "ความเร็วฟาร์ม" .. " (studs/sec)",
-    Value = { Min = 50, Max = 10000, Default = 900 },
+    Title = "ความเร็วฟาร์ม (studs/sec)",
+    Value = { Min = 50, Max = 10000, Default = State.FarmSpeed },
     Callback = function(value) State.FarmSpeed = value end
 })
 
@@ -1761,25 +1973,25 @@ TabSettings:Section({ Title = "ปรับหน่วง" })
 
 TabSettings:Slider({
     Title = "หน่วงตอนบิน",
-    Value = { Min = 1, Max = 50, Default = 2 },
+    Value = { Min = 1, Max = 50, Default = math.floor(State.StepDelay * 100) },
     Callback = function(value) State.StepDelay = value / 100 end
 })
 
 TabSettings:Slider({
     Title = "หน่วงหลังเปิดกล่อง",
-    Value = { Min = 10, Max = 200, Default = 50 },
+    Value = { Min = 10, Max = 200, Default = math.floor(State.ChestDelay * 100) },
     Callback = function(value) State.ChestDelay = value / 100 end
 })
 
 TabSettings:Slider({
     Title = "หน่วงก่อนตาย",
-    Value = { Min = 10, Max = 300, Default = 50 },
+    Value = { Min = 10, Max = 300, Default = math.floor(State.ResetDelay * 100) },
     Callback = function(value) State.ResetDelay = value / 100 end
 })
 
 TabSettings:Slider({
     Title = "หน่วงหลังเกิด",
-    Value = { Min = 10, Max = 500, Default = 100 },
+    Value = { Min = 10, Max = 500, Default = math.floor(State.PostResetDelay * 100) },
     Callback = function(value) State.PostResetDelay = value / 100 end
 })
 
@@ -1794,6 +2006,7 @@ TabSettings:Button({
         State.ResetDelay = 1.0
         State.PostResetDelay = 2.0
         State.MaxSpeedMode = false
+        requestSave()
         notify("Preset", "ตั้งค่าเรียบร้อย", 2)
     end
 })
@@ -1807,6 +2020,7 @@ TabSettings:Button({
         State.ResetDelay = 0.5
         State.PostResetDelay = 1.0
         State.MaxSpeedMode = false
+        requestSave()
         notify("Preset", "ตั้งค่าเรียบร้อย", 2)
     end
 })
@@ -1820,6 +2034,7 @@ TabSettings:Button({
         State.ResetDelay = 0.3
         State.PostResetDelay = 0.5
         State.MaxSpeedMode = false
+        requestSave()
         notify("Preset", "ตั้งค่าเรียบร้อย", 2)
     end
 })
@@ -1832,6 +2047,7 @@ TabSettings:Button({
         State.ChestDelay = 0.2
         State.ResetDelay = 0.2
         State.PostResetDelay = 0.3
+        requestSave()
         notify("Preset", "ตั้งค่าเรียบร้อย", 2)
     end
 })
@@ -1840,7 +2056,7 @@ TabSettings:Section({ Title = "การบิน" })
 
 TabSettings:Toggle({
     Title = "ปิดแรงโน้มถ่วง",
-    Default = true,
+    Default = State.GravityZero,
     Callback = function(value)
         State.GravityZero = value
         if not value then
@@ -1851,7 +2067,7 @@ TabSettings:Toggle({
 
 TabSettings:Slider({
     Title = "ความสูงบิน",
-    Value = { Min = 20, Max = 200, Default = 72 },
+    Value = { Min = 20, Max = 200, Default = State.FlightHeight },
     Callback = function(value) State.FlightHeight = value end
 })
 
@@ -1859,7 +2075,7 @@ TabSettings:Section({ Title = "ประสิทธิภาพ" })
 
 TabSettings:Toggle({
     Title = "จอดำ",
-    Default = false,
+    Default = State.BlackScreen,
     Callback = function(value)
         State.BlackScreen = value
         if value then
@@ -1882,13 +2098,13 @@ TabSettings:Toggle({
 
 TabSettings:Toggle({
     Title = "ล้างแรม",
-    Default = true,
+    Default = State.MemoryCleanup,
     Callback = function(value) State.MemoryCleanup = value end
 })
 
 TabSettings:Toggle({
     Title = "เพิ่ม FPS",
-    Default = false,
+    Default = State.FpsBoost,
     Callback = function(value)
         State.FpsBoost = value
         if value then
@@ -1908,7 +2124,7 @@ TabSettings:Toggle({
 
 TabSettings:Toggle({
     Title = "กราฟิกต่ำ",
-    Default = false,
+    Default = State.LowGraphics,
     Callback = function(value)
         State.LowGraphics = value
         if value then
@@ -1936,20 +2152,19 @@ TabSettings:Button({
 TabStats:Paragraph({
     Title = "สถิติ",
     Desc = "สถิติและประวัติการใช้งาน",
-    Image = "circle"
 })
 
 TabStats:Section({ Title = "สถิติ" })
 
-StatsLabels.Uptime = TabStats:Paragraph({ Title = "เวลาเปิด" .. ": 00:00:00", Desc = "", Image = "circle" })
-StatsLabels.Wins = TabStats:Paragraph({ Title = "ชนะ" .. ": 0", Desc = "", Image = "circle" })
-StatsLabels.Fails = TabStats:Paragraph({ Title = "พลาด" .. ": 0", Desc = "", Image = "circle" })
-StatsLabels.Rate = TabStats:Paragraph({ Title = "อัตราสำเร็จ" .. ": 0%", Desc = "", Image = "circle" })
-StatsLabels.BestTime = TabStats:Paragraph({ Title = "เร็วสุด" .. ": 0.0s", Desc = "", Image = "circle" })
-StatsLabels.AvgTime = TabStats:Paragraph({ Title = "เฉลี่ย" .. ": 0.0s", Desc = "", Image = "circle" })
-StatsLabels.Ping = TabStats:Paragraph({ Title = "ปิง" .. ": 0ms", Desc = "", Image = "circle" })
-StatsLabels.Speed = TabStats:Paragraph({ Title = "ความเร็ว" .. ": 900", Desc = "", Image = "circle" })
-StatsLabels.Respawns = TabStats:Paragraph({ Title = "เกิดใหม่" .. ": 0", Desc = "", Image = "circle" })
+StatsLabels.Uptime = TabStats:Paragraph({ Title = "เวลาเปิด: 00:00:00", Desc = "" })
+StatsLabels.Wins = TabStats:Paragraph({ Title = "ชนะ: 0", Desc = "" })
+StatsLabels.Fails = TabStats:Paragraph({ Title = "พลาด: 0", Desc = "" })
+StatsLabels.Rate = TabStats:Paragraph({ Title = "อัตราสำเร็จ: 0%", Desc = "" })
+StatsLabels.BestTime = TabStats:Paragraph({ Title = "เร็วสุด: 0.0s", Desc = "" })
+StatsLabels.AvgTime = TabStats:Paragraph({ Title = "เฉลี่ย: 0.0s", Desc = "" })
+StatsLabels.Ping = TabStats:Paragraph({ Title = "ปิง: 0ms", Desc = "" })
+StatsLabels.Speed = TabStats:Paragraph({ Title = "ความเร็ว: 900", Desc = "" })
+StatsLabels.Respawns = TabStats:Paragraph({ Title = "เกิดใหม่: 0", Desc = "" })
 
 TabStats:Button({
     Title = "ล้างสถิติ",
@@ -1969,7 +2184,6 @@ TabStats:Section({ Title = "บันทึกกิจกรรม" })
 StatsLabels.Log = TabStats:Paragraph({
     Title = "บันทึกกิจกรรม",
     Desc = "(ยังไม่มีบันทึก)",
-    Image = "circle"
 })
 
 TabStats:Button({
@@ -1984,20 +2198,20 @@ TabStats:Section({ Title = "เว็บฮุค" })
 
 TabStats:Input({
     Title = "ลิงก์ Discord Webhook",
-    Value = "",
+    Value = State.WebhookURL,
     Placeholder = "https://discord.com/api/webhooks/...",
     Callback = function(text) State.WebhookURL = tostring(text or "") end
 })
 
 TabStats:Toggle({
     Title = "เปิดเว็บฮุค",
-    Default = false,
+    Default = State.WebhookNotify,
     Callback = function(value) State.WebhookNotify = value end
 })
 
 TabStats:Toggle({
     Title = "ส่งแบบละเอียด",
-    Default = true,
+    Default = State.WebhookRichEmbed,
     Callback = function(value) State.WebhookRichEmbed = value end
 })
 
@@ -2021,7 +2235,6 @@ TabStats:Button({
 TabCredits:Paragraph({
     Title = "เครดิต",
     Desc = "ข้อมูลผู้สร้าง",
-    Image = "circle"
 })
 
 TabCredits:Section({ Title = "เครดิต" })
@@ -2029,25 +2242,21 @@ TabCredits:Section({ Title = "เครดิต" })
 TabCredits:Paragraph({
     Title = "ผู้สร้าง",
     Desc = CREATOR_NAME,
-    Image = "circle"
 })
 
 TabCredits:Paragraph({
     Title = "ข้อมูลเวอร์ชัน",
     Desc = "xEz Hub v" .. SCRIPT_VERSION .. "\nBuild a Boat",
-    Image = "circle"
 })
 
 TabCredits:Paragraph({
     Title = "เซิร์ฟเวอร์ Discord",
     Desc = DISCORD_URL,
-    Image = "circle"
 })
 
 TabCredits:Paragraph({
     Title = "ขอบคุณพิเศษ",
     Desc = "dawid-scripts (Fluent UI)\nRoblox Community\nAll testers\nYou!",
-    Image = "circle"
 })
 
 TabCredits:Button({
@@ -2056,7 +2265,7 @@ TabCredits:Button({
         pcall(function()
             if setclipboard then setclipboard(DISCORD_URL) end
         end)
-        notify("ดิสคอร์ด", "คัดลอกลิงก์ Discord แล้ว" .. "\n" .. DISCORD_URL, 5)
+        notify("ดิสคอร์ด", "คัดลอกลิงก์ Discord แล้ว\n" .. DISCORD_URL, 5)
     end
 })
 
@@ -2070,15 +2279,70 @@ TabCredits:Button({
     end
 })
 
+TabCredits:Button({
+    Title = "อัปเดตเป็นเวอร์ชันล่าสุด",
+    Callback = function()
+        notify("อัปเดต", "กำลังโหลดเวอร์ชันใหม่...", 3)
+        task.wait(0.5)
+        pcall(function()
+            loadstring(game:HttpGet(SCRIPT_URL))()
+        end)
+    end
+})
+
+
+-- VERSION CHECK
+
+
+task.spawn(function()
+    local req = getRequestFunction()
+    if not req then
+        print("[xEz Hub] Version check skipped (no request function)")
+        return
+    end
+    local ok, res = pcall(function()
+        return req({ Url = VERSION_URL, Method = "GET" })
+    end)
+    if not ok or not res or not res.Body then
+        print("[xEz Hub] Version check failed")
+        return
+    end
+    local decodeOk, data = pcall(function()
+        return HttpService:JSONDecode(res.Body)
+    end)
+    if not decodeOk or type(data) ~= "table" then return end
+    local latest = tostring(data.version or "")
+    if latest == "" or latest == SCRIPT_VERSION then
+        print("[xEz Hub] Up to date: v" .. SCRIPT_VERSION)
+        return
+    end
+    notify(
+        "มีเวอร์ชันใหม่",
+        "v" .. latest .. " พร้อมใช้งาน (คุณใช้ v" .. SCRIPT_VERSION .. ")",
+        10
+    )
+    addLog("New version available: " .. latest)
+end)
+
 
 -- START
 
 
-notify("xEz Hub", "v" .. SCRIPT_VERSION .. " | " .. "โหลดเสร็จ", 4)
+notify("xEz Hub", "v" .. SCRIPT_VERSION .. " | โหลดเสร็จ", 4)
 addLog("Session started")
 
 print("[xEz Hub] v" .. SCRIPT_VERSION .. " loaded. Fluent UI Dark Edition.")
 print("[xEz Hub] Discord: " .. DISCORD_URL)
+print("[xEz Hub] Panic key: " .. State.PanicKey)
+
+
+-- CLEANUP ON CLOSE
+
+
+game:BindToClose(function()
+    saveConfig()
+end)
+
 
 -- Cleanup profile card if the Fluent window is destroyed externally.
 task.spawn(function()
