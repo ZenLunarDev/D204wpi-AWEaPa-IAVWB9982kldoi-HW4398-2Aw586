@@ -1,22 +1,14 @@
 --[[
-    xEz UI Library v2.2
-    Minimal + 3D UI
+    xEz UI Library v2.3
+    Minimal UI
     Author: ZenLunarDev
 
     Features:
       • Minimal flat design with accent lines
-      • Animated: hover, click, ripple, slide, glow
+      • Animated: hover, click, ripple, slide
       • 6 Themes: Dark, Light, Midnight, Ocean, Sunset, Rose
       • Cross-platform: PC / Mobile / Console
-      • 3D UI mode (floating glass panels in workspace)
       • Every popular element + Config system
-
-    Fixes v2.2:
-      • Force PlayerGui parent (never gethui/CoreGui)
-      • Renamed Debug → SetDebug to avoid executor conflicts
-      • All methods guarded with type checks
-      • Full pcall error protection
-      • UI guaranteed to render on all executors
 
     Usage:
       local UI = loadstring(game:HttpGet("..."))()
@@ -27,37 +19,15 @@
 ]]
 
 local xEz = {
-    Version  = "2.2.0",
+    Version  = "2.3.0",
     Folder   = "xEzUI",
     Options  = {},
     Themes   = {},
     Theme    = "Dark",
-    _active  = nil,
-    _debug   = false,
 }
 
 --==========================================================================
--- DEBUG (safe)
---==========================================================================
-local function log(...)
-    if xEz and xEz._debug then
-        pcall(function() print("[xEzUI]", ...) end)
-    end
-end
-
-function xEz:SetDebug(v)
-    if type(self) ~= "table" then return end
-    self._debug = v and true or false
-end
-
--- Keep alias (guarded)
-xEz.Debug = function(self, v)
-    if type(self) ~= "table" or not self.Themes then return end
-    self._debug = v and true or false
-end
-
---==========================================================================
--- SAFE SERVICES
+-- SERVICES
 --==========================================================================
 local function getService(name)
     local ok, s = pcall(function()
@@ -73,32 +43,20 @@ local RunService   = getService("RunService")
 local UserInput    = getService("UserInputService")
 local HttpService  = getService("HttpService")
 local Players      = getService("Players")
-local ContentProv  = getService("ContentProvider")
-local Lighting     = getService("Lighting")
-local Workspace    = getService("Workspace")
 
 local LP = Players.LocalPlayer
 local isStudio = RunService:IsStudio()
 
-log("Services loaded. Studio:", isStudio)
-
 --==========================================================================
--- SAFE GUI PARENT — FORCE PLAYERGUI ONLY
+-- PARENT (PlayerGui only)
 --==========================================================================
 local function getGuiParent()
     local pg = LP:FindFirstChildOfClass("PlayerGui")
-    if pg then
-        log("Parent: PlayerGui")
-        return pg
-    end
+    if pg then return pg end
     local ok, pg2 = pcall(function()
         return LP:WaitForChild("PlayerGui", 10)
     end)
-    if ok and pg2 then
-        log("Parent: PlayerGui (waited)")
-        return pg2
-    end
-    warn("[xEzUI] Cannot find PlayerGui!")
+    if ok and pg2 then return pg2 end
     return nil
 end
 
@@ -232,58 +190,6 @@ local function fmtNumber(n, precision)
 end
 
 --==========================================================================
--- 3D UI
---==========================================================================
-local ThreeD = { Enabled = false, Panels = {}, Folder = nil }
-
-function ThreeD:init()
-    if self.Folder and self.Folder.Parent then return end
-    self.Folder = mk("Folder", { Name = "xEzUI_3D", Parent = Workspace })
-    log("3D folder created")
-end
-
-function ThreeD:createPanel(size, offset)
-    self:init()
-    local part = mk("Part", {
-        Name = "xEzPanel",
-        Anchored = true, CanCollide = false, CanQuery = false, CastShadow = false,
-        Material = Enum.Material.Glass, Transparency = 0.3,
-        Color = Color3.fromRGB(20, 20, 28),
-        Size = size, Parent = self.Folder,
-    })
-    local surface = mk("SurfaceGui", {
-        Face = Enum.NormalId.Front, AlwaysOnTop = true,
-        LightInfluence = 0, PixelsPerStud = 50,
-        SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud,
-        Parent = part,
-    })
-    table.insert(self.Panels, { part = part, gui = surface, offset = offset or Vector3.new(0, 0, -8) })
-    return part, surface
-end
-
-function ThreeD:updateAll()
-    local cam = Workspace.CurrentCamera
-    if not cam then return end
-    for _, p in ipairs(self.Panels) do
-        if p.part and p.part.Parent then
-            local cf = cam.CFrame * CFrame.new(p.offset)
-            p.part.CFrame = CFrame.lookAt(cf.Position, cam.CFrame.Position)
-        end
-    end
-end
-
-function ThreeD:setEnabled(v)
-    self.Enabled = v and true or false
-    if v then
-        self:init()
-        self.Folder.Parent = Workspace
-        self:updateAll()
-    else
-        if self.Folder then self.Folder.Parent = nil end
-    end
-end
-
---==========================================================================
 -- UI OBJECT
 --==========================================================================
 local UI = {}
@@ -299,20 +205,17 @@ function UI:Window(cfg)
     local theme = self:GetTheme()
     local win = { _tabs = {}, _settings = cfg }
 
-    -- Get parent safely (PlayerGui only)
     local parent = getGuiParent()
     if not parent then
         warn("[xEzUI] Cannot find GUI parent!")
         return nil
     end
 
-    -- Remove old
     pcall(function()
         local old = parent:FindFirstChild("xEzUI")
         if old then old:Destroy() end
     end)
 
-    -- Create ScreenGui
     local screen
     local ok, err = pcall(function()
         screen = mk("ScreenGui", {
@@ -329,8 +232,6 @@ function UI:Window(cfg)
         warn("[xEzUI] Failed to create ScreenGui:", err)
         return nil
     end
-
-    log("ScreenGui created, parent:", parent:GetFullName())
 
     -- Notifications layer
     local notifyLayer = mk("Frame", {
@@ -362,8 +263,6 @@ function UI:Window(cfg)
     })
     corner(root, 14)
     stroke(root, theme.Border, 0.4)
-
-    log("Root created, size:", tostring(winSize))
 
     -- Accent bar
     mk("Frame", {
@@ -398,7 +297,6 @@ function UI:Window(cfg)
         ZIndex = 2, Parent = topbar,
     })
 
-    -- Window buttons
     local function winBtn(sym, x, col)
         local b = mk("TextButton", {
             Name = "WinBtn", AnchorPoint = Vector2.new(1, 0),
@@ -476,7 +374,7 @@ function UI:Window(cfg)
         Parent = profile,
     })
 
-    -- Tabs scroller
+    -- Tabs
     local tabScroll = mk("ScrollingFrame", {
         Name = "Tabs", BackgroundTransparency = 1, BorderSizePixel = 0,
         ScrollBarThickness = 2, ScrollBarImageColor3 = theme.Border,
@@ -499,8 +397,6 @@ function UI:Window(cfg)
         ZIndex = 1, Parent = root,
     })
 
-    log("Sidebar + Content created")
-
     -- Drag
     local dragging, dragStart, startPos
     topbar.InputBegan:Connect(function(input)
@@ -520,7 +416,7 @@ function UI:Window(cfg)
         end
     end)
 
-    -- Entrance animation (from 85% → 100%)
+    -- Entrance
     root.Size = UDim2.fromOffset(winSize.X.Offset * 0.85, winSize.Y.Offset * 0.85)
     tween(root, TweenInfo.new(0.28, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Size = winSize })
 
@@ -602,9 +498,7 @@ function UI:Window(cfg)
         table.insert(win._tabs, tab)
         if #win._tabs == 1 then activate() end
 
-        --==========================================================================
-        -- SECTION
-        --==========================================================================
+        --==== SECTION ====
         function tab:Section(secCfg)
             secCfg = secCfg or {}
             local isRight = secCfg.Side == "Right" or secCfg.Side == "right"
@@ -1483,7 +1377,6 @@ function UI:Window(cfg)
 
     win._window = win
     UI._window = win
-    log("Window ready! Tabs:", #win._tabs)
     return win
 end
 
@@ -1534,14 +1427,6 @@ function xEz:ListConfigs()
 end
 
 --==========================================================================
--- 3D TOGGLE
---==========================================================================
-function xEz:Enable3D(v)
-    ThreeD:setEnabled(v)
-    return ThreeD
-end
-
---==========================================================================
 -- DEMO
 --==========================================================================
 function xEz:Demo()
@@ -1550,10 +1435,7 @@ function xEz:Demo()
         Subtitle = "v" .. xEz.Version .. " • Minimal",
         Size = UDim2.fromOffset(760, 520),
     })
-    if not Win then
-        warn("[xEzUI] Window creation failed!")
-        return nil
-    end
+    if not Win then return nil end
 
     local MainTab = Win:Tab({ Name = "Main", Icon = "◇" })
     local VisualTab = Win:Tab({ Name = "Visual", Icon = "◈" })
@@ -1603,23 +1485,7 @@ function xEz:Demo()
         Win:Notify({ Title = "Config", Description = ok and "Loaded!" or tostring(err), Lifetime = 2 })
     end })
 
-    local threeSec = ConfigTab:Section({ Name = "3D MODE", Side = "Right" })
-    threeSec:Toggle({ Name = "Enable 3D UI", Default = false, Callback = function(v)
-        xEz:Enable3D(v)
-        if v then
-            ThreeD:createPanel(Vector3.new(8, 4.5, 0.1), Vector3.new(0, 0, -8))
-            ThreeD:updateAll()
-        end
-    end })
-
     return Win
 end
-
--- Preload assets
-task.spawn(function()
-    pcall(function()
-        ContentProv:PreloadAsync({ "rbxassetid://12187365364" })
-    end)
-end)
 
 return xEz
