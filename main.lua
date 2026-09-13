@@ -1,3 +1,2091 @@
---[[ xEz Hub v1.0.0 ]]
+--[[
+    xEz Hub v1.1.0
+    Build a Boat
+    Key System: "xEzShop :3"
 
-return(function(...)local I={"L&9Q[Zrn>kn5f5PoVO*","LHWJ[L_6^BD`#5Zp`KRH.jk";"LHZnJI_Od";"L@MXXV9<g8<dQ`k#";"LX=^!/j?,";"L_`St>`3/)R";"LZQfAiLnalUE5%Y","Lcb/O-(9m=","L&P&sE$B-]YYl";"L@[Us$g0i;-OQ]Zc+#Q","L=*tk^2dt0g\\\"dY7","L49t9P@pf<b";"LDMaogck","LWqrK!","LLARDKj%","L406?GlD^cgHU^XR!Dp.^?Q:pQ6aOXYojf-\\<XD/=;C/O]<Mu6VoL_nj(jrW*D(co","L9Nre","L9p]NrS?M!#";"L#<C67+#4","Lm\'kntK:)d";"LhgF6EO+X_3IaGBG4(-";"LA?Lak<Dj#c","LWiPSD^V.IRrg+\\gGnV^rpZ","L]jSWh^gcU","Lc_\"%X`,CNROcYZj","L;r!stI>ZT8;M^t)OC";"Lb`Pq%DkM8m_5d";"LV\'IUK";"L^pVp3!cR@ZQ!(Utd/GVTJlQPSCc)Ti<4):Fta#K\'<rs,<1WJ]DOlb","L<@81S\'8O\"6bFt";"L+Qn@","L0ol0rmE$qIGg";"LCFbHpKn;E-hl";"LUgP)";"L=/@Kgf=@_";"LhB?It","LrRH-GA.JQ","Ll<5$e`I)^NjjXE^Hs.";"L@S[?48\"";"L/OkO","LZ]XGrD5\"@o";"L=i0(qAm3:,HU^","LC_4Wfa^e";"LsMr0*fb#h&ef","LPB\"1h","Lg(VONjk","L9Pna]Y9";"L3^0K)%IhpM8-03@Ir","LFuD-[","L+:6m<1qJk;lPBqq";"LkrC;:tX";"Lp,/G+aKnNj_f`R?";"LaM0jJms","Ljd5HTg9^[";"L&NFZPZeL.]","L_iT%*f_4f","L4/*4B\'1_F&47nX:lj","LskaWYYkFI";"LuAQNC\\4","LDHQ?6BBloSf?YN";"Lp:]BTcI#qPHu)0@","L/[Ib5C*`l0jd5Y","L+99dA#6";"Lg9FV[_\"p/s;c]gT";"La[\'[","L$boU)5?D*T","LVH6*Ys$fS9lpUA+AaJ%j3s/","LBZm5ZhJ)!k$n";"Lh5Nk0M>","L\\c\'/R";"L%/+r4+,l";"LIGYf1FO=","LCasZ^kp","LrSLrln)kV7%&+X<%Df_Rugh<0^ld.8f2uWC,@\\cjZ]Delu`CR";"L_Zht<;K2P5CSTuX","L<%H5-%tJr","LH\"#idpu,c;c8dnD";"LQC$VS=(/*i[J-9@0l)HTnVR!\"6uoMEpZX\\LCG\\4dQeFQ^";"L!+Y8=%UP@";"L=XsGC!,C]#(Q+W";"L(-j`s_J-O>WW+)","LZ/#@035","L,kZWA\\?\\Ubck","LH64r`lj";"Lb.?KqZ+","LIJpd5]jYep","LtksSj[CAm5u^m\'n4K8";"LgqNLQK1";"LG^K=2F\'lp";"LV?]@6J7:g-+\"","L5rN0<_8*jtjbNj=a!1";"L\'tQCs;Fb+p\'6[`-\'k","LpCeN<1J[,\\^]:RT79";"LjI*F4g<C@0oZfE[g9+<3_4";"LHieG*`#5IN@%[";"LP[A3M+\"";"L8.G8A2]oO6","L\\ccp<Y(","LU;l:4Tn";"Ls[s","Lh(u\\$]>p$","LG1\\S^k9T;!%jm[";"L49<<`@ak[q","LpKat^CS05t","L_US(ebt&qWqq,/\\HGTC4","LJn&\\lqR22\\_;Da";"LObON^5o0N1","LJ**RL-M,L%ts\\&90fZ_[_Et(13bqsLQ+>#8Lkb?[L,tgPatBmV:30-LFn\"8)6uNMMV!k";"LFJpqqOs9@1nBT\'bl*?.Z1Y+dRLVW","LcYRl\\575Zm\'m/?l]d,(\"V(BKWqX&\'<,c\"s2L5:$";"L\'OO*\';t";"L90%";"L$:;4Sa@G<I35","L.$0Wk,+","L!g^^<VeK";"L02C#;A(,7E";"Lj!<GJ_<NO+b#";"LTbT>Vg7\\TOHmE9`4I";"Lj?iM(Mr%I";"L;+lC!_jLs@O#A\"=@U","LT9L%WNG7j\"RHC";"LT9BShKW-[","LS5cnSHQNrmj\'\\#uPY:b<K3N&-nr";"L$A%1djh,e","L$\"SuMqU","LCn&o4";"L;FTrT\',;nN5#m:,","L>]9A^A,`","L7bn5W@V:9,";"LS3^JgSob-Z";"LS3(\\Z","LOb?R+_`$:tOMnR!1S";"L+1!e60c@Stm>","L!>A2pjLqA";"L\'dT,8`#<k";"LGel;8_,d.-fB2c";"LV0Uo\"WeTf5\\4","Lt$8nl[Z","L448_34+T=RO^1M*";"L5Vpk1GAh7:]O`Z;Gt";"L&5T\\UfdAGMdP0L^hJ!MN5t\\3kl^P","LJ0/In+,b%s2*t\'15B@sJbcd#gKQWL)","Lp$;BMHZ>L,H%Ir%";"Lrt&\'";"L)NN9l\'V#\'f&^;","L8,t%\\q*6D2:d4n\\+BJ[j","Ld7j!","Lf8V-";"L,o\'(Q#`";"L/0oA$C*mW+TRKOI/:","LIsS]&3CpqJ4Ws\\jtX","LL./,P%p";"L)PCh@n5_OPoF";"L)6<8";"L?`NhY";"Lnm]>tG#\'q[[V`t*o),pN>A%S/P<7$mu<]l#3n%Z%Xc";"L@[faP","LC#QWi;!n2D5:A.L";"LhZBSc";"LHWJPCg&8";"L@:7[$0TUuIA:FAB;]^\\\'";"LbZ^RiJ9","LH#8PP>S9_Z@:","LLb%Dnh:TKkbXN","LTuKuS2[P#cM>";"L.KGo(Xr","L8rOJo";"LlSpEZ/S>@)jJG8Np\"","Ll\".Q]*gBI","L\\]Z!D","LcT,F)pSPC","Lk<V;p^kCHb\\pV\'@XbhKnNnVTr<f);A]08WA/\\,kL!:","LWT$&`q-oQ30]=`MY)K","LO^PPgg7)\\cg*>A\"`88","L9(?e_*SJg1%j#";"L$sQ)6`XI/s-gZ%";"L,Q\"?cc%","L/SJ_9ad\"H5C7TWE5j","LX-Ae21OPI^OC","L\\<p8Ip\'CP$s%+","L9XpQD^s","L*r[S\"6GTC[J*!lIQ;`]R";"LKcI/]JEco","L&9V^.,r";"L4Hg1SCn.Wl;!d\"s`K:","L-#+7=<eW3m0XWf5h(";"L5EN\\=CQ74S","LOQB,1CSIGQab(B[";"L]@PPA";"L5n#\'\"jNh08H4^`8","L\\k!=!G<n`\"gA-jF;C";"LCN>;)$$0FW4S(EgjT2p%jf2?KnR#+(29*2JCcqKHdS";"L,eej.+5]T$BSPuISnQ6DgOL","L\'Y9Skj$9,h\'$u92@arPo`:C(3`!qT","L,T\\i";"Lfbk&=]cL\"","LH\"]cdg4,q5","L[ZT&L";"LCHq)2hVaooI-UriOMA";"Lnd<8","LO\'kN0\',L(AC6";"L+OgFWQ,";"L-`upR/<c@a";"LOc\\C$c`k;,I.\'M=+J!","L=9qeqDL-";"L6r7<1W9","Llrm$";"LK,r\"DK`b;\"G/R:Q\'@5#jmRkjhl?jsL/>;Zl\'`tJMJ+&-.S;!\"A\\\'PrkE;;mi3.N5(5B5rr&q;4Yd0-8<%#;b5r3FEb]^H(,82NXIBQOBS/&9=9u&;_I\'RO\"d>8\'Jb8^GfI<s5>cOTiFO.Dg","Lj&i(F*R\\b^";"L\'A`WJcA2r\\/4355hsL","L1G=01\'`1%V\'_fFZ/\'K";"L]8-p";"LA,`U3B#";"LGKW\"IjHDQ1f6";"Lm^^m]=MCc0[=M4]";"LVp4T?!7;b3","L.#<hU_HF";"L*O,r@Hc","Ls05dX7:qi19K\'Yt";"L[:DGP73%Gt0,&";"L@skl.BTFo_eXIkfJe\\:+","LtOc\"j01";"LM\"??T\'XCX\'=#q","L?\\i%&Zr";"Lp,<L1Hpm:UHa1j0lj";"L4^Pa;j6bW-;:Zu$po","Lj`(1*hBSYn5S8B%","LV9?Q0EjZVQA\'";"L<R8T?@g$5s","L``h2POI$\"Ja!#p@OI+";"L_OgkegI","LXHL)i.J1lq!hSuuP[RQ2oJ9";"LDnh\'Ml<<l*%m";"L4E,I%g]0PBIl-m*p\"";"LZY7ZO","LaTF?pG#L","LDeXnu>8ZV>$WX6_Qg]8r#!JOFT]-<ej7aU736XLsV;uln\\K3B`T<!","L(-4@WB5","LK%!D#9]r&EA5rYn";"L==";"L4]sV68lS%","LW<6>\'-l","L[G)&l9O*L<_9";"LfMHf","LO#Y>!lH14Fg&hO#ab1","Lg*1rF40N]%\'68?!l\\q","L&n-&k","LH>:\\9pNR[;`3nGE","L%KV2c3K;0B!XKs7r]C\"NN$VeUP^Oq_HZ\'A<F*pbQW`/,F`r8;c6(Ecm$1*qM_Or\'+BYT";"L\'dT,8`#<9","L<G8?DsS";"LI4D1bg0s/up$;R?po";"LP&;If[;:N9-Mak(oZKFB=kKLb!cra.3]#Q-^XD9r+@TaBM@Kf";"L(gi*\"=\'\\+","LqgaNBG@5nb?le+7";"L1u@Pnat";"L=?lj`CI:Y\'";"LjC3n;\'J#=)CQ\'-!`Z";"LqQDPt6E,H";"L.c&i6nq3Bc";"L*)$P=4;]@";"LGJn?8]a*\"LC:#Y$uT","L`uA";"LHk>(\";MCbc40;[QHm/","Lo9K`GQ@H#np&5bm";"LD#Dr";"Ll1@B_uMP!WdbZ8ddjM[mK60@.D[ma0=9.6","LpKlFkl76Cp1B1nT","L3qZ<\'-:\"V(<Ok6!b+MMeI;f7I?,*obG6b:*]W%g[+o","Lkf0,","LF%a+A\'QU&@","LU.A/f.r","L6O=s$jIO\\UrDO";"LfFNWiN=):c";"LOH\'j)","LjHr.eO[rcSGWVj,rU\\WpF39hh64O^Mp_8m@7mV5?jrueW,)>(Qf&n","LDCPF4W54.&?KF12.]aJ@W?Mc(B#","L/HAKn/kO`Y/kmh.lSl";"LpgM9Zu83[#","LK_Y43(\\]9CGU7jutM?.";"LC7TW?","L^Y[`KFiLM","LciDM0XPnL";"LCnt.F3\"<q","L1]^$H_MqA%ZZ_q";"L(q=ru&O[&\\2F\"2*&L0f\'";"LP(d\'Qf0)=S]#";"LMm9Y0D@\'&d\'^^S=GHCl","Lj_&";"L;-2W88Q*LFtC-1","L*FGWJ*F!YF%\"3VM/`,bPk(V-+M+V&d%R0<tHk)\'\'#cNTg\\P$G,:LV","LZ>RUFI\"FM\'8b(*VD2O(/WF=(q%m","L]5[<38]Ll","L_2J4M";"L/T@pkcCaUL_uSOV\'\'","Lc#,Vt)5c_h!#","L1iEurf1a?Zt(R604H2\'4";"LK;BIu<_+5";"L4/\"Rm5MTdE1\'eh^";"LV3mVH@:";"LHZnJI_OKr#`!bq5";"L\\9LhS8eONXFC[*";"L[to8L","L@/i9$5#^L@O57\\RaK2";"L:bY:!%9aqk\'%";"LS0&T";"L;c$AW_J>6@O:7Pgj\'";"Lk,8>Lo#k]sJAd,B","L5X[1";"L@pf]Dl#Hj>;+L&M\'jC";"Ls-`Gg$jnQK","L/pbHd";"Lu#*Gl]tp3(Ak","Lq\'gBul6","LfTML5\'uLF";"LX9A[3";"L%\\j!n\\/j";"L2/bAU8fmag\\9","Lo%Va;Cdh&Zs,3V:jN#GDqSr\"Urr$a/","L#EP\\.$kMR5M&TfiHp4A","LdP3[Q+L8";"L\'`qe3a,A);;U)I/lUX","L_N:I;g9m@t@a_BJ","L$h-=WEtS","LbO#3PPreRi&F/j5af","LuD*4U";"LZ\'=P`@sHlhu#2;T<EN:\\Ku6";"LX&T2lUXp8=WV!rjoi;?5:T$2L0V1Z?JOjh))LE.5HF","L4SQ^D/p,L<g/u";"LqDr+VL_hVh%=\\.\'32]Z$h$W7`D#WXbG4ngWa@dYmR;U%(\'5EWIkA0P1urPf)pg[LE58i","L\'e.gcgI","L&Zd@5rCBR[>_:Kg3/\"8n+gYfY+3)g6HrU9_c;c3^Vao!KE0Gu","LIu_\'$e3*","L+?ti$`$cS/`Jq$<","L\'\'BkPd3O7bW7&U+","L^VsX\\^,16ru`O34","LPBJU*=HRo.`UYcn","Lj?H](Zr";"L_6VU$@[\"","Lnc7U";"Lu*?oRM\"";"Lg<1q(Pk4j,T3L","Le?EcH!U","LO>Ko`#S=^]]@`(1VT]","L+2N_$TA0_r:JC`*=uu","L.l[qff8UC","LLEW&4";"L]+lj;b:f<","LO32H9+APUqc_ieXpo","LC46q`0nDRNl7-%&%J!B\"lV","LLZ`<\"TV;jUnY\"(3!aNB","Ln9kR<YP_O`","Lt$0-Uk:gOPTH";"LggE!(-Ji`1B/(pRtUSu=3n.]fV\"";"LGh?\'iJL2aj9fiO?8j!";"L@>=!,CI\'g=","L>.h(D+6_k\'_fp;!";"L-Fd5CJ)P&XSH4r.$L<s1jY#","L!KPca/5","L?uBrTX[R%:j.2893+*nq.*oYPSG#1>Aj<qBhmp*(%m","LJUO/M%saj9Lt";"LZg[P:%E1Od7s@mh";"Lah=iY";"L3DkW","L:VZ7bGf-","L?[anj_O_\\_.X?sk";"LNpM<P@b_","L\'X^0d`_08W`Z","L/aD>K+#V`,;2PkChNp";"LI/aG1t,","LaaK&2&852-:pu&37KFFd41FSbEmFrBuSjN8C^YN[lO]uC+W2e`#G$HCU<Y^Go<?\\s$hI0)]t?H[AT6JU<JkW9\\@:_?";"L`cA_0uT";"L7l3RD;<Bne";"L1Io]hse@m@[,Q(&","LfL?Fmu$2ZCTmdWV\\GXsd\'q[hm!=V-:u+r[,hC;T@j4IL*7Fq%oD4uJ!G3ha<p[NR";"LO<XKm(b>cd#n-Rq56","LjJ6F%`#s","L:)r8i]/$@Hf5@t,";"L_#)I=[k@ciE2!\\>^s","LFfHu+T.B";"LOM3#b4<J^?;^GVd";"L1@>r5";"LjY\'\']Of";"LOVG%0M\"","L3-4VET-:DGrE$NJmF[";"L`K\\p:@pCP.@S<u4";"L3]727o.*\'[E?q:G*YV","L/%rV$!FP$d","L`#u";"L#N\'B8Z3)2`9cD_B_]m/LH9G`.MO.`\'+B\"G#k8Qo5@#";"LrdK";"LjIT.)a1]UM+Q<VrCE?";"LjcC\\R","LQ]bIj","LZ[]o%04eCh.m;";"LNqUaJO-uYl:*?","L8^4HYn;qi7Lt","LhNITCCU\'uTC2>)#Io:";"L^YiSR&!?H0UI";"LbJ[KHqYrag.r";"L,XnUf9#uG","L-ncqo","LpI3N@:6";"LaOl*5jn8V6>!$EOZLI(9Yqj\\A&<_(O?7]LnPGqmh]uUV\'rcXc4b;cpcCGJi<]Z7\"$.Y@45ef","L2l7!\'?_%5cbc^RqjMc";"LC*m:,4+P<T;3s*!","LL3;cku4<","LTLdFnD5_6","Lriq;GlBfUQI+";"L5:ng,/V(";"L*VHq+kdm";"L1gN8MI><U+cIK`)","LVpC/1";"LHgVfJ";"LuaS&(!#";"LElL77\'a2H%";"LFXiG9","Lb?fq0","LT>^\"4O0UT1^e5S","LZJ6HFYqflB`uq*cY2pg,3lGdNrHWrn=a;J","LU2&q";"L7OJ%l";"LH!q,N3K)T.oH;jY";"L97^.*o[#SW";"LsuIqr-l","LoW!^dg/f\"","LHnIZe1c:D5cq/Tld^OT","Lj$gX/l]4\"S@k$)i","LCr#;;/S=P$5?&+b_4","LhVVU4\'jVJf5S:j>CSA";"LcN=","LM^0d-";"Lc@B(9Y<,8q,ce(","Lk[(s2tDc%";"LgIHrn.HLK`meZ6.#4C";"LkG+Z2@U","L&&%f\'rk","LLZs=D","L[E;7\\MJ@","L.-HC*sA(_:=k";"L)oTg$;GheTRB2C","LYG530<:","L!nY3K5LTR;:$ZVDo=i+","L7+,e","L3Y:KMTn","Lkp","LkLWq=96";"LU:V!M";"Lkh,A?CTO!i","L09G\"..8\\6OfW\"Q";"L5G,.PNR?PBfDj";"LbX5,OtX";"Lp3EFKarlIT`3H@j","L%mm6?";"Lh_b-EZFr=:liScjHrLf%*KbWs2C";"LSA\\/d","L/T&YH\'I2FIlU9;Z_j3","LC#:.dhAU3\\_ql2(Ot","L#,93PYl";"L++\'4?X_a,:","L96!\"R7tX`IS^";"L!R=:_-a]Fh";"L_N:I)OMqFi`bbZR","Lj&O#(p)Gd","LpVN!<1gGt7I-e.=/0k";"LN1B9u.tNuG]^>","L(bi+L%9=","Ln*[T9L96@Yu/;";"LHhW[_cV%2d4^*h55?S","L\'$uo2`JDsLgI";"L@TCI;Jk\\DPe*J#Jl>oO@Gh>46Z+aq3Q/$/3;\\daV2\'D*fWj%\'uSc..rtKZ&suCL.,WD#ao1cB)c)$IgtY&Mr^\\EQFe^3NZT)m5YqgJdciaFp>SJ0=[kjsme(3VM]c?q\'i%t#rGqsb$B:`g9G8A-5YNdI2ukW\"P)[4]tY";"LJ=U_?^WS9";"L,b;g47OblS";"LZ\'RFF","LMu@Jq_Rh!OAEcdN)gphu&PC";"L`I:0Q4Tc,p;KMNUa?A","LCW\')55V","Lj9cm?XMIDLg;W`:o=!","Lp:Pk+/e5[A;dML!_9";"LDuqf\\5V","LIR`?";"LBN?2^H;P","L_Ds*Y;Q)na1t[?[CV","LU/c_j0`h3N","LNTLB(","L0i=;bg\"H-0bm*LDqZL","LC>*l)q&+B6jmaR";"LsEe!D","L#tel84EEG>&I","Ls\'6Spl/U!)","LjmEX1<*I(-V\"";"LRTZ96L.9$","L00)1Z/\\3","LQi]\'24E\"!)+?u";"L0Dmn[oj`3c`Z";"L8&V*BK\'1`$bT8B","L*G+X3eg";"L(nG%7T=;pl","L2d5o\\4BARHBZnD","L&_s8","LS^]+:j9Hp>k=-Z_7DO<.X[op3%D32d*X\\kllYi*uFLMu6";"LL/*Buq6ms";"L1Xa";"LO!+cNp#d*\"+YLs`_9";"LTFoZUa0th>Fp";"LM->ItJ(";"L#MI2uF>UhHs`F";"L-ZSe-u7f>TXGZL\\","L+24VH@(TZ,;$Geb_8a","L\'$Z%BI>S12O1ln\";t","LLDEIK,01;","LsQ2Y40KPO","LEH41c5gIcROnEA5$Jt15po";"L\\b52/(mkZ";"LZe4mVW9","LLHLrb0$","LO;;q:p`?EWOFEnX";"La3TLY","LP[O2m!pUF","LHue!IO!cU,_`SB*","LN26\"tX1V$","L1\'D_#OAu_;";"LT[(,p[U#CP+Z","L5Li[)aD*d";"L1N;A1%NYJa","L>s<3R\'I[iX5r2uG";"LG*43&j3Yd";"Lp\'ld+D&la","Lg$";"L@a8(`1./!r/[>KO";"LW(\':J","L9rNLM";"L/\"Q;N";"LS<lQU]?9^+","LaF)n,","L$n;pr";"L<>F&I!M7GgFp";"LN+YJ-QeJl","LhSWAWrfmgO";"L68UIW","L9B32dXNO0";"L&^h>h:<&E\\otlFe_@cOhIn:I2_TjJ&%=NA4ek)H:m35","LR3\\o\\MJ.+eP*","L(e,r3=Q`6GMLO.";"L7ee1@CRcDhF\'dad";"LrOH/)HF";"LBA7fZg$";"L2gN.m)pLlB";"L5Sl(f/eBnJhgcnEjYf";"LC+:#K=b4QXT1OZf\'_$";"LjdCUGp6!IKjA-P0j$$";"Lcq,ad3\\bO","LmEokXJ%I)=m_L]3";"L\'8os)\'8qWlpV^=OHr";"LJr?-IW#7G8Fp";"L\\Z=hqCV";"Lau/MQ5][EMIr";"L4K*Y]KGN*[#<X*NSF";"LnZ=a%SHG7E","L_AmW";"L4D%@N!#";"L_]bBou&L\"Y","L`)O\\7s+\\>";"Lh>j9]hN\\okj`NaE","L\'d-:\\aIVAnO3ksr1T","LI+","L<7c_*V*o68@]L","L/mn]&pKl\"]g9@","LTt#_inBiYYrhBhDt(B","L0g:5)u\"O";"LjGhO(\'_DkR1s8<c/:","LU(CH\\<KoA*I$Lb","LE9","L5T5Np(s.75WD=]Nnc]";"Lc$kPUp2;DJ\'I2rIc\'";"LLuq0X]rWA)";"LQqlo$`s","LuKmG";"LO+AdtS[D3a","L/[IbO@p2)i";"Lh8f8+bRI19h&e%AIXpu#n+";"La8[O2W2-A5!(H","L>)J-agFA;:aKEK84I";"L@\"-;\"m>","L^\\:K,T#QH","LacCVi1)tB&a\\T\'h;f";"L=<?EX-.:rg","LlS^?M4(@W\'T\"efR","L21f[Bat","L\'I`p4IsSM(IpXTa","L)j";"L_DY[ehNIp2HsCd./&E","L4+JO@_g.aG+KY<b`s";"LQ><4(";"LAiN6DZA=sKTbC6(";"LpdaOLc_SmP`Kp\'PHF";"L`KJo7LsT";"L_OCHY";"Lb4Is@^7K)@l[+","LlU`u<3:","L.VDC>Q5Y";"L\\0gY2=1fTp";"LbOY=GZ]M_\'WQ3aW";"Lg(VL/_6<";"LM.-*XaY=%5:V";"L_&[f-7iaETV\'N";"L%)bkn";"Lk_19q70#!@";"L8u[f*0\\[Ab","LaK\\\"Tp#\"u1_VhS*","LpKlIDCS@P";"L=QRp";"La\\s,tKa86n(V","LXr\'H";"L\\@?\"$H/[X","L1HN6u9;4uE+[sV&/=m5IBS`K%L,N+#a^sR2=Qgq#H.Zf3c!8=$Pqs6J","L;8#","LpU(j\\cVE#KlnuQ_","LjOpbXgr=O\\_CaR?HF","LOMPKtl:>-rp1a0)";"Lo>7#3Ib[Hk)&bjqf;`d","LHkoVf/:","LCT^l4cgJT]Iae0:";"Lr!CfVnW&\".^oFOHfu7";"LtF`t25q-o3r)\'%8qnkj3Z`@$2L*5u<H^A2OQ*#c8","L4m`P%rr04L:jM","L@>R),IS+5isCTO2ZWQ`$(WG7iu\\W)7*Wf8+<W1";"L;+cF=";"L+_POI-c4P5\'iOXS";"L_Ee/*pg)?\'\'Wcu:8tFck%I3!KjP,-c!Q#Z$CV2A9pJL#3[eOZa(=.fPYf$em","L7kaI@B^Yu^>rS","LoW#gYK#ur\\C6";"L+8qqc+,h5d\'N;DQ1T","Ls0J<]tofNntnP/4V\"";"L)A","L/6]q*dC`5\',-(;f9-d";"LQr1hV.]3$9\'4iU2.SBjdhd\\XWGf","LI#R]$@K2/<s+`:*","Lp\'3c*o))$Q\'dFBQkUs?S(H12_Q*p1Pu\'n-iGcP+%7;]9I*0&A","LWH:qb$S","L-W&&fQ,","L2@V/ZL7qJ:(AN.L5?*","L<_01HEGa;","LGs-ps^L5?N`7K,4Lf";"L!CM[KJIupZf=F$O";"Lp&tk+F7K@luF]qC","LHV*(@q8,<_fjGT(","L6W0.)ln,X8un";"LGE^DpZ_L","LtLHD44`-S1%\'08)(ba8Y6E5_I\'6Jh]_Hrqpm?kl:\\GM(/U6(q2$o-+4-(3&D";"L/$@Xb1T","L/[Ibo@pfE*`_D8,_6/";"Ll*tH6";"LjIsM0h@T,-j1BqYaC";"LofmV&96";"LgnFK_O,=Plg7)X8/#";"LC?\\K=T[SQ5\'t/k[IpR","LO19N;jY`E2TiSTkO:;";"L_2N";"LOMZ5[gTI)Ip#nM9\'\'","L4lg%]/[I,","LQj?bPPT";"Lc!K[Vd1B+\'SUUD*8%[";"L/mP&3\'1slWa^6qO+o","LC<-9g@RVG;524S-`88","Ltfq=\'","L!5BbROM4XQ";"L+:*d\"f?uUh^2sM:YIrN3LUN";"LM:\'rZ?bRW","L?T;W$]<m:tjj]SIVHj","L;>jVlmB;n";"L5l<!C";"L_u<m,1mWQK/nA0\\`Z","L5VXN2n2mE-","LOb[55l*qO.h)Bbkg4+";"LeB:dRh=FCm";"LJI\'EZ)[>","LYVb`.B/Sr";"Ld\\eHXGg";"LaEY<)\'Olud+QT6[1T";"L+jo#i$q?aW0f=68e@1&G?rG3-JDC@[*IMGsP-Oo@mao\'bQbflu.in>:C3o.$F`bKq<pl>g(RX.l6:4%I0)BOoH$B+_qQuK3]XB2","LenbC";"LuiCHY#V";"L2Q@0!U-OB7","Ll2`fT@%i@dhCl6p";"LFuk]","LK/XlnCH%p\\","LG#GVj$\'FAoL3rmH5nP44?C>BPujPrN";"L@%I;-g<#?e@\'$?,C7m","L`#O\\$H@.%_el7","L!:+_O<c&tS","L&<6fYJ;;G7=53Dj5c4","L_6VaDa^=5R+#Mdf";"LAL\\:A[)<6QH_:$F%^^J@ss/D";"L;^.","L=&Qi.X#^1uVA]EGP<]pI","LGl=TkGg","L!g^N-u`At\'^c2(IN)W","L)gX.d,-XDa36,9","L3#dal8f&","L_`THs","Ld6:\\i!\\In";"Lbh1\"*9u-gCVA7\"IN=iuf&O]<-kudnoq7IFq9(gjeg$","L_6aOOsG%k^[TAS";"LpQKJ>I\'Yk#1qWjqgI","L]o8c(";"LP#q+=m(L!","L+:r1^CHB%qH(4@Xg(0","LEJu1";"L=N2W\\","LDi\"c;";"LAr#!W-EmK\'","LV_>1Z";"LOdd","L99]=RfLl)U[1B","Ls?+YbMIK8:2-/p\'q5`aK%=Hi\\3sLU;F#<<";"LCT^N=@[u";"Lf#&<e";"Lq5H?qlV";"LlE;`I5E_";"L5/MN8B#";"L\'jJI&cYSp#;K+qIC7;";"L[ZnIGfGs","L@<P9@5r[!WhiP;%`U:";"L4G;;W@V%";"LL%\\9`d7\'^+7#H+P3uB","LV$o*+`a7CB";"L1\"QWN\'d]-\\g<b1*+Qk";"Lj38^PFmj*W_9";"L@kHH?;3X>-@TaD4","LeX\'RC;,dcW9M]nto^NpG/ir[uf]oj\\nZ;!aHrd)4*0u[e=)$r","LOa,(I";"L>*W\"";"L?:G;U=%","LgO_F@(6";"LH%3P[gn6Dg5**:QacZ";"L/a&u\\Hm)Y&c1?,7h>?","Lr\">$DJ9","LJ(&u.HF","L1Z!o]OrclQ/k%Hjh9","L7?Aad_.;r","LE!J:","LT/n&TD=]","L1:YD","LZNa)&9V";"LZd5L\'[8>uU","LHi2_fj,H7";"LO,X=!O$5EHhOdsfh(","LE*sI4c(nu","L+u;(Cqt\\Qp";"L=f.VHl=Mn,","L8+b:[";"LrkNN(rIWihogU","L_gdQ_a3&oX+Qq&I@#","LM7c10l(>Y4A\'","L\'Og6TlFPs)@TV7D";"LTb05i\'G[S\\<\\\\;EZG<9NYl";"LVu4rrVAW4j_c?IS7-R<aL0JB","LY)Dn+E7Nlo";"L\'&rb\"=Y!8TIV$U)Lpo=IEgPe.c]f+D<gL7%^TUVn!u_)?d9GB8@fV)X6JQ/aSO%&bOf","LDhaVBoJQ<G","LN`.6";"LttO/J>H";"LKUp\'OL:?>9Qs%","LHs(<RCU%dVlPX-[","Lsp&d>a9&*cWZ`0I+Yb/?^9GI&afb#R!fK0LZShE#V3?*^>H","LRH)\\Z@b(uWa\'_#:rQP3","L$-s=-KFdu","LoXS&q\'T9kP;t";"Lj[)=>W.E[E";"LbO$NX9/mL";"LHZHEqg<##";"L^5#-O^30<K[*MA&c2\",%?nQ!>mSp/f-j$+mfda)1gofd7WWl5c?f";"Lki1]!]lTsG/h\'k%fbb<1D/WnF3SB";"LAK$8_7.:\"<ET\'Z";"Lj,Ag_Dr3_5XV?","LO2(a[g+o*6>)=Md52S","LTIlr8Of","L$jNK%nF";"LT%6h$qM;%:PtN","LIa2K-pIXd>OK&KflU,";"Lhsk91@<Pc^HWFu`lV";"LHiN;:\'$.+D","LU<IRQ","L?D#uMdT";"L[fkc`X@*","L+V5>M5?Dl=1>6:\\_`m","L+0g4","LJbmU56bB";"LTkq7#WD)BZfd;^9^s";"L`#gr\\5MP+J`8ie@";"L.bc!+&$","L\\n.","LK;lCr`ku.m5u3";"LIeH\\?K1","L<7o@ffh9S]","LRs?V","L%>aZ4";"L/mnJr/mn]J_@58LOMXh<Hue;*j%";"LC_2\'-k+/Pa<>,C9";"LE6:_ZDBX`","L/9IZ!N54/<D&M";"L!&eUm","Lgn8,nj8NNK\'I?IN","LW/u1Nq#g\"62;?tNpS1P?oF","LAIUtHgqgm%/5";"Ljd5AY1BO","Lck";"Lu``1%a`\\K?uo]P2A.dA5","L/0$;=`Iml9h\"tZ4_Z7\\";"L5)ZVQ6(.";"LJ:?eW=LgbbkR9G\\IQ42,Of","L0sk>A*TifY";"L/4,n[\'O?mccg>Z)";"L\\*MZ*+tP9%Pkcu","L,%%RQY0$!TTGZP^qP0UiCUkERA$ai/&Kja;3>XpGMZ","LhQ+nr?!Ki&XJWl1OBk_eS#aq?L@,B($b7N>h@r","L?\\*2m]U";"L_\"`HW4Tr8[I4gm]";"LpMB.AJ9","LVD.UR?V/a5","L47@A3\'G(s!_`\\(j","L@c(Y?k*Dp*l0J3MhhF*%*#\"f","Lc9b)Rrk";"Lplim?";"LO(L?EI/)?OOq+t!FUqWt$26Y5H;5O)lrK-eq[#n%&5/";"Ln/b\"0c%","LCcgd?T\")7j1Da[\\;#R","L:=T";"L2AEZJf6","L_A@;SD^+8";"L1Bu\\HWT=";"LP\"q\'`1T";"L_K-Kl/20c*r62r";"L_6e1rhVF3\\H%/o5\'k";"LCHHL?1\'(s$lH$o=","Ljd:O$HV^0!lV","L:.JX,EXsJ>?DkuuZ!t","LK=O,\"N-/ch";"L,5$J#lUI","L5?(QoOMP0&;?+P*","Lmp]cRme<8ikO8N*^Ug?","Ll,L&U6+-5SFJmc:M\"BZ):YD";"L!@WldL\"p";"Ll=_mX3]5?$0K*B9QVK&)ERO","L0.$T3l3u`_c]mr:;@Y";"LDB(UKg$","L3#Hg!QLZ)m)nf+)YJhA\\/_.D+h:;]![9hGf";"L>=\"R","L6u\'?TqDd\\a3\\P(+n;mb-I,&VYT]MJ6e#=SFGg";"L\'6:";"L<-Ws]";"L_AV1a`Qt","L\'8si#4FOI65F5,2","LI>sFW`IOJm5MhSYhqk","L&.Y_Ott0","L*+d1I$9+A7;B*cX&hGBpa@qMonEd?UM1?[X\\AXk[u1QD/hf]r\\:SW_``,[A7";"L9tGXD)%fS3(KD1n8$FX)!rJ1qp1m]%a^LtbCZ^(o2t";"L$k\\/fa\'=","L69\\;X<\")AS%jDmTk^C","L/R!<ga,^(Z;$MW4_Cg";"Lr?u`R1P_%Jmeq)L_-kUV<!bCIbG0Zm`AkU%%A4&_fp\'SBjI\\i","LAK_.;G,S(","L/==rP;1`7s@(n(6","LBlWjU]J.L";"LU&*,^%QFCPR3f","LaEsXQg(LLHp3p0h";"LlV+-3-V%g";"L2V73_sB3-FOf","Lh6n;hrYk","L56","L.a5e\\","La]+j,#nGe>pdge7";"LC2I(sH[(I(hV6U.";"L)l?i\\M>";"L\\fc0mBpt02";"L1>c)L+:[1WaF9.=jk";"LH[r?+p7b";"Lh@7\"^cVEq5_8dQK";"Lu9lUX*0]H&$/Kp^B/O","LH!Og;";"Lp&rOqb83pa[K.t>tri1JZF","L:4noNVCHdWSFsQLuN.E_2ck?O_k+^O:2[u&Vj<5Ef)]\"\'mk^V2<^Cr;A.js2YVg_K&?$h\'KAl=>++UlX]_.nj^1R";"LhfKNHH\"\\ihOEaVh4,","LjV27S\'G:$`jVt4m@HR";"LTc\'S0B#","Lj>:+I<%/O7jpYRCK^\\L4:Bf0Nn!m.<ap<&Z#$:*sX2Q0f";"L%7=;$HB;IF/!a","L]SeE%PT";"Lc(R92p\"0/&Gf","Lg9gV28:lFo3am4g2g@l@>R*O#+Rml\'_(,J";"LG4q\"GtX";"L@,^e_","LV\'0;BX91rO";"Lh]R\\d*If#","LQ\'G$)s>UV*@U\"3R`\"";"L`(;sR=$V";"L-M6b;IQ_FD>7nM;";"LlnYo^Hu:0:@a\\OEjk";"L2O6[Q*r1G","LT[]O[>-Vg$4SQ&6";"LK^!&.qF7\\pkf&7Watd","LH:u1)2C","Lbi3D>1:R@","LJa,0W%gU8b6jfd","L`LJjJ<akX*-4B$u9X^?H?Z\\)i69W_5","L?)D@@7h]r","LnNq9#/XY2","Lc\\@C1^d1s&r:7","LkiOAUUjhJIV_?B!UQ$]L#gsDRb?R2kXu@nat2Z_*ZDl%pNJ_GpZ#p","La?0CnCHB_-Cj","LjOV23_t$>*\'D<G=","LXA<3$";"LC7Z5\"_82","Lo>`=IoF","LA5111qWZ[@t_.pLa6l","LXYe,Rb(/SketquR.c*>:L_Nu_$Oi/3N]#A7meF72<=Q,gmI;,VOc#";"Lef<-<mnH<SEQV","Lo*aNdHJ*+","L)DG8AqB\\JkVZ";"LmpHZU";"L.h?]A5Q$1/CjU?7nr","L9RhF-q#","LZes$n96";"L\';X?X\\fV","L7eK4u-S.rf35G^>HmVuY!4\'\"YFHM","L&HHcf";"LT;*!TT2HlaCCf&pqU","LN-N,nm0R]4[Z","L5j3qmd%s";"L[`EBsJug;P?DuU/^^bKf7I=H8L\\17;\'\'qeGg)S_PEm`&-r(,3#Lf","LqeH$JG`(eG","L4bLL%","L#?>Dne\"X+i";"LF\'p6DefC_.2Yc";"L+CD*lG3u@6P5=","Ll<)Di/mo6\"+`CU\\;#J";"Lp#juZJ]aAk";"Lfm:Rq4#q","Lqsdm*=%";"LM,aQ?gh;gY!81";"L`30)?*n";"LDHmUQ";"La(@a","L!mk^M8kp!`7Fo3A_FpSV";"L?\'f$$&sWB","Ljd]\\VaKc:,`K_sbTS";"LDEoT1/#";"L$,\'%T0=R\"7FE,Ja";"LR;#\\=\'qqOdCB!","L\'`rq[un4Ts&tu[n1Ff$","LEAG&","L#i[.*Es-PC","L^VG*d,Gga*XsWe6","LqN!aOU9FX","LIh(k9/W5$,\'8]G$lj","LG:W$8u%X<7<h>";"LW+ea_:kAB=d?.","L`KR94aMYrh@R:d<+Z","L7^p2U#V";"LTsZ6tkU<A*kC#i";"L";"LBH2Ec;]J\\";"LSCZ__q:","L_cdh\"5I%8`W]3Jda]M","L]qW=NWgU","Lp#*rX\'1o$Q4&[;g;C";"L1SVs,";"L\']nuhTZ,A8a?m9","L!5ueDh[L","L1u%qBaINNOln=o0+o";"LDXmqKVPKA8hn]5<rai2D]]2W2+!3fd","LjD%t;pV+EsO+n?!@#";"LGtuc@YJuP-fRs0kc8jA@>tVDSTA\'UcTEAIN$?o?I\']G5-Z@9_sa[G:FTS";"L`Obfk\'e&(cLlR";"L&:cVnoTgUr";"L<NWgI92iEg?A#U";"L7`5A3].\"\'","LoO3bf.T1]m!NS;7U\"4E","L*M\"^TunTIfl.u2g","LCMm4Gct6F\"+`bo?\'A5","L9%\\j;)BOdFM7@2\'","LK]J!78PLZ.","Lnaksc/#";"L4&2<6@]*)tjgfq4acI";"L6]Pf1!ju0$";"LT%^>jh8%pVhq>6X","LA\"?-jpgl","Ln]pT7#HTB";"L1\\YE</h\"%eOY%U!3s3LA[/5d8)MbVat9Rs:+U%\'iAZrmbNa!O-_GXTt]=s;t/k/3BNC\\","Lk)[5","L<K1W,32^q","LDC)Re>]&`VA%";"L`33r%Cj","L40^<V`5f0[Hu)DU";"Lq94d;)6","Lb2mj3FY-BDV9(P]B>)DDk>&Hi6TYK9.D%LkU,","L0$ZBXVZ","L0<Nu";"LFKH^mPIWBY4%6br+\\<,$cuV";"LJYEq^sWpthZeP","L,TBf0O48","LKHI<0LLbZAC$hd","Lg0_K6hO*\"W1g^hW","L]$$:Ecrp6P";"L/(cKPcg\\I<\'O)D%O2q";"L_s.n0p$:[JH>LlP";"Lj^:ol^o";"LpJW$WlKf\\Ta#2Oq/%4","L2Mo\\67l","L+K>(<4*_B\"\'11fqlj","L0.)`m[M;g[6ITkfmqFG\\H/UJ4Nc%X4gi@0\\*Tm(u`<47/";"L`54ng+J(1iHu91`j\'";"LfO*hLLjP+-$?\"";"LB8e%XMjKBVJXA0","Lk2*WGNdGHY0bmia)H=;8CO>","LK*hH];`!5T%=VF`","L\'Y5k8g9g0fg9m:0_OK\"Y","L\'gm$$I+";"L`CU@PB1N";"LH>+S4";"LIhamZH[CJ,cIBF=Hp@";"LSA\"K?u`7T","L/XLanK_gmUp\"su";"LHCLsF<=MLL3:VR","Ls/H[SUj=B0";"LT?l\"\"-EF_*7(";"LT]n-!;cke";"LbY>2kJ*Hc<_\'Z.(AVZ";"Lo2.))b02^lF-nck>%]f";"L2!TD4=sK>%TS","LXB)]OC$MWJN)","LKepfuS3ZCr;C";"LDU\'5>tDhg>","L*qp)QrE,)h&u4^;.Qd","LLbDF?+ORKn_%[02UBLr2NJGVUG?Uq$jarG:EOD";"L5*$r+4(Qot\'X\'Bq\'tE","L_Cp_G\'f=\'Y5#6ALht9","L0X2lFO\\B31";"L_O<bdW6#>jfh3","L#`oPGfV","L_h&]0Xc";"Lg0,X0";"L/P,mP1Dl=QCMmX4","L;S#(C[V^MF\'QG","LC-e`n(Q?kLp5oUm@a)","LJD[oL","La#8<BCHoB!jjY,4jD]","L!3n]Vun","L`33\\-","Lj6Yd^1>6l!4*RT=/:","L\'ZT7:>(^kLO(uPrq]nC4sYS/%!R/i?qcI5U_@n","LjAn(]I+","L`,ed=I45U\\47nncaC","LGj=qf96","LHadY=g(a-Xa,N2maf","L?r#$*o$jO^","LuHY\\.!rDgE";"L]F\'\'=";"LLf)QBe1D7R>1Z5PIA?;FdD8H*FrMJ)OnL3","LlRRe","L4$%K>u,<","L?h:Mio:9L<","L#6qIk)6","LGT-fgEM5`XsmVT","LL$F.bKC]@";"Lj\'iiH*Vuo3f.S(f<:97#njsj;=BZQk],=6Hr$/5BP^-YW","Lh!IldN5Yn6","LcX#_+C5e.Ol#WeG";"LXm_;G$n";"Lg#&(8O9d3a";"LM9mo[@k:QY","L)R!C";"LOH&,2(/WY^";"LZY.<2N8/m","L0FuM";"L(H(nAg<k2^[\'QN4M!S\\K?/]uL1[oOA?uj3pBF_T9Ak";"L4J/X.%Tt";"L4(&(g5rM_qg\\4ejhl","L1@hAnlU?(Jpd82Za^l","LJfiSmP%&u";"L`\"2-WHXJio","Lc2G","LGr;8H";"LI4p$";"L/[IbhO?MLsj,m","LtSNQ\"b\'P","LcNZ8Z529dPl^)UB";"LGiODu^9BN","L>-+*c4erj0`?$4mat";"L.W_GE%CGm\\Fsf8KjBd!*XM]";"La3^%=;F`990-#IalkHg=W_#B","LEtZrbt\'([s[nh=%CH/GJUi+*Y@Da8cnW#Vdj>:S.o&_&U+O-]D5c&GJk6Kf:";"LV_<Q6gUIo>HUm","LncF%p7Cr4;";"L]Nm.h1kE4q(ufQ[O(,)/4PtH.Xo\\_\'h9n>!O%G5<ZuGKUlr9>\\%gg&#g^PtlfR?+e8D0*a","L_Q%.BfV";"LKaJq3";"LZ%i)956;";"L49t:F_4","L6E]\"\':dt;+BLXO24Du!C96";"Lk]ibjN\'!K&=eUs","L-!hikeLYc%c,3Q\'tZ-hfqG3\'.3s32+QE@0VDf1KMtrFEnj>p@";"L/R:>ojNs-:_>X<c;t","Lg9`?5jk";"L7&NrXre7-9@+h2an+";"LH.n-C1s=Nt@p0E\"@#","L4MPkqa^FffcIgD$+\"","L_V;aL:c0","Lkt_","L&FLGY>!M/1lCB\"";"LZX-h6Ql\\:A";"LC$Djp;B28_nJJ1dr`#";"L`l(TB?ntC";"LpqDoG`Sc";"Lg0,lR_`SpcC*`@Yg9`@)_4","L/[Ib@g9`R3@[>","L\'V!\'J5QIZKp3c]r`o";"L9d\'<Q0$";"LoW!uf_OCl-@m#9","LjV8.ghq\"22\'bB&Z_(","LX*]W<TOt1#qms";"L/[Ib;g9^o]`!b50_j/";"LCn&o4oZ:Gi_8$kl","L\'1*o-_6OTu\'t(/P";"L[$[WKHMuXt";"L2@\\R3#m[@","L@9r+8uRoF*";"LWl3_;gC%%T";"Lc%A)u^4C","LteH\'$dn","LZ<i$u^k:$68n(;","L1&L<4PJ7O","LURb\'J";"LoW!mD`o";"L-YdA4-q:Qr","LKh\'hA_3=2fNusSbVF9#%N7MW2>WBmJaP805U)D","L.j#BY><%<nalsr";"LmUpe,2eeV*F3MKrZF";"LGf>-_#1r1#7eW\\","L&KHX<","LuVcPn>n","L$S","L6n<WA6[qlaC<<*";"LE^V2-l&`*U,TpBSR3_)LjrDofhBRI;Cg)1VK.X!i\'8cqH","LW1s!_7.]DT`Z";"LHA2";"LHc\'Yg0=noA3,H(IFL@\">mB)\\J\'!Y:<X9h:*7/7Ts%=pP7jV.9Dj$pa:s>S.Z34j7hrgH=H*2;47U\"W)Fsdo!VLM9&O7][bF\'%","Ll#Z.3/ShJZ4e-tP\'!-","Lg*sFe+d32@/=jH<`\"";"LsBDP";"L`Um7C/97*2`3,2@";"L*:*0M#kbtl[Dk7p7(";"LH\'I%a/&3nCC+\'UqHc","L2\"JDD,\"5&*=S.K3","LOFhrUjk";"LoGM:j-(s(u.i2/#bW^";"LtK<ZM4$","L7\\\\\'PQ_)g]KBR@Q4(pM-],19H_\'JhE","L\\pp,b","LCT?qLpV%pf`?X7R@al","L8V68\'$;rmnZF","LC6:8nKdC3QbU";"LXO)+.mS;@";"LpKat2_OClt/p,\\OOM/$","LhN$#d/kc\'/C*`l0","L7h`e?KMi^","L%<;oetI","L]T\\->","L_?XGaUPm>^niu$E:H\\_G.K`c\\r#/X_oKGV_O]L-!q!YqT";"L:L1,uS8;L^Cc(\"FL^+HuQNpQrY(";"LHo<CS`#$","L1@una/Rq)q\')iKr/=4";"Lkquah";"L35:6L/Uo%";"L[oRdj9@>!c";"L[#m-r","L/4n,8C5?#uhVNXV4$";"L`CltX2+R6H:2l`\"r+q9q","L>c8ZE";"LT>0!O@T!o6j,FNrClA";"LQi]2F,DU0V";"L2/@^O\\[jW-dS";"Lu%)tUICK";"LZ\\#DYLd`","LoEfHG.c";"L/mnJr/mn]J_@58LOMA","L`X3O82*U7G=@Ec","LFI,sSY]#jB","Lur:\'7W9";"LVr5_h2f";"L.pha";"LOF\'6]_AV1a`Qt","La+_AUgnciTC2nn.","L;E^VGjGJmo;bS/(+K6","LRNAmj5PRi","L/\'K";"L&h_(3!=qf(266ZZ";"L)\'/igDZ\"","LX/V\\T/Wo_iq_nO&";"Lr\"JA\"4$","L]X-s!)a19d";"Ld$#N$9>!+=C8hqXsk_gI(cIH7Sen8.$?$)","LT\"[VGh`mu!/ka$U","Lh\\6qf6)PdAXF";"Lf`","Lss7T*","L49<\\l1RS<e`o","LsJit&$S";"Lac5Cqg]3=UO#T\\S4$","L+3(\"8_6;f$Is/VA1S";"LK:4Gi`F\"N6LE($kFjNZoH*Z`2;C";"L4\\fI^dYr9%0<hZ#","LZ>])/go$";"L_`STCjd9jN","L&`4$13CRp7JAX4>@EWi";"L-$idt(6O0iO;_Y","L5ZEK=Ms","LBdNbQP]B&*fJd^\'k5/";"L*-L06mY&T","L]6b8qfn_";"LEB\'[^>PoZ_","L[VJ?7\'%","LZtGCi2eY/Zs>C_C.3e;q-gqKal)_jB9eBABfaTCE:O!^C","LlFZ-s//?.G_OQloTS";"L&8-Kj&,";"Lc2L[Qh:T7#X:V=<CK9`","LE3]J6b\\Z/";"LO\"+Y+l$2RdDpHNk2SJM","L49tfFO2e_Lj,\"s/","Lm#!hg?g";"LW?H*6D,","Lc3iZ","L^8om@tD\'hRTV`V";"Lm6c`o0EqHUe;Q>]8a:tTLbZ],O0lWTRNR`8<cq%\'@-k(D3*-6<.>\'A[O8ckUmcHf(\\L:W^^o","L-*BjD:5o0%;)\\fCkc3#`,j5jlahR_O)u0_2LGg+\"-f/Klkp6:2Wh>VVd>(Y\\5?;]";"LaQW%sHWi3;1mriM`Vm";"LFqY^BK$";"LV[3>\\-i/uO/8&";"LA><?+T@:S";"L?u2fkrBg1Gg,","LH>ee+hV%^X`_H7Y";"LB-&0T^gh&\'","LC2W?K1hXNqhADR\"","LG^FOs","L,3a4+j/\\l%","Lpdf4&/p\"BIcC)fT";"LPmYR*","Lo]6u";"LL`PbDc\'t","L_D_R%0W!Z";"L$p!\'iPFY*jXHm#2;Ea#lj\'eqJ^[YAcP-(-";"LVh)/u^Q>L^IfK";"LTgi^`U&1";"LO^=CAV;\'(J@e-M7$*M";"L\'Y5T";"L4QhKYX%bjN=<L";"L/@BVRZ+";"Lm[2g\\","LaU\'6f40\'H$Hq\'HnaC";"L49<U","L=0Ij";"LO5j:\"oeGl7^%upI";"L+_?$^5]1r6lT0oT/:","L/&,ZMh\"N/Fh@,m/","LErX:&HtaMOTI44nhc@4b%\\C@F5%=SB","LI\\\"LM,EY)N","LP\\(RQNO2ND";"Lp#.Uug9@","Lc_u&>bL#-q<K7+U";"La%4ZH7h\"6";"LY-qlU+o","LKu8,XuOO;h\'h(";"LgsrfosH";"L+KhREO^H3c+UucUC2F","L40[=k+!&<,c)M\\,";"LYe(&L\\^o++>S","L]#,T)H`\\U","LoW0AV0g!*E[\"","LE`t\'&lmPkjE\"#Pfa]$p";"LspM)u&-ZZA,<@HLcTG6sWXT_lD\"Us).u\"65mKE/@ooLEH8;Q6A\'Ul^U)3H4hA-ipF?;iS-;_eQe4OMWeKcHiWP5J";"Lun","L`6NCF4(t=Y5F)k`Hr";"L+V!N.`#Q:c+!9=>HaM","Lf#is-XrLj!0&np4<-DI,2^krIVj0hD.tK","L/[$&a\'_?4:I>I$$po";"L:OSmBf,@JUK[A^pNfps","L/n\'7dCn<5%H9U[5+b\"";"LXV%)_SW<l[5j","LT^5[\"17osH","L7emM_>s*","Lk5V0r-24";"L>T_R+at";"L`16\"!hB/h;CPpC9p_a","LO!Ok\\\'D]CIgr7@`","L\\idm-?@EM","LB<mk";"LHLSAV`3r","L`&SmZjc(G<","LL9lTjZ:(n-oUlIdHZj";"L!$RbH","L/:7cCUX";"Lc=Vl3k@PeFt%>Jru0C^E3J1!#eleth]6&4ta.]K99ZNW4p4uG97QJ:oE\"\"Xh;r%A";"LqrSIi.T+_K&G!r";"L`_0*1\'f\\UR/(NRl","LDDGIR2BA@","LBJIsK>D/e";"Lh6o8JjJ=:ga+r2a";"Lp^C?^=,6,3FsU]>Ms","L<-8^>";"LY\">=`l.omAZMBb!IJM\"JW9D";"L5<o^r\'jjLj`dkdE","LBEBk$Fa1>+CTEC2+R:XP","L.<>","L@4`sL1)ogUp`kjc","Ln=rcu*eS`L","LVj%XpkU^>SQf($";"Ls<1K<;e1dO[)Y.X4Zu>l[_4=","LSWemGUj%UO#Gt";"L.3bRlb+^1\\8?Yg$TiZH5>d^pRQ1.TY6\\\"\"","LM5[*\'8+6s1apA)HqC%Npmt#";"LFlIg2\'4pj3uX&","L@%IHe@\'p";"Lct-%)\'1upb`3X]C";"Lk\">^\\\\]?j","LDZoY>RN%m>@77MTtBn#";"L;!o7[1tm8\\;M5\'%\'8r";"L\\RuugBj\\cFL`N\"MVK(\'cuO5_p!j._Cr!,bm;L#8j7hetF/$=[","L3-[EPOd4ag:2r\\qB/X;EV\"","LQ^EW\"nmplO";"L6Ro$","LZMq]dt4Q\'nWq6R","L^6M<E:D8RSAk";"LOdu","LC7JU$h8m*e;Q;M?","LGUi%lU`[MU5!]","LjGRDpjD8)Q5*iT,","L]_XJ[9];M3s&Gfn-&F-G0Q7)r#X-ea2&`stL2\\2!Dg\'3KQ2S\"]-g4";"LTFj?";"LEuX";"LP26njL3s[";"L\'V$+e\'6\'.W@44q(","L<\'[DG";"L8rG-2=453BN8Z";"L;?+m;H%n.11tCZl","LE=+\'(C-NF6?aq","L\\48<jga?b-7BM-+fs4k<6Bp?#Vo","Lj)b55a$IG+g(m\\N","LSG_5l8qFHJtX";"LEtAsBm>";"Ldq(e\'\\^oF^86GR\'(6","LCS!:ej,m";"L_@#p\\jg;nS`N(qj476";"LHrk`GXr","La+dT?ge_","Ldm-DU5j","L69m,d6k";"L)i1TScR5JXG6Je7usP";"LJ/33u4Yj7jF\"/WSk2XX";"LhD[E[`?Y9l`,#^s_9";"L+K\".$ab]#E5M7%q";"L&IUC2";"LJXP%E4i#\"s51U=fH=M?(Vo","L_u^kP","LHu:01C7u-6@\'ot";"L2-KjmK>^i?(((","Lt0`dr","LW1:YBeB+\\&7l","LHca\\2<#";"LoW!1L","LW16JXM\"","Ljl$lg=[2/";"L/#6T<>YIa.Gf","L?Q[d@","L151_I","L/]1%MSZ9M`\'MST";"LOdcsU3/Y";"LrQ8u^","LjR$^95HW=+K[IT,;2SV7^sb";"La<SpsksHP%p[Fd\\*\\&+";"LpVN!Ghq*uSgE:X:g<P","L6Y13f:e;q","Lk1(3e","L.N`[t)JkJ","L*@u0WG1)Zd%\'Nm-]P&GO@\\ZMC#:Wrde;*gSJ4","LH>lPU+1D3tg$","LpJuLeO?#t;5].SX@pZ";"L!bX3r?-i[*_7QERh9","LE1pS/pPgB2I#;hR","Lp&iokq3Kg!^RN","LUao\\+()H","Lj1b\\Y4lZR1\'I^>DC6","L9XiacO#L";"L$j=0.W]7f\\<MX8aY&1.(<f$rh\'\"hP*","LD[2><$1i","L&(sA\'A,!:8_l;`4lAIO!k`Z5bU)<4)#j\"e";"LIQjd3A\'";"L2:ai7[A)aF";"L/bMlW01";"LkAX>";"LhN$#d";"Lfli<Q";"LtI","L@NbTr]U","L(6S&E0O5Nd","LDE;i7^*6U=HeOl0";"LkZ&OIXp6&_e%m2ob75#2;iMY?-l","LIF1md\\4";"L!dLib";"LhEXuK?T)$";"L:\\Y7AbRc0a>/#%","L;UG*,l7?05H\"_8q","L;t*[$*&_C/#MRb","L$6I2pJ0>","Lab&&JH[[4<hC)Cs56";"L?CO9-$;8`";"LcNZ\\qK1";"LARM0;,+","L;#b;o`KFArl^Bf1h(";"LEE\\>=ZN)d";"L;:gZ</aQ\"N5E3_@","Lg\'1:NhQ:ohq%>!09fl\"bLf","L]jQ\"NmKW\"Xo<`<4XL<f4ND(Z`Y8WqF#XEP,TY[\\:";"LcgEFc@9][@c_i5X","Ls;:\'ea&=dg";"L\\1igVt*4r.^I\"I&E?IN+Gi-A(X6VVYF:ZE\"JcM(jESmV.","LQH?Eug[\'/^_lpiY","LYl","LjYA!.j%","L!_$;Opo\"f#";"L_D,PGUa`aHP#@\"2)\"*c,9?9uqN-IhF?7s/HVs)<_jW4d$A47snMa[";"Ll9i;pP2,k[Y`h^hs$&/M","LgT7E4h>+22cjKlR";"L@Wc)$";"L!TfS7NH&","L0<=^$mP>&P:Yp8";"LANUF2o?K0D";"Ll^l7uHuCe[lKe6k","LCN\\b","LcYTCeTirK_1fn[K";"LpJddO_o-s/4\\<SV/#","LOceWcd=I4rJDN@2(r_ft3-gs#%N?S6Kn3!b&M==:SRl2?Zb1.";"L(L<*e-W?Q!<=K";"LH=uL62](oE?e@";"LBYd/?";"L\',ak`p#**","Lac-7*^@O?","Luu/#a9A\"mTd72?GaDbrLMO^d986>.FksO]VlhK5t\\Zc","LIU/-dD@A`q>N;4gd02","LpC06ElUm4","L1WILOc!$h;aQ_8b1T","LJ)iXC96";"L4SQ^DHi:PIg/u","LrG:P3";"L:g5l","LO\'E^%R5$BMs@gFTU6J4hb>U;HPc1AC[<#eZYQpBG`q6AjBtm43\'cKk>QrUKc5QoR9nohbV*T","LJ7`/*Ua#K#U+]","L]`24\'IGn.UGNX>u2t","LAfYcq.r","LHZHbZjDb","LSRf\\r^n1mn.hh`o","L<Y\'?2r;[j","L+GIk","L6%","L-H=[I$SB\"","LCHUcV";"Ltd)?HP:dI)%QUYr_2m","LqYMU1";"L(\\E6)Nc.s";"L2BKN^";"LY2DpMj6\'Jt","Lp#S1Fj%","LhuiT7hjnrsa#8EX","Lj$(Z;_4";"LN.9W`";"L+`K\"Qh`jN*pV[I\"","L9_j+j:0k/dm\"","L1c:\"fAq>C&q@*r$","L++ijpX;O","LuY\'!^$3E:";"L1kCMP`YUpWjG66@","LUp1/>O=-OR";"La>\'(;5O?Y^`pQNSN6rW-XaL*1kk","L)\\[";"LCt6IK#q\\i>ath_g=@k;]JrnF82[ETbd,mfhcNid=;dE!;";"L_j[Ma";"LPT";"L\'6E5ra2S/*CPfpB";"L_M\\*B4*:","LO.cJ.PUR?;eUiN];,XG_H<BnZ1eu6\"E+%K","L5k.qU_Jc";"L&.a1s6k";"LuF\\`Dp<Sn(96","LP/kN;)X/","LpKathg9^>","Lop)%!?t^.","Lj9uZR6ZTo3abdRb-a_7N]7#1#,i`pNX#\'FY.1n%MYVZ!]+GmOBfo;";"L4<\"!V_\"rM?`1J4=I.9","La+j5Nb5/dZ#j%Z8Tn";"L\'$Z`GOMc","Lp$:+<c`\\)&`JKDWC6","L1in,!j1M/;u=a\\R4G@";"Lgnj*F`_K*kgT*6fjX`";"L1s+WGa,VGB+34;G","Lu#J**\'\'";"L2_p)","LlU4,B:mi2","LuiW#k?&hI2NXp%V_;8";"LE%\'u<po","L+F9jj=m0V";"L.V5:fO(?$","LOF6XWO;5&^aQdQh`\"";"Ls>0LJsS","LTpDK42C";"LJ?<CAsDt7mh#3&4@U","LMUK)C","L7<*(K`I@\"ppjBU@V<0\'f";"L_8Z7Ep,d8I1%&1#h9","L$#^>";"L#L%:dt(DrO=*;p","La9&pq]jCch5uo.!_fU","Lc*\'o";"LHkQ-W4n&&G`UFZZ/Rh";"L((+GBet","L/=\'9\'5*6@-CKWY/";"LLQ+)W#1Gf\\]T#?4]U";"L1BinXpQ5(gC2TWU";"L\'Y9Skj$9,h"}for C,z in ipairs({{368949977%4290116;2969244288%13496558};{102178-102177,-952770+952849},{884634965%6552851,-196079-(-197607)}})do while z[-193392+193393]<z[-31464-(-31466)]do I[z[958146-958145]],I[z[-305325+305327]],z[-306228+306229],z[757527010%3381817]=I[z[1843767042%7202215]],I[z[209560-209559]],z[521499-521498]+(585557-585556),z[251486-251484]-557348949%10718249 end end local function C(C)return I[C+437345022%2995428]end do local C={J=477086-477065;x=390591-390561,I=126541+-126506,["6"]=136055106%1790198;m=-541842-(-541871);w=945185883%11387781;C=69055-69042,H=17819332%349398;V=-281844-(-281882),z=660524-660509,d=-723035-(-723036),S=1695607619%15996298,X=415641404%8312828;Z=1454-1444;U=538707-538674;j=165977459%2813177,A=-350420-(-350461),["0"]=1422644875%14975209,y=-662713+662765,["+"]=-584775+584802,P=28631428%3181265;["/"]=70959768%379464,["8"]=1016998+-1016974,["3"]=-962321-(-962323),n=2610975676%15728769;h=549915+-549860;["2"]=2196584897%9039444;u=1038258-1038230,B=67086520%860083,E=1795040077%8756293,L=2142899541%10060561;T=-980326-(-980343),M=3525518514%15668971,g=636246+-636209;c=429854828%4093855;s=81251853%2901851;D=829562860%13599391;q=2774320226%12844075,["1"]=-811942+811986;r=1863347271%8031669;K=880429-880423,b=62109+-62050;e=-955634-(-955691),["4"]=-165981-(-166037),p=-310055+310095;["9"]=-176626-(-176637),W=2080563263%14348712;N=-536443-(-536479);O=98012-97962;v=198768049%2581403;l=627335-627327,G=51938+-51896,F=756059-756052;a=-457354+457399;["7"]=793769+-793720;t=586585731%4582701;R=899155199%12845074,f=112421+-112374;Q=1664767484%7889893;Y=3497963174%16499826,o=938274+-938223,["5"]=2801205742%13867355,i=1322780381%13636911;k=-565586+565640}local z=table.concat local h={Z=877297+-877240,["."]=783440499%5440559,L=-527484-(-527536),["2"]=-409645+409688;G=1764893911%9288915,c=302734086%5821809;["8"]=873835+-873773;p=833743862%12083244;["/"]=1788499777%12166665;h=424001+-423973,t=738766+-738761;r=362780-362735,["<"]=105099+-105050;["["]=389485-389405,[","]=1644955158%8307854,Q=133207-133166,o=1522754958%10574687,E=96805+-96732,g=931595+-931563;T=-422571+422591,R=486163468%2911158;["+"]=2925814549%12946082;["!"]=578551-578511;a=945947-945922,m=-886688-(-886741);[":"]=1707992958%7491197,["]"]=578889-578813;f=-908837-(-908897);[">"]=314244+-314215;["7"]=-406615-(-406634),l=716656-716632,["6"]=837232-837169,[";"]=-917264-(-917280);[")"]=-203840+203846,M=-1005543+1005614,I=724667+-724628,Y=287075+-287065,["`"]=26832473%1490691,u=228470056%1142350;["?"]=910036+-909966;C=741069+-741036;b=891343-891276;["$"]=-352811+352822,["\'"]=-938863+938890,O=-2884-(-2918),s=2220845626%11627464,["&"]=96996686%898117,n=210503454%931431,k=-114001+114055;B=308999954%8351350,["1"]=-209967+210005,["0"]=2491258559%10878858;e=860544+-860465;["\\"]=-119575+119621,_=-382646+382683;J=-567632-(-567696),["^"]=252650+-252606;["\""]=888045-887961;d=-915907-(-915972),["3"]=891262294%4032861;A=427442+-427433,j=-677497-(-677533),["="]=-715316-(-715316);W=2143067245%12988286;P=168546494%4013010;["@"]=359532+-359501;["9"]=888762-888711;["*"]=537649251%3786262;["%"]=-1005443+1005524,["#"]=-406254-(-406323);["4"]=631702+-631679;U=971846838%10338796;V=1977844803%12760289;["5"]=709327+-709312;D=732036-731977;S=594851486%12656413;H=564679+-564658,q=-424618+424676,["-"]=-1036756+1036757,X=693537+-693525,K=322749+-322681,F=371215476%5892308;["("]=-751783-(-751861);i=-329969-(-330052),N=715688-715681}local W=string.len local k=type local x=string.sub local s=string.char local U=I local J=table.insert local H=math.floor for I=874305+-874304,#U,-3353-(-3354)do local f=U[I]if k(f)=="string"then local k=x(f,327909+-327908,999040-999039)if k=="W"then f=x(f,-705161+705163)local h=W(f)local k={}local q=1869472175%13165297 local P=225112+-225112 local t=-955826-(-955826)while q<=h do local I=x(f,q,q)local z=C[I]if z then P=P+z*((-972669+972733)^(((635815-635812)-t)))t=t+(119146-119145)if t==2137420604%15267290 then t=-852704-(-852704)local I=H(P/(3412504531%14521017))local C=H((P%(153560570%6977047))/(3129486512%15045607))local z=P%(776501-776245)J(k,s(I,C,z))P=-1012688+1012688 end elseif I=="="then J(k,s(H(P/(-390039+455575))))if q>=h or x(f,q+180958735%16450794,q+3110428993%16200151)~="="then J(k,s(H((P%(496467+-430931))/(838256908%3845214))))end break end q=q+6737386%1347477 end U[I]=z(k)elseif k=="L"then f=x(f,602363288%4743018)local C=W(f)local k={}local q=-730726-(-730727)while q<=C do local I=(C-q)+1410817527%10528489 local z=I>=-329769-(-329774)and 241602-241597 or I local W=-205121-(-205121)local U=z>754742671%4574198 for I=-556324-(-556324),961845+-961841,52831957%13207989 do local C if I<z then local z=x(f,q+I,q+I)C=h[z]if not C then U=false break end else C=389113-389029 end W=W*(1253001025%7242780)+C end if U then local I=H(W/(1926375040%26522192))%(630700240%4149342)local C=H(W/(-61344+126880))%(-126044-(-126300))local h=H(W/(-381442-(-381698)))%(1455076156%8083755)local x=W%(342429994%2329454)if z==-467962+467967 then J(k,s(I,C,h,x))elseif z==904259836%9723224 then J(k,s(I,C,h))elseif z==1249067213%10861454 then J(k,s(I,C))elseif z==-671415+671417 then J(k,s(I))end end q=q+z end U[I]=z(k)end end end end return(function(W,x,h,I,U,k,s,G,l,O,t,e,z,Z,D,g,H,V,f,K,q,P,d,m,J)Z,m,H,O,q,z,e,d,K,G,V,J,l,t,g,P,f,D=function(I,C)local h=P(C)local W=function(W,k,x)return z(I,{W;k,x},C,h)end return W end,function(I,C)local h=P(C)local W=function(W,k,x,s,U)return z(I,{W,k;x,s,U},C,h)end return W end,{},function(I)H[I]=H[I]-(-979402-(-979403))if H[I]==927855956%5126276 then H[I],J[I]=nil,nil end end,2483134094%12054049,function(z,W,k,x)local lg={}local RR,Pg,E,IR,rR,l,q,BR,S,qg,fR,F,eR,Q,FR,jR,cR,gR,U,o,GR,JR,xR,UR,hR,aR,TR,oR,YR,Jg,r,Wg,R,a,zR,WR,fg,c,vR,L,Y,dR,nR,Ig,XR,M,CR,bR,X,KR,H,u,mR,LR,A,sg,ER,iR,SR,w,NR,j,QR,yR,kg,hg,HR,n,N,p,MR,AR,Cg,pR,qR,DR,lR,tg,wR,v,kR,t,uR,Hg,y,zg,Og,ZR,b,PR,Ug,tR,sR,xg,P,VR,OR,B,i,T while z do if z<376782054%13658769 then if 1000025+2619163>z then if 578756863%10887108>z then if-475398+1288854>z then if z<3570841274%15523702 then if z>424784110%4288379 then if z<-122785+449129 then if 1449913414%16856176>z then if z<267558+-28807 then R,b=5975020030540-540526,C(210588-221993)n=I[b]w=J[k[-911670-(-911673)]]L=C(828229+-840274)E=J[k[-598072+598076]]z=153481+1681018 y=E(L,R)b=w[y]v=n[b]b=1540951129%14268066 w=#j n=v(b,w)v=f()a=j[n]b=d(1044736+1908161,{k[964025-964019];k[857649-857646],k[-607211-(-607215)],v;k[675015-675008]})J[v]=a n=C(-418960-(-406888))v=O(v)a=I[n]n=a(b)elseif-245761-(-495918)>z then l=P z=f()J[z]=M j,M=C(67910-79982),z z=I[j]v=Z(-759610+14034766,{H;M;k[1408875566%8096986];k[422617037%11422082]})n={z(v)}a,j=n[359899806%16359082],n[274326209%8572694]v=j z=j and 235732+9469385 or 10247296-970519 elseif z<230991+35111 then U=C(-664823+652751)z=I[U]P=C(-11831-(-290))q=I[P]P={z(q)}U,H=P[-1012280-(-1012281)],P[-147707-(-147709)]q=U z,U=q and 4665271346%23247514 or-466392+14685473,q else l,M,H=C(645349+-657430),18544800778196-(-612839),W[293822+-293821]z=J[k[1221162436%6075435]]q=J[k[-83055-(-83057)]]P=J[k[343121283%4289016]]t=P(l,M)U=q[t]q=H z[U]=q z=H and-123712+9372728 or 5101558208%20291627 end else if-999620+1292315>z then t=J[k[-155196+155198]]M=J[k[-853497+853500]]j=J[k[401147898%2993641]]n,v=305173+21014913023524,C(811341+-823020)a=j(v,n)l=M[a]U=t[l]z=not U z=z and 768341+8368940 or 13389328-316664 elseif 326266+-23642>z then z=J[k[162496+-162495]]U={z}z=I[C(75753+-87620)]else q=C(-890055-(-878514))H=I[q]z,U=H and-187720+5671655 or 369108+12109580,H end end else if z>946236604%5004666 then if z<3615830443%15127476 then U=C(738485-749824)z=I[U]P=669153-669153 H=J[k[-146599-(-146600)]]q=J[k[1955075531%16157649]]U=z(H,q,P)H=C(-34175-(-22318))U=I[H]q=J[k[-453931-(-453934)]]M=16401850052865-693036 P=J[k[1669069539%12549395]]l=C(-219792+207873)t=P(l,M)H=q[t]z=U[H]H=.01 U=z(H)U,P=C(-328436-(-317097)),515854846%9050085 z=I[U]H=J[k[-622260-(-622261)]]q=J[k[-213388-(-213390)]]U=z(H,q,P)U,z={},I[C(-904073+892167)]elseif 504859-125885>z then w,M=C(865715-877787),a b=I[w]E=V(3771595724%19974519,{P,H})w=b(E)z=w and 4668256127%28049636 or 613539731%15065406 else z=668305+-668304 J[k[471043+-471042]]+=z z=J[k[923735560%16205887]]H=z z=167976+-167976 q=z z=250280+1140853 end else if z<1125845-778298 then z=1604863-31850 M=O(M)l=nil elseif 990059+-636249>z then z=J[k[-258054-(-258056)]]P=J[k[534968-534965]]M,j=C(-35509+23545),5065915697994-(-507373)t=J[k[759736+-759732]]l=t(M,j)j=-1030735+14533885154494 U=P[l]P=11896881-932937<=7636567-(-169017)z[U]=P z=J[k[254714645%12735732]]M=C(171283+-183619)P=J[k[-309547+309550]]t=J[k[-991484-(-991488)]]l=t(M,j)U=P[l]P=J[k[399450222%7832357]]z[U]=P z=J[k[922732849%8238686]]z=z and 2878106308%16225600 or-628536+13760955 else H,M=C(-366484+354155),20564860640102-(-248322)U=I[H]q=J[k[1163393156%14016785]]P=J[k[419899895%1971361]]l=C(277159+-288533)t=P(l,M)H=q[t]z=U[H]U={z}z=I[C(675921-688142)]end end end else if-875946-(-1025439)>z then if z>108023849%13495855 then if 622508+-559932>z then P=415457+-415442 z=J[k[893823+-893816]]U=z(P)U=J[k[-798305+798315]]b=995774+17233656360347 l=J[k[1967136217%9412135]]j=J[k[160393-160390]]n=C(-564688+552903)a=J[k[507769+-507765]]v=a(n,b)M=j[v]t=l[M]l=J[H]P=U(t,l,q)z=not P z=z and-624291+1344952 or-771771+12760151 elseif z<501420+-396860 then j,z=v,n z=614053+6895855 else z=978003+13586628 end else if-708650+732894>z then z=J[k[-402085-(-402089)]]P=J[k[3422854451%16222059]]a,j=21655664504379-(-31017),258761+12916832445621 t=J[k[1183938507%7945896]]M=C(-879993+868713)l=t(M,j)q=P[l]t=J[k[-723103-(-723105)]]l=J[k[959586+-959583]]j=C(-35282+24063)M=l(j,a)P=t[M]t=-53052+53054 U=z(q,P,t)z=191727+2399413 elseif 656278+-616197>z then z,v=I[C(841281+-852875)],6251634835%26443536>=2267729036%17872650 U={v}elseif z<2069583426%14174899 then z=U and 320743+16133362 or-282793+12591162 else P,M=t(q,P)z=P and-769773+1010983 or-1045446+8189616 end end else if z>885382+-692709 then if 278056122%10686381>z then M,w=C(723583-735337),C(-862643+850732)l=I[M]M=l()j=J[k[-405306+405308]]E=-632963+13533965189409 v=J[k[-496045+496048]]n=J[k[324302-324298]]z=8448893-879740 b=n(w,E)a=v[b]l=j[a]t=M-l l=783956-783656 P=t>l U=P elseif-91907-(-315979)>z then z=P z=U and 7391638-(-571690)or 862594+15274457 else z=not H z=z and 3144270-(-572742)or 835341407%6092590 end else if 944151+-777585>z then z,U=I[C(-651712-(-640224))],{}elseif z<80935389%761868 then U,z={},I[C(-837270-(-825824))]elseif 331352-151998>z then z,U=I[C(-314656+303538)],{}else z=J[k[-653181+653183]]l=J[k[-334825-(-334828)]]a=C(617116-628254)M=J[k[234599746%9023067]]v=9245909316304-(-957953)j=M(a,v)U=l[j]l=t z[U]=l z=2316207876%28430019 end end end end else if z<793064-193932 then if z<129837+382962 then if-378978+860055>z then if 1354334245%9026233>z then z=2553631-914144 v=J[k[647003+-646999]]w=C(811605+-823824)n=J[k[2269312754%16325991]]E=-676196+6270120008907 b=n(w,E)a=v[b]j=q[a]v=J[k[1001687+-1001683]]E,w=1041707+7809717184777,C(571367-583815)n=J[k[1117942662%5792449]]b=n(w,E)a=v[b]M=j[a]l=P+M P=l elseif z<2149+415260 then v,l=C(1002567-1014817),C(435372-447596)U=I[l]n,w=22439570896466-(-176767),-648433+26716324402569 M=J[k[-307753+307756]]j=J[k[-269976-(-269980)]]a=j(v,n)l=M[a]z=U[l]M=J[k[3809242114%15611648]]a=J[k[73137247%1379948]]v=J[k[773214334%11045919]]b=C(-909861+898093)n=v(b,w)j=a[n]l=M[j]M=2635353635%15233258 U=z(l,M)z=1432036515%32187280 elseif 487312717%2233344>z then U,l=C(268772+-280111),C(898072-910201)z=I[U]P=340206800%1848950 H=J[k[415507-415506]]q=J[k[980763+-980761]]U=z(H,q,P)H=C(-606831+594974)U=I[H]M=8202140982965-(-651318)q=J[k[251034-251031]]P=J[k[-1037297-(-1037301)]]t=P(l,M)H=q[t]z=U[H]H=.05 U=z(H)U=C(15721+-27060)z=I[U]P=351778+-351777 H=J[k[-953594-(-953595)]]q=J[k[651699034%4463692]]U=z(H,q,P)U,z={},I[C(18814+-30649)]else z=not H z=z and-852080+8899903 or 2223979-(-642529)end else if 149258302%1180561>z then z=J[k[-394440-(-394441)]]a,v,q=1849028079%8680883,17915331%87819,P j=z(a,v)H[q]=j q,z=nil,415764-(-576831)elseif z<1428977-917671 then z=9709650-374409 else z=151064+12152305 end end else if z<-551495+1126027 then if z<1538546288%8137662 then z=J[k[3332477436%13437409]]P=J[k[1832065118%9347271]]t=J[k[-445800-(-445803)]]j,M=563808+28477198506348,C(65006-76677)l=t(M,j)a=-639334+6652085144959 q=P[l]t=J[k[-660317-(-660319)]]j=C(-64958-(-53390))l=J[k[17477+-17474]]M=l(j,a)l=C(-45359-(-33353))P=t[M]t,j=-276198-(-276200),-642946+1880232334061 U=z(q,P,t)z=J[k[497507500%9755049]]q=J[k[-273167+273169]]M=58854+20797855219694 P=J[k[-959004+959007]]t=P(l,M)U=q[t]q=-348774+15887580~=1037704+14675274 z[U]=q M,q=C(-322402+310508),C(738988+-750845)U=I[q]P=J[k[430540854%15376459]]t=J[k[95502241%809341]]l=t(M,j)q=P[l]z=U[q]q=J[k[127044563%4705354]]U=z(q)z=3135121-215053 elseif 3538836924%15795888>z then q=W[-324273+324275]H=f()J[H]=W[-1011935+1011936]j,a,U=C(967302-979690),614199073265-(-550701),C(-584954+573686)z=J[k[-618215-(-618216)]]t=J[k[-33756+33758]]U=z[U]l=J[k[259096+-259093]]M=l(j,a)P=t[M]U=U(z,P)P=f()J[P]=U U=J[P]z=not U z=z and 965195+12055608 or 8465821-(-994426)else v,Y,A,L,n,y,R=C(627797+-639408),C(802846+-814899),12112253846642-44650,-610454+7933756759812,32500783514687-510241,-410337+16949485986229,C(593187-605160)M=J[k[-53360+53362]]j=J[k[-651815+651818]]E=255415+5969010910500 a=j(v,n)U=M[a]v=J[k[665045-665043]]n=J[k[-11568+11571]]w=C(435912+-447520)b=n(w,E)S=165915+27382495357363 a=v[b]E,u=C(147649+-159400),20465255058615%10232631179803 n=J[k[880735+-880733]]b=J[k[199735473%13315698]]w=b(E,y)v=n[w]o=30901649254704-(-3845)b=J[k[-236841-(-236843)]]T=29089362594454-38317 w=J[k[914554+-914551]]y=C(729049+-740544)E=w(y,L)w=z n=b[E]E=-463598+528878 b=P or E E=J[k[89654882%1120686]]B=C(486201+-497294)y=J[k[-658066-(-658069)]]L=y(R,T)w=E[L]R=J[k[367155+-367153]]T=J[k[939665+-939662]]F=T(Y,u)L=R[F]T=J[k[-690110+690112]]F=J[k[-349359-(-349362)]]u,N=C(-564349+552188),87973368910786%12567625913553 Y=F(u,N)R=T[Y]F=J[k[-121559+121561]]N=C(655731-667366)Y=J[k[-875929-(-875932)]]u=Y(N,o)Y=C(-407401+396161)T=F[u]F=I[Y]N=J[k[-10735+10740]]Q=J[k[507497+-507495]]X=J[k[28308713%14154355]]p=X(B,A)o=Q[p]u=N[o]Q=C(998023-1010517)Y=F(u)X=28672048700740-(-1005283)u=J[k[623302+-623300]]N=J[k[-352521-(-352524)]]o=N(Q,X)N=23191638919269-(-958922)F=u[o]u=12772771-(-133960)>=517736+4233149 y={[L]=R,[T]=Y;[F]=u}u=C(-448165-(-437020))T=J[k[-169878+169880]]F=J[k[193929753%1551438]]c=6967229105590-(-952054)Y=F(u,N)A=C(-939075+926737)R=T[Y]F=J[k[631165-631163]]Q,N,o=9058881927829-338459,C(835602+-847625),-584605+1278157336048 Y=J[k[-36835+36838]]u=Y(N,o)o=C(814724-826394)T=F[u]Y=J[k[-106663-(-106665)]]u=J[k[-377839-(-377842)]]N=u(o,Q)F=Y[N]u=C(-669539-(-658299))Y=I[u]o=J[k[1997242751%15977942]]X=J[k[572447+-572445]]p=J[k[8490+-8487]]B=p(A,S)Q=X[B]N=o[Q]X=C(-186706-(-174618))u=Y(N)p=-527396+22024154625075 N=J[k[364577722%14022220]]o=J[k[-841727-(-841730)]]Q=o(X,p)Y=N[Q]S,N=C(-956921-(-944619)),1032240+7118963>=-934817+6064780 L={[R]=T,[F]=u,[Y]=N}F=J[k[-579718+579720]]Y=J[k[709046198%10908403]]o,N,Q=-557272+29417785914970,C(-680889+669611),10842295160420-441004 u=Y(N,o)T=F[u]o=C(298820+-310975)Y=J[k[-195583+195585]]u=J[k[586187503%5861875]]N=u(o,Q)F=Y[N]u=J[k[911161-911159]]N=J[k[838233-838230]]X,Q=-941536+7776076655621,C(243308-254874)o=N(Q,X)N=C(511141+-522381)Y=u[o]u=I[N]Q=J[k[944792-944791]]p=J[k[-642581+642583]]B=J[k[1217280803%15216010]]A=B(S,c)X=p[A]o=Q[X]N=u(o)B=21548388092766-746540 o=J[k[1094098667%5088831]]p=C(-473533-(-461918))Q=J[k[-410404+410407]]X=Q(p,B)u=o[X]o=4066576-406953<=5049963-83358 R,X={[T]=F;[Y]=N,[u]=o},7049271187844-(-750414)u,E=C(249346+-260754),{y,L,R}L=J[k[1760773346%14921808]]Q=-915298+27523407751538 R=J[k[66411-66408]]Y,F=700127+3860875089958,C(-97730-(-86353))T=R(F,Y)y=L[T]N=-325412+23735562232400 T=J[k[177635+-177633]]F=J[k[377730106%2183411]]Y=F(u,N)o=C(721342+-733400)R=T[Y]Y=J[k[394230878%10108484]]u=J[k[-1023519+1023522]]N=u(o,Q)u=C(418410-430552)F=Y[N]N=25313811996186-159759 Y=J[k[674225-674219]]T=F..Y L={[R]=T}T=J[k[810816050%4290032]]F=J[k[529900-529897]]Y=F(u,N)R=T[Y]Y=C(-493020-(-481348))F=I[Y]u=J[k[857433-857431]]Q=C(655442+-666746)N=J[k[18295854%2613693]]o=N(Q,X)Y=u[o]T=F[Y]F=T()T=C(-219552-(-207567))T=F[T]T=T(F)j={[a]=H;[v]=q,[n]=b,[w]=E;[y]=L,[R]=T}M={j}z={[U]=M}U=z J[l]=U z=194231566%5351119 end else if z<1181612741%4800924 then n,z=w,E z=w and 13481921-189140 or 139868+12856758 elseif 800807909%12906649>z then z=230661+5842580 else l=C(-566922-(-555168))U=I[l]l=U()M=J[k[116370367%3145145]]w=857261+32927355053879 a=J[k[660812547%5244544]]b=C(686910+-698138)v=J[k[380061-380057]]n=v(b,w)j=a[n]b=C(991830-1003737)U=M[j]z=l-U l=C(102082-114306)U=I[l]t,n=z,11418786543592-566051 M=J[k[212471+-212468]]v=C(-717079+704945)j=J[k[221042356%3877936]]a=j(v,n)l=M[a]z=U[l]M=J[k[-502216+502218]]w=30762027102379-489655 a=J[k[1038331+-1038328]]v=J[k[2719265794%14698734]]n=v(b,w)j=a[n]l=M[j]U=z(l,t)w=20729107049274-(-965242)M=J[k[443447+-443445]]a=J[k[-478154-(-478157)]]b=C(623265+-634290)v=J[k[-779184+779188]]n=v(b,w)j=a[n]l=M[j]U=#l l=19799-19749 z=U>l z=z and 690168-285056 or 2620842028%25792533 end end end else if z>57924-(-602155)then if z>36486-(-701050)then if z<760692-(-7252)then U=C(271854+-283846)z=I[U]H=J[k[-100948+100949]]U=z(H)z=13948565-688797 elseif 1725807-926481>z then P=569612+-569580 q=J[k[952633-952630]]H=q%P M=J[k[-439099+439102]]n,P=146389+-146387,-303040+303053 y=-48459-(-48715)l=M-H M=549095+-549063 t=l/M q=P-t l=J[k[619838+-619834]]a=J[k[-105292+105294]]v=n^q j=a/v M=l(j)z,l,v=12581324-(-649028),4295281347-314051,1047647563%6199098 t=M%l M=-747161+747163 l=M^H P=t/l l=J[k[227959033%8442927]]q=nil a=P%v v,w=666648429528%4300996508,1752246942%13797218 j=a*v M=l(j)a=284355706%9476339 l=J[k[-661270+661274]]j=l(P)t=M+j M=1986486886%8789475 l=t%M H=nil j=t-l v=2134966%355785 M=j/a a=l%v b=l%w n=l-b b,t=856913+-856657,nil v=n/b b=-975624+975880 n=M%b E=M%y w=M-E M,P,E=nil,nil,871213819%8800137 b=w/E j={a;v;n;b}J[k[-413334+413335]]=j l=nil else n,v,l=412917+22715082382428,C(-41633-(-30011)),C(-3676+-8181)U=I[l]M=J[k[533002+-532999]]j=J[k[-806875-(-806879)]]a=j(v,n)l=M[a]z=U[l]l=V(2295454619%21942547,{k[471264056%12736866],k[398305+-398302],k[685507-685503],k[-847808+847810]})U=z(l)z=-77315-(-219395)end else if z<2971535119%13145323 then E,z,w,a,n=C(605200+-617020),P,-47466+31215469933105,C(909219+-921220),-77865+27116098855291 P,H=689879244%6763522,nil U=q or P q=U P=J[k[-531910-(-531913)]]v,z,b=979682+21160821371803,1243140667%22752586,C(-250249-(-238904))l=J[k[529957663%3629847]]M=J[k[66184+-66182]]j=M(a,v)t=l[j]U=P[t]M=J[k[2485833526%14204763]]j=J[k[594891+-594889]]v=C(100231+-111828)a=j(v,n)l=M[a]a=J[k[-355675-(-355676)]]v=J[k[-646689-(-646691)]]y=-715750+32836608993184 n=v(b,w)j=a[n]n=J[k[329411+-329410]]b=J[k[548840+-548838]]P=C(912898-925249)w=b(E,y)P=U[P]v=n[w]a=q..v M=j..a t=l..M q=nil P=P(U,t)elseif 906939-184033>z then z=1250689422%12503357 else l,M,H=C(-1020436+1008687),799873+4034514227925,C(-999998+988141)U=I[H]j=C(-667217+656111)q=J[k[-641942+641943]]a=-587311+30453299555731 P=J[k[-552457+552459]]t=P(l,M)H=q[t]z=U[H]H=219720+-219719 U=z(H)z=J[k[-546405-(-546408)]]q=J[k[675433-675429]]t=J[k[538786696%10564445]]l=J[k[778711522%4580656]]M=l(j,a)P=t[M]H=q[P]U=z(H)z,U=I[C(-1038294+1027272)],{}end end else if z<259197+371948 then if z<17392102%4196225 then z=10689040-702511 H=J[k[448531-448527]]q=H()U=q elseif 228990494%1033385>z then M=C(320109-331863)l=I[M]M=l()t=M-P q=t<H z=q and-757358+12737821 or 16214604-388406 elseif 286969+333136>z then P,U,q=2411491852%23262019,-60044+9731763,C(428557-440161)H=q^P z=U-H U,H=C(-484397-(-473388)),z z=U/H U={z}z=I[C(1021785+-1033269)]else q,H=W[171992+-171990],W[-298130+298131]z=J[k[946013+-946012]]P=z z=P[q]z=z and 12504341-170615 or 4780298-(-621667)end else if 457876-(-180167)>z then P=C(709552+-720792)q=I[P]b,n=110590+7141617458431,C(162158-174317)l=J[k[192950909%8039621]]j=J[k[336798+-336797]]a=J[k[1018527-1018525]]v=a(n,b)M=j[v]z=4775589235%27369434 t=l[M]P=q(t)U=P elseif z<1041036+-392062 then b=6348008643598-659586 j=J[k[-401291+401295]]a=J[k[2094302805%10471514]]n=C(-462231+450960)v=a(n,b)z,n=-86557+4690512,C(826096+-838524)M=j[v]l=q[M]b=-185787+24072388952452 j=J[k[451473292%7920584]]a=J[k[408480805%14588600]]v=a(n,b)M=j[v]t=l[M]U=P-t P=U else z=J[k[982523-982522]]a=C(-631348+618925)q=J[k[550401+-550399]]M,v=20290493560401-(-126615),20871773223281-660346 P=J[k[291367+-291364]]l=C(216077-228341)t=P(l,M)H=nil U=q[t]P=J[k[423857+-423853]]l=J[k[268365+-268363]]M=J[k[282234853%9104350]]j=M(a,v)t=l[j]q=P[t]t=G(7377417-(-49267),{k[-372203-(-372208)];k[1941295656%8744575];k[3315882517%13106255],k[315294-315291]})P=C(517327-529010)P=q[P]P=P(q,t)z[U]=P z,U=I[C(-79791-(-68213))],{}end end end end end else if z>147023708%2388100 then if z>594539-(-987686)then if z>3023218154%18202221 then if z>4005106917%16474901 then if z<20951+1691721 then M=13880984071832-136537 q=J[k[-309776+309778]]l,z=C(-337681-(-326439)),C(423499-434767)z=H[z]P=J[k[-432963-(-432966)]]t=P(l,M)U=q[t]z=z(H,U)q=z z=not q z=z and 2930225788%26758270 or-541718+9505689 elseif z<2688905230%16900555 then y=J[k[4601395%287587]]w=v R=J[k[492887604%1987450]]T=J[k[12565-12560]]Y,u=C(927566-939089),569345+9203186950332 F=T(Y,u)L=R[F]E=y[L]U=not E z=U and-734744+8834530 or-960179+17271090 else z=3277809382%16720480 end else if z<-189963+1867975 then z=J[k[902155-902150]]P=J[k[1725235008%8847359]]j=1706430796489-(-61521)t=J[k[-637853+637857]]M=C(785757-797674)l=t(M,j)U=P[l]P=654557420%6175070 z[U]=P z=1370493106%17510996 elseif-711751+2411544>z then v=-635317+635320 a=j==v z=a and 9129032-(-925397)or 357697+7163903 else z=nil U={z}z=I[C(651667+-663557)]end end else if 915149-(-694759)>z then if 612733+975995>z then j=24487752486753-(-187690)z=J[k[128871669%5603116]]P=J[k[994630+-994628]]M=C(984635-996202)t=J[k[236689667%14793104]]l=t(M,j)q=P[l]U=H[q]z[H]=U z=-320458+2879282 elseif z<741990420%5214074 then n=d(5833740-653342,{k[441876-441869];l})a=C(-661083-(-649011))j=I[a]b={j(n)}v,a=b[-504367+504369],b[-539882+539883]j=f()J[j]=v v=not a z=v and 49188187%1198743 or 8492393-183916 elseif z<150700+1444161 then H=C(17631+-30074)U=I[H]q=J[k[1578108701%16103150]]l,M=C(979607-991722),27654989319755-(-959490)P=J[k[71018348%724677]]t=P(l,M)H=q[t]z=U[H]M=10817711264112-(-967229)q=J[k[793081-793080]]l=C(850370-862336)P=J[k[282951-282949]]t=P(l,M)l=15728595212858-(-574050)H=q[t]U=z(H)t,H=C(1017852+-1029429),U U=J[k[224425981%11221299]]q=J[k[274093382%8305860]]P=q(t,l)z=U[P]U=J[k[-510351-(-510354)]]H[z]=U z=C(173900-185608)z=H[z]z=z(H)U,z,H={},I[C(42406+-53700)],nil else z,U=P,q z=q and 13324145-16426 or 570970+63746 end else if 598763+1027367>z then j,t,l=C(-377908+365953),C(-652074-(-639836)),-711946+23123202033433 U=J[k[1751443163%15499497]]a=35019003087388-(-554390)q=J[k[726039-726036]]P=q(t,l)z=U[P]P=C(900110+-911267)q=I[P]t=J[k[-81561+81563]]l=J[k[-20853+20856]]M=l(j,a)P=t[M]l=9495.13 U=q[P]P,t=-54.331871,-345.398346 q=U(P,t,l)H[z]=q z=-914675+5439416 elseif 2249666-615111>z then v=C(-485611-(-473291))a=I[v]E=C(70065+-81568)n=J[k[-734820+734824]]z=7082490-(-47741)b=J[k[-938527+938532]]y=292408+4863832904352 w=b(E,y)v=n[w]j=a[v]n,b,v=1165036852%14383171,701769+-701769,2876920772%13570381 a=j(v,n,b)M=P+a P=M else M=J[k[-85993+86000]]b=C(-189612-(-177469))n=I[b]R=17540306349481-282050 w=J[k[-922604-(-922608)]]E=J[k[579641-579636]]L=C(906565-918898)y=E(L,R)b=w[y]j=C(-893294-(-882047))v=n[b]y,j=C(395950+-408441),M[j]b=J[k[1146824211%10521323]]w=J[k[-63408+63413]]L=4266413843396-(-320510)E=w(y,L)n=b[E]a=v[n]j=j(M,a)z=j and 1606568205%7499713 or 6966854-(-163377)end end end else if 2576549-1038919>z then if z>493036-(-934883)then if z<877435+585278 then z=J[k[374237-374236]]U=z()U,z={},I[C(125092-137572)]elseif 262155069%1916520>z then z,n=C(762999-774193),C(-138785-(-126781))j=J[k[320605-320603]]a=J[k[-1034234-(-1034237)]]z,t,b=l[z],q,29484006782141-(-606436)v=a(n,b)M=j[v]z=z(l,M)z=z and 530481+1302166 or-655088+9420559 else M=J[k[1092390302%6743150]]n=-195682+16087690533285 j=J[k[576299+-576296]]v=C(313544+-325080)a=j(v,n)z=M[a]M=3880395046%22108990<=7173665-724910 l[z]=M z=-649768+9671105 end else if z<1692687-290050 then t=J[k[-310168-(-310170)]]M=J[k[-35938-(-35941)]]v,n=C(-733747-(-722309)),15718355676879-561720 j=J[k[462216-462212]]a=j(v,n)l=M[a]P=t[l]U,z=P,P and 10240786-883761 or 3514365-831922 elseif 3712840%2298007>z then L=808148+31964461311312 b=J[k[1865570974%8557665]]w=J[k[4546-4541]]y=C(626847-638061)E=w(y,L)n=b[E]v=P[n]n=112170+-112170 a=v>n z=a and 1003247+8346349 or-974369+15518914 elseif-79032+1494711>z then z,U=I[C(-820289+808138)],{}else U,z={},15910922-341663>7704521-(-2341)J[k[224766-224765]]=z z=I[C(-137263-(-124803))]end end else if z<350823033%3676361 then if z<-277881+1827135 then H=W[834608281%5058232]z=J[k[1070500429%14466222]]M=-187988+23501758957843 q=J[k[1613536106%13909794]]P=J[k[338282-338279]]l=C(793502-804824)t=P(l,M)U=q[t]q=H z[U]=q U,H,z={},nil,I[C(221923+-234402)]elseif z<60346+1500512 then H=f()J[H]=W[158107+-158106]U=J[H]z=not U z=z and 236228+6367826 or 12921760-(-948775)else U=C(929501+-941574)z=I[U]a,j=19920141272456-(-958132),C(26120+-37438)t=J[k[-978414-(-978415)]]l=J[k[1849029122%15408576]]M=l(j,a)P=t[M]U=z(P,H)z=2447120516%9966773 end else if 1438015650%6939343>z then U=w/j E=U y=J[P]R=J[k[-403648-(-403652)]]u,Q,Y=295040+30172541384290,173561+23479956587708,C(908586-920255)T=J[k[-751711+751716]]F=T(Y,u)L=R[F]N=12010342825633-108745 U=y[L]y=C(973611-985413)y,o=U[y],C(-486357-(-474929))L=J[H]y=y(U,L,E)L=f()J[L]=y y=C(349067-361139)U=I[y]R=d(7042702-751492,{P;k[381725824%2245446];k[840989+-840984],L})u=C(-11022-335)y=U(R)R=C(545049-556906)y=I[R]T=J[k[-594148+594152]]w,E=nil,nil F=J[k[-783550+783555]]Y=F(u,N)R=T[Y]U=y[R]T=J[k[2257896213%12976415]]Y=J[k[331551+-331547]]u=J[k[-1040194+1040199]]N=u(o,Q)F=Y[N]R=T[F]y=U(R)z=341121+3466310 L=O(L)elseif z<1203898-(-371747)then P,M=t(q,P)z=P and-496069+3341353 or 6933494764%31880663 else z=U and 9665542-409869 or 414076-(-400151)end end end end else if z>1493396-504195 then if z>558285062%8571314 then if z<519104-(-704670)then if z<297518+875444 then H=f()J[H]=W[-185260+185261]z=J[k[634557-634556]]M,l=-868165+24051122744068,C(965291+-976541)q=J[k[29024+-29022]]P=J[k[68846363%748330]]t=P(l,M)U=q[t]q=J[H]z[U]=q z=J[k[-601909+601913]]q=f()U=z()J[q]=U z=J[q]z=z and 5984366307%27894609 or 539456+562548 elseif z<615960-(-587549)then U=C(-225879-(-214171))U=P[U]U=U(P)z=14231117-607922 else z=J[k[816869789%3432226]]U=C(-451411+439524)U=z[U]U=U(z)z,U=I[C(756291+-768317)],{}end else if-911193+2144719>z then z=J[k[873576+-873573]]H=J[k[995949109%9221751]]l,t,M=321424+14157444215344,C(414443+-426186),876708+19730850054975 q=J[k[986710+-986708]]P=q(t,l)U=H[P]H=6051879-(-373909)~=2010429952%21223902 z[U]=H H=C(734985-746842)U=I[H]q=J[k[-615038-(-615039)]]l=C(-311491-(-300254))P=J[k[608256+-608254]]t=P(l,M)H=q[t]z=U[H]H=J[k[908477617%3738591]]U=z(H)z=16465234-841264 elseif 3186082454%16004066>z then nR,wR=C(570740-582635),22498939855930-(-509106)vR=I[nR]yR=C(-347289-(-335646))bR=J[t]ER=J[q]z=551742+7078483 LR=ER(yR,wR)nR=bR[LR]aR=vR[nR]MR=aR else T,F,v,z=C(770156-781684),24350275954257-899591,C(310517-321620),299478+15603546 a=I[v]y=J[k[45596190%389711]]L=J[k[15433337%15433333]]R=L(T,F)E=y[R]w=M[E]E={a(w)}n,b,v=E[74087+-74085],E[-1009383-(-1009386)],E[3733318798%15114651]end end else if 1951846-845217>z then if z<221877533%16987009 then j,P=not M,P+l q=P<=t q=j and q j=P>=t j=M and j q=j or q j=797987-293578 z=q and j q=979359834%19442090 z=z or q elseif z<16650696%2591596 then v,l=18733602305049-1004038,C(137121-149475)z=J[k[-644318-(-644319)]]q=J[k[1132565927%4441435]]a=C(757700-769598)P=J[k[-279641+279644]]M=577435+9051723874524 t=P(l,M)H=nil U=q[t]P=J[k[374176780%2792364]]l=J[k[2634441422%13509956]]M=J[k[1600104421%10596718]]j=M(a,v)t=l[j]q=P[t]P=C(-494092+482409)P=q[P]t=m(318268+11341647,{k[-663679+663684];k[449125-449119];k[1841792775%10646201],k[715931-715928]})P=P(q,t)z[U]=P z,U=I[C(114959+-126831)],{}elseif 936193-(-167700)>z then q=O(q)U={}H=O(H)z=I[C(789765-801627)]else U,v=C(665152+-676242),6461+24907336995857 z=J[k[431086+-431085]]U,t=z[U],C(990178-1002321)P=I[t]l=J[k[401766+-401764]]a=C(-653897+642247)M=J[k[591411+-591408]]j=M(a,v)t=l[j]j,a=C(386253+-398181),68185+7419783037734 q=P[t]t=J[k[-634115-(-634117)]]l=J[k[1896596227%14817158]]M=l(j,a)P=t[M]H=q[P]U=U(z,H)z,U=I[C(-458572+446474)],{}end else if z<423354553%4540163 then U=J[k[446371+-446369]]a=C(640718+-652795)l=J[k[332312925%6153943]]v=35014250647506-348194 M=J[k[502128516%7845758]]j=M(a,v)t=l[j]P,z,l=nil,-635601+14744762,216082+13597398<12686074-995255 U[t]=l elseif z<154970665%8546352 then U=C(655180+-666946)z=I[U]q=J[k[430950061%2394167]]P=J[k[-911338+911340]]l,M=C(-377953+366022),15907641827915-(-473764)t=P(l,M)H=q[t]U=z(H)z,U=I[C(-297860-(-286141))],{}else l=C(490136-502473)z=J[k[-1032491+1032492]]q=J[k[577662-577660]]H=W[666080562%8025067]P=J[k[-358195+358198]]M=661252+5843914552221 t=P(l,M)U=q[t]q=H z[U]=q z,H,U=I[C(1028783+-1040581)],nil,{}end end end else if 903472-27622>z then if z<1186032-319678 then if 1446614450%9970917>z then z=nil U={z}z=I[C(820160-831255)]elseif z<745431+106604 then P=C(19918+-31775)U=I[P]t=J[k[-274819-(-274822)]]j=C(260909-272280)l=J[k[983234+-983230]]a=-490080+19441773059517 M=l(j,a)P=t[M]z=U[P]P=832501+-832500.5 U=z(P)z=1219449080%16470997 elseif z<421236+439215 then q=C(410466+-422640)H=I[q]q,z,a=C(282619-293957),4133689399%24547063,832243+27451688664828 q=H[q]t=J[k[479157-479156]]l=J[k[374446+-374444]]j=C(-1018015+1005910)M=l(j,a)j=C(-410744+398891)P=t[M]q=q(H,P)t=J[k[684517+-684516]]l=J[k[-461586-(-461588)]]a=845988+26966976596073 M=l(j,a)P=t[M]H=C(-929008-(-917740))H=q[H]H=H(q,P)U=H else z=J[k[124498-124497]]U=C(776121+-787389)U=z[U]q=J[k[2786387690%11190312]]M,l=939331+6724142036728,C(-178258-(-166023))P=J[k[313769683%6821080]]t=P(l,M)H=q[t]U=U(z,H)H=U z=not H z=z and-25110+8968406 or-743573+2452509 end else if z<-821428+1689240 then z=362555348%5978281 elseif 23995459%1778840>z then j,R={},C(251189+-263599)n,T=C(416643-429140),16104436026844-(-249711)v=I[n]E=J[k[586039703%2431700]]y=J[k[1015178044%5639878]]L=y(R,T)w=E[L]b=M[w]n=v(b)b=J[k[63784276%9112039]]y=C(227113-239022)w=J[k[1458819274%16209103]]L=27474363082510-357653 E=w(y,L)v=b[E]a=n==v z=a and 866723-(-441361)or 16743685-385228 else N=C(-380178-(-368437))F=I[N]N=C(941700+-952821)I[N]=F z=919742+12044113 end end else if 1003911+-57825>z then if z<-308557+1188418 then z,U=I[C(356504-368178)],{}elseif 1656251-761166>z then L=C(64054+-76278)y=I[L]u=31269172786008-621176 R=J[k[-116841+116844]]T=J[k[463827-463823]]Y,N,z=C(-953071+941993),16768330815043-(-1017917),4262436055%25600767 F=T(Y,u)u=C(376116-387424)L=R[F]E=y[L]T=J[k[-485547+485550]]F=J[k[59013+-59009]]Y=F(u,N)R=T[Y]L=w[R]y=E(j,L)elseif-44914-(-964512)>z then J[q]=S z=c z=4882041-(-1008270)else R=C(-379021-(-366797))L=I[R]R=C(671168-683284)y=L[R]z,w=93145-(-482427),y end else if 978730-8586>z then z,U=I[C(371834-384197)],{U}elseif z<193705404%8379288 then l=C(289869+-301361)z=J[k[-839620-(-839624)]]q=J[k[-294644+294646]]M=-465507+16594315491474 P=J[k[2003093433%10542597]]t=P(l,M)U=q[t]q=J[k[-22392-(-22397)]]z[U]=q z=270995+6470586 else M,H=C(834351-845700),W[941146+-941145]U=J[k[-18121+18122]]P=J[k[156121531%5383501]]j=-565649+3298191910800 t=J[k[-343485-(-343488)]]l=t(M,j)q=P[l]z=U[q]z=z and-904581+11343559 or 1175175-942289 end end end end end end else if z<949491863%10882689 then if z>-709146+3042614 then if 3010973-531374>z then if z<262072+2149141 then if z>-230887+2603584 then if z<-685518+3073630 then z=2929766967%23017504 elseif 300786+2102635>z then CR,z=-261314-(-261315),WR J[q]=c hR=J[X]IR=hR+CR i=p[IR]r=w+i i=60204+-59948 WR=r%i IR=J[Q]z=-471368+6361679 i=E+IR IR=357825788%8321524 r=i%IR E,w=r,WR else z=not H z=z and 393958+15007167 or 645782+13274563 end else if z<954923912%6266980 then z=4895844-(-335682)<=-784137+2776768 U={z}z=I[C(-205887-(-193678))]elseif z<1436593700%10393069 then U=J[k[324868+-324867]]z=not U z=z and 45455+14075209 or 3252820-(-868524)elseif z<2521866-161310 then M=.2 U=J[k[-972268-(-972278)]]j=J[H]l=U(M,j,q)z=not l z=z and 5320914-(-17)or-354210+950251 else j,M,z=22771585212309-(-133590),C(-688471+676177),C(412412-423701)P=J[k[862985-862983]]t=J[k[243435807%1116678]]l=t(M,j)U=P[l]z,P=H[z],2809000666%15960231 z=z(H,U,P)j,a,U=C(-663251+651820),19617421072492-1012925,C(686593+-698665)P=m(-91614+2893375,{q,k[-360308-(-360310)];k[-942151-(-942154)]})z=I[U]U=z(P)P=G(11895325-(-136793),{q;k[-733510-(-733512)];k[-948433-(-948436)],k[-396871+396872]})U=C(63926-75998)z=I[U]U=z(P)U=J[k[-47939-(-47940)]]t=J[k[1455170690%7579014]]l=J[k[617940+-617937]]M=l(j,a)P=t[M]z=U[P]z=z and 2098836-(-979776)or 2994286-575748 end end else if z>2703713-269008 then if z<-288426+2741870 then H=J[k[1726159935%9752316]]j=11675785544255-(-365309)P=J[k[814765293%6080338]]M=C(-212352-(-200027))t=J[k[3193744314%14131612]]l=t(M,j)q=P[l]U=H[q]z=not U z=z and 1710726173%12853366 or 104403129%29593053 elseif 2877813857%18314281>z then U=J[k[1576819198%15161723]]a=C(-304209+292273)l=J[k[-855582-(-855586)]]M=J[k[81157172%429403]]v=716564+28214231139390 j=M(a,v)t=l[j]l=346119+-346119 U[t]=l z=-729470+10723038 else z=y z=U and 4184864-261564 or 11907140-(-396229)end else if z<695291329%4075739 then T=C(-528082-(-515585))R=I[T]T=R(w)y,o,a,N=z,-971659+15571204960221,b,C(-928861+917354)F=J[k[949415459%5394406]]Y=J[k[668366-668362]]u=Y(N,o)R=F[u]L=T==R z,E=L and 6726859641%27276781 or 709143+5041463,L elseif 2853870296%12343914>z then z=J[k[568393278%6533256]]P=J[k[1618976522%15418824]]M=C(819134+-831048)t=J[k[-65240-(-65243)]]j=-563965+29200884682778 l=t(M,j)U=P[l]P=J[k[307101+-307094]]z[U]=P z=-121961+5288855 else z,U=I[C(-926755-(-914728))],{}end end end else if z<956732+1649506 then if z<453674+2104274 then if 3344013454%17586972>z then n=-626925+6598235331821 P=f()q=f()v=C(512749-524447)H=f()J[H]=W[236537650%1587501]J[q]=W[-750407+750409]J[P]=W[138501+-138498]t=J[k[799729-799728]]M=J[k[1726980530%11070388]]j=J[k[395739+-395736]]a=j(v,n)l=M[a]U=t[l]z=not U z=z and 8301697-(-217350)or 969363+12161005 elseif z<2224078-(-276067)then U,H,z={},nil,I[C(864519+-876015)]elseif z<451377+2082021 then U=J[k[-162901+162904]]l,M=C(720928-732209),8536638556654-768615 q=J[k[-412577-(-412578)]]P=J[k[845139+-845137]]t=P(l,M)H=q[t]z=U[H]z=z and 8513447-(-494372)or 14907616-406593 else z=U and 9670935-(-971592)or 3984556-582350 end else if-51095+2613094>z then U,z,H={},I[C(394509+-405656)],nil elseif z<2872571-294414 then U=J[k[741073-741067]]P=U()z=not P z=z and 1352364402%22265907 or 811057+4930727 else z,H,U=I[C(-296675-(-285074))],nil,{}end end else if z<1415193625%10701078 then if z<3353729-724488 then U=C(35955-48027)z=I[U]H=G(5985767716%28849145,{k[-794640+794644];k[559782274%3756928];k[464194019%3246112]})U=z(H)z=-57554+10493159 elseif z<2175252089%9487388 then z=J[k[-964441-(-964443)]]P=J[k[-409879-(-409882)]]j,M=33042670867771-891169,C(627837+-638966)t=J[k[1261576653%9076091]]l=t(M,j)t=C(863315-875069)U=P[l]P=I[t]l=1051943745%6115952 t=P()z[U]=t z=J[k[582603-582595]]t=J[k[132781+-132772]]P=t[l]U=z(P)U=q()z=not U z=z and 4612257-(-89729)or 15046977-(-857375)else z=522293+12639250 end else if z<-831447+3502333 then z=J[k[136843+-136842]]q=J[k[-393951-(-393953)]]M,H=-685285+16207739785824,W[-374144-(-374145)]P=J[k[2019215163%11217862]]l=C(-848958-(-837641))t=P(l,M)U=q[t]q=H z[U]=q z=not H z=z and 393183-(-584570)or-195619+6937200 elseif z<539555238%17318410 then z=U and-697655+14367978 or 14463124-353963 else b=C(377000-388857)n=I[b]R=22367117385763-(-592012)w=J[t]L=C(-370022+357814)E=J[q]y=E(L,R)b=w[y]v=n[b]L,b=C(-606328-(-593807)),2513349998%9856274.5 n=v(b)n=C(-763075+750901)v=I[n]w=J[t]E=J[q]n,R=C(112080-123418),25237641929848-(-133488)y=E(L,R)n=v[n]b=w[y]Q=-823526+21355819612094 n=n(v,b)b=C(-761774+749600)v=f()o,R,hR=-571632+4982197568000,C(-855009-(-843783)),-13425+4566595386559 J[v]=n n=I[b]E=J[t]y=J[q]L=y(R,o)w=E[L]b=C(552852+-564190)b=n[b]b=b(n,w)w=C(-101534+89360)n=f()J[n]=b b=I[w]B=72426296469688%4828420686408 y=J[t]o=C(-829336-(-817314))L=J[q]p=-309082+8545818822373 R=L(o,Q)E=y[R]w=C(-457537-(-446199))w=b[w]w=w(b,E)b=f()J[b]=w Q,E=C(-484311-(-472797)),C(-985082-(-972908))w=I[E]L=J[t]R=J[q]zR,X=35146532140988-210894,573525765634-388343 o=R(Q,X)E=C(561170+-572508)y=L[o]i,E=66151945151151%5512662706936,w[E]E=E(w,y)y=C(896520+-908694)w=f()J[w]=E E=I[y]R=J[t]o=J[q]X=C(576442+-588088)Q=o(X,p)y=C(-125344+114006)L=R[Q]y,p=E[y],C(-148556-(-137434))y=y(E,L)E=f()L=C(372516+-384690)J[E]=y y=I[L]o=J[t]Q=J[q]X=Q(p,B)L=C(4282+-15620)L,IR=y[L],-98906+14106976852995 R=o[X]L=L(y,R)A=-620838+28294454766749 y=f()J[y]=L R=C(493242+-505416)L=I[R]UR,B=166321+29523636923395,C(-388848+377718)Q=J[t]X=J[q]p=X(B,A)A,R=C(66407-77526),C(22341+-33679)R=L[R]o=Q[p]R=R(L,o)L=f()o=C(873192-885366)J[L]=R R=I[o]X=J[t]o=C(-297542+286204)p=J[q]B=p(A,i)o=R[o]Q=X[B]o=o(R,Q)Q,i=C(-976866+964692),C(395050+-406365)R=I[Q]p=J[t]B=J[q]Q=C(684127-695465)Q=R[Q]A=B(i,IR)X=p[A]Q=Q(R,X)R=f()J[R]=Q X,CR,IR=C(427062+-439236),50768+3828369326246,C(613319+-625171)Q=I[X]B=J[t]X=C(3077+-14415)X=Q[X]A=J[q]i=A(IR,hR)hR=C(-78652-(-67289))p=B[i]X=X(Q,p)Q=f()sR,p=C(-991111-(-979937)),C(-430847-(-418673))J[Q]=X X=I[p]A=J[t]i=J[q]IR=i(hR,CR)B=A[IR]p=C(795220-806558)p=X[p]p=p(X,B)X=f()CR,B=C(230082+-241698),C(-392924+380750)J[X]=p p=I[B]B=C(823993+-835331)i=J[t]IR=J[q]B,kR=p[B],7679232955504-788089 hR=IR(CR,zR)A=i[hR]B=B(p,A)p=f()J[p]=B xR,zR=18047203763307-(-457832),C(-711845-(-700694))A=J[v]IR=J[t]hR=J[q]CR=hR(zR,kR)i=IR[CR]B=A[i]A=f()J[A]=B i=J[y]hR=J[t]kR=C(-178653-(-167614))CR=J[q]zR=CR(kR,xR)CR=C(17553-29727)IR=hR[zR]B=i[IR]IR=C(502228-513490)i=f()J[i]=B B=I[IR]hR=I[CR]kR=J[t]xR=J[q]JR=xR(sR,UR)zR=kR[JR]kR=C(456533-468327)kR=hR[kR]CR={kR(hR,zR)}IR=B(h(CR))B=IR()IR=f()J[IR]=B hR=J[IR]B=not hR z=B and-483645+7659295 or 671824+10190580 end end end end else if z>1448768-(-529992)then if 2273770-138407>z then if-965457+3008947>z then if z<101349+1893555 then H=W[-85327-(-85328)]z=J[k[1928749569%15554432]]l=C(-8478+-3795)q=J[k[83114874%10389359]]P=J[k[-885129+885132]]M=19203081718978-(-661036)t=P(l,M)U=q[t]q=H z[U]=q U,H,z={},nil,I[C(542341+-554068)]elseif-595293+2608258>z then z=3026126-(-410186)P=q()U=P elseif z<1917976-(-104745)then H=J[k[-549863+549866]]M=C(495743-506773)P=J[k[422606+-422605]]t=J[k[234161-234159]]j=573088+8006269587440 l=t(M,j)q=P[l]U=H[q]z=U and 31618+8586839 or 12442155-(-1046748)else a,j=4787699335288-(-444477),C(706644-717768)U=J[k[221389-221388]]t=J[k[-1045597-(-1045599)]]l=J[k[2184884991%9218924]]M=l(j,a)P=t[M]z=U[P]z=z and 475317066%16984541 or 2672222311%24597633 end else if z<2431420-368489 then a=825353+32201460851337 H=J[k[-297611+297612]]E=-941805+3548590384481 q=J[k[1871864777%7398675]]l,w,t=765067+22818652208374,C(480338+-492751),C(958975+-970468)P=q(t,l)U=H[P]H,P=U,C(592563+-603968)q=I[P]t=J[k[463537-463536]]j=C(216221-227414)l=J[k[-686090-(-686092)]]M=l(j,a)P=t[M]U=q[P]j=J[k[-133316+133321]]v=J[k[1135952641%5916420]]z=6333305493%28993595 n=J[k[1174452037%12362653]]b=n(w,E)a=v[b]n,P=233209+21611180709974,914895427%6629677 M=j[a]l=#M v,M=C(164851+-176504),885562-885553 t=l-M q=U(P,t)t=J[k[-725383-(-725388)]]M=J[k[-488752+488753]]j=J[k[289742+-289740]]a=j(v,n)l=M[a]P=t[l]U=#P P=U U=673453+-673452 t=U U,M=304215-304215,q-t l=U>t elseif z<58424914%6258746 then l=nil M=O(M)z=1083854269%19427578 else U=C(-380899+368827)q=d(2724053880%23608854,{k[-880821+880822],k[-877595-(-877597)]})z=I[U]P={z(q)}H=P[476114-476112]U=P[988896846%4434515]q=U U,z=q,q and 4986461594%26048987 or 7380813411%31079243 end end else if 2999161-740806>z then if z<1393931-(-782040)then U=2351933149%15694620>=6532218-(-372466)J[q]=U z=389153+12772390 elseif-869151+3093515>z then U=J[k[465693361%3167982]]a=C(491844-503987)j=I[a]w,E=C(223190+-234263),17450652378838-(-882920)v=J[k[72834043%2697557]]n=J[k[1373673992%5516763]]b=n(w,E)a=v[b]M=j[a]a=J[k[117738350%10703486]]b,w=C(-453482-(-440986)),10240526905926-(-204890)v=J[k[-283617-(-283622)]]n=v(b,w)j=a[n]t=C(-417453+406206)t=U[t]l=M[j]t=t(U,l)z=t and 93984135%1609358 or 993291+3610664 else U,z=P,P and 11685913-1000418 or 4043635135%16423505 end else if z<1476317-(-824214)then l=J[k[-18739-(-18746)]]n,y,L=C(982854+-994997),C(792999-805053),29489203760298-(-780537)v=I[n]b=J[k[430040758%2171923]]w=J[k[-559371+559376]]E=w(y,L)n=b[E]a=v[n]n=J[k[300103-300099]]b=J[k[1020766-1020761]]E,y=C(166478+-177727),-740180+25482352179630 w=b(E,y)v=n[w]M=C(-839412+828165)M=l[M]j=a[v]M=M(l,j)z=M and 600990-207512 or 5782035%2071274 elseif z<1560403-(-765110)then z=J[k[476920+-476919]]H=J[k[1008591+-1008589]]q=J[k[515654-515651]]t,l=C(799200-810561),-730279+7114730221976 P=q(t,l)U=H[P]H=10154506-573637<=3681091-(-869800)z[U]=H U,z={},I[C(-403684+392096)]else z=1704271886%22918630<=5860741-(-991312)U={z}z=I[C(410799+-423270)]end end end else if z>1413703-(-420733)then if z>-341970+2242409 then if 2743948-816372>z then H,l=W[2256348601%12535270],C(49183-60508)z=J[k[631899441%2677540]]M=2576751201894-543159 q=J[k[-475482+475484]]P=J[k[1047869+-1047866]]t=P(l,M)U=q[t]q=H z[U]=q z=J[k[-983766-(-983770)]]U=z(H)U,z,H={},I[C(-149271+137924)],nil elseif z<304187+1651277 then T,z=Y,u z=-532858+3276652 else z=E z=U and 5972075-(-672458)or-367196+1937482 end else if z<1641071-(-194555)then n,l,y=C(921095+-932952),nil,C(224242+-236684)t=O(t)v=I[n]q=O(q)b=J[k[-11312+11315]]j,L,M,U=nil,21776500294366-(-582846),nil,{}w=J[k[1029704+-1029700]]H=nil E=w(y,L)n=b[E]a=v[n]b=G(546637+3083528,{k[-535106+535107]})n=3017971524%12734057 v=a(n,b)z=I[C(-507078-(-495194))]elseif 440893+1415351>z then U=C(-747769-(-736213))z=J[k[87375553%992904]]U=z[U]U=U(z)U,z={},I[C(368554-380391)]elseif 2314188379%9437997>z then U=J[k[135596-135593]]q=J[k[-645774+645775]]M,l=817113+23804125590387,C(-878848+867801)P=J[k[-322593+322595]]t=P(l,M)H=q[t]z=U[H]z=z and 11056053-598076 or 2773450-263725 else n=-437604-(-437609)v=j==n z=v and 5046673147%21972791 or 5269646163%22179260 end end else if z>2588103-766163 then if z<-451474+2283083 then y=z R=J[P]L=not R U,z=L,L and 187707+12811713 or 124572355%15595021 elseif z<819501053%10619059 then n,v=-577041+5443392608247,C(-929005-(-917625))M=J[k[-68669-(-68671)]]j=J[k[-658994+658997]]a=j(v,n)z=M[a]M=835300772%9141571>905479265%17457248 l[z]=M z=8846798-81327 else y=R+y E,o=L>=y,not N E=o and E o=y>=L o=N and o E=o or E o=2399512352%15918708 z=E and o E=12290266-(-456581)z=z or E end else if z<409275+1367201 then H=W[1444695085%11465834]z=J[k[1546804413%7228058]]q=J[k[-335283+335285]]l=C(-528109+516216)P=J[k[2250948432%10874147]]M=4818715241310-762523 t=P(l,M)U=q[t]q=H z[U]=q z=J[k[486183637%5227781]]U=z(H)H,U,z=nil,{},I[C(-15990-(-4018))]elseif z<-57106+1855999 then z=467182596%13730261 elseif z<3148533308%14047870 then z=not H z=z and 2295865982%25327894 or 1616108859%13541808 else a,j=-149101+245591115487,C(643893+-655704)z=J[k[623301194%3443653]]q=J[k[250194+-250192]]t=J[k[-715584-(-715587)]]l=J[k[200474440%903038]]M=l(j,a)P=t[M]H=q[P]q=-102467-(-102468)U=z(H,q)U,z={},I[C(-865679-(-853978))]end end end end end else if 1307441913%11442435>z then if 2214654-(-630780)>z then if z>308722956%13907720 then if 3002077-190380>z then if z<1932027668%10372288 then U,z={},I[C(-525515-(-513110))]elseif-557417+3363657>z then a,t,v=C(-243843-(-232489)),C(-639567-(-627424)),12792976745782-(-1012239)z=J[k[413801753%4547272]]P=I[t]U=C(-98226+86936)l=J[k[-34267-(-34269)]]M=J[k[344907+-344904]]j=M(a,v)v=11659601623438-(-383911)t=l[j]U,a=z[U],-273406+10142582341233 q=P[t]j=C(-532610+521566)t=J[k[949055+-949053]]l=J[k[-1007565-(-1007568)]]M=l(j,a)P=t[M]H=q[P]q=2668385-332720<=5404527-82689 U=U(z,H,q)U,t,a=C(90977-102267),C(-579751-(-567608)),C(244812-256686)z=J[k[-271492-(-271493)]]P=I[t]l=J[k[-165603+165605]]M=J[k[98090+-98087]]j=M(a,v)t=l[j]a,U=-208675+3207005746424,z[U]q=P[t]j=C(413447+-425768)t=J[k[-258756-(-258758)]]l=J[k[-444750+444753]]M=l(j,a)P=t[M]H=q[P]q=11639890-(-566978)>=6339857-(-533544)U=U(z,H,q)t,v=C(381907-394050),15035257719832-192703 z=J[k[-432403-(-432404)]]a=C(-926314-(-914372))P=I[t]l=J[k[655604-655602]]M=J[k[1691185173%14705958]]U=C(-491669-(-480379))j=M(a,v)t=l[j]q=P[t]t=J[k[501469-501467]]a=32879607016194-(-348364)l=J[k[-628549-(-628552)]]U,j=z[U],C(1009269+-1021050)M=l(j,a)P=t[M]H=q[P]q,v=1821061210%21058762<=3317658759%14058214,-526060+20532555033669 U=U(z,H,q)t=C(-919033-(-906890))z=J[k[14591641%243194]]a=C(16553-27645)P=I[t]U=C(-85732+74442)l=J[k[-276753-(-276755)]]M=J[k[-676119+676122]]j=M(a,v)t=l[j]a=847171+9340089115578 q=P[t]t=J[k[680339714%3543436]]j,U=C(655230+-666431),z[U]l=J[k[805000+-804997]]M=l(j,a)P=t[M]H=q[P]q,v,t=4011892481%20616074>=4192299-(-645011),440814+23177586257978,C(269958+-282101)U=U(z,H,q)z=J[k[2449650871%9606474]]P=I[t]U,a=C(262662-273952),C(-228054+217021)l=J[k[615019-615017]]M=J[k[157213917%2382029]]U=z[U]j=M(a,v)a=781228+26802673059092 t=l[j]q=P[t]j=C(-230066+217778)t=J[k[608016-608014]]l=J[k[-671601+671604]]M=l(j,a)P=t[M]H=q[P]q=3422305-(-33681)>100671639%8907556 U=U(z,H,q)z,U=I[C(809544+-821324)],{}else l,M=C(90567-102667),-637803+21890542166844 U=J[k[654361135%14225242]]q=J[k[18436826%737473]]P=J[k[1304281472%9451315]]t=P(l,M)H=q[t]z=U[H]z=z and 13230028-916003 or-597769+3317554 end else if 1978210-(-843937)>z then P=1121034363%6442725 q=J[k[1643318446%9554177]]H=q*P q=27552855292371-821174 U=H+q H=35184371071776-(-1017056)z=U%H J[k[-346630-(-346632)]]=z z=10122358-(-634994)elseif 171462+2666990>z then a,z=not M,3504523-58075 P=a else z=f()l=P J[z]=M M,j,w=z,C(20822+-32016),C(834765+-846868)z=J[M]j=z[j]v=J[k[127802+-127799]]E=629762+26051860992865 n=J[k[897345441%11358803]]b=n(w,E)a=v[b]j=j(z,a)z=j and 3751007191%15106861 or 2136890886%10845429 end end else if 324132801%3826246>z then if z<4087498480%18154617 then z=11595530-(-560605)>=1549332648%19406115 U={z}z=I[C(973844+-985181)]elseif 2694730-(-20205)>z then z=J[k[796568+-796567]]H=J[k[814388722%4197880]]q=J[k[3753567093%16109730]]l,t=16447668602416-(-595899),C(-951290-(-940034))P=q(t,l)U=H[P]H=-290060-(-290060)z[U]=H U,z={},I[C(-712345-(-700667))]elseif z<758649+1965000 then z=1763987584%8607575 else q,z=nil,2969395348%14958911 end else if 223168+2507820>z then Y,z=N,o z=4468510017%17866293 elseif z<3417518-679014 then z=J[k[2402576326%10678117]]a=-829150+1879630752329 q=J[k[120618+-120616]]t=J[k[200851703%2008517]]l=J[k[-639609-(-639613)]]j=C(512927-524851)M=l(j,a)P=t[M]H=q[P]q=C(-150649-(-138119))q=z[q]U={q(z,H)}z,U=I[C(-726167-(-714118))],{h(U)}else z=F z,L=-152104+8011849,T end end end else if z<3452654-509424 then if z<1998067-(-922697)then if 3878363-1022317>z then U=C(687060-699132)z=I[U]H=G(-557730+13358215,{k[-399242+399243],k[394092+-394090];k[1021093+-1021090]})U=z(H)z,U=I[C(-697076+685254)],{}elseif 3851185-965959>z then z=J[k[277057+-277056]]M=23766197456608-(-777307)q=J[k[46240780%1491638]]P=J[k[-888687+888690]]l,v=C(-600203+588783),16992302424510-82646 t=P(l,M)U=q[t]a,H,t=C(126848-138826),nil,C(-331773+319916)P=I[t]l=J[k[-1018770+1018772]]M=J[k[1767282128%10098755]]j=M(a,v)t=l[j]q=P[t]t=V(246043965%19295682,{k[1223844824%10114420],k[-380438-(-380440)],k[291679003%1176125],k[933256+-933251]})P=q(t)z[U]=P U,z={},I[C(599545-610893)]elseif 623333978%5003403>z then t=C(-986750+974307)P=I[t]v,a=835968+4262345246272,C(-269842+258579)l=J[k[116422166%4311932]]M=J[k[-421155+421158]]j=M(a,v)v,a,w=-530398+24128942998465,C(64687+-77192),32238486950913-(-124579)t=l[j]U=P[t]l=J[k[-280760-(-280762)]]M=J[k[211554-211551]]j=M(a,v)E=C(-19226+7087)t=l[j]P=U(t)L,a,n,v,b=-397173+7161716579451,C(-875629+863223),473604+27242326259593,13504885144336-(-630144),C(-154779+143057)t=f()J[t]=P U=J[t]l=J[k[3049479467%14316805]]M=J[k[-573315-(-573318)]]j=M(a,v)P=l[j]M=J[k[-546964-(-546966)]]j=J[k[1289930190%7632723]]v=C(-425684+413707)a=j(v,n)l=M[a]y=11817+30326012741888 U[P]=l v,a=178353+33180666758057,C(111228-122937)U=J[t]l=J[k[78743-78741]]M=J[k[134738679%3742741]]j=M(a,v)P=l[j]j=C(-535139-(-522819))M=I[j]a=J[k[-940389+940391]]v=J[k[792752-792749]]n=v(b,w)v=C(-327482-(-316077))j=a[n]l=M[j]a=I[v]n=J[k[-637175+637177]]b=J[k[-700565+700568]]w=b(E,y)v=n[w]j=a[v]R,n=27924318324233-774974,C(242595-254000)v=I[n]b=J[k[579779-579777]]w=J[k[616704693%8810067]]y=C(806353-818214)E=w(y,L)n=b[E]a=v[n]b=C(-427865+416460)n=I[b]w=J[k[797203-797201]]E=J[k[2595695079%15827409]]L=C(860091+-872153)y=E(L,R)b=w[y]v=n[b]M=l(j,a,v)U[P]=M v=-854+19282515404393 U=J[t]w=10459906803033-(-724397)l=J[k[-422190+422192]]a=C(-432634-(-421315))M=J[k[711262+-711259]]j=M(a,v)P=l[j]j=C(983941-996261)M=I[j]b=C(-699706-(-688250))a=J[k[366323507%5467515]]v=J[k[337715+-337712]]n=v(b,w)H=nil j=a[n]v,a,b=-278785+278785,277132-277132,C(101160-113567)l=M[j]j=42516260%10629065 M=l(j,a,v)U[P]=M v=1041133+31839479748349 U=J[t]a=C(767906+-780121)l=J[k[-218532+218534]]M=J[k[2234356323%13299740]]j=M(a,v)a=C(-609315+596932)P=l[j]w,l=17526880680561-(-583024),566443+-565193 U[P]=l U=J[t]v,z=32005215477695-(-809592),I[C(23857+-36064)]l=J[k[-608792+608794]]M=J[k[658254+-658251]]j=M(a,v)P=l[j]a,l=C(-331815-(-320656)),q q=nil U[P]=l v=30750401925553-711106 U=J[k[-12312+12313]]l=J[k[339824529%2480471]]M=J[k[64114-64111]]j=M(a,v)P=l[j]M=J[k[303792+-303786]]a=J[k[-582698-(-582700)]]v=J[k[-256194+256197]]n=v(b,w)j=a[n]l=M[j]M=C(618941+-630624)M=l[M]j=G(776829+1568862,{k[114690-114686],k[800165435%7081110],t;k[774908836%7907233];k[1762526979%15736848],k[1655393747%13680940];k[714366632%14882638];k[801452088%7220289]})t=O(t)M=M(l,j)U[P]=M U={}else H,U,z=nil,{},I[C(-247586+236280)]end else if z<3293871-366273 then z=401103712%1954878 elseif 222241+2714778>z then z=-699098+1052820 else z=J[k[-350279+350283]]M=C(629988+-642419)P=J[k[2897949992%16654885]]j=294252+31290991016831 t=J[k[84202+-84199]]l=t(M,j)q=P[l]j=C(446581+-458745)t=J[k[-977519+977521]]a=-29130+22754149604141 l=J[k[-623345+623348]]M=l(j,a)P=t[M]t=-489645-(-489647)U=z(q,P,t)q,M=C(971088+-982945),C(899110-911068)U=I[q]P=J[k[1628283127%13026265]]t=J[k[-794146+794149]]j=12014842018604-(-891566)l=t(M,j)q=P[l]z=U[q]q=J[k[-163934-(-163939)]]U=z(q)z=138666+15031289 end end else if z<-67013+3037372 then if 3119079-169553>z then U=J[k[1004019-1004018]]H=W[-323335-(-323336)]P=J[k[-42049-(-42051)]]t=J[k[698229-698226]]M,j=C(-396377+384614),-968564+21057189703105 l=t(M,j)q=P[l]z=U[q]z=z and 6280313-120053 or 1242859619%7863303 elseif 117872+2842603>z then P,j,U=C(-64419-(-52245)),C(991777-1002812),C(641717-653978)z=J[k[-155530+155531]]a,U=296884+21452935749457,z[U]q=I[P]t=J[k[289803+-289801]]l=J[k[177897-177894]]M=l(j,a)P=t[M]H=q[P]q=J[k[-425342+425346]]P=J[k[627416+-627411]]U=U(z,H,q,P)z,U=I[C(-344251+333040)],{}else z=J[k[206097+-206095]]z=z and 2130046924%17201119 or 2586654519%16838277 end else if-476101+3459210>z then P=q(t)z,H=l,nil z[U]=P z,U=I[C(-324694+313680)],{}elseif z<1963381929%13708979 then z,U=I[C(-102990-(-91579))],{}else o,u=C(-218426-(-207305)),C(-365028-(-353788))F=I[u]N=I[o]u=F(N)F=C(-1054614-(-1042873))I[F]=u z=-601363+13565218 end end end end else if z<3034031429%16744391 then if 3402712-228466>z then if z>1197598824%11944972 then if 3495837-371911>z then l=J[k[1048324+-1048319]]b,n,P=633107+9931976222973,C(-397671+385524),z j=J[k[473307841%3286860]]H=z a=J[k[512620322%4271836]]v=a(n,b)M=j[v]t=l[M]z,q=t and 13302070-(-256350)or 1928784585%13476835,t elseif 2508945-(-645217)>z then H,M=W[582189715%10781291],9294721254181-(-413123)z=J[k[2589659353%15414639]]q=J[k[1954263997%8316017]]l=C(824369+-835554)P=J[k[732388+-732385]]t=P(l,M)U=q[t]q=H z[U]=q z,H,U=I[C(-1002087+990927)],nil,{}else U,H,z={},nil,I[C(-632434+621239)]end else if 1035858076%8903782>z then j,M=4303956084906-(-868138),C(896781+-908718)H=J[k[1327422255%5554068]]P=J[k[1397663010%14408897]]t=J[k[45638+-45636]]l=t(M,j)q=P[l]U=H[q]z=U and 1081328956%21296001 or 14433811-(-367504)elseif z<3373879-318377 then z,U=I[C(30104+-42374)],{}elseif-722535+3810881>z then z=J[k[736919+-736913]]P=J[k[317408102%12696324]]M,j=C(-654620-(-643157)),14995557221754-(-202188)t=J[k[775826+-775823]]l=t(M,j)U=P[l]P=1734671880%9637066 z[U]=P z=43961+5122933 else P,l,j=C(403891-416388),C(-709567+698228),C(-381773-(-370375))U=I[P]t=I[l]a=32808884895095-(-163382)P=U(t)t=J[k[-79863+79866]]l=J[k[72593+-72589]]M=l(j,a)U=t[M]z=P~=U z=z and 7036405-526524 or 24099155%4056526 end end else if z>3104440-(-155594)then if z<1742185765%11146865 then z=2147231879%9004608 elseif-493724+3775964>z then z=J[k[1089368551%15787950]]U=z()H=U z=H and 4186110182%17079541 or-772672+5297413 else H=W[834156+-834155]q=J[k[-752194+752195]]t=J[k[892161398%7080646]]l=J[k[-278414+278417]]a,j=28491786702420-(-468351),C(75798-87877)M=l(j,a)P=t[M]U=q[P]z=not U z=z and 2785941767%25906030 or 6289620-(-939735)end else if 975343696%7309446>z then U,z={},I[C(-223792+211336)]elseif z<681891+2538756 then H=W[414110872%8119821]z=J[k[-211362-(-211363)]]l=C(74313-86632)q=J[k[307235540%2603691]]M=975434+205588061717 P=J[k[863218+-863215]]t=P(l,M)U=q[t]q=H z[U]=q z=H and 494712538%4231732 or 2458204064%19452021 else U=C(398209+-410662)z=J[k[540320-540319]]U=z[U]U=U(z)U,z={},I[C(159083+-170254)]end end end else if z<-301958+3751634 then if z<757752+2622261 then if 446201+2866867>z then z=10019990-699928~=888212+-721312 U={z}z=I[C(628731+-640600)]elseif-637468+3965503>z then U=C(362296+-374288)z=I[U]z=z and-1014221+4700897 or 1749263890%14510466 elseif z<3184344202%15147602 then U,P,z={},3747277-(-415569)>11098023-326057,I[C(-417728+406548)]J[k[217904883%8380957]]=P else z=1796082-(-197420)~=8754456-712702 z=z and 856058+3260420 or 4318858-566378 end else if z<-922415+4341674 then q=J[k[-150686+150688]]M=-962265+32897529129648 P=J[k[-697482-(-697485)]]l=C(649064+-660997)t=P(l,M)z=C(-4133+-7523)U=q[t]z=H[z]z=z(H,U)q=z P=not q U,z=P,P and 6714673656%28757828 or 8451246-93632 elseif z<940021+2501359 then z=U and 835582542%11423604 or 5270881-635463 else z=j z=P and 2510598-(-827147)or 896028-27537 end end else if 3795595-236077>z then if z<950409046%5010196 then z=U and 307408+14106399 or 15298673-875512 elseif 3167945-(-348833)>z then E,b,R=C(77280-88652),C(-778451-(-766052)),C(506056+-517214)a=J[k[-174985-(-174987)]]v=J[k[660045-660042]]T,w,y=15270319474625-502779,14115536399258-791021,11106230500721-878910 n=v(b,w)j=a[n]n=J[k[83202-83200]]b=J[k[876936+-876933]]w=b(E,y)v=n[w]E=J[k[810290957%8353515]]y=J[k[945241+-945238]]L=y(R,T)w=E[L]z=2712605950%11838492 b=w..q n=H..b a=v..n M={[j]=a}J[l]=M else H,M=C(-620716+609613),C(766327-777659)z=I[H]t=J[k[1465481945%6753373]]M=t[M]l={M(t)}t={z(h(l))}q,P,z,H=t[5879237%1175847],t[554431+-554428],5144788118%26046373,t[983712957%7933169]end else if 1918952188%8992257>z then H,M=C(317886+-329743),228781+6621735259742 U=I[H]q=J[k[-1025485-(-1025487)]]l=C(-650479-(-639193))P=J[k[3062072775%15465014]]t=P(l,M)H=q[t]z=U[H]H,l=-936310-(-936315),C(-83055+70618)U=z(H)U=J[k[-121249+121250]]q=J[k[-870389+870391]]P=J[k[1035403-1035400]]M=15357871980618-(-777125)t=P(l,M)H=q[t]z=U[H]z=z and 3031986-(-905390)or 806406+12698838 elseif z<2699226722%15950411 then q=J[k[588263+-588259]]P=J[k[-551671+551676]]H=q==P z,U=-206810+1169346,H else F=4399409-66577~=8505520-310689 z=F and 1044079+15241441 or-395284+11784975 end end end end end end end else if z<1597830867%6318633 then if z>3787437009%18100272 then if z>-648396+5760401 then if 2652867734%19906342>z then if z<-109025+5336016 then if z<4585886465%21206947 then if z<4583892-(-558794)then z,gR=jR,MR z=1188002099%14490386 elseif z<482127766%5241372 then M=C(449635+-461707)z=I[M]j=V(4147704677%17037281,{t;k[-839140+839142],k[-303825-(-303828)],l})M=z(j)z=1745441603%10871064 elseif z<1674329792%13247271 then U=J[k[882273-882272]]j=C(-870152-(-858404))t=J[k[-544748+544750]]a=-622555+13876308023576 l=J[k[-971003+971006]]M=l(j,a)P=t[M]z=U[P]z=z and 432127672%11415187 or 2745075657%25068602 else z=J[k[794162-794161]]H=J[k[-263843-(-263845)]]q=C(-625959+613833)q=z[q]U={q(z,H)}U,z={h(U)},I[C(708900-721125)]end else if z<5010533-(-185494)then a=J[P]n=J[k[197940963%10996720]]b=J[k[-696949-(-696953)]]z,y,E=7566103-(-560688),462969+18121678049405,C(-675107-(-663352))w=b(E,y)v=n[w]j=a[v]a=95718280%4785914 M=j>a t=M elseif z<1369574264%20064202 then U,z=109838+7100193>-98389+4280401,I[C(-26841-(-15623))]U={U}else M=C(-779009-(-767329))z=J[k[321019-321017]]P=J[k[2087094936%9035043]]t=J[k[-101070+101074]]j=22435539831808-959281 l=t(M,j)U=P[l]t=C(510813+-522567)P=I[t]t=P()P=G(1792219062%7621650,{k[-234402+234405],k[856511611%4219269]})z[U]=t U=C(-39759+27687)z=I[U]U=z(P)z=126300+1591263 end end else if 5938507-641320>z then if z<6176873-927531 then z=J[k[43908+-43907]]l=C(-288814-(-276327))q=J[k[1385153402%6925767]]M=1971104574852-(-562705)P=J[k[473858718%14359355]]t=P(l,M)U=q[t]H=W[1305165481%15354888]q=H z[U]=q z=J[k[281425-281421]]U=z(H)z,H,U=I[C(-932215-(-919880))],nil,{}elseif z<658729+4620297 then q,H,z=nil,nil,-308302+4391628 else M,H=C(117537+-128796),W[1071979567%4939998]U=J[k[-56556-(-56557)]]j=1026339+33729038537783 P=J[k[281861+-281859]]t=J[k[232266-232263]]l=t(M,j)q=P[l]z=U[q]z=z and 10935892-(-237826)or 3053326173%17366730 end else if z<5258715-(-41925)then z=6731762-(-981154)~=-430579+7376643 J[k[2660079945%11367863]]=z z=3927419035%24606583 elseif z<6011596-699217 then F,M=19978780704835-498668,C(533707-545112)l=I[M]b,T=24639655797205-46340,C(457184+-469690)j=J[k[-123822-(-123826)]]n=C(458766-469821)a=J[k[818182-818177]]v=a(n,b)M=j[v]a,n=z,C(940821+-953270)U=l[M]M=584338706%8853616 v=I[n]w=J[k[921953704%13760503]]y=J[k[-957305+957309]]L=J[k[251839-251834]]R=L(T,F)E=y[R]b=w[E]n=v(b)v=-367479-(-368379)j=n or v l=U(M,j)U=t/l M=U a=J[k[113619-113616]]n=J[k[161910+-161906]]b=J[k[-923027+923032]]E,y=C(-763868+752168),2494821471198%39600357722 w=b(E,y)v=n[w]j=a[v]a=786185-781185 U=j>=a z=U and 4450627838%24909594 or 452146+7627289 else P,t,z=nil,nil,298108+55614 end end end else if z>5207288-(-241552)then if 576838184%12696866>z then if z<5089086-(-367529)then z,U=3888260842%28067308,782055+7170292<-580718+11749566 J[k[492762-492758]]=U elseif z<716874+4751017 then q=C(-191481-(-179409))t=d(1195073-(-397470),{k[717748-717746],k[949907-949904];P})U=I[q]q=U(t)z=q and 3670399522%27719007 or 190794+2536720 else U=C(-203260-(-191268))z=I[U]z=z and-183116-(-933037)or 4945254118%20987210 end else if z<5523693-19286 then P,j,z,l=C(-213843+201346),C(-281324-(-269448)),2727041938%28574350,C(-504723-(-493182))q=I[P]t=I[l]P=q(t)t=J[k[1361044344%7519582]]a=9888897924795-(-1020737)l=J[k[-1045572-(-1045575)]]M=l(j,a)q=t[M]H=P==q U=H elseif 4575276-(-954494)>z then z=15814696-(-949790)Y=w==E T=Y else U=C(-88463+76391)q=G(629163+476620,{H;k[342690162%1822820];k[167191-167188]})z=I[U]U=z(q)z=1224846465%14712276 end end else if z>5027214-(-378333)then if 602020+4809504>z then b,a=not n,a+v M=j>=a M=b and M b=j<=a b=n and b M=b or M b=-251571-(-623368)z=M and b M=4200004-260527 z=z or M elseif 61366+5368463>z then U=J[q]a=C(-836500-(-824855))z=U~=a z=z and-861486+15412726 or 1557414007%8965386 else z=J[k[-889601-(-889603)]]U=z()H=f()J[H]=U U=J[H]z=not U z=z and 1769645910%22893904 or 750440+10380585 end else if 5181616-(-154177)>z then z=U and 197591294%26233008 or 530844+1172168 elseif z<-50769+5397446 then H,M=C(148329+-160186),-28121+34033031424960 U=I[H]q=J[k[623648856%8543135]]l=C(303141+-314218)P=J[k[653429-653427]]t=P(l,M)M=-765426+6465669052852 H=q[t]z=U[H]H,l=-851230+851230.5,C(830594+-842714)U=z(H)U=J[k[-857819+857822]]q=J[k[969837+-969836]]P=J[k[308200422%14009110]]t=P(l,M)H=q[t]z=U[H]z=z and-314521+5927987 or 13687745-(-871829)elseif z<4778940-(-596709)then U,z={},I[C(-966686+955383)]else z={}J[k[-110545+110547]]=z U=J[k[-439037-(-439040)]]l,t=-463319+35184372552151,U U=q%l J[k[770004+-770000]]=U j=733672647%8433016 M=q%j j=-821209-(-821211)l=M+j J[k[881997-881992]]=l j,a=C(-313544+302051),C(801881+-813374)M=#H P[q]=j j,z,b=331106-330902,713519624%13094717,442718+-442717 w,v,n=b,715891+-715890,M b=351588-351588 E=w<b b=v-w end end end end else if z<-858262+5601416 then if-537300+5171862>z then if z>5050072-500868 then if z<1472012574%12986051 then l,H=C(-389438-(-376997)),C(-854186+842329)U=I[H]q=J[k[-164555+164556]]M=12670072421142-41995 P=J[k[913969-913967]]t=P(l,M)l,M=C(62837-74691),23006354831287-495070 H=q[t]z=U[H]H=328962+-328961 U=z(H)U=J[k[771320-771317]]q=J[k[-503927+503928]]P=J[k[-946893+946895]]t=P(l,M)H=q[t]z=U[H]z=z and 4385873300%17633320 or 3024280918%21839145 elseif z<1703043607%13696974 then t=J[k[345741-345734]]y,v=25598399546845-(-338099),C(109680-121823)a=I[v]n=J[k[1308947704%8726318]]b=J[k[701808-701803]]E,l=C(-1023781-(-1011415)),C(142507-153754)w=b(E,y)v=n[w]j=a[v]w=C(-24141-(-12252))v=J[k[259414630%6327186]]n=J[k[210973+-210968]]E=318909+4892675124009 b=n(w,E)l=t[l]a=v[b]M=j[a]l=l(t,M)z=l and 576359+7827311 or 622105085%2648839 else z=J[k[795158-795157]]a,M=C(657940-669249),25710252253257-(-937595)q=J[k[919413962%4996815]]P=J[k[-960977+960980]]l,v=C(-26630+14180),11553647694728-(-721276)t=P(l,M)U=q[t]P=J[k[2008428226%10515331]]l=J[k[320307-320305]]M=J[k[121435038%837483]]j=M(a,v)t=l[j]q=P[t]t=V(7756619-(-31502),{k[3120949572%12533934],k[-956887+956894];k[861107810%7757728];k[158937+-158934],k[-732193-(-732201)]})P,H=C(597082-608765),nil P=q[P]P=P(q,t)z[U]=P U,z={},I[C(-734340-(-721910))]end else if z<119382+4374858 then z,U=I[C(1004622+-1016601)],{}elseif 2373095887%20418832>z then z=J[k[188700-188695]]a=J[M]j=z(a)j=C(-494262+482190)a=V(833129663%3404940,{M;k[-983221+983224];k[544109+-544105]})z=I[j]j=z(a)z=395610+-54237 elseif z<-1040627+5561541 then z,U=I[C(-683237-(-672130))],{q}else z,H,U=I[C(28455-40778)],nil,{}end end else if z<249778+4450860 then if z<5027044-368698 then v,n=C(-706357-(-694042)),28652442997069-(-336593)t=J[k[341878+-341876]]M=J[k[3203329803%13236900]]j=J[k[3329049550%15777486]]a=j(v,n)l=M[a]P=t[l]z,U=P and 270410+-65236 or-509218+8078371,P elseif 193541+4496741>z then z=4238413036%17712617 else H=V(5516662217%24894927,{k[286083+-286076]})U=C(-834346-(-822274))z=I[U]U=z(H)z=nil J[k[-191126+191133]]=z z=648980+9888597 end else if z<5404489-690333 then z=85127+268595 elseif 700675207%7483292>z then H=W[-164814-(-164815)]q=J[k[378247-378246]]U=q[H]q=nil z=U==q z=z and 1488593-(-97581)or 1890648380%18693956 else P=O(P)z=-710051-(-768164)end end end else if z<-318750+5235479 then if 4270439-(-591084)>z then if z<4031980-(-730301)then z=3837867531%23021139 elseif-592637+5362985>z then z=M and 209895+4949040 or 341533907%9318404 elseif z<399622063%9629782 then bR=C(-163177-(-151326))nR=I[bR]vR=z z,aR=nR and 10510827-704173 or 34096266%11559472,nR else l,a,z,j=nil,nil,859057+-803152,nil M=O(M)end else if 1527862134%20580609>z then q=W[-393385-(-393387)]H=f()J[H]=W[2724223921%11350933]z=J[k[731782-731781]]P=f()U=z()J[P]=U U=J[P]z=not U z=z and 3724446794%18117390 or 3363810-395756 elseif 108298819%20677923>z then q=J[k[869380+-869379]]t,l=-1009416-(-1009417),-521448-(-521450)P=q(t,l)q=-877261-(-877262)H=P==q z,U=H and-437376+8390826 or 320854639%25690387,H else z=87455+3270365 end end else if 297121221%6085634>z then if 2086382520%9089199>z then z=J[k[2564493423%10730098]]q=J[k[-1040806+1040808]]P=J[k[-965858-(-965861)]]M,H,l=6807918142496-366526,W[271353+-271352],C(-1010149-(-998378))t=P(l,M)U=q[t]q=H z[U]=q z=H and 3224961189%28413028 or 1215828261%13168795 elseif z<4164676-(-837697)then U,z={q},I[C(-718171+706535)]else M,j,q=C(462745+-473782),12213054505684-470173,C(352355-364579)H=I[q]P=J[k[238277-238275]]t=J[k[804971478%8131025]]U={}l=t(M,j)q=P[l]z=H[q]q=J[k[677306-677305]]H=z(q)z=I[C(184216-195724)]end else if z<5395669-382664 then P=f()z=J[k[79826-79810]]U=z()J[P]=U t=J[P]U,z=t,t and 11046491-707115 or 13986034-551584 elseif 4742095-(-314069)>z then a=-889820+32460118085351 z=J[k[854316613%15820678]]q=J[k[282706352%9423545]]j=C(-856566-(-845039))t=J[k[490941+-490938]]l=J[k[392255120%2280553]]M=l(j,a)P=t[M]H=q[P]q=140400730%1560007 U=z(H,q)z,U=I[C(-145529-(-134268))],{}else M=C(56539-68396)l=I[M]n,P,b,z=C(531381+-542868),nil,-195506+2066140643188,-775757+2166890 j=J[k[-453005-(-453008)]]a=J[k[658673+-658669]]v=a(n,b)M=j[v]t=l[M]M=.2 l=t(M)end end end end end else if z<4941410-999952 then if z<349800+3425341 then if 3056765-(-637711)>z then if 940036461%16721155>z then if 3282939-(-347915)>z then z,U=262475770%7240276>826955+13383845,{}J[k[154144+-154143]]=z z=I[C(492589-504386)]elseif z<3687017-51463 then c=z WR=J[q]z,S=WR and 13268418-(-50654)or 757097+152463,WR elseif 1151331989%7128509>z then z=J[k[265171-265170]]n=-877311+13572310317999 P=J[k[-546567-(-546569)]]t=J[k[308298+-308295]]M,j,v=C(-489315-(-477067)),8127447170517-(-332019),C(713446+-724511)l=t(M,j)q=P[l]t=J[k[-1031589-(-1031593)]]M=J[k[1032167+-1032165]]y=13377614504497-(-46628)j=J[k[786685-786682]]a=j(v,n)v,n,w=420682+18747851159248,28643+5443858373123,C(-1038421-(-1027229))l=M[a]P=t[l]l=J[k[10053414%10053412]]a,b=C(241122-252680),553426+19541320053177 M=J[k[-347610+347613]]j=M(a,v)t=l[j]v=C(-600471-(-588929))M=J[k[-77796+77798]]j=J[k[-123821-(-123824)]]a=j(v,n)l=M[a]j=J[k[898959567%11379235]]a=J[k[-947417+947420]]n=C(-648624-(-637073))v=a(n,b)M=j[v]v=J[k[3339175484%15041331]]E=43602321166986%512968525195 n=J[k[1062539819%10216729]]b=n(w,E)a=v[b]n=J[k[-263824+263826]]b=J[k[628970+-628967]]E=C(527842+-540000)w=b(E,y)E=-166951+13446311240860 v=n[w]w,j=C(-210825-(-199504)),{[a]=v}v=J[k[483676-483674]]n=J[k[67220-67217]]b=n(w,E)a=v[b]v=J[k[1459984405%13035575]]H={[q]=P;[t]=l,[M]=j,[a]=v}U=z(H)z,U=I[C(444516+-455636)],{}else z=5463465-(-418095)~=1778411900%13668992 z=z and 1318534513%27702271 or 11990436-213600 end else if z<4540075-877615 then H=W[-1034973+1034974]z=J[k[-214699+214700]]q=J[k[37403+-37401]]l,M=C(757926+-770427),-599395+10482594101364 P=J[k[1354645710%6359839]]t=P(l,M)U=q[t]q=H z[U]=q z=H and 911475+-397667 or 972533060%16641305 elseif z<-396814+4073088 then M=-448830+16390104397582 z=J[k[2517374%109451]]H,l=W[-189219+189220],C(-983190-(-971631))q=J[k[919435057%7726345]]P=J[k[-353104-(-353107)]]t=P(l,M)U=q[t]q=H z[U]=q z,U,H=I[C(807899-819204)],{},nil else U=C(-82204+70212)z=I[U]H=J[k[-743695-(-743696)]]U=z(H)z=8575695-567725 end end else if 893769+2828515>z then if 945893+2757048>z then z=J[k[-207453+207457]]U=z()H=f()J[H]=U z=J[H]z=z and 2430776961%12437140 or 4057048-329491 elseif z<-791880+4501321 then z=U and 1601214140%16736147 or 3816253-1005533 elseif z<3363463-(-352681)then z=J[k[-491524+491532]]l=939866-939863 t=J[k[2372757275%13330097]]P=t[l]U=z(P)U=q()z=not U z=z and 2078575-(-842886)or 3116795732%28705643 else z,U=I[C(-861505-(-849218))],{}end else if 825294+2914724>z then H=O(H)z,U=I[C(521952-534264)],{}elseif-981068+4738758>z then z,U=I[C(-126365-(-114259))],{}else U,z,H={},I[C(-717375+705131)],nil end end end else if z>723084+3144344 then if z<3022243-(-908095)then if z<1052334891%8961031 then n=C(234543+-246484)j=J[k[574664-574662]]b,l=19259823436617-380993,C(703593+-714861)l=t[l]a=J[k[970252+-970249]]v=a(n,b)M=j[v]l=l(t,M)z,U=l and 3984189422%20906156 or 3034048187%21584626,l elseif z<233163992%4408557 then U=q()z=not U z=z and 856738339%6885521 or-1045765+14591844 else R=C(-92257-(-80503))L=I[R]R=L()y=R-w U=y>E z=U and 2592540831%16677974 or 13180634-(-73656)end else if 58906+3878682>z then U=C(633519-645591)H=G(2517360-(-732032),{k[149078+-149074]})z=I[U]U=z(H)z=12976617-(-528627)elseif 3440874-(-497765)>z then U=J[k[547625541%9956828]]q=J[k[-557357-(-557359)]]P=J[k[1657068500%8162899]]M,l=31905327473904-453351,C(-514087-(-501993))t=P(l,M)H=q[t]z=U[H]U={z}z=I[C(-392715+380850)]else z,j=I[C(424784+-436809)],-423406-(-423406)M=t>j U={M}end end else if 3182461-(-641614)>z then if z<478498914%8476832 then z=U and 6459631-(-989457)or 6383209-212919 elseif-568478+4374825>z then E,X,A={},C(610124-622153),nil y=f()R=f()J[y]=E L=d(13415018-(-263339),{y,j;l,M})n=nil E=f()b,B,o=nil,C(-676190-(-664855)),{}J[E]=L L,n={},22126428577513-(-35158)J[R]=L N=C(977675-989807)L=I[N]p=J[R]Q={[X]=p,[B]=A}N=L(o,Q)J[t]=N M=O(M)L=D(-212799+840373,{R,y;v,j;l,E})j=O(j)E=O(E)R=O(R)y=O(y)l=O(l)w,P,E=nil,nil,-483650+33503605448243 J[q]=L v=O(v)b=12834713326101-703165 l=J[t]v=C(856167+-868414)M=J[q]j=M(v,n)P=l[j]l=f()n=C(780597-791698)J[l]=P M=J[t]j=J[q]v=j(n,b)P=M[v]M=f()J[M]=P w,b=608016+18063688047051,C(795767+-807225)j=J[t]v=J[q]n=v(b,w)P=j[n]j=f()J[j]=P v=J[t]w=C(567594-579553)n=J[q]b=n(w,E)P=v[b]b=C(132812-144986)n=I[b]b=C(578605-590957)b=n[b]b=b(n)v=not b z=v and 3184602452%19117898 or 898685664%11946654 elseif z<4205609-393631 then w,v=not b,v+n U=a>=v U=w and U w=v>=a w=b and w U=w or U w=-633601+2350009 z=U and w U=12928327-573894 z=z or U else P=Z(602971+-173265,{H;q;k[-130786-(-130789)],k[655891+-655887]})U=C(396482+-408554)z=I[U]U=z(P)P,z=U,I[C(-82776-(-71626))]U={P}end else if 3217855-(-627202)>z then U=C(371861+-383933)q=G(11379539-740776,{k[3020929398%15571801],k[3516408514%13844128],k[413008321%1626017]})z=I[U]U=z(q)z=7920707-671289 elseif z<428795+3430991 then F=G(8326208-41093,{l})z=I[C(313047+-324762)]Y={F()}U={h(Y)}else z=J[k[236601325%1177121]]q=J[k[-406795+406797]]P=J[k[193866083%1394720]]M,l=31693091390676-805678,C(-540445-(-529261))t=P(l,M)U=q[t]q=1209995859%4755816~=3653108-648439 z[U]=q U=C(431311+-443383)q=G(-76850+12664738,{k[793533+-793528];k[992600004%6203750];k[-543824+543826];k[57250+-57247],k[22408+-22402]})z=I[U]U=z(q)z=2022229742%12022257 end end end end else if z<-708411+4859687 then if z<-88421+4184992 then if z<2436219739%11637291 then if z<2946448-(-1001071)then U=C(-959134+948108)z=I[U]P=J[k[615350-615349]]t={z(P)}U,H,q=t[664968-664967],t[-465824+465826],t[1144449233%6023417]P,z=U,1921018999%11580140 elseif z<355311+3604306 then l=P z=f()J[z]=M M=z v=J[M]y=C(-819408-(-807486))b=J[k[329263010%14315783]]L=84811816659970%7710165207398 w=J[k[779446-779444]]E=w(y,L)n=b[E]a=v[n]v=C(341166+-352465)v,L=a[v],691522+16802339508558 v=v(a)b=J[k[268113-268112]]y=C(99297+-111339)w=J[k[1972507888%8727911]]E=w(y,L)n=b[E]a=C(261537-272949)a=v[a]a=a(v,n)z,j=a and 7176147-(-179408)or 680669619%26767173,a elseif 4122673-127837>z then q=C(-423616-(-411287))H=I[q]z,U=H and-988840+8656906 or-1040930+15392477,H else H=J[k[1236513639%11665223]]j=34708226738821-789347 P=J[k[-854945-(-854947)]]M=C(-838083-(-826574))t=J[k[558764+-558761]]l=t(M,j)q=P[l]U=H[q]z=not U z=z and 564390889%21289826 or 4534180-831904 end else if z<4498807-462773 then U=J[k[2301651276%9394495]]M,j,H=C(655126-666952),-258676+11598249805708,W[263909-263908]P=J[k[-23186-(-23188)]]t=J[k[2656233651%16705872]]l=t(M,j)q=P[l]z=U[q]z=z and 10648597-812325 or 841508+1568058 elseif-140742+4203537>z then U=C(-609301+598198)z=I[U]P=J[k[-362808-(-362809)]]l=C(-607912-(-595519))l=P[l]t={l(P)}P={z(h(t))}U,q,z,H=P[-705426-(-705427)],P[-1038713+1038716],15298762-117998,P[207128+-207126]P=U else z=1626477560%20684458>-859595+10003255 z=z and 15137464-(-260948)or 1462990774%10122510 end end else if z<1228060813%18544497 then if z<3404683-(-708464)then H=O(H)z=4869439-(-46543)elseif z<537900177%7518046 then H=C(47639+-59496)U=I[H]q=J[k[-208711+208712]]M=365919+11736423612410 P=J[k[3068580188%16235874]]a,l=18884946795442-(-837287),C(-591183+579213)t=P(l,M)H=q[t]z=U[H]j,H=C(63094-74190),-629744-(-629745)U=z(H)q=J[k[-615153+615156]]t=J[k[1883124265%10234371]]l=J[k[560713790%3664796]]M=l(j,a)P=t[M]H=q[P]z,U=H and 267303-(-334921)or-962522+10949051,H else z=J[k[763766775%4743893]]U=z()H=U q=not H z,U=q and 9359561-362902 or 10023328-(-195142),q end else if z<3773252-(-357414)then a=139905+32600987392204 q=J[k[766538+-766537]]t=J[k[164537-164535]]l=J[k[-619137+619140]]j=C(765573+-776761)M=l(j,a)P=t[M]H=q[P]z,U=H and 1325094270%9372255 or 4291278566%17511494,H elseif 4599668-464754>z then U=J[k[625256-625251]]q=U()U=not q z=U and 1772689805%16787031 or 2202046-(-701898)else z=1832742585%24588933 end end end else if 1024459+3323693>z then if z<4185302-(-99027)then if z<4611432-443556 then q=4305913377%27011271>=10709903-524078 U,z={q},I[C(272907+-283938)]elseif z<191696423%17043924 then j=J[k[460551+-460549]]z=143445+2829220 a=J[k[317093+-317090]]n,b=C(-756333-(-744840)),23773882129537-(-806589)v=a(n,b)M=j[v]t=M elseif 2684213246%14486213>z then c=C(-660010+647986)B=J[k[-125573-(-125576)]]WR,z=577676+12733816227485,119078172%6844083 A=J[k[-437326+437330]]i=900708+10706091726101 S=A(c,WR)A,r=C(701986+-714160),C(480577-492036)p=B[S]X=w[p]B=I[A]S=J[k[1437400683%6360180]]c=J[k[-945471+945475]]WR=c(r,i)A=S[WR]p=B[A]Q=X~=p N=Q else M,H=16760239728795-(-128481),W[220855+-220854]z=J[k[494351641%10518120]]q=J[k[-387777-(-387779)]]l=C(-857613-(-846445))P=J[k[355566668%6708805]]t=P(l,M)U=q[t]q=H z[U]=q U,H,z={},nil,I[C(309397+-320679)]end else if 3718390526%17686082>z then H,z,U=nil,I[C(958643+-970276)],{}elseif 717688674%4514919>z then q,M=C(242620+-254844),C(-488911+476527)U=I[q]j=22556017495296-(-744455)P=J[k[2952713518%14690117]]t=J[k[155941-155939]]l=t(M,j)q=P[l]z=U[q]a=C(-299554-(-287274))P=J[k[605884-605881]]v=15198010617655-824210 l=J[k[850398-850397]]M=J[k[877681+-877679]]j=M(a,v)t=l[j]q=P[t]P=344409040%3703323 U=z(q,P)z=2382045-(-783595)else z=J[k[-160824+160826]]U=z()H=U z=not H z=z and 1180409-1023502 or 266058+10702670 end end else if z>366824+4046244 then if z<3862325-(-577699)then z=J[k[-988854-(-988855)]]H=2342097862%17472332<=9757705-(-121492)U=z(H)U,z={},I[C(130131+-141849)]elseif z<1881161393%9383507 then P,M,n=C(541569+-554066),C(204864+-216759),C(790476-802647)q=I[P]l=I[M]b,z=-934155+8599509569711,865479761%12649297 j=J[k[1015961-1015960]]a=J[k[-1026251+1026253]]v=a(n,b)M=j[v]t=l[M]P=q(t)t=J[k[-72701-(-72702)]]l=J[k[400805-400803]]a,j=-385726+5361739525246,C(-345101-(-333720))M=l(j,a)q=t[M]H=P==q U=H else U=J[k[689068290%7572179]]M=16956609896261-573549 q=J[k[-944465+944467]]P=J[k[7270-7267]]l=C(-751238+739251)t=P(l,M)H=q[t]z=U[H]z=z and 2472518134%18604368 or 1021968+7119286 end else if z<-776468+5144904 then l=596910-596908 z=J[k[451460-451452]]t=J[k[3590364812%15409291]]P=t[l]U=z(P)U=q()z=not U z=z and 805065+7201778 or 184916020%11957852 elseif 724315155%4444030>z then z,a,v=3128748-(-658633),C(616875+-628653),17852886337823-(-120666)P=J[H]l=J[k[307875102%9055150]]M=J[k[-984896-(-984899)]]j=M(a,v)t=l[j]q=P[t]U=q else z=J[k[773204371%15160870]]H=J[k[2556116180%15876498]]t=C(-529757-(-517670))P=I[t]a=C(-952530+940819)l=J[k[2192200121%12315731]]v=160837+6171799820020 M=J[k[921109+-921105]]j=M(a,v)t=l[j]q=P[t]t=.4 P=q(t)v=1573777692305-(-617547)l=J[k[2178484956%12170307]]a,U=C(-102965+90651),C(589214+-601666)M=J[k[611122-611118]]j=M(a,v)t=l[j]l,U=857740093%4986861,z[U]q={[t]=l}U=U(z,H,P,q)a,z,t=C(549667-562195),C(317141-329061),C(-612724+600637)z=U[z]z=z(U)z=J[k[-15262+15263]]H=J[k[28531-28526]]P=I[t]l=J[k[473176-473173]]v=1024599+33767017749268 M=J[k[-190792-(-190796)]]j=M(a,v)t=l[j]a,U=C(239801+-252110),C(401015-413467)q=P[t]t,U=.4,z[U]P=q(t)v=27269912840215-(-616835)l=J[k[1425995827%6227056]]M=J[k[-1041197+1041201]]j=M(a,v)t=l[j]l=-483244+483245 q={[t]=l}U=U(z,H,P,q)z=C(93114-105034)z=U[z]z=z(U)U,z={},I[C(-399448+386990)]end end end end end end else if 1688646658%12552105>z then if 6518762-448399>z then if z<-605427+6342055 then if z>73768+5577241 then if-918139+6622036>z then if z<1175580319%10085478 then a=306100+1476846<-109280+4415544 J[q]=a z=6317926263%27175710 elseif-679773+6359559>z then U=J[k[-899924-(-899930)]]q=U(H)z=not q z=z and-509304+14456858 or-535686+12947197 elseif z<805875+4881595 then z=nil U={z}z=I[C(836183-847978)]else H,U=C(-91408+80287),C(1651-13392)z=I[U]U=I[H]H=C(684152-695273)I[H]=z H=C(-372840-(-361099))I[H]=U H=J[k[85804840%3177957]]q=H()z=8919844-(-143150)end else if z<6636655-914380 then j=223689+13604716015350 H=J[k[-305638+305639]]P=J[k[303533-303531]]t=J[k[124148+-124145]]M=C(967336-979518)l=t(M,j)q=P[l]M,l=33640160848964-(-37100),C(-1042799+1031306)U=H[q]q=J[k[-549271+549273]]P=J[k[297540+-297537]]t=P(l,M)H=q[t]z=U==H z=z and 957808+14829522 or-1023968+17226446 elseif z<2987251820%11738281 then z,U=I[C(809360+-820979)],{}else z=nil U={z}z=I[C(-566209+554633)]end end else if z<370258986%5697584 then if z<1712243488%19176464 then U,z={},I[C(142868+-154567)]elseif z<211595601%7631530 then U,z={},I[C(-616808-(-604543))]elseif-974532+6555385>z then U=J[k[-928302+928312]]l=J[k[1039656-1039654]]b,n=-803341+28644960892455,C(-227905-(-215583))j=J[k[345567-345564]]a=J[k[11828+-11824]]v=a(n,b)M=j[v]t=l[M]l=J[H]P=U(t,l,q)z=not P z=z and 478035792%11075478 or 561580+3153696 else H=J[k[656128+-656124]]j=C(-1041217-(-1029575))t=J[k[-72904+72905]]l=J[k[2313818227%9846035]]q,a=C(673183-684451),992840+16115813136136 q=H[q]M=l(j,a)P=t[M]q=q(H,P)z,U=q and 396545+9386270 or 109027-(-746299),q end else if z<6439748-821492 then z=J[k[360296+-360295]]q=J[k[19601701%98501]]M,l=29881087877570-(-414872),C(183424+-195678)P=J[k[-213067+213070]]H=W[1851162301%15050100]t=P(l,M)U=q[t]P=479702532%15474272 q=H/P H=nil z[U]=q z,U=I[C(-802207+790047)],{}elseif 570856+5063309>z then z=J[k[866419545%10967336]]j=C(-516959+504502)q=J[k[1414465624%9367322]]t=J[k[244249251%984876]]a=-280125+3570521738427 l=J[k[855169-855165]]M=l(j,a)P=t[M]H=q[P]q=1563380299%6381140 U=z(H,q)z,U=I[C(880788+-891828)],{}else H,a,q=W[-855103-(-855104)],706975+5773822787809,C(712326+-723731)U=I[q]j=27917758219607-840335 P=J[k[-953827+953828]]t=J[k[-818935+818937]]M,v=C(-372308+359777),477671+26214868510152 l=t(M,j)q=P[l]P=-665385-(-668985)z=U[q]q=H/P U=z(q)P,q=C(185226-196631),U U=I[P]t=J[k[836655017%3428914]]l=J[k[765181307%5585265]]j=C(452404-464259)M=l(j,a)P=t[M]l=1837347848%10682234 z=U[P]t=H%l l=-436267-(-436327)P=t/l t=C(402249-413654)U=z(P)a,P=C(356217+-367993),U U=I[t]l=J[k[-582988-(-582989)]]M=J[k[822620-822618]]j=M(a,v)t=l[j]l,v=2325117811%10426537,C(390217-401733)z=U[t]t=H%l U=z(t)t,l=U,C(775462+-787064)U=I[l]M=J[k[146629897%6982376]]j=J[k[6107870%32838]]n=518123+2622283717850 a=j(v,n)l=M[a]n=805937+33428812968093 z=U[l]v=C(444707+-456817)M=J[k[2018713789%12940473]]j=J[k[2753768%152987]]a=j(v,n)l=M[a]U={z(l,q,P,t)}U,z={h(U)},I[C(101848-113824)]end end end else if 316712038%7227400>z then if 2518990633%15707103>z then if z<3833449491%17558272 then U=q()z=not U z=z and 588792+8759308 or 790987+9408934 elseif z<-743125+6512079 then z=y z=E and 596130735%4282375 or 544163+12164570 elseif z<1365410166%6536513 then E=J[k[103444+-103442]]y=J[k[213624531%16432656]]T,b,R=18736175705048-(-161340),C(808412-819606),C(131348-143409)b=l[b]L=y(R,T)w=E[L]b=b(l,w)v,z=b,1038536-971496 else M=-394589+22174710132146 U=J[k[926742+-926741]]l=C(549143-560155)q=J[k[65006234%10834372]]P=J[k[-922422+922425]]t=P(l,M)H=q[t]z=U[H]z=z and-385434+16572762 or 1959608557%12730517 end else if z<-702440+6579938 then z=932607910%15245321 elseif z<2097678184%10406817 then Q=O(Q)z=856871391%10894165 o=O(o)p=nil T=O(T)B=O(B)A=O(A)X=O(X)else t=q M=J[k[636563+-636561]]z=l~=M z=z and 4007047836%17453690 or 1212521295%26155034 end end else if z>593400+5405373 then if z<7059777-1021223 then a=C(-945062-(-932650))l=J[k[-963452+963454]]M=J[k[268410-268407]]v=4435880818548-(-823453)j=M(a,v)t=l[j]P=q[t]U,z=P,2069392657%12163614 elseif 545586257%18604279>z then j,M=-375743+32277958096501,C(1002030-1013983)z=J[k[-523738+523742]]P=J[k[216926373%3055301]]t=J[k[1185094315%8007394]]l=t(M,j)q=P[l]a=22091558398552-(-179671)t=J[k[596165+-596163]]l=J[k[-154169-(-154172)]]j=C(457477+-468501)M=l(j,a)P=t[M]t=778533-778531 U=z(q,P,t)z=1044558400%5788707 else z=J[k[-563091+563093]]q=f()U=z()J[q]=U U=J[q]z=not U z=z and 6869858-611939 or 462326564%3211388 end else if 743325+5208750>z then U=C(570339-582634)z=J[k[970132-970131]]U=z[U]U=U(z)z,U=I[C(-751798+740631)],{}elseif 6116577-147825>z then z=4019786819%23294333 else z=r z,S=233837-(-675723),WR end end end end else if z>6906164-457753 then if z<-949163+7530196 then if z>-739215+7266135 then if 7562651-1013618>z then z=17127822-661768~=855004+8494796 z=z and 2845577-466629 or-301158+14639773 elseif z<110048+6446012 then z,v=1141486259%18008049<=5220556416%29241783,C(-338100-(-325937))J[k[-474294+474298]]=z U=J[k[906948+-906943]]n=25248190270833-(-761980)M=J[k[2235059259%9592529]]j=J[k[-607550-(-607553)]]a=j(v,n)l=M[a]b,z=-462533+20186020000636,3228694874%20613482 j=J[k[-66507-(-66509)]]n=C(986353+-998478)a=J[k[-682753+682756]]v=a(n,b)M=j[v]j=137321+-137318 t=U(l,M,j)else z=-104927+9288103 end else if z<424088+6058617 then z,U=I[C(-843020+831946)],{}elseif 3924190828%22133865>z then H=O(H)q=O(q)z,U=I[C(-858986-(-846912))],{}elseif 7549310-1044067>z then v=J[M]z,P=312179256%14411592,v else z=314209+14644474>6173030908%26423195 U={z}z=I[C(541643-553311)]end end else if 1529332075%16732956>z then if z<424196+6183581 then z=1023783+4489119>2049206051%20970434 U={z}z=I[C(-860876+849322)]elseif z<-678761+7296682 then z=-491868+4601684 else U=J[k[2468069203%15720186]]M,H=C(-300022-(-287549)),W[-576810-(-576811)]P=J[k[31254914%651144]]j=113018+15865251029857 t=J[k[-242351+242354]]l=t(M,j)q=P[l]z=U[q]z=z and-150874+16104220 or 1899619643%20338970 end else if 1901491132%8384283>z then z=J[k[-511161+511162]]H=J[k[358477+-358475]]l=459549+7808028789526 q=J[k[-792802-(-792805)]]t=C(-222852-(-211126))P=q(t,l)U=H[P]H=869824-869524 z[U]=H z=J[k[-651940-(-651941)]]H=J[k[1689943537%8324845]]l,M=17835473833253-27828,19738692166145-720410 q=J[k[2066252367%15653427]]t,j=C(898151-909233),22677025168643-(-756796)P=q(t,l)U=H[P]H=.05 z[U]=H z=J[k[199787-199786]]H=J[k[173866+-173864]]l=27389722559223-86309 q=J[k[-886740+886743]]t=C(1008710+-1020412)P=q(t,l)U=H[P]l,H=32944858580007-116794,.8 z[U]=H t=C(304620-316139)z=J[k[-576777+576778]]H=J[k[-658475-(-658477)]]q=J[k[1287427313%9903287]]P=q(t,l)t=C(802292+-814049)U=H[P]H=126475+-126474 z[U]=H z=J[k[519078766%10178015]]l=5000351992818-(-802086)H=J[k[-835810-(-835812)]]q=J[k[568792+-568789]]P=q(t,l)U=H[P]H=-225331+225333 z[U]=H z=J[k[-129482-(-129483)]]H=J[k[-736300-(-736302)]]q=J[k[-508634-(-508637)]]l,t=10365362261441-473831,C(704308+-715963)P=q(t,l)U=H[P]H=4289116992%19461558>77266392%22459254 z[U]=H z=J[k[2453494393%11518753]]q=J[k[-974594-(-974596)]]l=C(429066-440710)P=J[k[628992-628989]]t=P(l,M)H=q[t]P=J[k[1005564602%13407528]]M=C(-998740-(-986915))t=J[k[880075921%16605206]]l=t(M,j)q=P[l]P=-846207+846209 U=z(H,q,P)U,z={},I[C(287766-299914)]elseif z<2449675932%13960144 then z,U=I[C(742321-753581)],6166633-788915>8938778-577836 U={U}else AR=C(-853010-(-841153))BR=I[AR]SR=J[t]Ig,rR=858619+10332877584592,C(772612-785004)cR=J[q]iR=cR(rR,Ig)AR=SR[iR]pR=BR[AR]z=12854650-540709 AR=V(1655977706%12352631,{t;q;QR,A})BR=pR(AR)end end end else if 1306649480%7224025>z then if z>3351323627%17793356 then if z<174868+6041645 then P=G(8959943-433699,{k[919060+-919043]})U=C(-665755-(-653683))z=I[U]U=z(P)z=nil J[k[-479121+479138]]=z z=117757+13014662 elseif z<-841807+7116371 then z=12460227-833323>142713+12040064 U={z}z=I[C(945632-956666)]else l=6374043547545-11265 z=J[k[148283+-148282]]H=J[k[2811309410%11912328]]t=C(-178125+165798)q=J[k[759404+-759401]]P=q(t,l)U=H[P]H=J[k[474480139%10544003]]z[U]=H z,U=I[C(-134218+122545)],{}end else if 570386+5501916>z then t=O(t)l=O(l)z=110048+10185851 elseif z<25955418%9919334 then z=q()z=z and-62007+2627182 or 1400033-1046311 elseif-1022301+7187576>z then M=C(986072-998041)U=J[k[939169792%14907457]]P=J[k[278282-278280]]j=29317143064025-964742 t=J[k[-1025743-(-1025746)]]l=t(M,j)q=P[l]M=-718370+8229333484826 z=U[q]U=C(-306665-(-294305))U=z[U]U=U(z)z=J[k[842079729%3629654]]q=J[k[1018035-1018033]]l=C(480581-493097)P=J[k[-278037-(-278040)]]t=P(l,M)U=q[t]q=nil z[U]=q z=-295880+753625 else z,U=I[C(1008243+-1019371)],{}H=O(H)end end else if z<7361507-974411 then if 7023890-662284>z then z,U=11896643-(-676577)<7514074-717664,{}J[k[388340-388339]]=z z=I[C(871844+-884160)]elseif z<-433342+6801554 then z=nil U={z}z=I[C(-440389-(-427944))]else H=O(H)q=O(q)z,U=I[C(-211866-(-200622))],{}end else if z<290061+6113506 then z=3773412-(-707501)>315555216%3280910 J[q]=z z=13759262-597719 elseif 2323465986%20874337>z then b=b+w v,y=n>=b,not E v=y and v y=b>=n y=E and y v=y or v y=11492972-112123 z=v and y v=851408+14690407 z=z or v else U=C(697498-709570)z=I[U]P=d(807433+10020324,{k[364561-364557];k[-573098-(-573099)];k[-525609-(-525611)],H;q})U=z(P)P=J[q]l=J[H]t=#l U=P%t P=763938-763937 z=U+P J[q]=z z=-311789+13737571 end end end end end else if z<6698594-(-727880)then if z<6915326-(-251994)then if z<336443+6685547 then if z>2974048854%18203659 then if z<6062826-(-884919)then a,P=63432+31580094316969,C(192474+-204331)U=I[P]t=J[k[1007042-1007040]]l=J[k[3840401023%16342132]]j=C(-497185-(-485314))M=l(j,a)P=t[M]z=U[P]P=V(-145229+12878610,{k[641796759%4754050]})U=z(P)z=523311516%11847399 elseif 6671472-(-337481)>z then L,z=35486495%3548649,5203015457%25813670 y=M+L U=y else q=J[k[124859-124858]]t=J[k[49011829%1690063]]a=21800113634864-398985 l=J[k[-372950+372953]]j,z=C(-482385+470310),12036678-(-202276)M=l(j,a)P=t[M]H=q[P]U=H end else if 7230682-556949>z then q,l=P(H,q)z=q and 5993321-67698 or-117109+3299962 elseif z<-457730+7166131 then z=J[k[12271071%1227107]]z=z and 2212129600%21810864 or 3470739847%17719794 elseif z<7245089-466648 then H,z,U=nil,I[C(-579919-(-568459))],{}else z,U=I[C(695926-707616)],{}end end else if z<6610689-(-517687)then if 862031339%19882765>z then z=J[k[730559-730554]]H=f()U=z()J[H]=U z=J[H]z=z and 10742331-(-322703)or-325730+4435546 elseif z<6519070-(-600639)then U=C(-336654+324253)z=I[U]U={z}z=I[C(-1002458+991268)]else o,F=not N,u+F T=F<=Y T=o and T o=Y<=F o=N and o T=o or T o=5840127991%23998034 z=T and o T=3944002635%23426489 z=z or T end else if z<4130169299%18163137 then R,w=C(-431922-(-420052)),C(-483224+471081)j=J[k[-470985-(-470992)]]b=I[w]T=12681946761397-45476 E=J[k[426875+-426871]]y=J[k[615209-615204]]L=y(R,T)w=E[L]L=C(-156579+144611)n=b[w]R=11428130199241-(-146944)w=J[k[-357735-(-357739)]]E=J[k[-902838+902843]]a=C(506342-517589)y=E(L,R)b=w[y]a=j[a]v=n[b]a=a(j,v)z=a and 15820594-(-87748)or 3833354209%17906262 elseif 7569351-417771>z then z=1522440693%14756241>=1045734605%17972609 U={z}z=I[C(-1045152+1033109)]else z=J[k[742365192%12169921]]b=C(1028192-1040065)U=z()P,w=U,20917012428096-(-766156)U=J[k[232344+-232334]]M=J[k[-516366-(-516368)]]a=J[k[826167235%12908863]]v=J[k[274910-274906]]n=v(b,w)j=a[n]l=M[j]M=J[H]t=U(l,M,q)z=not t z=z and 9554871-(-415712)or 1200321319%21229391 end end end else if z>1416682954%10139714 then if z<668416225%13490523 then if-563275+7867001>z then j=C(-379188+367116)a=e(-434678+790240,{H;M;k[4156395706%16299591];k[325663263%4229393]})z=I[j]j=z(a)z=2091120297%9716537 elseif z<-882317+8228779 then z=J[k[2907101582%11582078]]P=J[k[368986850%1740504]]M,j=C(976191+-987765),1.8205042134097e+14%3569616412614 t=J[k[-377997+378000]]l=t(M,j)j,a=C(-866384+854198),1.3778750790502e+15%5533634893735 q=P[l]t=J[k[302802050%4205584]]l=J[k[-352971-(-352974)]]M=l(j,a)P=t[M]t=346588602%4030100 U=z(q,P,t)z=2009424-(-910644)else a=J[M]L=-845432+33418832618305 b=J[k[-148664-(-148665)]]y=C(-169969-(-158830))w=J[k[1693043470%14347826]]E=w(y,L)v=C(-63199-(-52005))v,z=a[v],11777451-287157 n=b[E]v=v(a,n)j=v end else if 8322554-916411>z then z=U and 496287-316114 or 2920286172%18754257 elseif z<-530865+7947320 then j=15430521190280-(-287881)H=J[k[-970838-(-970839)]]P=J[k[276447+-276445]]t=J[k[1620505065%16368738]]M=C(-1020263-(-1008414))l=t(M,j)q=P[l]U=H[q]z=not U z=z and-416445+1831971 or 22664866%7740386 else E,n,l=21777660726620-402879,C(-353600+341858),C(-648622-(-636550))U=I[l]b=6601165347577-(-307464)M=V(1535889237%9549151,{P;k[382219-382215];k[894695-894690],H})l=U(M)w,M=C(-125843+113631),C(-102315+90458)l=I[M]j=J[k[755591+-755587]]a=J[k[-1045011+1045016]]v=a(n,b)z=I[C(162544+-174490)]M=j[v]U=l[M]j=J[k[-300243-(-300246)]]v=J[k[122704340%2115592]]n=J[k[368292341%15345514]]b=n(w,E)a=v[b]M=j[a]l=U(M)U=14784191-(-781705)~=295246853%5114187 U={U}end end else if z<344051881%14644552 then if-255844+7435716>z then hR,JR=C(392909-404259),C(444452-456059)B=I[hR]sR=747333+21555347079152 zR=J[t]kR=J[q]xR=kR(JR,sR)z=-139310+11001714 CR=zR[xR]hR=B(CR)elseif z<4470591823%22429092 then M,H=29927349431025-(-576383),C(234649-246506)U=I[H]q=J[k[951448-951446]]P=J[k[461752-461749]]l=C(410307-422664)t=P(l,M)H=q[t]a=33518823816518-671822 z=U[H]q=J[k[-428410+428411]]j=C(290153-301793)t=J[k[652741637%7172985]]l=J[k[2130884739%16647537]]M=l(j,a)P=t[M]H=q[P]q=V(-941515+8481022,{k[-80231-(-80232)],k[-34940+34942];k[862707-862704];k[-935371-(-935375)],k[288353+-288348]})U=z(H,q)z,U=I[C(127531-139262)],{}elseif 1344683371%9691742>z then H=W[-153989+153990]z=not H z=z and 914798+10873625 or 10796413-(-781471)else U=402061-402061 q,z=U,374684098%6719755 end else if z<7060064-(-179322)then U=J[k[-542997+543001]]z=H==U z=z and 314797614%17353546 or 539078+14638571 elseif 58641624%12847312>z then z,H,U=I[C(-187224+176130)],nil,{}else z=J[k[-514204+514214]]q=J[k[1623007196%11193153]]H[z]=q z=J[k[-92612+92624]]q={z(H)}U,z={h(q)},I[C(375669-388033)]end end end end else if z<6981371-(-663520)then if 743992584%9092066>z then if z<1203812360%17090330 then if 3718566241%21702505>z then U=J[k[-186129+186130]]H=U()z=not H z=z and-113102+11898047 or-918764+6364503 elseif 3076333930%12178103>z then U=C(-657649-(-645577))z=I[U]q=V(2400782477%14802916,{H,k[191922+-191920];k[286240-286237]})U=z(q)z=-385981+6556271 elseif 7706637-244900>z then z=-123910+12427279 else H=W[3253922894%14723633]z=J[k[377525+-377524]]q=J[k[443205172%4388170]]l=C(479459+-491173)P=J[k[201050-201047]]M=-1699+12016859667582 t=P(l,M)U=q[t]q=H z[U]=q z=J[k[703069360%10652566]]U=z(H)H,z,U=nil,I[C(-760275-(-749045))],{}end else if z<7681110-165356 then M,z=j,a z=-153124+13862325 elseif 6599487-(-926798)>z then v=1636562089%16203585 a=j==v z=a and 383891+5272555 or 716846893%3574822 else t=C(-64933+53644)q=J[k[171014+-171009]]n,v,t=10069+7955419621155,C(169827-181929),q[t]M=J[k[-605376-(-605378)]]j=J[k[-438654-(-438657)]]a=j(v,n)l=M[a]t=t(q,l)z=I[C(-927456+915620)]J[k[-287988+287989]]=t q=J[k[-942767+942768]]U={q}end end else if z>935415+6664274 then if 6706329-(-926812)>z then gR,z=MR,jR z=MR and 5833671373%25301698 or 3216585616%19638215 elseif z<773979+6866244 then z,U=I[C(-376996+365835)],{}else t=J[k[3065818692%14882615]]a=30572545337667-(-3673)l=J[k[467699325%2555734]]j=C(-677290-(-665125))M=l(j,a)z=C(826681+-837949)U=t[M]z=P[z]z=z(P,U)t=z z=not t z=z and 7180179-815717 or 2705626992%16474105 end else if 2626630699%19400634>z then U=J[k[653414081%2816440]]q=J[k[-693084+693086]]M,l=33386831666719-139621,C(-22667-(-10719))P=J[k[121570+-121567]]t=P(l,M)H=q[t]z=U[H]z=z and 4899727873%19639613 or 6497774-25204 elseif z<4343930525%21790807 then q,v=W[2713758342%14993140],C(-692557+681052)t=J[k[848517+-848516]]P,H,n=W[-303067-(-303070)],W[2073724906%13042295],20976790296263-405663 M=J[k[-932796-(-932798)]]j=J[k[718767-718764]]a=j(v,n)l=M[a]U=t[l]v,a=705119+8221046328469,C(786865+-798358)l=J[k[-164794+164796]]M=J[k[1943123585%16467149]]j=M(a,v)t=l[j]z=U==t z=z and 340641+7994582 or-667044+16144109 else z=U and 274491+4941938 or 858065-(-859498)end end end else if 8044977-151429>z then if z>7592621-(-177256)then if z<2466323442%12939630 then U=J[k[-1019817+1019818]]H=U()z=not H z=z and 83987+2678452 or 4274858-(-60596)elseif z<-5550+7835104 then t,w,E,j=P,C(328473+-340161),-532859+23701888126104,C(351679-362873)v=J[k[1116251043%7392391]]n=J[k[233027735%1188917]]j=l[j]b=n(w,E)a=v[b]j=j(l,a)M,z=j,j and-767418+14476619 or 315807272%17997860 else z=R z,E=5079529-(-671077),L end else if-227410+7884140>z then z=J[k[227244-227243]]H=J[k[-462667-(-462669)]]q=J[k[3115168296%13369821]]l,t=-663820+22434969061851,C(-996764-(-985089))P=q(t,l)U=H[P]H=J[k[941252-941248]]z[U]=H z,U=I[C(-545273+534210)],{}elseif z<291710059%8606206 then P=C(29969-42466)q=I[P]M,z,b=C(-642790-(-630461)),14478089-126542,10349847169009-(-461538)l=I[M]n=C(-268821+256345)j=J[k[115436909%459908]]a=J[k[24640920%300499]]v=a(n,b)M=j[v]t=l[M]j=C(-479810-(-467452))P=q(t)t=J[k[-961295-(-961296)]]l=J[k[62766156%729839]]a=-474593+8171976871102 M=l(j,a)q=t[M]H=P==q U=H elseif 2685979515%23288978>z then U=J[j]z,U=I[C(990046+-1001516)],{U}else l,v=C(149330+-161187),C(575928-588355)t=I[l]M=J[k[540219+-540217]]n,z=-301269+34037542655678,1658330881%7535085 j=J[k[52074963%371964]]a=j(v,n)l=M[a]q=t[l]l=.1 t=q(l)end end else if z>4095396210%17927381 then if z<-339637+8298026 then z=U and 1002007753%21489307 or 14446902-8651 elseif z<358055+7615479 then U=613591+5816863>763324113%25872557 J[k[192216+-192215]]=U U,z={},I[C(-501459-(-489627))]else z=-243781+4327107 end else if z<8496188-566113 then U=J[k[177429-177428]]M=C(-555946+544280)P=J[k[745552-745550]]t=J[k[882845-882842]]j=21431007014742-(-276389)l=t(M,j)q=P[l]z=U[q]U,l=C(-996154-(-983794)),C(706869+-718857)U=z[U]U=U(z)z=J[k[-285896+285897]]q=J[k[-380724-(-380726)]]P=J[k[1782412283%15773560]]M=22066155991922-(-439473)t=P(l,M)U=q[t]q=nil z[U]=q z=885210138%4206679 elseif z<8656966-713950 then l=55285764070655%9214294468825 z=J[k[955787+-955786]]t=C(-1042856-(-1031564))H=J[k[1035436+-1035434]]q=J[k[1400823570%15062619]]P=q(t,l)U=H[P]H=1331297776%8758538 z[U]=H z=J[k[765129+-765128]]H=J[k[147705-147703]]l=929369+26341777277329 q=J[k[260544+-260541]]t=C(-250681+239545)P=q(t,l)U=H[P]H=665610+-665610 z[U]=H z=J[k[44806477%2036658]]H=J[k[1585131308%15540503]]l,t=-958096+1284085407973,C(781704+-794082)q=J[k[320689+-320686]]P=q(t,l)t,q=C(-526167-(-514770)),C(-412058-(-400304))U=H[P]M=323158+10032794477545 H=I[q]q=H()l,j=25396869718925-554331,19447724946081-(-307391)z[U]=q z=J[k[-4144-(-4145)]]H=J[k[1138095149%8822443]]q=J[k[1017324339%12111004]]P=q(t,l)U=H[P]H={}z[U]=H z=J[k[-406730+406731]]H=J[k[5872+-5870]]t,l=C(-345963-(-334884)),12332307965385-495451 q=J[k[896103900%15721121]]P=q(t,l)U=H[P]t,H=C(114760-126620),286367+-286367 z[U]=H z=J[k[1875853079%15502918]]H=J[k[818484-818482]]l=572476+30681772833683 q=J[k[1152642416%10772359]]P=q(t,l)U=H[P]H,l=341180+-341180,C(-602582-(-591106))z[U]=H z=J[k[-377475-(-377479)]]q=J[k[-533097+533099]]P=J[k[-345517+345520]]t=P(l,M)H=q[t]P=J[k[714721+-714719]]M=C(404753+-416105)t=J[k[622853+-622850]]l=t(M,j)q=P[l]P=551224-551222 U=z(H,q,P)z,U=I[C(823736-835964)],{}else t=q z=f()J[z]=t t=z z=f()J[z]=l j=J[t]l=z z,M=j and 354121+15904185 or-745364+5515395,j end end end end end end end end else if 11795739-(-649193)>z then if 10091984-87554>z then if z>9094231-91992 then if 452278035%11354372>z then if z>3380648393%25540774 then if z<69786+9294978 then if 386645+8955025>z then if-519709+9808501>z then z=v and 1646110243%10017088 or 3728081954%15322019 elseif z<-135516+9440666 then jR=m(1859838868%22539774,{KR;t,q;l})MR=C(-821152-(-809080))gR=I[MR]MR=gR(jR)z=5521250684%24691859 elseif-973259+10295625>z then v=-747117+26756844148504 l=J[k[1256010114%5924576]]M=J[k[87615-87612]]a=C(23043+-34666)j=M(a,v)t=l[j]P=q[t]z,U=28143+16565512,P else z=15719861-155728~=459023+4675901 z=z and 6335783-991762 or 5337604-854786 end else if 1182193468%17247715>z then z=-132846-(-486568)elseif 6028879670%24670190>z then T,Y,E=812299+29443258634371,28785305284483-(-1017049),C(-548733-(-536969))a=J[k[3467845813%15691610]]R,z=C(-224196-(-212189)),100077+16463452 n=J[k[1687105273%8150267]]F,y=C(-718894-(-706750)),347252+21888037526364 b=J[k[703364037%3588592]]w=b(E,y)v=n[w]E=J[k[255199+-255195]]y=J[k[174850+-174845]]L=y(R,T)w=E[L]b=P[w]E=J[k[-563659+563667]]L=J[k[669938+-669934]]R=J[k[263029-263024]]T=R(F,Y)y=L[T]w=E[y]n=b*w a[v]=n else t=J[k[-677425-(-677426)]]P=H==t U,z=P,-878801+3561244 end end else if z>9715776-299291 then if 674199455%23741292>z then z=J[k[11279075%2255814]]U=z()z=2525079295%19944629 elseif z<3343162498%19726115 then z,U=I[C(-354642+342213)],{}else z,U=I[C(-61500+50032)],{}end else if 10030954-658337>z then z=8757692-(-425484)elseif 254659355%9433774>z then M,n,y,b=C(-958293-(-946888)),C(766374+-778459),C(-390622-(-378936)),319243598903-474019 l=I[M]j=J[k[482496-482495]]a=J[k[-544315-(-544317)]]L=32499531811280-(-471373)v=a(n,b)M=j[v]z=329916+333665 t=l[M]v=J[k[972338-972333]]b=J[k[32013-32012]]w=J[k[-625380-(-625382)]]E=w(y,L)n=b[E]a=v[n]j=a/H a=381177+-381077 M=j*a l=t(M)q=l else z,l,t=5693275-(-978970),nil,nil end end end else if z<538151+8613909 then if z>9826856-777524 then if 4543221113%22010296>z then z=497065292%12683651>267723216%12653187 z=z and 809490868%22327839 or 12404621-615742 elseif 8434015-(-704644)>z then z,U=I[C(-98141-(-85864))],{}else H,P,q=W[304805-304804],W[-396393-(-396396)],W[926676-926674]U=J[k[7162-7161]]z=H~=U z=z and 2558808145%14626144 or 775014-483557 end else if z<9065873-51295 then a,M=12097842164172-(-877621),C(-696162-(-684996))H=J[k[736760381%16744554]]j=665363358729-320212 P=J[k[3023501443%13681002]]t=J[k[-255859+255861]]l=t(M,j)q=P[l]U=H[q]j=C(-1042136+1030307)q=J[k[-662589+662594]]t=J[k[-1034970-(-1034971)]]l=J[k[108130+-108128]]M=l(j,a)P=t[M]l=288787110%9626237 H=q[P]z=U+H H=z t=H>l q,P=t,z z=t and 783393+8589338 or-572848+1236429 elseif z<8727711-(-297864)then t,l,z=nil,nil,-414698+14067335 elseif 8990602-(-42139)>z then M,l=890886+16880656533166,C(-92467+80872)z=J[k[-491648+491649]]q=J[k[-392021+392023]]H=W[184924-184923]P=J[k[-458229-(-458232)]]t=P(l,M)U=q[t]P=632311-632211 q=H/P z[U]=q H,U,z=nil,{},I[C(-129986+118416)]else P,j=C(-710854+698343),C(756773-768756)q=I[P]t=J[k[1209049441%10422840]]a=8446443365769-(-469460)l=J[k[72546+-72544]]M=l(j,a)P=t[M]H=q[P]P=J[k[-755572-(-755573)]]j=-982072+28070024490823 t=J[k[-388088-(-388090)]]M=C(353460-365472)l=t(M,j)q=P[l]M,l=-696930+25777986130245,C(-820643-(-808351))U=H[q]q=J[k[-642744+642745]]P=J[k[-256385+256387]]t=P(l,M)H=q[t]z=U[H]H=C(636425+-648300)H=z[H]U={H(z)}z,U=I[C(-14262+1995)],{h(U)}end end else if z>4326587859%23592241 then if z<9026619-(-214057)then U=C(-43288-(-31216))H=d(3224815043%26533355,{k[937754031%7383890]})z=I[U]U=z(H)z=nil J[k[695518+-695517]]=z z=4777247569%20885384 elseif z<8783715-(-468629)then z=J[k[454174060%16220502]]M=C(770509-781966)P=J[k[-525332+525334]]a,j=-94819+32646374960581,328158+6232312367480 t=J[k[9258831%3086276]]l=t(M,j)j=C(933819-945300)q=P[l]t=J[k[-155205+155207]]l=J[k[701827+-701824]]M=l(j,a)P=t[M]t=774149234%16128109 U=z(q,P,t)z=-795306+4558207 else z,U=I[C(381960+-393325)],{q}end else if 914171847%9526339>z then H,z=nil,14969514-531263 J[k[2661306380%15207465]]=U elseif z<9113831-(-65357)then H=C(-298455-(-286598))U=I[H]q=J[k[1324154833%9007856]]M,l=15261517677369-26487,C(502372+-514390)P=J[k[-83099-(-83101)]]t=P(l,M)H=q[t]z=U[H]H=J[k[-441634-(-441637)]]U=z(H)U,z={},I[C(-1030735+1018890)]else v=13267110-(-839243)>=1011507+120322 z=v and 244917121%19863259 or-1046713+13062546 end end end end else if z<9122811-(-584255)then if 119505+9419461>z then if z<87484+9382909 then if z<639349425%10860157 then M,b,U=C(-321456-(-310051)),28603030683692-478245,1337194-(-225398)>1156558130%11522765 J[k[345370-345366]]=U n=C(-368696-(-356511))l=I[M]j=J[k[607388314%4636552]]a=J[k[613588+-613585]]v=a(n,b)M=j[v]n,a=C(339046+-351495),z t=l[M]v=I[n]n=v(q)v,a=-768382-(-768383),392013280%8000271 j,M=n or v,666425071%8127135 l=t(M,j)j,M,z,v,t=l,260072+-260071,722939+4686190,a,987891768%4573573 a=627121+-627121 n=a>v a=M-v elseif 33950060%24487746>z then z=432260+-432259 J[k[-518463+518464]]+=z l=8691684662101-(-111738)z=J[k[654528965%9485927]]H=J[k[402088+-402085]]t=C(309441-321373)q=J[k[2373049933%9530321]]P=q(t,l)U=H[P]H=755356+5688128>=195572+9602866 z[U]=H z=J[k[535184765%8108860]]H=J[k[867925-867922]]t,l=C(-279641-(-267108)),14311827378791-882783 q=J[k[854823-854819]]P=q(t,l)U=H[P]H=J[k[805999382%8857136]]z[U]=H z=J[k[-309665-(-309672)]]z=z and 278740395%21080085 or 353828+10183749 elseif 9029411-(-437286)>z then H=e(3226795535%22474710,{k[533525+-533521],k[598539272%2850187],k[-862836+862839];k[-931703+931708]})U=C(-1010034+997962)z=I[U]U=z(H)z=302937610%19764336 else U=J[k[1012811-1012810]]H,j,M=W[517631962%15685817],708016+32401792691520,C(-594209-(-582617))P=J[k[-55184-(-55186)]]t=J[k[1005897-1005894]]l=t(M,j)q=P[l]z=U[q]z=z and 820211003%14172527 or 15460691-(-820211)end else if 503754+8989740>z then U=C(-982135-(-970369))z=I[U]M=7710827047176-(-124158)q=J[k[122557105%13617456]]l=C(-860883+849656)P=J[k[380307-380305]]t=P(l,M)H=q[t]U=z(H)z,U=I[C(-679972+667903)],{}elseif 4071905865%16997407>z then l=m(1804474454%12865682,{k[-628686-(-628698)],k[413078665%2096846],k[36848-36844]})U=C(-613297+601225)z=I[U]U=z(l)z=245982250%3806681 else n,z=C(-487134-(-475729)),j v=I[n]n,b=C(-956914-(-944836)),C(-146838+134614)j=v[n]v=f()E=z J[v]=j n=I[b]b,L=C(-717551+706419),C(-497732-(-485508))j=n[b]y=I[L]b,w=z,y z=y and 930819406%4042999 or 1508470-932898 end end else if 2622538949%12684387>z then if z<118945+9426888 then z=8694221-(-469862)P=J[k[367678758%1641423]]q=P==H U=q elseif 2460967756%10943821>z then P=C(908677-920082)U=I[P]j=C(180324-192117)t=J[k[1331674177%13871606]]l=J[k[-326719-(-326721)]]a=23100779431950-(-434679)M=l(j,a)P=t[M]z=U[P]U={z(H)}z,U=I[C(-165009-(-153840))],{h(U)}else t=C(887973-900419)z=J[k[383637+-383636]]l=30962554812023-982565 H=J[k[764654-764652]]q=J[k[-594099-(-594102)]]P=q(t,l)U=H[P]H=4354394%2174697 z[U]=H t=C(-1032751-(-1020433))z=J[k[638150689%5697774]]H=J[k[-914871-(-914873)]]l=-695976+6077120473525 q=J[k[809262-809259]]P=q(t,l)U=H[P]l,H=315370+6297532316554,.01 z[U]=H t=C(1006948-1018836)z=J[k[-125819+125820]]H=J[k[-124009-(-124011)]]q=J[k[-191005-(-191008)]]P=q(t,l)U=H[P]H=.3 z[U]=H z=J[k[194754913%1132296]]H=J[k[406834253%7137443]]q=J[k[-691578-(-691581)]]t,l=C(-917212+905715),939159+12658838209135 P=q(t,l)U=H[P]H=.3 z[U]=H l,t=15588176146966-(-797252),C(1012507+-1024575)z=J[k[614030+-614029]]H=J[k[151777+-151775]]q=J[k[559733847%2454973]]P=q(t,l)l,t=13324691557595-996511,C(119877+-132077)U=H[P]H=1040130699.5%9123953.5 z[U]=H z=J[k[39510433%189954]]H=J[k[1299685922%8331320]]q=J[k[-194909+194912]]P=q(t,l)U=H[P]H=7119878-(-589471)>2960868215%18073295 z[U]=H j,M=3542561530672-(-926529),22782663438079-(-244338)z=J[k[446224684%5070735]]q=J[k[710541-710539]]l=C(923479+-934520)P=J[k[454268+-454265]]t=P(l,M)H=q[t]M=C(-349552+338190)P=J[k[-603070+603072]]t=J[k[-478344-(-478347)]]l=t(M,j)q=P[l]P=-367060-(-367062)U=z(H,q,P)z,U=I[C(128537+-139552)],{}end else if 8996968-(-570502)>z then P,H,q,z=W[-71009+71012],W[533063137%16658223],W[278704+-278702],158299+-158299 t=z z=.02 l=z z=2344249324%28428735 elseif z<-566183+10208058 then q=C(-320900+309043)U=I[q]P=J[k[-562119-(-562121)]]j,M=-752063+9753588894588,C(197149+-209565)t=J[k[424409538%2572179]]l=t(M,j)q=P[l]z=U[q]q=J[k[-232232+232236]]U=z(q)z=12107297-51256 else F,y=C(-184152-(-172556)),C(270213+-282710)E=I[y]b=z y=E(a)L=J[k[1893455408%13334193]]Y=-103895+32355228225713 R=J[k[1298883963%14760045]]T=R(F,Y)E=L[T]w=y==E z,n=w and 1237520208%25003965 or-153152+14357793,w end end end else if z<8938918-(-897486)then if z<80801+9701096 then if 3907869814%20845646>z then z=-971825+4580036 elseif 9375093-(-387287)>z then z=C(-279731-(-268075))q=J[k[216081-216079]]l,z,M=C(764631-776325),H[z],3630014164079-681429 P=J[k[42808723%5351090]]t=P(l,M)U=q[t]z=z(H,U)q=z z,U=q and 395423+5626717 or-636394+2214671,q elseif 1916179406%13617186>z then P=C(-285213+273356)U=I[P]t=J[k[-966549-(-966551)]]l=J[k[1624583786%10758833]]a,j=-378092+8596491998351,C(591208-602361)M=l(j,a)P=t[M]z=U[P]P=G(759488278%23312704,{q;k[-937262-(-937264)],k[1224824553%10744075];k[-345226+345234]})U=z(P)z=495472+12102567 else z=J[k[-475101-(-475102)]]H=J[k[1019782972%8867678]]t,l=C(-715882-(-703763)),-718088+3665303862194 q=J[k[458395-458392]]P=q(t,l)U=H[P]H,l=92035562%8701278<210859+10115014,-469435+28351179758925 z[U]=H t=C(-520638-(-508720))z=J[k[-174382-(-174383)]]H=J[k[536983-536981]]q=J[k[-246920-(-246923)]]P=q(t,l)U=H[P]t,H=C(309393-320482),.01 z[U]=H l=-442266+26378389499797 z=J[k[164118-164117]]H=J[k[521252+-521250]]q=J[k[2497738311%16011143]]P=q(t,l)U=H[P]H=.2 z[U]=H l,j=720053+14030664228048,710207+9576808905516 z=J[k[2296863033%15110941]]H=J[k[1613775458%11865996]]t=C(-788621-(-777610))q=J[k[-449839+449842]]P=q(t,l)t=C(618095-629981)U=H[P]H=.2 z[U]=H l=12905498127757-(-518636)z=J[k[120619+-120618]]H=J[k[-1040738+1040740]]q=J[k[1220784438%5377905]]P=q(t,l)U=H[P]H,M,l=.3,321394+13871042556361,C(-368788-(-357448))z[U]=H z=J[k[441429+-441425]]q=J[k[391693292%13056443]]P=J[k[-891615-(-891618)]]t=P(l,M)H=q[t]M=C(-297412+285607)P=J[k[-280645+280647]]t=J[k[614233895%8300458]]l=t(M,j)q=P[l]P=371604+-371602 U=z(H,q,P)U,z={},I[C(558832-570539)]end else if z<9321327-(-473407)then H=f()J[H]=U q=J[H]U,z=q,q and 1573373985%20537959 or 121642-81203 elseif z<10453090-631627 then z,RR,ER=-878134+11855456,C(241904+-254336),C(-334518-(-322667))bR=I[ER]LR=J[t]yR=J[q]TR=26730793667424-301761 wR=yR(RR,TR)ER=LR[wR]nR=bR[ER]aR=nR else U=J[k[-681327-(-681328)]]j=-15522+6676269172934 P=J[k[498785-498783]]t=J[k[13713169%112403]]M=C(620558-632115)l=t(M,j)q=P[l]z=U[q]U=C(611672-624032)U=z[U]U=U(z)l,M=C(-681183+669710),34634201623669-421238 z=J[k[206394800%1235897]]q=J[k[-55253+55255]]P=J[k[627426-627423]]t=P(l,M)U=q[t]q=nil z[U]=q z=2762104-352538 end end else if z>1030028+8918354 then if 9839072-(-139484)>z then P,z,t=nil,205474-(-148248),nil elseif z<213227+9776821 then z=U and 7268284-236292 or-216579+5132561 else M=J[P]w=923516+23848401441765 a=J[k[425448304%5672644]]b,E=C(280807-292686),5378838920353-(-183591)v=J[k[205991045%6866368]]n=v(b,w)j=a[n]l=M[j]w=C(988540-1000436)j=J[H]v=J[k[-768490+768494]]n=J[k[-110879+110884]]b=n(w,E)a=v[b]M=j[a]t=l-M n=1157307355483-102209 M=J[k[612977+-612973]]j=J[k[-531860-(-531865)]]v=C(-528517+516276)a=j(v,n)b,n=2236340267031-566278,C(304927+-315976)l=M[a]U=t[l]l=J[k[-321493-(-321496)]]t=U j=J[k[-943350+943354]]a=J[k[118138-118133]]v=a(n,b)M=j[v]U=l[M]z=U and 6841831-(-584434)or-671959+5975787 end else if 1362043916%23313859>z then U=J[k[1872031406%8587300]]P=J[k[-479111-(-479115)]]t=J[k[912093+-912088]]a,M,w,j=9637391634490-(-852301),C(-148296-(-137192)),468924+30419667373977,985592+5726492835954 l=t(M,j)q=P[l]z=U[q]P=C(-747450+735130)U=I[P]b,j,q=C(864720+-876612),C(-76720+64746),z t=J[k[-457933+457937]]l=J[k[273142+-273137]]M=l(j,a)P=t[M]l=378934-378934 z=U[P]t,P=95798370%6386558,77954-77954 U=z(P,t,l)P,j=U,C(173281-185424)U=C(-484022-(-472775))z=J[k[-965518-(-965525)]]M=I[j]a=J[k[1819171365%11299201]]v=J[k[964910982%12214063]]U=z[U]n=v(b,w)j=a[n]l=M[j]j=J[k[1037379+-1037375]]n=C(-960615-(-948606))a=J[k[965577+-965572]]b=-173035+17324743541614 v=a(n,b)M=j[v]t=l[M]U=U(z,t)z=U and 3474674858%22219657 or 3156145-947369 elseif 293371+9591546>z then a=z b=J[k[2101651970%16419156]]L,v,y=-42496+11394517072569,C(-768037-(-756843)),C(-43420-(-31889))w=J[k[2554768839%15770178]]v=l[v]E=w(y,L)n=b[E]v=v(l,n)j,z=v,v and 289924958%11296602 or 747983+10965287 else z=9308330-(-1042464)end end end end end else if 8449828-94780>z then if z>7222764-(-915662)then if 8381263-125803>z then if z<-713809+8932425 then if-909459+9052420>z then U,z={},I[C(-769741+757350)]elseif 8629648-471018>z then WR=z r=J[q]z,c=r and 7065868-(-990440)or 3415919-1018643,r elseif 696266504%20237405>z then z=J[k[-985979-(-985985)]]U=z()j=1765125891499-352886 z=J[k[-235663+235667]]P=J[k[-499400+499402]]t=J[k[837708-837705]]M=C(-529889+518049)l=t(M,j)q=P[l]j,a=C(-852408-(-841281)),26975898734810-237513 t=J[k[-43598-(-43600)]]l=J[k[-255460+255463]]M=l(j,a)P=t[M]t=604505-604503 U=z(q,P,t)z=14787220-(-382735)else z=nil U={z}z=I[C(-648678-(-636777))]end else if z<344802+7877950 then z=J[k[-634602+634603]]l,H,M=C(-602660-(-590804)),W[-832452+832453],500697+23638294972198 q=J[k[210359532%2474818]]P=J[k[1050469010%4840871]]t=P(l,M)P=463219556%8271776 U=q[t]q=H/P z[U]=q H,z,U=nil,I[C(-427693+415607)],{}elseif z<-991070+9224840 then z=-589021-(-942743)else w=C(-967010+955887)j=J[k[-954344-(-954346)]]v=J[k[-483674-(-483677)]]n=J[k[-578066-(-578070)]]E=1016056+27968413544935 b=n(w,E)a=v[b]z=2742355418%13472659 M=j[a]l=t<M U=l end end else if z<753140672%17734378 then if 9001945-733245>z then H=J[k[100195-100192]]M=C(920828-932512)P=J[k[-595988-(-595989)]]j=31039801907697-(-974469)t=J[k[610306-610304]]l=t(M,j)q=P[l]U=H[q]z=U and 3393202561%32473976 or 2412485-(-593850)elseif 7549571-(-727422)>z then l,t=-991893+3963448043978,C(-325428-(-313829))z=J[k[2548691307%10708787]]H=J[k[2463870242%10266126]]q=J[k[288674+-288671]]P=q(t,l)U=H[P]H=-784490+784490 z[U]=H U,z={},I[C(-731290+719520)]else z=2322369342%12304821 end else if 193331+8128519>z then n=C(652711-664783)v=I[n]b=V(599508686%9931152,{t;k[-480179-(-480181)],k[383329935%2038989],k[260535-260534],j})n=v(b)z,v=I[C(-112416-(-100088))],-1039315+4694372<=2174519756%25387343 U={v}elseif z<1217070645%13282712 then z=5255668-722321>=-987248+17132662 U={z}z=I[C(-319134-(-307205))]else F=z Y=J[q]z,T=Y and-774099+6298979 or 17106293-341807,Y end end end else if z>332229573%14734734 then if z<8157986-60377 then if 1110542122%14317729>z then z=J[k[-436808-(-436810)]]l=J[k[2308723400%13824691]]M=J[k[554052-554048]]a,v=C(-744440+732451),75387338343580%1159805342730 j=M(a,v)U=l[j]l=713505+-713504 z[U]+=l z=13947685-(-616946)elseif 750439889%9517358>z then F,T,E=-880092+30927395956253,C(-541087+528780),C(-596455-(-584368))j=f()U=5036834-(-136832)<=742968521%5931499 J[j]=U a=f()U,u=2923115568%16278295<3620538-980924,C(539723+-551067)J[a]=U U=J[k[228988-228981]]N=22986123447316-(-761275)n=J[P]v=C(591203+-603655)w=I[E]y=J[k[-773489+773493]]L=J[k[519992501%3611059]]R=L(T,F)E=y[R]R=C(-1001427-(-989284))b=w[E]L=I[R]T=J[k[2564714278%14824938]]F=J[k[-543924+543929]]Y=F(u,N)R=T[Y]v,u=U[v],11020786086709-991018 y=L[R]R=J[k[-217309-(-217313)]]T=J[k[922083776%8307061]]Y=C(378064-389499)F=T(Y,u)L=R[F]T,F=C(-644112-(-631974)),31138669696441-466197 E=y[L]w=b(M,E)y=J[k[903860-903856]]L=J[k[84707-84702]]R=L(T,F)E=y[R]y=J[H]b={[E]=y}v=v(U,n,w,b)U,R=nil,C(-541486-(-529921))n=f()J[k[1782449090%10609816]]=v J[n]=U b=J[k[904062725%5107699]]E=J[k[835013-835009]]T=6553608801991-(-523556)y=J[k[150540-150535]]L=y(R,T)w=E[L]U=b[w]w=K(748607+14878311,{k[-941316-(-941320)];k[-198389-(-198394)];j;a;n})b=C(-454883+443200)b=U[b]b=b(U,w)E=z J[n]=b w=C(-383442+371522)U=J[k[-1035081-(-1035083)]]w=U[w]w=w(U)w=C(-863917+852163)U=I[w]w=U()z=q and-322486+14790273 or 7821301-815384 U=q elseif z<1817833140%10772257 then q=C(34758-46653)H=I[q]z,U=H and 5351869-909388 or 1906172730%13109277,H else z=not H z=z and 199793380%6266227 or 14086080-824387 end else if z<8309511-196223 then z,U=I[C(821845+-833196)],7259710-34911>=8417618-1005418 U={U}elseif z<-309649+8440844 then z,U=l,t z=3710178358%14611636 else H=J[k[213722947%1032478]]U,z=H,H and-395317+7407306 or 12240129-1175 end end else if-34235+8072422>z then if z<8537891-530485 then z=799970+-446248 elseif z<2537413261%12774731 then U,z={},I[C(921453+-933404)]elseif z<2752328516%22131443 then z=J[k[234477-234476]]t=C(-951773-(-940043))H=J[k[1033994+-1033992]]q=J[k[2215712915%10451476]]l=24126691120393-436519 P=q(t,l)U=H[P]H=J[k[71117+-71113]]z[U]=H U,z={},I[C(645307-656898)]else a=-679530+679532 U=j==a z=U and-203427+2346594 or 991463-(-705111)end else if z<4882555285%22567177 then z=1063120501%18587298 elseif z<2171930147%21214491 then U,z={},I[C(677832-689829)]else i=168107+-168106 r=p[i]z,c=1131353676%7526376,r end end end end else if z>249392+8362701 then if 4422174890%18700392>z then if 8761554-3466>z then if 9098115-467746>z then a,n,v=487874639498-(-903769),-82845+5658506415591,C(917960+-929622)H=J[k[-899864-(-899867)]]P=J[k[-559003-(-559004)]]j=915529+33316948886609 t=J[k[1540890962%7100880]]M=C(-646022+634635)l=t(M,j)q=P[l]U=H[q]t=J[k[879080-879079]]H,j=C(407195+-419546),C(-784405-(-772092))l=J[k[200065322%1290744]]L=4221748377125-(-545160)M=l(j,a)P=t[M]M=J[k[663296-663295]]j=J[k[486997+-486995]]a=j(v,n)l=M[a]y,j=C(-1048392-(-1035948)),C(1030928-1042168)M=I[j]v=J[k[-117933-(-117938)]]b=J[k[-892293-(-892294)]]w=J[k[1929655607%12449391]]E=w(y,L)n=b[E]z=1021922919%18674704 a=v[n]j=M(a)t=l..j H=U[H]q=P..t H=H(U,q)elseif z<9249535-570896 then l=J[k[1005525523%7031647]]z,v,a=2819745-262673,34647868857546-(-139836),C(490542-502632)M=J[k[54425151%13606287]]j=M(a,v)t=l[j]P=H[t]q=not P U=q elseif 8873116-140265>z then U=q()z=not U z=z and 8169849-(-55299)or 151427+15682749 else U=J[k[-36565-(-36570)]]q=U()z=q and 3165406425%18015478 or 676521-(-202592)end else if z<8106648-(-661905)then l,t,z=nil,nil,-34328+15215092 elseif z<2146984967%12577532 then z=J[k[744745+-744744]]H=J[k[209547-209545]]l,t=22143613327892-979405,C(601301+-612388)q=J[k[890635+-890632]]P=q(t,l)U=H[P]j,t,H=230650+26872550583271,C(-971004-(-958958)),205828785%957339 z[U]=H z=J[k[-277581+277582]]H=J[k[-91397+91399]]l=29292912833646-(-229594)q=J[k[575979393%3047510]]P=q(t,l)l,M=28604784524612-35132,8.0398194651991e+14%21729241809080 U=H[P]H=.02 z[U]=H z=J[k[2329809665%11886784]]H=J[k[27965942%466099]]t=C(299150+-310696)q=J[k[808515+-808512]]P=q(t,l)U=H[P]H=-709241+709241.5 z[U]=H z=J[k[2007927571%9426890]]t=C(-387401-(-375921))H=J[k[-489378-(-489380)]]l=-1003722+27208109228615 q=J[k[1571083686%16196739]]P=q(t,l)U=H[P]l,H=1046073+1001083636633,15635568%2233652.5 z[U]=H t=C(-758055+746502)z=J[k[600406297%8961288]]H=J[k[-725408+725410]]q=J[k[702589+-702586]]P=q(t,l)U=H[P]H=511845+-511844 z[U]=H z=J[k[1162722160%6353673]]H=J[k[-140498+140500]]q=J[k[-471960+471963]]t,l=C(-564382-(-552472)),20773103349383-(-161602)P=q(t,l)U=H[P]H=5119191-(-635901)<=1761250570%9864198 z[U]=H z=J[k[1466439259%10862513]]q=J[k[92160+-92158]]l=C(-1043951-(-1032426))P=J[k[1733862357%8583477]]t=P(l,M)H=q[t]P=J[k[166528509%871877]]M=C(-155412-(-143814))t=J[k[774849+-774846]]l=t(M,j)q=P[l]P=447522-447520 U=z(H,q,P)z,U=I[C(434753+-446698)],{}else H=C(-718619+706547)U=I[H]P=V(-74446+13013835,{k[955084-955080]})t={U(P)}H=t[-623440-(-623441)]P=f()q=t[-370063-(-370065)]J[P]=q q=z U,z=H,H and 14127017-200078 or 610665+12157278 end end else if z>9612501-672365 then if z<8435757-(-517876)then z=nil U={z}z=I[C(-614965+603175)]elseif 8948479-(-31836)>z then P=J[k[382050-382048]]j=24842514719793-96001 t=J[k[255243-255240]]M,z=C(-985235+973650),C(830168+-841436)z=q[z]l=t(M,j)U=P[l]z=z(q,U)P=z z=not P z=z and 7819208-(-397668)or 80152018%24169210 else z=U and 171676386%6859914 or 9216953-(-619584)end else if 951288+7976952>z then U=J[k[1858242613%8563330]]t=J[k[-532470-(-532471)]]j,a=C(-248472+235983),18214+25307013195490 l=J[k[1001488002%10014880]]M=l(j,a)P=t[M]z=U[P]z=z and 102397513%15643373 or 3998010704%21231478 elseif z<7986973-(-946086)then z={}P=J[k[949833+-949824]]q,H,t=-236809+236810,z,P P=-759065-(-759066)l,z=P,2789265285%13277489 P=-902089+902089 M=P>l P=q-l else l=C(656885-668140)z=J[k[809946593%15575896]]H,M=W[583996+-583995],-325186+26273238083084 q=J[k[-434881+434883]]P=J[k[165066498%5002015]]t=P(l,M)U=q[t]q=H z[U]=q z=H and 10432720-854087 or 9381058-(-62182)end end end else if 9413779-891134>z then if 3441380051%20932831>z then if z<9156013-797291 then n,v=-610959+24081768758876,C(640607+-653111)M=J[k[-718390-(-718392)]]j=J[k[-171516+171519]]a=j(v,n)l=M[a]z=2026802826%18465166 t=q[l]l=277491+-277491 P=t<=l U=P elseif 82971147%18649475>z then z=J[k[-340773-(-340777)]]a=13651399994059-(-306697)P=J[k[-7062+7064]]j=3853552758218-(-973112)t=J[k[1029285+-1029282]]M=C(-891681-(-880484))l=t(M,j)q=P[l]t=J[k[1034638902%10346389]]l=J[k[-506974-(-506977)]]j=C(910166+-922345)M=l(j,a)P=t[M]t=932587373%4505253 U=z(q,P,t)z=4043097865%16029107 elseif z<720145+7667119 then z=J[k[1941378810%10326483]]U=z()z=U and 7689108-530118 or 2765441907%14509089 else U=C(756180-768252)z=I[U]q=V(9621993-(-393300),{H;k[998969-998966],k[-313764+313768]})H=O(H)U=z(q)z,U=I[C(-110387+98190)],{}end else if z<9234073-828055 then w,b=21220004369802-(-987407),C(530664+-542117)a=J[k[-467119-(-467123)]]v=J[k[69266883%1033834]]n=v(b,w)b=C(203587+-215592)j=a[n]M=q[j]a=J[k[-939281-(-939285)]]w=17325548652550-(-300925)v=J[k[730882+-730877]]n=v(b,w)j=a[n]l=M[j]z=1918264707%9037679 t=P-l P=t elseif z<343839+8119867 then v=C(210383+-222819)M=J[k[905889+-905885]]n=781147+16313660863057 j=J[k[-80707-(-80712)]]a=j(v,n)n=29869497234055-293938 l=M[a]t=q[l]M=J[k[466462084%5553120]]v=C(-572551-(-560025))j=J[k[866868-866863]]a=j(v,n)l=M[a]U=t[l]z=P+U P=z z=947095605%16015031 else U,z={},I[C(-158339-(-146183))]end end else if z>3823834483%15509264 then if 670019+7911913>z then a,l=-272835+25662076295280,11470578297679-(-698766)z=J[k[253499+-253498]]t=C(1045881+-1058223)H=J[k[-923634-(-923636)]]q=J[k[-14505+14508]]j=C(965809-978066)P=q(t,l)U=H[P]P=C(-931811+920406)q=I[P]t=J[k[4098399986%16263492]]l=J[k[-711888+711891]]M=l(j,a)P=t[M]H=q[P]z[U]=H l,t=22470646152894-1021407,C(-416975+405263)z=J[k[-498663+498664]]H=J[k[-922295+922297]]q=J[k[-526922-(-526925)]]a=257137+34651139560086 P=q(t,l)U=H[P]P,j=C(18059+-29464),C(-963823+951523)q=I[P]t=J[k[-133194-(-133196)]]l=J[k[-309013+309016]]M=l(j,a)P=t[M]H=q[P]z[U]=H z,U=I[C(409181-420598)],{}elseif z<748558+7849337 then z=3440239916%15757964<1110575109%17217513 J[k[1536800679%6800003]]=z U=J[k[1286903522%10724196]]j=16673663061003-1027511 P=J[k[2019182623%15532174]]t=J[k[221368+-221364]]M=C(960885+-973168)l=t(M,j)q=P[l]t=J[k[9049809%3016602]]l=J[k[-524190+524194]]a,j=1003235+30440856676476,C(-140395-(-128018))M=l(j,a)P=t[M]t=-235293-(-235296)H=U(q,P,t)q=f()U=J[k[-645540+645545]]H=U()J[q]=H H=J[q]U=not H z=U and 619227+14908039 or 1769951416%19515698 else T=f()CR,B,X,S,p=-332871-(-332871),-810158+810413,C(419869+-431274),743394+-743393,272251717%3446223 J[T]=F Q=I[X]X=C(858723+-870801)o=Q[X]X=110518-110517 Q=o(X,p)p=-667936-(-667936)o=f()zR,c=-1036238-(-1046238),1444955958%15706043 J[o]=Q Q=J[v]X=Q(p,B)Q=f()J[Q]=X B=-385535+385536 X=J[v]A=J[o]p=X(B,A)X=f()J[X]=p i=C(-279381-(-268141))B=J[v]A=B(S,c)B=1708306001%13666448 p=A==B c=C(-169578+157931)B=f()A=C(-134395+122492)J[B]=p r=I[i]IR=J[v]hR={IR(CR,zR)}p=C(-259498-(-246981))i=r(h(hR))p,r=L[p],C(-121171-(-109524))WR=i..r S=c..WR p=p(L,A,S)A=f()c=C(672779+-684851)J[A]=p S=I[c]WR=Z(916336+3986091,{v,T,n;t,q;R,B,A,o;X,Q,b})c={S(WR)}p={h(c)}S=J[B]z=S and 932210539%4619796 or 2046184703%21453053 end else if 2031989479%8953371>z then U=C(-1053055-(-1040760))z=J[k[-662500+662501]]U=z[U]U=U(z)U,z={},I[C(-79835-(-68428))]elseif 348793020%16202851>z then P,U,q=797014+-266747,-356668+8293055,C(-344375+333306)H=q^P z=U-H U,H=C(-377739+366133),z z=U/H U={z}z=I[C(941945+-953804)]else P,j,a=C(-867169-(-855312)),C(421507-433773),3985704635611-(-555620)U=I[P]t=J[k[-732775-(-732776)]]l=J[k[794876227%6569225]]M=l(j,a)P=t[M]z=U[P]P=314382.5-314382 U=z(P)U=J[k[902044-902041]]t=J[k[-354938+354939]]j=C(-100711+89124)l=J[k[-793069-(-793071)]]a=777896+16588847628164 M=l(j,a)P=t[M]z=U[P]z=z and 3359654307%17284691 or 5391323132%25609035 end end end end end end else if-363350+11696704>z then if 10358124-(-417580)>z then if 250186299%23976785>z then if z<3561391045%20889305 then if z>9574271-(-573312)then if z<2688682416%21428245 then w=5874193046995-4900 z=J[k[-87784-(-87786)]]l=J[k[-822791-(-822794)]]y,n,v,a=27988830300625-(-280856),16556505269704-(-989269),21264687315723-(-273315),C(-498107+485957)M=J[k[40508-40504]]j=M(a,v)U=l[j]v,l,b=C(-611367+600192),3029000729%16111706,C(-809875-(-797652))z[U]+=l F=30437489199679-(-1010974)z=J[k[2460712631%13520399]]M=J[k[33316163%16658080]]j=J[k[457025+-457021]]T=C(978709+-990516)a=j(v,n)l=M[a]a=J[k[-489629-(-489632)]]E=C(-775744+764717)v=J[k[122667+-122663]]N=C(-315301-(-302809))n=v(b,w)j=a[n]n=J[k[200346548%817741]]b=J[k[160261-160257]]w=b(E,y)v=n[w]w=J[k[788735-788733]]y=J[k[-807590-(-807593)]]L=J[k[513228-513224]]R=L(T,F)E=y[R]b=w[E]y=J[k[2866898660%11421907]]o=207512+23377003610093 L=J[k[841779436%15588508]]F,T=30716707232650-(-433237),C(263719+-276074)R=L(T,F)T=C(118099-129701)E=y[R]R=I[T]F=J[k[-229036+229039]]Y=J[k[1087717054%14502894]]u=Y(N,o)T=F[u]L=R[T]F=J[k[491888643%3074304]]N,o=C(41541+-53578),14512940750812-(-410250)Y=J[k[862030+-862026]]u=Y(N,o)T=F[u]N,u=21532156687342-(-750396),C(-880263+868425)R=L(T,t)T=J[k[758135951%9975473]]F=J[k[1297410144%9980078]]Y=F(u,N)L=T[Y]y=R..L w=E..y n=b..w a=v..n n=21001517727179-956312 M=j..a j=139830599%5178911 U=z(l,M,j)v=C(572086-583751)U=J[k[975926200%16541122]]M=J[k[1301941570%16480273]]j=J[k[319676+-319672]]a=j(v,n)l=M[a]z=U[l]z=z and 878956876%3801490 or 1086760-944680 elseif 3360874405%14696044>z then z=J[k[343023+-343020]]M=z(l)z=231361+9158370 else U=J[k[1833093254%14321041]]P=U()z=not P z=z and 985167-136423 or-614387+3251533 end else if 17663+10015758>z then z=J[k[963720-963719]]H=J[k[-3458+3460]]a,t=607062+9165420744021,C(-929103-(-916716))q=J[k[984800-984797]]l=3083685772298-(-248209)P=q(t,l)j=C(-20198+7813)U=H[P]P=C(704933+-716338)q=I[P]t=J[k[232879805%5971277]]l=J[k[-169015+169018]]M=l(j,a)P=t[M]H=q[P]z[U]=H z=J[k[23705+-23704]]l=-514852+30870203093835 H=J[k[712788+-712786]]a,j,t=494290+24140874260759,C(-1003793+992141),C(548680+-560728)q=J[k[-129794-(-129797)]]P=q(t,l)U=H[P]P=C(271284+-282689)q=I[P]t=J[k[618388-618386]]l=J[k[760281+-760278]]M=l(j,a)P=t[M]H=q[P]z[U]=H U,z={},I[C(-622600+611057)]elseif z<2003260285%19541248 then z,U=I[C(-652901+640484)],{}elseif 4817541219%22892580>z then v=J[q]n=5864452-621729~=710400+-114485 a=v==n z=a and 5206099-(-658586)or 3050742103%15344473 else U=C(-1056718-(-1044646))q=e(9561612-(-839681),{H,k[-833549+833552],k[335969440%3293818]})z=I[U]U=z(q)z=-357671+11506323 end end else if z>3490257503%22596696 then if z<-1023726+11413717 then z=322205+5249629<=2152661620%16063175 U={z}z=I[C(-130225-(-119034))]elseif z<-772977+11172692 then t=J[k[25374+-25371]]M=J[k[-471014+471018]]v,n=C(-691436-(-679958)),859110+25292891378203 j=J[k[212973689%9680622]]a=j(v,n)l=M[a]U=t[l]z=U and-600160+3071424 or 4378205607%22633223 else z=J[k[-763389+763390]]t,j,l=C(-545639-(-534514)),C(897919+-909141),258430+27294883069992 H=J[k[1899275996%9592303]]q=J[k[132779+-132776]]a=-633872+10146449161860 P=q(t,l)U=H[P]P=C(-919295-(-906975))q=I[P]t=J[k[3078752390%13868254]]l=J[k[977357-977354]]M=l(j,a)P=t[M]t,l=945467200%11818340,-958445-(-958445)H=q[P]P=-774944-(-774944)q=H(P,t,l)z[U]=q U,z={},I[C(330649-341751)]end else if z<-480527+10737711 then t=J[k[124041-124038]]n=20273220184911-886383 M=J[k[-666595-(-666599)]]j=J[k[75791-75786]]v=C(-1033662-(-1021927))a=j(v,n)z=9350174-353515 l=M[a]P=t[l]q=not P U=q elseif z<2297669627%14852935 then q,l=P(H,q)z=q and-572135+8525370 or 5254888-244565 elseif z<924553+9420532 then j=J[P]E,l=29294827445795-(-694054),z v=J[k[558412-558409]]n=J[k[573189209%3795955]]w=C(992851+-1003871)b=n(w,E)a=v[b]M=j[a]z,t=M and 5341400-149972 or-905524+9032315,M else U=J[k[-181477+181478]]q=J[k[270770546%8205168]]P=J[k[-56371+56374]]l,M=C(-68844-(-57342)),-227873+11662883360599 t=P(l,M)H=q[t]z=U[H]z=z and 3007969-(-588610)or 901741+8553067 end end end else if-93336+10658884>z then if 9677585-(-790857)>z then if 2486153691%11461650>z then z=675276+3802229 elseif z<549289826%12829601 then M=C(-950759-(-938275))U=J[k[453435-453434]]j=3915163959276-719053 P=J[k[-363657-(-363659)]]t=J[k[3056285411%13173644]]l=t(M,j)q=P[l]z=U[q]U=C(-887638-(-875278))U=z[U]U=U(z)z=J[k[506916565%3840277]]q=J[k[-651454+651456]]P=J[k[-233858-(-233861)]]M,l=972760+12722699910988,C(-620724-(-608827))t=P(l,M)U=q[t]q=nil z[U]=q z=-267390-(-500276)elseif 1462436116%11343594>z then P,U=C(391383+-403588),C(-446272-(-433819))z=J[k[-25739-(-25740)]]U=z[U]U=U(z)z=J[k[320568-320567]]U,a=C(-530500-(-518565)),579140+6721187984885 q=I[P]U=z[U]t=J[k[815250562%10190632]]l=J[k[1122086969%4636723]]j=C(-614408+603026)M=l(j,a)P=t[M]H=q[P]t,P=977938086%6150554,692652744%10994488 q={H(P,t)}U=U(z,h(q))z,U=I[C(381741+-392809)],{}else M,a=20981865572254-(-786060),C(261921+-274087)U=J[k[2673137997%13299194]]q=J[k[-647901-(-647902)]]j=795944+2070968704668 P=J[k[-859609-(-859611)]]l=C(682461+-694098)t=P(l,M)H=q[t]z=U[H]M=C(-709621+697589)P=J[k[-469212-(-469213)]]t=J[k[-408608+408610]]l=t(M,j)E=C(-792217-(-780158))q=P[l]l=J[k[573404-573403]]v=19733921689914-691541 M=J[k[909277402%9092774]]j=M(a,v)y=19830526432702-782764 t=l[j]M=C(-265781+254541)l=I[M]a=J[k[629866-629861]]n=J[k[349094285%2266846]]b=J[k[682578-682576]]w=b(E,y)v=n[w]j=a[v]M=l(j)U=C(516464-528815)U=z[U]P=t..M H=q..P U=U(z,H)z=636922+1872803 end else if z<10627328-146713 then U=J[k[531861879%12663378]]l=C(360351-371885)q=J[k[-949082+949083]]M=-781841+3862459823383 P=J[k[465207-465205]]t=P(l,M)H=q[t]z=U[H]z=z and 12310915-739326 or 5013+1870722 elseif z<9836344-(-673605)then z=J[k[-988822-(-988823)]]M,H=549131+16893969268143,W[385224693%5665069]q=J[k[405117+-405115]]P=J[k[-119646-(-119649)]]l=C(633082-644557)t=P(l,M)U=q[t]q=H H=nil z[U]=q z,U=I[C(184292-195791)],{}else U,z={},I[C(233307+-245098)]end end else if 960578822%19789919>z then if z<9896394-(-719747)then H,M=W[809406983%5122829],32424194062158-490580 z=J[k[497368695%14628491]]q=J[k[944105+-944103]]P=J[k[174770+-174767]]l=C(-522878+511260)t=P(l,M)U=q[t]q=H z[U]=q U,H,z={},nil,I[C(51642+-63699)]elseif 218333977%10931228>z then z=J[k[175226+-175225]]H=J[k[-690622-(-690624)]]l=9453485716878-(-121764)q=J[k[-823572-(-823575)]]t=C(918094+-930363)P=q(t,l)U=H[P]H,l=-14165+8228007>14147912-622982,6742392677982-547355 z[U]=H t=C(425784+-437054)z=J[k[424661-424660]]H=J[k[1313033762%9726176]]q=J[k[-880127-(-880130)]]P=q(t,l)U=H[P]t,H,l=C(136564+-148989),1301129762%8911847,-369937+24395798565233 z[U]=H z=J[k[1010129+-1010128]]H=J[k[1017685-1017683]]q=J[k[-29437+29440]]P=q(t,l)U=H[P]H=613491-613491 z[U]=H U,z={},I[C(-517618+506439)]else z=1741888709%18508139>=1016597+8328353 U={z}z=I[C(562185-573398)]end else if 11540755-856561>z then U=C(750671+-762743)z=I[U]q=G(-527552+4916121,{k[-674741+674746],k[822799254%13945750];k[-397316-(-397318)];k[984150321%4514451];k[-928953-(-928959)]})U=z(q)M,j,q=C(586353-597607),8.1478880312539e+14%3974579537751,C(-4638+-7219)U=I[q]P=J[k[164205569%9659151]]t=J[k[688122-688119]]l=t(M,j)q=P[l]z=U[q]q=.4 P=d(988490+13383991,{k[-123108-(-123112)],k[63477654%4534118],k[-229510-(-229513)]})U=z(q,P)z=1997831-(-492735)elseif z<10588388-(-133035)then j=P()M=not j U,z=M,3510917-58012 else P=645453-645252 q=J[k[-252794-(-252797)]]H=q*P P,q=704409751%9392130,1659032654%16757903 U=H%q J[k[-974264-(-974267)]]=U q=J[k[2136628739%13028224]]H=q~=P z=H and 116845848%2368569 or 4109731310%18057154 end end end end else if 10421944-(-649591)>z then if z>10750769-(-162805)then if z<10177801-(-826552)then if 757982+10188127>z then F,y,w,Y=C(226653-237663),C(128789+-140646),nil,20501308695731-(-442519)E=I[y]L=J[k[885441+-885439]]R=J[k[174965937%1223538]]T=R(F,Y)y=L[T]z=4635521-(-773608)b=E[y]y=.05 E=b(y)M=nil elseif z<3311983695%15353538 then U=C(1000779-1011882)z=I[U]l=C(253593-264925)l=H[l]t={l(H)}l={z(h(t))}q,U=l[231503-231501],l[-332162-(-332163)]t,P,z=U,l[-475294-(-475297)],988992+584021 else MR,z=aR,vR z=64541+5061897 end else if-593730+11638451>z then b,L=C(132023+-144197),C(420413-431880)n=I[b]R=1035920+32235747142674 w=J[t]E=J[q]y=E(L,R)b=w[y]v=n[b]z,n=2093295672%9815066,C(-246947+235893)n=v[n]n=n(v)elseif z<10133508-(-928038)then z,q,H=1121082-508901,45858435%1019076,W[-99989-(-99990)]U=H or q H,P=U,C(958183-969937)q=I[P]P=q()else U,M=C(-259454+248351),C(-931910+920578)z=I[U]t=J[k[-874292+874298]]M=t[M]l={M(t)}t={z(h(l))}U,P,q=t[-263342-(-263343)],t[1763686455%10253991],t[470425+-470423]t,z=U,260673+15076806 end end else if 10725323-(-133585)>z then if z<-920628+11731534 then z=J[k[265390201%5307804]]j,P=C(792611+-804235),C(-870922-(-858748))q=I[P]a=272168+18498081864317 t=J[k[-982191+982193]]l=J[k[-203631+203634]]M=l(j,a)U=C(615069+-627524)P=t[M]H=q[P]U=z[U]q=J[k[597804+-597800]]U=U(z,H,q)U,z={},I[C(418344+-430119)]elseif 449600131%12188078>z then z=J[k[-321267-(-321268)]]H=J[k[3498261658%15687272]]M,l=C(-975910-(-964281)),273496+20848144710036 q=J[k[661514+-661511]]t=C(-594407+582408)P=q(t,l)U=H[P]P=J[k[835083+-835081]]j=152194+33225239112173 t=J[k[-770925+770928]]l=t(M,j)q=P[l]t=J[k[562136900%8783389]]l=J[k[785314+-785309]]P=t[l]H=q..P z[U]=H U,z={},I[C(-451314+439033)]elseif 28093528%17250377>z then U=C(-178472+167369)z=I[U]l=C(597106-608475)P=J[k[479506+-479505]]l=P[l]t={l(P)}P={z(h(t))}H,q,z,U=P[496811902%9936238],P[773282-773279],3432453565%18030428,P[294207-294206]P=U else z,U=I[C(-992256+980494)],{}end else if 2807783520%26139442>z then PR,lg[699056601%3426748]=786448+17366406684550,C(513916-526148)CR=J[t]lg[2085209112%10271966],xR,JR,kg,sg,ZR,pR,lg[951397-951375],gR,eR=-266705+15398004305363,C(-364614-(-353596)),217211+10415686369911,-322121+2219987775058,8383731032588-463565,C(907080+-918903),-596443+6762924074536,181345+10002684693968,C(-1009306+998108),C(-826265+814029)zR=J[q]vR=9968251905386-463689 kR=zR(xR,JR)UR=969625+22431875243316 hR=CR[kR]kR=J[t]dR,tR=-416457+18533191761023,C(-817055-(-805108))xR=J[q]RR,lg[448674380%12819267],lg[558050+-558046],CR,OR,HR,lR,fR,sR,TR=C(-884189+872142),C(438976+-451032),100269+13201421766742,610690507%3650786>5322153-832447,656168+34226477742873,C(-501772+489663),C(-348211-(-335789)),18446716425169-848452,C(-665564-(-653785)),900555+2454294693547 JR=xR(sR,UR)fg=31743624827897-268860 zR=kR[JR]JR=J[t]kR,oR=15850546-134429<=11017915-143481,C(-1023269+1012104)sR=J[q]UR=sR(HR,fR)AR=463887+23335222515299 xR=JR[UR]lg[207556+-207550],jR,JR=26748875416743-996352,785846+31367903181656,-129428+14047282>=15842169-470037 UR=J[t]HR=J[q]qR=C(409835-421339)fR=HR(qR,PR)MR=C(485038-496919)sR=UR[fR]fR=J[t]XR,lg[185131-185128],NR,UR,DR=963782+3027820007611,C(631766-643256),33401476332228-(-721405),54354000%2680483>=-425963+15852303,C(-274802+263304)qR=J[q]PR=qR(tR,OR)HR=fR[PR]fR,lg[-313757-(-313765)]=2950780236%25317395<11237164-324908,18033234524471-(-436118)PR=J[t]wR,mR=32335369966141-546668,27088935447641-555795 tR=J[q]GR,lg[1870150709%15584589],nR=193400+10292019191616,C(316645-328266),C(597244+-609484)OR=tR(lR,GR)qR=PR[OR]PR,VR=-154280+155180,27139736149262-(-103503)OR=J[t]lR=J[q]GR=lR(eR,VR)tR=OR[GR]lg[998671925%15364183]=-676874+24201971777551 GR=J[t]YR,OR=-963155+18506817082364,67331+1914502>13714091-(-512199)eR=J[q]VR=eR(ZR,dR)lR=GR[VR]GR=.02 VR=J[t]ER,rR=C(-860235-(-848241)),-557823+12275579410771 ZR=J[q]dR=ZR(DR,mR)eR=VR[dR]dR=J[t]FR,lg[896527332%7471061],VR,KR,BR,lg[1416760127%15918653]=C(616839+-628645),1382053790515-(-425808),203342721%11961336.5,14081791897530-(-862691),C(-712231+700848),-724357+23493441976384 DR=J[q]QR=C(206768-218618)mR=DR(gR,KR)lg[-534561+534592]=C(205638-217446)ZR=dR[mR]Hg=C(-963303+951753)mR=J[t]lg[1289873793%9213384],dR,Ug,Ig=C(-1041000-(-1029590)),274388+-274387.5,C(-881746+870137),991791+2257826636268 gR=J[q]KR=gR(MR,jR)aR=C(67636-80031)DR=mR[KR]bR,mR,yR,LR=12401025277324-(-358658),-56860-(-56861),C(-302537-(-290310)),28419279253460-(-803805)KR=J[t]MR=J[q]jR=MR(aR,vR)gR=KR[jR]jR=J[t]lg[805653+-805646]=C(-743841+732715)aR=J[q]KR=3225941644%20780440~=3547409716%23391882 vR=aR(nR,bR)MR=jR[vR]jR,hg=490014+-489942,313043+16103947916919 vR=J[t]nR=J[q]bR=nR(ER,LR)uR,lg[2080761241%11247358]=C(-814631+802241),-941441+18704239525766 aR=vR[bR]bR=J[t]ER=J[q]LR=ER(yR,wR)lg[101804-101786]=98249899127316%32749970471745 nR=bR[LR]zg,vR=C(-499149-(-487488)),867174+-867158 LR=J[t]bR=970312+-970262 yR=J[q]wR=yR(RR,TR)ER=LR[wR]LR,SR=-951538+14827229<=1676331394%10211155,C(-765994-(-753472))wR=J[t]xg,Pg=C(295954+-307100),243330+29939078152179 RR=J[q]TR=RR(FR,NR)yR=wR[TR]iR,wR=C(-173280+161204),1667310998%26691159>=13650088-(-545614)TR=J[t]FR=J[q]NR=FR(uR,YR)Wg,lg[-390046+390048]=C(599646-611937),-112376+18991128779139 RR=TR[NR]NR=J[t]uR=J[q]TR=5223709731%25525661<1197098407%12333439 YR=uR(oR,XR)FR=NR[YR]NR,lg[809669518%3460126]=741420+-741320,1.889147735956e+15%15484817640486 YR=J[t]cR=33857+31322275099832 oR=J[q]XR=oR(QR,pR)uR=YR[XR]XR=J[t]YR=969203620%7541165<-1016250+4431723 QR=J[q]Cg,qg=-657262+704499058870,C(368146+-379632)pR=QR(BR,AR)oR=XR[pR]pR=J[t]BR=J[q]XR=3724609-(-12170)>=1109652488%18708915 AR=BR(SR,cR)QR=pR[AR]AR=J[t]SR=J[q]Jg=34151152194293-(-256809)cR=SR(iR,rR)rR,lg[677554+-677537]=C(-370291+358202),C(-719772-(-708007))BR=AR[cR]pR=-537356+10789802>=4794322190%21630007 SR=J[t]cR=J[q]iR=cR(rR,Ig)AR=SR[iR]cR=J[t]lg[-90493+90509],Ig=-702275+32786032046822,C(152275+-164471)iR=J[q]rR=iR(Ig,Cg)SR=cR[rR]rR=J[t]cR=879549-292114<=1495931797%7590332 Ig=J[q]Cg=Ig(zg,hg)tg,lg[318598-318562]=C(-920074+907549),-540056+30964895118827 iR=rR[Cg]Og=53745+9382466895648 Cg=J[t]rR=2571906415%29711659~=-400944+15662935 zg=J[q]hg=zg(Wg,kg)Ig=Cg[hg]lg[-863299-(-863312)],Cg=C(-112602-(-100433)),3666425-(-682851)~=2389416-(-29859)hg=J[t]Wg=J[q]kg=Wg(xg,sg)zg=hg[kg]hg=2647505290%26897655>1640351-822654 kg=J[t]xg=J[q]sg=xg(Ug,Jg)Wg=kg[sg]kg=204007+1712227<=753931+4945824 sg=J[t]lg[430225724%12653697]=22517252997991-186994 Ug=J[q]Jg=Ug(Hg,fg)xg=sg[Jg]Jg=J[t]sg=1953184737%11034942 Hg=J[q]fg=Hg(qg,Pg)Ug=Jg[fg]Jg=343798503%17462204>=-383477+15946410 fg=J[t]qg=J[q]lg[877419-877400]=C(566911-579362)Pg=qg(tg,Og)Hg=fg[Pg]lg[-307102-(-307129)],fg,lg[2147591540%13678927]=C(-946591+935166),979310722%15962912~=2218960562%23434151,C(741097+-753164)Pg=J[t]tg=J[q]Og=tg(lg[759908332%6846021],lg[-118729+118731])qg=Pg[Og]Og=J[t]lg[1036297-1036296]=J[q]lg[511475-511473]=lg[28155-28154](lg[-104842-(-104845)],lg[1834316192%9757001])Pg=59314307%11878235<=-704355+12074443 tg=Og[lg[637520-637518]]lg[-46623+46628],Og=C(345743+-358206),-332564+333564 lg[-838296-(-838298)]=J[t]lg[-384099-(-384102)]=J[q]lg[810376116%8905232]=lg[-957822+957825](lg[2673523445%14071176],lg[133311990%2777333])lg[81547203%471371]=25366254653007-(-843733)lg[141407+-141406]=lg[2553746%638436][lg[-206500+206504]]lg[1159609782%4976866]=J[t]lg[-420332-(-420337)]=J[q]lg[1595086062%11312667],lg[-403262-(-403264)]=C(353781-365741),151327472%12203512>-697561+10312205 lg[833056974%15718056]=lg[231451+-231446](lg[-724757-(-724764)],lg[500796+-500788])lg[13477+-13474]=lg[-788162+788166][lg[488003694%13555658]]lg[2858730452%13678136]=-922745+12456981408545 lg[-506811+506817]=J[t]lg[-1033018+1033022]=-595254-(-639254)~=12545217-1014339 lg[779130-779123]=J[q]lg[563512+-563504]=lg[1874495007%7497980](lg[661607661%5378924],lg[502476371%12255521])lg[56106121%355102]=lg[53926798%13481698][lg[570872276%2492892]]lg[499285-499275]=C(363432+-374925)lg[-955008-(-955015)]=J[t]lg[2326549112%13219029]=J[q]lg[-150904+150913]=lg[2091370688%10103240](lg[502778070%5915036],lg[-698408+698419])lg[-644208+644219]=C(-585981-(-574914))lg[2128738441%13059745]=lg[537895087%2988306][lg[-147080+147089]]lg[764737316%4472148]=J[t]lg[2530718409%14461248]=J[q]lg[333053+-333043]=lg[603199%8617](lg[-349622-(-349633)],lg[-946250-(-946262)])lg[1400970229%16103106]=lg[-307362-(-307370)][lg[897566+-897556]]lg[980799569%4928641]=J[t]lg[216205+-216194]=J[q]lg[-660141-(-660164)],lg[-736218+736226]=C(243106+-254952),-219379+6939261>-563825+12907203 lg[455877400%4955189]=lg[711238-711227](lg[45965402%2419231],lg[900808130%5774411])lg[-344173+344182]=lg[199821+-199811][lg[-685885-(-685897)]]lg[650932-650920]=J[t]lg[978792-978771],lg[-633673+633698]=C(-895551+884057),C(-472214+461172)lg[496822-496809]=J[q]lg[-952712-(-952726)]=lg[754430-754417](lg[3442383583%16549921],lg[-821208-(-821224)])lg[530707+-530696]=lg[962103+-962091][lg[441429-441415]]lg[150537+-150527]=14950899-804702~=1104943662%11605470 lg[-741944-(-741958)]=J[t]lg[-271973+271985]=153868+-153868 lg[496877314%5582891]=J[q]lg[-202093-(-202109)]=lg[-388330+388345](lg[-38275-(-38292)],lg[-1003770+1003788])lg[-656994-(-657007)]=lg[332880134%1799352][lg[920397-920381]]lg[2733225328%11110672]=J[t]lg[624932636%15242259]=J[q]lg[746019+-746001]=lg[-257713-(-257730)](lg[-859097+859116],lg[1383349610%13174758])lg[553703-553686],lg[-179890+179904],lg[-713955+713987]=C(413882-425636),213955+-213955,-600308+5839697425299 lg[1029900816%13036719]=lg[748214+-748198][lg[1358304060%9633362]]lg[2091753702%10838102]=I[lg[-878362-(-878379)]]lg[-470187+470211]=718638+25984865417238 lg[-734103+734120]=lg[140254-140238]()lg[206881-206863]=J[t]lg[-513396+513415]=J[q]lg[1231676149%11299781]=lg[-968947+968966](lg[877680083%8955919],lg[934083-934061])lg[789803+-789784]=C(784283+-796037)lg[-757943-(-757959)]=lg[204878-204860][lg[-547135-(-547155)]]lg[985354-985336]=I[lg[1037264+-1037245]]lg[350417-350398]=lg[568831+-568813]()lg[-217292-(-217312)]=J[t]lg[534971-534950]=J[q]lg[692502+-692480]=lg[1011068505%12181548](lg[1496044991%11333674],lg[1043802-1043778])lg[1979337294%10472684]=lg[1210716968%10174092][lg[308982642%15449131]]lg[833175+-833153]=J[t]lg[118679801%8477127]=J[q]lg[-684324+684348]=lg[982263+-982240](lg[406173442%2403393],lg[-848823-(-848849)])lg[54628300%1365707]={}lg[2601268596%12689115]=lg[514078-514056][lg[864388+-864364]]lg[1884407404%16106046]=292345962%2118449 lg[1470707582%6970178]=J[t]lg[2285949589%11316582]=J[q]lg[-634458-(-634484)]=lg[331040-331015](lg[-952129+952156],lg[244770101%2245597])lg[681309239%10814432]=lg[61584932%521906][lg[529237402%16538668]]lg[1049079806%12489045]=J[t]lg[2965722527%11862890]=J[q]lg[246768668%3855760]=lg[474834712%8959145](lg[749682417%14416969],lg[2569361734%14353976])lg[-404661-(-404686)]=lg[44770-44744][lg[-18328-(-18356)]]lg[646843-646817]=715119-715119 lg[2287676364%9453208]=J[t]lg[-821703+821732]=J[q]lg[496133-496103]=lg[-793285+793314](lg[511697335%9475876],lg[-849726-(-849758)])lg[24803784%751629]=lg[505075+-505047][lg[311304+-311274]]lg[91237239%1788965]=-30044-(-30044)lg[721834640%10311923]=J[t]lg[46845628%4684560]=213534+-213534 lg[-379311-(-379342)]=J[q]lg[425985+-425953]=lg[387556+-387525](lg[1099230525%4505043],lg[2296391149%13750845])lg[561885875%9687687]=lg[376558-376528][lg[2254627680%10839556]]lg[764116-764084]=J[t]lg[-594591+594624]=J[q]lg[-302005+302035]={}lg[-243197-(-243231)]=lg[2535692073%14087178](lg[201701+-201666],lg[-668043+668079])lg[-487822+487853]=lg[2885535152%12023063][lg[-906167+906201]]lg[-289597-(-289629)]=58604+4220870>92423+9580531 B={[hR]=CR;[zR]=kR,[xR]=JR,[sR]=UR,[HR]=fR;[qR]=PR,[tR]=OR,[lR]=GR;[eR]=VR;[ZR]=dR,[DR]=mR,[gR]=KR;[MR]=jR;[aR]=vR,[nR]=bR,[ER]=LR,[yR]=wR;[RR]=TR,[FR]=NR;[uR]=YR,[oR]=XR;[QR]=pR,[BR]=AR,[SR]=cR;[iR]=rR,[Ig]=Cg,[zg]=hg,[Wg]=kg,[xg]=sg;[Ug]=Jg,[Hg]=fg,[qg]=Pg,[tg]=Og;[lg[580223-580222]]=lg[-543139+543141],[lg[739391-739388]]=lg[896198944%9957766],[lg[-395751-(-395756)]]=lg[-892771-(-892777)],[lg[2119105743%8375912]]=lg[-884122-(-884130)],[lg[892654+-892645]]=lg[190344813%8275861];[lg[1371233379%6788284]]=lg[209270318%14947879],[lg[650565+-650552]]=lg[-897134-(-897148)];[lg[-518049-(-518064)]]=lg[291898-291881];[lg[2042667156%13801805]]=lg[332833-332814],[lg[539906+-539888]]=lg[-339858+339878];[lg[275900-275879]]=lg[1433-1411];[lg[281506+-281483]]=lg[-1008196+1008220];[lg[457531+-457506]]=lg[-125447-(-125473)],[lg[1334438711%10938022]]=lg[-889967-(-889995)];[lg[1064305181%5543256]]=lg[309137+-309107],[lg[-959707-(-959738)]]=lg[-104595-(-104627)]}HR=29174919783853-(-20324)hR=f()UR,kR=C(236553+-248211),C(210418-221575)J[hR]=B PR=.103564225 zR=I[kR]xR=J[t]JR=J[q]sR=JR(UR,HR)lR=-0.994466245 kR=xR[sR]tR,sR,UR,qR,aR,JR=-0.0177407414,-0.999842644,-0.00183729955,.994622767,C(596999-609192),672.744934 CR=zR[kR]VR,fR,OR,xR,HR,kR=23126830898871-996518,-1003717-(-1003717),.103547923,62.1137619,.017645346,-43.6134491 zR=CR(kR,xR,JR,sR,UR,HR,fR,qR,PR,tR,OR,lR)xR,HR=C(638406-649563),C(-111897-(-100527))kR=I[xR]fR,qR,lR,OR=-412640+11622704898308,234030-234030,-0.0149736926,-0.047031723 JR=J[t]sR=J[q]UR=sR(HR,fR)xR=JR[UR]tR,HR,GR,fR,sR,JR,PR,UR=-0.0149902813,.000705028593,-0.998781145,.0470264405,8767.91406,97.4659729,.999887645,-0.99889338 CR=kR[xR]xR=-60.1504707 kR=CR(xR,JR,sR,UR,HR,fR,qR,PR,tR,OR,lR,GR)lR,JR,PR,GR,tR=-0.187770084,C(-159421+148264),265231-265231,604539375%4836315,-293257+293258 xR=I[JR]sR=J[t]UR=J[q]fR,qR=C(-432002-(-419853)),-47554+8056101374057 HR=UR(fR,qR)fR=-127386-(-127386)JR=sR[HR]OR,qR=914836+-914836,.187770084 CR=xR[JR]JR,HR,UR,sR,eR=-54.331871,-0.98221302,9488.60645,-345.398346,-0.98221302 xR={CR(JR,sR,UR,HR,fR,qR,PR,tR,OR,lR,GR,eR)}CR=f()sR,OR,fR,UR,B,dR,qR,HR,GR=C(-365340-(-353413)),33652735412702-511144,48648+12327202838628,811747+31432746636874,{zR,kR,h(xR)},403845+30211986951535,C(115257-126406),C(791963-803023),20710933493673-20989 J[CR]=B bR=24073799527160-343854 kR=J[t]xR=J[q]JR=xR(sR,UR)zR=kR[JR]jR=1036302+14018742897009 JR=J[t]kR=nil sR=J[q]UR=sR(HR,fR)xR=JR[UR]UR=J[t]HR=J[q]vR,PR,MR,JR,gR,ZR,lR=28667062578245-931872,-615719+24160050172185,C(-710841-(-699452)),nil,C(-547812-(-536386)),C(-115814+104362),C(951346+-963808)fR=HR(qR,PR)DR,tR=C(-47128-(-35907)),C(951941-963516)sR=UR[fR]eR=C(-633698+622632)fR=J[t]UR=nil qR=J[q]PR=qR(tR,OR)KR=32509297190241-338495 HR=fR[PR]PR=J[t]tR=J[q]OR=tR(lR,GR)fR=nil qR=PR[OR]PR,mR=nil,200941+15465639562036 OR=J[t]lR=J[q]GR=lR(eR,VR)tR=OR[GR]GR=J[t]eR=J[q]OR=nil VR=eR(ZR,dR)lR=GR[VR]GR=nil VR=J[t]ZR=J[q]dR=ZR(DR,mR)nR=C(262987-274493)eR=VR[dR]VR=nil dR=J[t]DR=J[q]mR=DR(gR,KR)ZR=dR[mR]dR=nil mR=J[t]gR=J[q]KR=gR(MR,jR)DR=mR[KR]KR=J[t]MR=J[q]mR=nil jR=MR(aR,vR)gR=KR[jR]KR=nil jR=J[t]aR=J[q]vR=aR(nR,bR)MR=jR[vR]jR=nil B={[zR]=kR;[xR]=JR,[sR]=UR;[HR]=fR;[qR]=PR,[tR]=OR,[lR]=GR,[eR]=VR;[ZR]=dR,[DR]=mR;[gR]=KR,[MR]=jR}zR=f()JR=f()J[zR]=B xR=f()DR=m(736700+14260611,{hR,t;q})VR=V(4648862387%22707324,{t;q})kR=f()B=1162674744%7909352 OR=e(-788816+4726617,{A;t;q})J[kR]=B PR=f()B=311854-311854 UR=f()J[xR]=B B=5923169967%24045553>=560743973%24864009 sR=f()fR=V(-485299+12073838,{t,q;hR})HR=f()qR=f()KR=z dR=Z(2085863992%13420764,{t,q})J[JR]=B B=11739342-909540>4900765930%29429806 J[sR]=B B=422336450%11802331>=12527530-(-259585)J[UR]=B B=nil J[HR]=B B=f()jR=z J[B]=fR vR,fR=C(-61221-(-49326)),nil J[qR]=fR fR=G(8492850-357251,{qR;t;q;L;A})tR=m(1466268222%16264236,{hR,t;q;IR,B})J[PR]=tR tR=f()lR=G(13845744-(-869534),{tR,t,q})J[tR]=OR OR=f()mR=d(2364311695%15439112,{t;q})J[OR]=lR lR=f()eR=e(1689104449%16410975,{tR;t,q})GR=G(472279+11541738,{tR,t;q})J[lR]=GR GR=f()ZR=g(-1021667+10577975,{t,q})J[GR]=eR eR=f()J[eR]=VR VR=f()J[VR]=ZR ZR=f()J[ZR]=dR dR=f()J[dR]=DR DR=f()J[DR]=mR mR=f()gR=d(3217718675%27643626,{GR;t,q})J[mR]=gR aR=I[vR]MR,z=aR,aR and 944199-(-294358)or 4920771679%20996331 elseif 10488865-(-394987)>z then a=J[q]v=298544+5198109~=-1024487+17565922 U=a==v z=U and 3195373-(-75303)or 1303600534%18302329 else j=-460372+15761949172479 H=J[k[382981-382978]]P=J[k[1051593851%4823825]]a=-797050+17160147437744 t=J[k[3298381242%14340788]]M=C(-183686+171756)l=t(M,j)q=P[l]U=H[q]j,T,v=C(756477-767525),5465413921586-893249,C(149375+-161567)t=J[k[-44587-(-44588)]]l=J[k[-5464+5466]]M=l(j,a)P=t[M]E=C(754770+-766138)M=J[k[3729686935%15161329]]R=C(1026070+-1038106)j=J[k[2000518898%12661512]]y,n,z=22483137521990-245857,27979712583338-(-171067),8159329-(-109200)a=j(v,n)v=C(-330977+319375)l=M[a]a=I[v]n=J[k[-541504+541505]]b=J[k[412354-412352]]w=b(E,y)E=C(1034489-1045643)v=n[w]y=33976899258093-(-816864)j=a[v]n=J[k[621944-621943]]b=J[k[513200+-513198]]w=b(E,y)v=n[w]b=J[k[344365+-344360]]E=J[k[513255777%11664904]]H=C(-149588-(-137237))H=U[H]y=J[k[645913981%6658907]]L=y(R,T)w=E[L]n=b[w]w=C(589890-601772)a=j(v,n)E=10305119103921-(-419597)v=J[k[38765143%478582]]n=J[k[-647284+647286]]b=n(w,E)j=v[b]M=a..j t=l..M q=P..t H=H(U,q)end end end else if 10905530-(-262581)>z then if z<650960+10483032 then if 6150878540%24657811>z then b,z,n,U=-685256+18350880708137,3018425112%16228092,C(-225126-(-213853)),C(-1032219-(-1021116))H=z z=I[U]l=J[k[898247-898246]]j=J[k[198572-198570]]a=J[k[-501063+501066]]v=a(n,b)M=j[v]t=l[M]l={z(t)}U=l[1913747831%13767970]t,q,z,P=U,l[-125576+125578],518719883%18743714,l[1864157776%9367627]elseif z<11591843-494722 then z=C(-7558-3710)q=J[k[17652536%2942089]]l,M=C(-344996+333973),17431888384418-(-3603)P=J[k[264880+-264877]]t=P(l,M)U=q[t]z=H[z]z=z(H,U)q=z U,z=q,q and-551279+9860771 or 3032976299%19976044 elseif z<-296442+11414493 then U,z=H,6174733106%27255311 else a=C(-931004+919751)P=J[H]l=J[k[-887462+887465]]v=573930+23452374542526 M=J[k[285611-285607]]j=M(a,v)t=l[j]j=C(-1016622+1005200)q=P[t]a=10160464284209-(-411722)t=J[k[360347507%8189716]]l=J[k[491281+-491277]]M=l(j,a)P=t[M]U=q[P]q=136696-136496 z=U>q z=z and 1020582+9123828 or 1096946130%23604293 end else if z<3590161325%23240380 then H=f()J[H]=W[-720849-(-720850)]M,l=248458+23921986445561,C(441599+-454089)z=J[k[-169291-(-169292)]]q=J[k[-1005010-(-1005012)]]P=J[k[-810262+810265]]t=P(l,M)U=q[t]q=J[H]z[U]=q z=J[k[913396+-913392]]U=z()q=f()J[q]=U z=J[q]z=z and 1877939780%29591675 or 370349510%9837231 elseif z<3607612750%23353618 then z=I[C(242849-254100)]H=O(H)U={}else t,z=C(1044831+-1056585),3641049-(-62558)P=I[t]t=P()l=J[k[718178+-718175]]n=C(-709694+697345)j=J[k[37709761%471372]]a=J[k[-130985+130987]]b=-212670+19507910681146 v=a(n,b)M=j[v]P=l[M]q=t-P P=197612+-197602 H=q>P U=H end end else if z>502846+10716340 then if-128990+11387422>z then z=952348+-952348 U={z}z=I[C(408862-421347)]elseif z<-902970+12186764 then H=Z(-981609+2818363,{k[668399+-668393]})U=C(-520729-(-508657))z=I[U]U=z(H)z=-948245+3758965 else M,t=9853101408646-(-987238),C(-819392-(-808219))H=J[k[368299633%7672909]]j=-199759+19214427795266 q=J[k[550643+-550641]]l=-668205+34180411666521 P=q(t,l)U=H[P]q=J[k[449032865%16036888]]P=J[k[141665+-141663]]l=C(824637-836980)t=P(l,M)H=q[t]P=J[k[2671680961%14842672]]M=C(617255-629466)t=J[k[-278189+278191]]l=t(M,j)q=P[l]z={U;H;q}H=f()J[H]=z q=f()z=240167722%14127513 J[q]=z z=308582+8618757 end else if 10917423-(-259709)>z then U=J[k[-942297-(-942298)]]P=J[k[-385786+385788]]j=-492979+32331989188738 t=J[k[159411-159408]]M=C(100323-111558)l=t(M,j)q=P[l]z=U[q]U=C(-987350+974990)U=z[U]U=U(z)z=J[k[463162-463161]]q=J[k[550224+-550222]]M,l=26911521348286-174539,C(-155728+144387)P=J[k[146724+-146721]]t=P(l,M)U=q[t]q=nil z[U]=q z=13854352-(-294071)elseif 2240691817%14022017>z then U,z,H={},I[C(-161076-(-149658))],nil else z=279603+-279602 J[k[-742449+742450]]+=z U,z={},I[C(-728059-(-716610))]end end end end end else if z<511879+11472542 then if z>5804231389%22627169 then if z<-430749+12217433 then if z<909529854%12298401 then if 11090310-(-608934)>z then u,L,Y=-671483+31812655544536,C(874173-886030),C(-684083-(-672360))y=I[L]R=J[k[302976+-302972]]T=J[k[-294829-(-294834)]]F=T(Y,u)z=11500208-(-250180)L=R[F]U=y[L]L=.02 y=U(L)elseif z<11815463-105752 then z,E=118448917%7288409,y o=E w[E]=o E=nil elseif z<461392+11266630 then E=J[k[181843202%739200]]b=C(-435724-(-424530))y=J[k[144461-144458]]n,R,b,T=z,C(988394+-1000918),l[b],-894904+12215884791280 L=y(R,T)w=E[L]b=b(l,w)v,z=b,b and 2733239888%16268886 or 914104+4873199 else z=J[k[913549565%12020389]]l,H=C(-655073-(-642596)),W[-249314+249315]q=J[k[666853552%13337071]]P=J[k[847609+-847606]]M=28898007590497-(-314927)t=P(l,M)U=q[t]q=H z[U]=q z=J[k[-974825+974829]]U=z(H)H,z,U=nil,I[C(483391+-494972)],{}end else if 494321+11269291>z then R=J[j]y,L=z,not R z,U=L and 1249860075%26917910 or 1367598161%6349423,L elseif 3489671126%23821166>z then z,U=I[C(104539-115925)],{}else U,z={},I[C(-1011988+1000584)]end end else if z<269222+11614963 then if z<4151913345%25399538 then z,U=I[C(-984039+972314)],{}elseif 110237939%24605943>z then z,U=I[C(813900+-826334)],{}else U,z={},I[C(425574+-437145)]end else if z<3495265078%16827650 then U,z={},I[C(-358402-(-346951))]elseif z<1043627354%13058988 then z,U=H,{H}J[k[-851626+851627]]=z z=I[C(231202-243265)]else q=J[k[757791-757790]]t=q()z=t and 1378804939%6164294 or 204951087%17927223 end end end else if z>12547673-1016580 then if z<10956513-(-626698)then if 533472+11041022>z then U=J[k[54324203%310424]]l,M=C(-969060-(-956968)),13143328182831-522823 q=J[k[804476+-804475]]j=171169+7001786036251 P=J[k[-651751-(-651753)]]t=P(l,M)H=q[t]z=U[H]P=J[k[90501-90500]]t=J[k[1285240562%8863728]]M=C(-204215+192791)l=t(M,j)q=P[l]l=J[k[527033+-527032]]E,a,v=C(783844-795859),C(-770589-(-758090)),22747407039720-349064 M=J[k[2575523978%16198264]]j=M(a,v)t=l[j]y,M=20853493232882-986884,C(-760345+749105)l=I[M]a=J[k[78066490%421981]]n=J[k[89172-89171]]b=J[k[2970211358%15715404]]w=b(E,y)v=n[w]j=a[v]M=l(j)U=C(729631-741982)P=t..M U=z[U]H=q..P U=U(z,H)z=1104633-(-771102)elseif 1602025956%20390363>z then z=J[k[1007123-1007122]]P,a,j=C(782342-793944),4746455889045-(-758797),C(1014976+-1026332)q=I[P]t=J[k[-437387-(-437389)]]l=J[k[-71243+71246]]M=l(j,a)P=t[M]a=18303265186566-524731 H=q[P]t=J[k[15809812%7904905]]l=J[k[-498235-(-498238)]]j=C(-284123+272139)M=l(j,a)P=t[M]t=J[k[526994-526990]]q={H(P,t)}U=z(h(q))z,U=I[C(955379+-967377)],{}else z=J[k[2890347369%13633714]]b=5320932824542-756785 q=J[k[171908705%6366989]]M,l=-482298+13874153993526,C(695899+-708273)P=J[k[379695747%5932746]]t=P(l,M)U=q[t]P=C(17362+-29116)q=I[P]n=21423161514928-423097 P=q()v,M=C(261165+-273258),69541693203484%23180566199545 z[U]=P z=J[k[145785-145784]]l=C(-611194-(-599377))q=J[k[160665-160663]]P=J[k[-785959-(-785962)]]t=P(l,M)U=q[t]t=J[k[157317899%810917]]M=J[k[-50069-(-50071)]]j=J[k[-555533-(-555536)]]a=j(v,n)l=M[a]P=t[l]t,a,j=-849535+849536,9109448945843-(-303070),C(461286+-473562)q=P+t n=C(-94371+83071)z[U]=q z=J[k[907943774%4428994]]t=J[k[-17378+17380]]l=J[k[2929140827%13882184]]M=l(j,a)P=t[M]l=J[k[-1021796-(-1021797)]]j=J[k[788507930%15163614]]a=J[k[-41278-(-41281)]]v=a(n,b)M=j[v]t=l[M]q=P..t j,M=210127+2552450437077,C(-686451-(-674868))U=z(q)z=J[k[501042161%14736534]]q=C(825226+-837083)U=z()U=I[q]P=J[k[92037935%2359947]]t=J[k[921165+-921162]]l=t(M,j)q=P[l]z=U[q]q=.3 U=z(q)z,l,M=C(245850+-257139),C(841915+-853494),3794573071609-(-1012205)q=J[k[-47902+47904]]P=J[k[870294-870291]]t=P(l,M)U=q[t]q,z=-951166-(-951176),H[z]z=z(H,U,q)q=f()J[q]=z U=J[q]z=not U z=z and 283169582%15307418 or 3350842-984396 end else if-217469+11829846>z then M,H,q=C(738354+-749517),W[154911654%916637],C(-822284-(-810060))U=I[q]P=J[k[-790060-(-790061)]]t=J[k[-755275-(-755277)]]j=-1038066+32051979931967 l=t(M,j)q=P[l]a=C(-3741-8319)z=U[q]P=J[k[1034868-1034865]]l=J[k[283215517%1253166]]b,v=C(760465+-772210),16976130172523-(-620662)M=J[k[2638917782%14187730]]j=M(a,v)t=l[j]q=P[t]v=7593665429215-(-233201)l=J[k[696110-696109]]a=C(-942575+930060)M=J[k[2454643721%13126437]]w=640562+33434032469662 j=M(a,v)t=l[j]j=C(-1009527+997461)M=I[j]a=J[k[2047130013%16509113]]v=J[k[3281499068%14984014]]n=v(b,w)j=a[n]b=C(-1057059-(-1044813))l=M[j]a=J[k[462446+-462445]]w=-931614+32374135779841 v=J[k[-398226+398228]]n=v(b,w)b=-481469+5195325383216 j=a[n]M=l(j)j=J[k[265014385%5521133]]n=C(136439+-148430)a=J[k[599711-599709]]v=a(n,b)l=j[v]a,v,P=C(933956+-945397),-507713+30999619712932,{[t]=M;[l]=H}U=z(q,P)P=J[k[-593915-(-593918)]]l=J[k[449514-449513]]M=J[k[1360112466%12478096]]j=M(a,v)t=l[j]q=P[t]U=#q q=878324008%6364666 z=U>q z=z and-999234+5326725 or 384527+2781113 elseif z<3421657940%27280079 then R=J[a]L=not R U,z=L,-25420+2497636 else U=J[k[-576364-(-576365)]]H=U()z=not H z=z and 4654908899%18961084 or 11613860-(-666340)end end else if z<4535169174%20469282 then if z<895422+10484649 then z=J[k[-809727-(-809728)]]H=J[k[-421994+421996]]t,l=C(788745-799923),576339+569193756086 q=J[k[-895291+895294]]P=q(t,l)U=H[P]H=J[k[-864273-(-864277)]]z[U]=H z,U=I[C(-57633+45753)],{}elseif 11046945-(-338325)>z then Y,v=C(182882-194484),b F=I[Y]Y=C(1001972-1012993)T=F[Y]F=T(H,v)T=J[k[-739189+739195]]Y=T()R=F+Y z=-823173+7228079 L=R+j F,R,v=2755773751%11981625,589177-588921,nil y=L%R j=y T=j+F R=t[T]L=a..R a=L elseif 2406629353%14342601>z then z,U=I[C(-402366-(-390752))],{}else y,z=C(-729972+717612),5479643871%23894766 U=J[n]y=U[y]y=y(U)end else if 702107+10780751>z then z=J[k[1665017501%14478413]]U=z()z=U and 360038156%20618988 or 3231993-877327 elseif z<-243858+11734304 then z=j and 7047121-(-222961)or 1242430-(-822412)else z=I[C(-421951+410841)]U=J[P]J[k[3711098491%14904010]]=U t=J[P]U={t}end end end end else if-597800+12817550>z then if z>12301917-275915 then if z<-804105+12931893 then if-492244+12536323>z then z=J[k[-922087-(-922088)]]H=J[k[258410+-258408]]a,l=401704+5533520275688,17149807815517-(-373717)q=J[k[972461326%12309637]]t=C(-789606-(-778020))P=q(t,l)U=H[P]q=J[k[537419-537415]]t=J[k[-964388+964390]]j=C(-486211+474043)l=J[k[-319171+319174]]M=l(j,a)l=-251905+31069088256132 P=t[M]H=q[P]z[U]=H j=C(327447-338623)z=J[k[-490386-(-490387)]]H=J[k[732210+-732208]]q=J[k[-588353+588356]]t=C(-4370-7685)P=q(t,l)U=H[P]q=J[k[-231915+231919]]t=J[k[945280+-945278]]l=J[k[-544991+544994]]a=22013642305916-903538 M=l(j,a)P=t[M]H=q[P]z[U]=H z=J[k[-489215-(-489216)]]l=18215468306603-913289 H=J[k[-766208-(-766210)]]q=J[k[907211823%15120197]]t=C(-804814+793703)P=q(t,l)U=H[P]l,H=7312846670145-424948,1229266917%10639238~=7328175-544794 z[U]=H z=J[k[85483809%5342738]]t=C(336757-349119)H=J[k[68956598%3830922]]q=J[k[229907+-229904]]P=q(t,l)U=H[P]H=-24800+2980599>=-99531+16049858 z[U]=H z,U=I[C(-935043-(-923402))],{}elseif 1014844+11065893>z then H,U,z=nil,{},I[C(563239+-574282)]else j,U=P,-522424-(-522424)z=j==U z=z and 518372750%15544207 or 972306746%26607992 end else if 370593024%23894715>z then p,F,X=738130+20745996608106,z,C(-259150+247410)N=J[k[995824+-995821]]o=J[k[458804980%10923928]]Q=o(X,p)u=N[Q]Y=w[u]T,z=Y,Y and 13096557-7762 or 2811481-67687 elseif 528828917%24601496>z then z,l=12498629-279855>1357148-576794,C(343864+-355466)J[q]=z t=I[l]l=C(380246+-391984)P=t[l]l=f()t=f()J[t]=P M=f()j=z b=G(2034658-618826,{M})P=G(15896328-(-364314),{})J[l]=P P=1078962120%23312327>=7600509-(-471415)J[M]=P n=C(-167582+155510)v=I[n]n=v(b)z,P=n and 938850142%16074992 or 8507579-(-1028245),n else j=J[k[753296-753294]]n,b=C(607952+-620133),25999822044611-167544 a=J[k[-214956+214959]]z=3393190445%20006927 v=a(n,b)l=C(-584623-(-572967))l=t[l]M=j[v]l=l(t,M)U=l end end else if z>2753340772%20306108 then if z<2475930282%19870259 then z,b=163427+10760064,275209+-275208 t+=b elseif z<1483309791%13498073 then z,U=I[C(12925-24915)],{U}else z=J[k[-491831-(-491832)]]q=J[k[-849182+849184]]H,l=W[556685717%2869514],C(356856+-368172)P=J[k[580754+-580751]]M=27028833168558-637828 t=P(l,M)U=q[t]q=H z[U]=q U,z,H={},I[C(-441604-(-429857))],nil end else if 12903160-903550>z then t=J[k[37417382%226772]]M=J[k[567203+-567200]]v=C(103051-114374)j=J[k[-282128-(-282132)]]n=17956310948326-899389 a=j(v,n)l=M[a]P=t[l]z,U=P and-658510+2664959 or 774190720%4699722,P elseif z<122044+11890384 then z=J[k[3011979172%14984971]]H,M=W[516313+-516312],701797+11399146331991 q=J[k[44816-44814]]l=C(781712+-792845)P=J[k[-257166+257169]]t=P(l,M)U=q[t]q=H z[U]=q z=J[k[-328006+328010]]U=z(H)z,H,U=I[C(-456570-(-445137))],nil,{}elseif z<-519788+12534713 then z=J[k[-933651-(-933652)]]U=z()H=U z=not H z=z and 138763+5547514 or 173568013%20309856 else z=-986732+6948830 end end end else if z>4625004719%23899952 then if z<567594+11776485 then if 12770100-450126>z then U=C(-930133-(-918061))z=I[U]H=m(11122599-668408,{k[775176071%14907232],k[268324195%3779214];k[-162248-(-162250)]})U=z(H)z=2834963562%11374473 elseif z<344815+11985009 then y=J[M]u,Y=24135998829251-(-669988),C(-896514+884361)R=J[k[2892374732%13773213]]T=J[k[647324+-647321]]F=T(Y,u)L=R[F]E=y[L]w=a>=E n,z=w,1703979657%14567026 else z,U=I[C(597706+-610213)],{q}end else if 287565986%25018208>z then U,z=-350675+7154155<=15462844-(-397380),I[C(-531853+519949)]U={U}elseif z<11497616-(-896621)then U=J[k[1450493869%5944647]]P=J[k[514306-514304]]t=J[k[-1042615+1042618]]j,M=-355308+24092729137087,C(575248+-587627)l=t(M,j)q=P[l]z=U[q]M,l,U=22979980504207-(-130365),C(562670-574376),C(251657+-264017)U=z[U]U=U(z)z=J[k[553249+-553248]]q=J[k[447937250%2574352]]P=J[k[408723+-408720]]t=P(l,M)U=q[t]q=nil z[U]=q z=172782802%31300380 else j=10975782154375-662673 z=J[k[-13459-(-13464)]]w=C(-514713+502428)P=J[k[13722939%13722937]]M,n,a,E=C(974352+-985745),C(-80650-(-69535)),C(-651335-(-639596)),29692430892822-395540 t=J[k[-524263+524266]]l=t(M,j)q=P[l]b=18751856835728-(-386444)U=H[q]q=-120797+12536014>=826939+1345396 z[U]=q z=J[k[304493191%4757706]]v=24719877646290%211281064588 P=J[k[119638-119636]]j=22725201120042-680404 t=J[k[-718737-(-718740)]]M=C(-379180+367200)l=t(M,j)q=P[l]l=J[k[-342742-(-342744)]]M=J[k[-21978+21981]]j=M(a,v)t=l[j]j=J[k[-1026841+1026843]]a=J[k[121197-121194]]v=a(n,b)M=j[v]v=J[k[96870+-96868]]n=J[k[1769505057%7106446]]b=n(w,E)a=v[b]j=H[a]l=M..j P=t..l t=808493+-808488 U=z(q,P,t)H,q,M=nil,C(-74169+62312),C(-614079+602076)U=I[q]P=J[k[1002830+-1002828]]t=J[k[1332629595%5599284]]j=1018847+21759660481461 l=t(M,j)q=P[l]z=U[q]P=e(15606328-(-679479),{k[162057926%5227675],k[1183123100%14606458],k[61694883%1028248],k[3034724537%14247533]})q=-393806-(-393807)U=z(q,P)z,U=I[C(-106570-(-95534))],{}end end else if 418874+11872910>z then if 256810+11992026>z then z=U and 308000+-14067 or-138963+450278 elseif z<2507015342%22887584 then z=13741783-22263 elseif-22146+12301573>z then H=W[-787373+787374]z=J[k[655203-655202]]l,M=C(200560+-212402),7419088016117-410999 q=J[k[141964930%2535088]]P=J[k[296779453%1231450]]t=P(l,M)U=q[t]q=H z[U]=q z=J[k[15035+-15031]]U=z(H)U,z,H={},I[C(743980-756236)],nil else z=J[k[362658-362656]]U=z()H=f()J[H]=U U=J[H]z=not U z=z and-294019+12787648 or 92627+8295238 end else if 4032429667%24815579>z then U=J[n]z=U and 667132+10773149 or-158836+7901293 elseif z<93495+12217660 then H=O(H)z=896486+13663088 else BR=J[A]SR=J[t]cR=J[q]rR,kg,Ig=C(615776-627349),22857843453201-721789,-983570+25368136953910 iR=cR(rR,Ig)AR=SR[iR]pR=BR[AR]rR=347511+1729749939630 AR=m(3590854222%15471613,{XR})iR,BR=C(186939-198369),C(177769+-189452)BR=pR[BR]BR=BR(pR,AR)pR=J[zR]AR=J[t]SR=J[q]cR=SR(iR,rR)Wg=25945228546038-565445 BR=AR[cR]SR=J[E]iR=J[t]Cg,zg=C(-857605-(-846586)),629897+15801480740917 rR=J[q]Ig=rR(Cg,zg)cR=iR[Ig]AR=SR[cR]hg=C(-301406-(-289523))cR=d(4286162-264125,{hR;t,q;OR})SR=C(537959+-549642)SR,sg=AR[SR],C(87797+-100172)SR=SR(AR,cR)AR=G(243576+7307135,{hR;t;q;eR,A;M,b})pR[BR]=SR Cg,zg=C(136463-147471),10745589867822-938403 pR=f()BR=Z(2916613693%15858159,{JR,PR,t;q;eR,n,A;b})J[pR]=BR BR=f()J[BR]=AR iR=J[t]rR=J[q]Ig=rR(Cg,zg)cR=iR[Ig]iR=2715211-(-175048)Ig=J[t]Cg=J[q]zg=Cg(hg,Wg)rR=Ig[zg]hg,Ig,zg=9163589045862-818619,182272048%8285084,C(-432997-(-421531))SR={[cR]=iR,[rR]=Ig}rR=J[t]Ig=J[q]Cg=Ig(zg,hg)iR=rR[Cg]rR,Wg=491349+2568325,C(-379553-(-368286))Cg=J[t]zg=J[q]hg=zg(Wg,kg)kg=18243621139094-840039 Ig=Cg[hg]Cg=186287-186187 cR={[iR]=rR;[Ig]=Cg}AR={SR,cR}SR=f()iR=Z(1974556-420031,{SR,t;q})J[SR]=AR cR=f()AR={}J[cR]=AR AR=f()J[AR]=iR rR=G(636286+2649220,{hR;t,q,A,cR,AR,PR,pR})iR=f()J[iR]=rR Ug,Wg=-99561+14098696330894,C(757786+-769800)rR=J[zR]Cg=J[t]zg=J[q]hg=zg(Wg,kg)Ig=Cg[hg]lg[-421718+421719]=-274319+22544961280145 zg=J[v]Wg=J[t]kg=J[q]xg=kg(sg,Ug)hg=Wg[xg]Pg=2612806962898-363026 Cg=zg[hg]zg=C(546231+-557914)zg=Cg[zg]hg=J[iR]zg=zg(Cg,hg)Cg=C(-424676-(-412819))rR[Ig]=zg Ig=I[Cg]xg=12742172603761-(-139708)zg=J[t]hg=J[q]kg=C(738017-749957)Wg=hg(kg,xg)Cg=zg[Wg]rR=Ig[Cg]Cg=V(522841+10308049,{v;A;iR})Ig=rR(Cg)rR=f()lg[455361-455354]=C(731706-743727)Ig=K(5098883-207173,{lR;HR,hR;t,q,y,Q})J[rR]=Ig Cg=G(213514+652062,{y,t;q})Ig=f()sg=Z(10444484-(-757198),{xR})Wg=m(10423413-963021,{kR;hR,t;q;y,i,HR})lg[471766965%8424410]=-187034+12539113124200 zg=d(4659816876%23810543,{lR,Ig;t;q})qg=C(-521055-(-509035))J[Ig]=Cg Cg=f()J[Cg]=zg hg=d(7383521377%29827794,{kR,hR,t;q,y,GR;mR,rR,CR;VR,Cg,lR;PR,BR,i,OR;HR})zg=f()J[zg]=hg Ig=O(Ig)hg=f()J[hg]=Wg kg=m(567118+-24585,{y;t;q,sR;PR})lg[896339-896335]=26507297171731-686300 Wg=f()J[Wg]=kg xg=d(1431158-1045007,{xR;hR,t,q,Wg})kg=f()J[kg]=xg xg=f()J[xg]=sg sg=J[zR]Jg=J[t]Hg=J[q]fg=Hg(qg,Pg)Ug=Jg[fg]Hg=J[n]qg=J[t]Og=C(1008392+-1020489)Pg=J[q]tg=Pg(Og,lg[100813-100812])fg=qg[tg]Jg=Hg[fg]Hg=C(407689-419372)fg=K(-177572+9317610,{A;hR;t,q;n})Og,lg[2972560112%15243898],Hg,Pg,qg=16285165213075-(-559116),314488+1221472843200,Jg[Hg],4.7513949857603e+15%25963907048379,C(-651143-(-639886))Hg=Hg(Jg,fg)tg=C(518040+-529672)sg[Ug]=Hg sg=J[zR]Jg=J[t]Hg=J[q]fg=Hg(qg,Pg)Ug=Jg[fg]fg=J[t]qg=J[q]Pg=qg(tg,Og)Hg=fg[Pg]fg=Z(7972847-566201,{hR,t,q,n;A})Pg=C(-48835-(-37751))Jg=o[Hg]Hg,tg=C(-227987-(-216304)),-553289+26986894926431 Hg=Jg[Hg]Hg=Hg(Jg,fg)lg[481088208%2492685]=-925141+28636690502123 sg[Ug]=Hg Jg=C(-87377-(-75520))Ug=I[Jg]Hg=J[t]fg=J[q]qg=fg(Pg,tg)Jg=Hg[qg]sg=Ug[Jg]Jg=m(3510290545%20327379,{t;q;hR,GR;lR;y})Ug=sg(Jg)Jg=C(-319275+307418)Ug=I[Jg]Og,tg=16816753193728-(-240534),31114165887256-(-808832)Hg=J[t]fg=J[q]Pg=C(558788+-570796)qg=fg(Pg,tg)Jg=Hg[qg]sg=Ug[Jg]Jg=m(780875293%16964445,{t;q,hR,y})tg=9062980152538-842846 Ug=sg(Jg)Jg,Pg=C(-551221-(-539364)),C(574486-586055)Ug=I[Jg]Hg=J[t]fg=J[q]qg=fg(Pg,tg)Jg=Hg[qg]sg=Ug[Jg]Jg=G(-172023+15789223,{t;q;hR,zg,GR;A,R})Hg,tg=C(-855961+844104),C(161259-172488)Ug=sg(Jg)Ug=f()sg={}J[Ug]=sg Jg=I[Hg]fg=J[t]qg=J[q]Pg=qg(tg,Og)Hg=fg[Pg]Og=6709984743949-804313 sg=Jg[Hg]Hg=G(1012899+6970841,{t;q;Ug,ZR;hR,dR;DR})Jg=sg(Hg)lg[279128-279122],tg,lg[2879944959%11900599]=746992+24621571131097,C(301397+-313410),C(320378+-332278)fg=J[t]qg=J[q]Pg=qg(tg,Og)sg=C(189822+-201366)sg=gR[sg]Hg=fg[Pg]Pg=J[t]tg=J[q]Og=tg(lg[-741672-(-741673)],lg[-506449-(-506451)])lg[946880443%9193014]=C(955783-966863)qg=Pg[Og]lg[-193438-(-193440)]=927408+15194141914355 Pg=J[M]fg=qg..Pg Pg=J[t]tg=J[q]Og=tg(lg[-695195+695196],lg[367727+-367725])qg=Pg[Og]tg=J[t]lg[33384080%183429]=C(645931-657290)Og=J[q]lg[1043745636%4479595]=Og(lg[-127116-(-127118)],lg[-186227-(-186230)])Pg=tg[lg[-548215-(-548216)]]Og=J[t]lg[-174209+174212]=C(343766-354864)lg[1709268706%13250145]=J[q]lg[453605+-453603]=lg[1355748731%6247690](lg[28132353%1480650],lg[502309+-502305])tg=Og[lg[898601+-898599]]lg[-69320-(-69321)]=J[t]lg[735023-735021]=J[q]lg[-1043503-(-1043507)]=C(-966007+954215)lg[642685+-642682]=lg[-960315+960317](lg[107962+-107958],lg[532464-532459])Og=lg[682130+-682129][lg[592167-592164]]lg[-622035-(-622037)],Jg=18420721084945-247952,{[Hg]=fg,[qg]=Pg;[tg]=Og}sg=sg(gR,Jg)lg[-729407-(-729411)],tg=23284720869641-(-280913),C(-422588-(-410217))fg=J[t]qg=J[q]lg[3124838195%13586253],Og=C(112006+-123285),35112943626159-(-497711)Pg=qg(tg,Og)Og=C(78514+-90732)Hg=fg[Pg]qg=J[t]Pg=J[q]lg[647387+-647386]=670641+1254900565655 tg=Pg(Og,lg[3042054831%15680695])fg=qg[tg]Pg=J[t]lg[2094598297%10686726]=C(393583+-405213)tg=J[q]Og=tg(lg[469601045%2863421],lg[1015319450%7691814])qg=Pg[Og]lg[906911+-906908]=-986600+7070190574276 tg=J[t]Og=J[q]lg[999970-999968]=C(534582-545802)lg[-664223+664224]=Og(lg[3859106679%15374927],lg[714744+-714741])lg[-546195+546198]=C(485965+-498138)Pg=tg[lg[1010083+-1010082]]Og=J[t]sg=C(-711323-(-698840))lg[1138376849%12110392]=J[q]lg[-520857-(-520859)]=lg[697679461%15503988](lg[185894703%3098245],lg[-67764-(-67768)])tg=Og[lg[1636364094%14106587]]Og=14862625-130595<=2643786-(-488162)lg[325047+-325045]=J[t]lg[-354221-(-354224)]=J[q]lg[-534997-(-535001)]=lg[-669296-(-669299)](lg[1812597887%10240666],lg[1030348+-1030342])lg[-662989+662990]=lg[3631986822%14824436][lg[809158+-809154]]lg[804645-804643]=m(3646297354%30761199,{hR;t,q;PR;zg;hg})Jg={[Hg]=fg;[qg]=Pg,[tg]=Og,[lg[-373232-(-373233)]]=lg[310880+-310878]}Og,tg,sg=28264667463911-281982,C(956560+-968831),gR[sg]sg=sg(gR,Jg)lg[1038642521%6372040]=-242467+24583778754522 fg=J[t]qg=J[q]lg[-643246+643248]=123416+23992987945356 Pg=qg(tg,Og)Hg=fg[Pg]qg=J[t]Pg=J[q]Og=C(-37797+26627)tg=Pg(Og,lg[-362362-(-362363)])lg[524339-524338],lg[848045+-848042]=C(974021+-985533),-967914+31813257592520 fg=qg[tg]Pg=J[t]tg=J[q]Og=tg(lg[-215368-(-215369)],lg[820653+-820651])qg=Pg[Og]lg[-865536+865541],lg[-347485-(-347487)],sg,lg[530165796%12622995]=C(903021+-914809),C(-165851+154156),C(-394615+382132),26475491553075-868107 tg=J[t]Og=J[q]UR=O(UR)lg[777013-777009]=-676904+11010588026927 lg[2084829631%15914730]=Og(lg[-469859-(-469861)],lg[-422225-(-422228)])lg[-849160+849163]=C(-940211+928248)Pg=tg[lg[196766+-196765]]Og=J[t]sg=gR[sg]lg[234044602%3493203]=J[q]lg[-160833-(-160835)]=lg[703157-703156](lg[1151561211%6854531],lg[771825604%11874240])tg=Og[lg[474985+-474983]]Og=11375237-(-149455)<795078+3601989 lg[2105295998%12682506]=J[t]lg[-10258+10261]=J[q]lg[1193184782%12300874]=lg[165190-165187](lg[201742-201737],lg[618268321%2630929])lg[555628+-555627]=lg[254038898%4704424][lg[542809+-542805]]lg[367869+-367867]=K(2172148647%9947200,{hR,t;q;PR;zg})Jg={[Hg]=fg;[qg]=Pg;[tg]=Og;[lg[521814625%16306707]]=lg[510781-510779]}lg[3623368106%15160536]=-984597+20727769230281 sg=sg(gR,Jg)tg,Og=C(-884674-(-873289)),8590216270255-639503 fg=J[t]lg[499963+-499959]=31298369793316-(-576458)qg=J[q]Pg=qg(tg,Og)lg[-702037+702038]=494673+4791073389670 Hg=fg[Pg]qg=J[t]Og=C(-915417+903978)Pg=J[q]tg=Pg(Og,lg[-175229+175230])fg=qg[tg]sg=C(-220297+207814)Pg=J[t]lg[3465027641%16344470]=C(-125939+114417)tg=J[q]Og=tg(lg[586657+-586656],lg[-218771+218773])qg=Pg[Og]lg[713129-713127],lg[-59528+59533]=C(-645293-(-633929)),C(-590871+578676)tg=J[t]Og=J[q]lg[2689186139%14775748]=2042534021034-902131 lg[-517133-(-517134)]=Og(lg[-847359+847361],lg[-351955+351958])lg[-68923+68926]=C(-455310-(-443833))Pg=tg[lg[526213+-526212]]Og=J[t]lg[-784736-(-784737)]=J[q]lg[2350939202%12244475]=lg[-1018511-(-1018512)](lg[619483869%16302207],lg[-206079+206083])tg=Og[lg[780324-780322]]sg=gR[sg]lg[32950151%10983383]=J[t]lg[842838+-842835]=J[q]Og,lg[-578582+578588]=3460141-583861>-661812+14571118,665947+33266880533288 lg[225174320%3311387]=lg[-332641-(-332644)](lg[39385864%389959],lg[2115859206%14105728])lg[847632325%12842914]=lg[-746491+746493][lg[840151-840147]]lg[877731077%3901027]=V(285906954%10395163,{hR,t;q;NR})Jg={[Hg]=fg,[qg]=Pg;[tg]=Og,[lg[-755789+755790]]=lg[362313-362311]}sg=sg(gR,Jg)tg,Og=C(-530607+519094),6.8361877596569e+14%32553275217981 fg=J[t]qg=J[q]Pg=qg(tg,Og)lg[898807-898803]=1002686+5940428701200 Hg=fg[Pg]JR=O(JR)lg[-35746+35747],lg[1166552885%5116460],Og=-341943+16503230272955,C(-966950-(-955433)),C(-492905+480378)qg=J[t]Pg=J[q]lg[-981072-(-981078)]=20568262310441-218304 tg=Pg(Og,lg[1398112897%15033472])fg=qg[tg]Pg=J[t]lg[894093472%14657270],lg[2970573838%15079055],lg[2207846689%12334339]=9041294988483-263249,434053+20653620217356,14108418828820-1020011 tg=J[q]lg[599563450%9828909]=C(-462874+451678)Og=tg(lg[990383+-990382],lg[960409094%10217118])qg=Pg[Og]lg[480412+-480410]=C(-691262-(-679211))tg=J[t]Og=J[q]lg[2381485653%12150437]=Og(lg[1018582+-1018580],lg[724447+-724444])Pg=tg[lg[-899514-(-899515)]]lg[-43073+43076]=C(-472528-(-460744))Og=J[t]lg[269251335%12238697]=J[q]sg=C(-70155-(-57672))lg[548595052%5175425]=lg[-599703-(-599704)](lg[-210551+210554],lg[33542-33538])tg=Og[lg[-771694+771696]]lg[-361206+361208]=J[t]sg,Og=gR[sg],12080592-433207<=1548625843%19085071 lg[766050243%15959380]=J[q]lg[303993019%7069605]=lg[41974-41971](lg[-815137-(-815142)],lg[-472997+473003])lg[250548080%13186741]=lg[25454-25452][lg[-374164+374168]]lg[1218501720%9987719]=G(2750145827%15340091,{hR;t;q})lg[18810+-18805],Jg=C(-65956-(-54040)),{[Hg]=fg,[qg]=Pg,[tg]=Og,[lg[143168826%5726753]]=lg[563049-563047]}lg[23301+-23300]=954879+32583104047429 sg=sg(gR,Jg)fg=J[t]qg=J[q]Og,tg=28694579816805-521524,C(663722+-676028)Pg=qg(tg,Og)Hg=fg[Pg]qg=J[t]Og=C(144831-157270)Pg=J[q]tg=Pg(Og,lg[749747+-749746])fg=qg[tg]Pg=J[t]lg[-579787+579790]=20486104995755-(-691608)tg=J[q]lg[-812588+812590],lg[451470-451469]=18525365209157-(-186733),C(-948948+937386)Og=tg(lg[405878-405877],lg[140449068%1494139])lg[-548079+548083]=-510560+25663400589582 qg=Pg[Og]lg[1001476445%7310047],lg[-735454+735456]=866803+7924770935927,C(214727-225879)tg=J[t]v=O(v)Og=J[q]lg[980526+-980525]=Og(lg[694907-694905],lg[200300770%8708729])Pg=tg[lg[1460952802%5774517]]lg[176560-176557]=C(-462413-(-451236))Og=J[t]lg[989162+-989161]=J[q]lg[703910-703908]=lg[-113681+113682](lg[996410539%4656124],lg[-87513-(-87517)])tg=Og[lg[676756257%4203455]]Og=335680+7018648>=-725693+17388860 lg[-316334-(-316336)]=J[t]lg[435157+-435154]=J[q]lg[-841329+841333]=lg[292883-292880](lg[907916+-907911],lg[-211167+211173])lg[-358216-(-358217)]=lg[191004386%5617776][lg[-525290-(-525294)]]sg=C(295576+-308059)lg[-625847-(-625849)]=d(3138350-(-4335),{hR;t;q})sg,Jg=gR[sg],{[Hg]=fg;[qg]=Pg,[tg]=Og,[lg[-889314+889315]]=lg[39006267%469955]}sg=sg(gR,Jg)tg=C(164244+-176461)fg=J[t]qg=J[q]lg[-150480+150481],Og,sg=18935358834341-(-318412),-248202+22292284846614,C(889299-901143)sg=gR[sg]Pg=qg(tg,Og)Hg=fg[Pg]Og,lg[529537-529533]=C(497041-509422),-196466+7237924949148 qg=J[t]Pg=J[q]tg=Pg(Og,lg[-471138+471139])lg[1166456090%4628794]=-182983+12228186300677 fg=qg[tg]Jg,Og,tg={[Hg]=fg},585841046130-799074,C(830241+-842597)sg=sg(gR,Jg)fg=J[t]qg=J[q]Pg=qg(tg,Og)lg[-618113-(-618114)]=712297+32774877388084 Hg=fg[Pg]qg=J[t]lg[1204206760%13530413]=C(703772+-715465)Pg=J[q]Og=C(-756663-(-745220))tg=Pg(Og,lg[84700105%7058342])tR=O(tR)E=O(E)fg=qg[tg]lg[471817441%3494944]=C(-23855-(-12464))Pg=J[t]lg[-501668+501674]=791036+18388360482678 tg=J[q]Og=tg(lg[-20702+20703],lg[23955+-23953])lg[3674737813%15375472]=C(-570385+557970)qg=Pg[Og]Og=J[t]lg[193083-193082]=J[q]lg[806021-806019]=lg[-650569-(-650570)](lg[-455544-(-455547)],lg[218738+-218734])tg=Og[lg[-511785+511787]]lg[-628296+628298]=J[t]Og=1373148056%12483164 lg[1239358683%5388516]=J[q]lg[359367+-359363]=lg[261004-261001](lg[13854465%13854460],lg[679013+-679007])lg[394128240%9165773]=lg[421934-421932][lg[1120147392%13660334]]lg[87068-87066]=119174409%2019901 lg[315618+-315614]=J[t]lg[449465-449460]=J[q]lg[342682-342676]=lg[-293847-(-293852)](lg[111139667%11113966],lg[13519931%13519923])lg[-330565+330568]=lg[-874715-(-874719)][lg[-626381-(-626387)]]sg,lg[1524541099%6599745]=C(798657+-809843),-272049-(-272065)Pg={[tg]=Og;[lg[-949174-(-949175)]]=lg[1010915-1010913];[lg[758769901%4570903]]=lg[1016293+-1016289]}Og=J[t]lg[876932-876929],lg[-421740-(-421746)],lg[-792365+792372]=C(-406849+394480),200469+7547891728037,C(-448329+436897)lg[877858131%5813630]=J[q]lg[-439595-(-439599)],sg=10807525697698-218362,gR[sg]lg[-711244+711246]=lg[1757712451%7953450](lg[-478927-(-478930)],lg[1233496741%12459563])tg=Og[lg[-320076+320078]]lg[-526149+526154]=C(453229-464345)Og=G(1985272319%14000960,{hR,t,q;OR})VR=O(VR)Jg={[Hg]=fg;[qg]=Pg;[tg]=Og}sg=sg(gR,Jg)tg,Og=C(-290141+278407),-984157+15598600347836 fg=J[t]lg[2190559898%13039047],lg[-939729+939730]=-81579+24741166656428,9465382441201-(-393286)qg=J[q]sg=C(971661+-982847)Pg=qg(tg,Og)lg[377816-377813]=C(687912-699423)Hg=fg[Pg]Og=C(-514619-(-502584))qg=J[t]lg[773480404%5022600]=11712598025973-397735 Pg=J[q]tg=Pg(Og,lg[300522-300521])fg=qg[tg]Pg=J[t]lg[222439+-222438]=C(-940596-(-928933))tg=J[q]Og=tg(lg[2376519119%13351231],lg[72259+-72257])qg=Pg[Og]Og=J[t]lg[267471-267470]=J[q]lg[-91399+91401]=lg[3565+-3564](lg[569687003%3351100],lg[722435+-722431])lg[1170132974%4815362]=200684+26712271511722 tg=Og[lg[-886894+886896]]lg[-752644-(-752646)]=J[t]Og=533615+-533565 lg[822704-822701]=J[q]lg[-177682-(-177686)]=lg[68570885%1023446](lg[48807+-48802],lg[-479714-(-479720)])lg[-842225+842226]=lg[-789626+789628][lg[478411-478407]]lg[846685+-846681]=J[t]lg[2221107242%9656988]=-952312-(-952612)lg[560914481%5291646]=J[q]sg=gR[sg]lg[233472658%4764748]=lg[181624+-181619](lg[617546-617539],lg[-213570+213578])lg[142650903%9510060]=lg[161847+-161843][lg[682007910%3853152]]lg[-360957+360961]=-535358+535408 Pg={[tg]=Og;[lg[71816485%11969414]]=lg[456834+-456832];[lg[-137195+137198]]=lg[-966407+966411]}Og=J[t]lg[887417-887414]=C(447592+-459587)lg[283745+-283744]=J[q]lg[302552254%1394250]=9081496629966-(-499126)lg[115579-115577]=lg[446736+-446735](lg[-708711+708714],lg[357616+-357612])tg=Og[lg[232647878%8616588]]Og=m(1526304-368346,{hR;t,q,OR})lg[387545+-387539],Jg,lg[-464943+464946]=1545131479017-(-930534),{[Hg]=fg;[qg]=Pg,[tg]=Og},C(278588+-289961)sg=sg(gR,Jg)fg=J[t]lg[2417889910%15803202]=-594033+11310986142980 qg=J[q]tg,Og=C(-318720+306489),29735118559142-762256 Pg=qg(tg,Og)lg[1042537+-1042536]=29991552139956-560167 Hg=fg[Pg]Og,lg[272361-272359]=C(83452+-95878),428991+21137455995571 qg=J[t]Pg=J[q]tg=Pg(Og,lg[-138587-(-138588)])sg,lg[378495481%4301085]=C(659771-672254),C(833109-845581)fg=qg[tg]fR=nil Pg=J[t]tg=J[q]Og=tg(lg[-412217+412218],lg[1468411649%10414267])sg=gR[sg]qg=Pg[Og]Pg=15904909-70408<=56466613%14910685 Og=J[t]lg[318214313%12239012]=J[q]lg[566017-566015]=lg[816554+-816553](lg[36958-36955],lg[-306085+306089])tg=Og[lg[410665+-410663]]Og=K(481578663%4000289,{hR;t,q})Jg={[Hg]=fg;[qg]=Pg,[tg]=Og}sg=sg(gR,Jg)fg=J[t]qg=J[q]tg,lg[-80661+80662],Og=C(957376+-969609),29836350757913-(-203308),18536189842916-521261 Pg=qg(tg,Og)Hg=fg[Pg]Og=C(706203+-717487)qg=J[t]sg=C(9440+-21923)Pg=J[q]lg[492628-492626],lg[807581+-807578]=762456+8803491605931,C(956339+-968728)tg=Pg(Og,lg[862315-862314])fg=qg[tg]lg[58880-58876]=9015216468566-(-826896)Pg=J[t]lg[3184827121%13270113]=C(843843+-855787)tg=J[q]Og=tg(lg[533551924%2350449],lg[-504777+504779])qg=Pg[Og]Pg=4229867038%17509196<1581368968%18333431 Og=J[t]lg[708081+-708080]=J[q]lg[938520734%16465276]=lg[-283940+283941](lg[-766770+766773],lg[220331-220327])lg[-670748+670755]=C(98381-110521)tg=Og[lg[2308494047%13990873]]Og=V(3937184234%16889553,{hR,t,q,FR})lg[1442388144%8849007],sg,Jg=C(-698848-(-686672)),gR[sg],{[Hg]=fg,[qg]=Pg,[tg]=Og}tg,lg[1071748429%4219482]=C(442221-454434),-303914+31307502214172 sg=sg(gR,Jg)fg=J[t]IR=O(IR)qg=J[q]Og=350183+18098213685508 Pg=qg(tg,Og)sg=C(492100-504583)Hg=fg[Pg]lg[1050910522%9553732],Og=991450+21512108836423,C(-193492+182422)qg=J[t]Pg=J[q]tg=Pg(Og,lg[692231115%4874867])fg=qg[tg]Pg=J[t]lg[1210015220%5576107]=C(67842-79654)tg=J[q]Og=tg(lg[-829460-(-829461)],lg[-278458+278460])qg=Pg[Og]lg[-588939-(-588943)],sg=-351977+18684054634725,gR[sg]Og=J[t]Pg=577510+13918867<=591383+6171432 lg[447090+-447089]=J[q]lg[1939096370%16716348]=lg[353604+-353603](lg[-731079+731082],lg[-411244-(-411248)])lg[-1858+1861],lg[1000709+-1000704]=C(708689+-720153),C(998106-1010349)tg=Og[lg[669605631%8696177]]Og=K(-1019321+12762096,{hR;t;q;oR})Jg={[Hg]=fg;[qg]=Pg,[tg]=Og}sg=sg(gR,Jg)Og=600200+33740295345367 fg=J[t]tg,lg[3058165265%15602884]=C(366279+-378218),25921978792644-(-242786)qg=J[q]Pg=qg(tg,Og)Hg=fg[Pg]mR=O(mR)Og=C(1021713-1033778)qg=J[t]lg[893295-893291]=-659199+12664342324744 Pg=J[q]lg[-849346+849348]=12101996797026-(-293281)tg=Pg(Og,lg[1318165297%11769333])fg=qg[tg]Pg=J[t]tg=J[q]lg[174750-174749]=C(-764927-(-753869))Og=tg(lg[1958514526%10586565],lg[765662-765660])qg=Pg[Og]Og=J[t]lg[1575289541%7160407]=J[q]lg[124496955%773273]=lg[421097401%5614632](lg[-978622+978625],lg[689908+-689904])tg=Og[lg[96532-96530]]Og=-710999+711029 lg[883152-883150]=J[t]sg=C(-771572-(-760386))lg[-714820-(-714823)]=J[q]lg[1457655254%5830621]=lg[403831-403828](lg[303593+-303588],lg[-825206+825212])lg[336168-336167]=lg[179844780%4386458][lg[-759066+759070]]lg[721456900%11272764]=J[t]lg[2542361645%15133105]=J[q]lg[484043+-484041],lg[137489+-137481]=-539514+540014,57094463967450%839624661020 lg[19304981%772199]=lg[732368-732363](lg[-202251+202258],lg[-463105-(-463113)])lg[208187+-208184]=lg[-740085-(-740089)][lg[909675674%9887779]]lg[398104864%13270162]=-372142-(-372242)Pg={[tg]=Og;[lg[-330176+330177]]=lg[-205492+205494];[lg[387893+-387890]]=lg[-823336-(-823340)]}Og=J[t]lg[-460645-(-460649)]=178603110814-94539 lg[-613310+613311]=J[q]lg[-13904+13907]=C(-1042760+1030534)lg[-632113+632115]=lg[606490305%10830184](lg[326876561%1549178],lg[-979671-(-979675)])tg=Og[lg[326640910%14847314]]lg[293895+-293893],lg[-329789-(-329794)]=187131+28856329214338,-899862+8615186582209 Og=K(4165517103%26955862,{hR,t,q})sg,Jg=gR[sg],{[Hg]=fg;[qg]=Pg;[tg]=Og}tg=C(815876+-827990)sg=sg(gR,Jg)Og,lg[53939+-53931]=598654+10304993914944,3267164067783-(-470570)fg=J[t]lg[723491+-723490]=439514+24919769151610 qg=J[q]Pg=qg(tg,Og)Hg=fg[Pg]qg=J[t]Pg=J[q]Og=C(441026+-453149)tg=Pg(Og,lg[-915195+915196])fg=qg[tg]Pg=J[t]sg=C(833255+-844538)tg=J[q]lg[-171792+171793]=C(-984504+973054)Og=tg(lg[892398+-892397],lg[1665843248%6855322])qg=Pg[Og]Og,tg,sg=35795030115730%2753464639500,C(687748+-699723),gR[sg]Pg=d(6197042824%24253194,{OR,t,q})Jg,lg[421275205%3343454]={[Hg]=fg;[qg]=Pg},6719636901529-672352 sg=sg(gR,Jg)fg=J[t]qg=J[q]Pg=qg(tg,Og)Hg=fg[Pg]Og=C(-921219+909655)qg=J[t]Pg=J[q]sg=C(833253+-845097)tg=Pg(Og,lg[2109048781%9209820])fg=qg[tg]lg[621537+-621536],sg,Jg=880198+32488571358418,gR[sg],{[Hg]=fg}sg=sg(gR,Jg)fg=J[t]tg=C(-710976-(-698574))qg=J[q]Og=-175613+17016863706353 Pg=qg(tg,Og)Og,lg[202132-202130],lg[351645-351641]=C(-579169+567917),1526815868708-164958,-285154+2969948151624 Hg=fg[Pg]lg[441992459%2363596]=21506136970149-(-217977)qg=J[t]sg=C(-743528+731270)Pg=J[q]tg=Pg(Og,lg[-608495+608496])fg=qg[tg]Pg=J[t]tg=J[q]lg[223849-223848]=C(362672+-375012)Og=tg(lg[631226-631225],lg[-855721-(-855723)])qg=Pg[Og]Og=J[t]lg[-357012-(-357015)]=C(-679640-(-667424))lg[-113405+113406]=J[q]lg[-522533-(-522535)]=lg[-224310+224311](lg[248668+-248665],lg[1753997396%15660691])lg[2503836068%12154544]=C(-6869-5181)tg=Og[lg[267434+-267432]]lg[-319971-(-319972)]=J[t]lg[126100-126098]=J[q]lg[2308995846%9995653]=lg[96167+-96165](lg[-776151+776155],lg[-261612+261617])Og=lg[1188607456%8085765][lg[492565-492562]]lg[243373+-243371]=J[t]lg[-939406-(-939409)]=J[q]lg[886049-886044],lg[1477705038%8348616]=C(544411+-555627),25028574482660-(-7330)lg[-190397-(-190401)]=lg[-966945+966948](lg[2032724993%16132738],lg[563532-563526])lg[2293940850%12201813]=C(502839-514952)lg[180152-180151]=lg[908032-908030][lg[2513353444%13228176]]lg[227201-227198]=J[t]sg=gR[sg]lg[164368740%11740624]=J[q]lg[-208583+208588]=lg[-840950-(-840954)](lg[-429365+429371],lg[-197736+197743])lg[495943+-495941]=lg[590771-590768][lg[-339268-(-339273)]]lg[-208409-(-208413)]=J[t]lg[-313883-(-313888)]=J[q]QR=O(QR)L=O(L)lg[-519281-(-519288)]=C(-741983-(-730370))lg[27778422%1736151]=lg[-586808+586813](lg[-532899-(-532906)],lg[-315559-(-315567)])lg[394051-394048]=lg[922750-922746][lg[656879838%3027096]]lg[447822+-447816],Pg=-763052+30521355263024,{tg;Og,lg[-406888-(-406889)],lg[251346062%1102395];lg[-809622+809625]}lg[251840+-251837]=C(-908210-(-896986))Og=J[t]lg[-472518+472522]=33832066418939-(-439439)lg[267801106%6866695]=J[q]lg[-364214-(-364216)]=lg[-3412+3413](lg[589428453%4534065],lg[637731-637727])tg=Og[lg[46715365%270031]]Og=262209551%10488382 lg[-105835-(-105837)]=J[t]lg[-259067-(-259070)]=J[q]lg[1857597081%10799983]=C(638006-649398)lg[264574-264570]=lg[172623027%8220144](lg[3795031181%15426956],lg[1820451534%14334264])lg[2167709325%9185209]=lg[322613+-322611][lg[654585-654581]]lg[258920209%2845277]=d(2923872434%11785206,{hR;t;q})lg[-126739+126746],Jg=C(-895498-(-883080)),{[Hg]=fg;[qg]=Pg;[tg]=Og,[lg[450856075%3267073]]=lg[1998520032%15373231]}sg=sg(gR,Jg)tg,Og=C(-592788+580676),-645314+16745909434167 fg=J[t]qg=J[q]Pg=qg(tg,Og)Hg=fg[Pg]qg=J[t]Pg=J[q]Og,lg[962808+-962806],lg[352703576%14108143]=C(57748+-69561),687409+27356024353937,26644484728746-423731 tg=Pg(Og,lg[-732518+732519])fg=qg[tg]lg[772800-772799]=C(-583205-(-571821))Pg=J[t]tg=J[q]Og=tg(lg[521812751%3894125],lg[1952460032%7656706])tg,lg[223619+-223618],sg=C(-835486+823971),25911949556455-674757,C(989514-1000797)sg=gR[sg]qg=Pg[Og]Pg=m(2284540-471231,{Wg,hR,t,q})Jg={[Hg]=fg,[qg]=Pg}sg=sg(gR,Jg)fg=J[t]Og=349947+20358119755276 qg=J[q]Pg=qg(tg,Og)Og=C(-698136-(-686860))Hg=fg[Pg]qg=J[t]Pg=J[q]sg=C(-55804-(-44521))tg=Pg(Og,lg[-679697-(-679698)])fg=qg[tg]lg[-940190+940191]=C(-764604-(-753135))Pg=J[t]tg=J[q]lg[-266458-(-266460)]=424544+26167569577273 Og=tg(lg[207122+-207121],lg[2289475662%10648724])tg=C(354086+-365355)qg=Pg[Og]Pg=V(5597970-583214,{Wg;hR;t,q})lg[214200916%8925038],sg,lg[2407390201%16266150],lg[-432599-(-432601)],Og,Jg=3344018668604-(-739801),gR[sg],27712701724109-(-703643),90413+33299728784229,3391919474226-1032199,{[Hg]=fg,[qg]=Pg}sg=sg(gR,Jg)fg=J[t]qg=J[q]lg[-598882-(-598885)]=C(-118977-(-107456))Pg=qg(tg,Og)Hg=fg[Pg]sg=C(897945-909228)qg=J[t]Og=C(484816+-497166)Pg=J[q]tg=Pg(Og,lg[923529082%5808359])fg=qg[tg]Pg=J[t]lg[216393-216392]=C(-439574-(-428245))tg=J[q]Og=tg(lg[558025495%2619838],lg[132541-132539])sg=gR[sg]qg=Pg[Og]Pg=m(5927970-305211,{Wg,hR,t,q})Jg,tg={[Hg]=fg,[qg]=Pg},C(301993-314235)sg=sg(gR,Jg)lg[-36793+36794]=8420351289883-(-9526)fg=J[t]Og=9672061568390-(-527377)qg=J[q]lg[889195394%6946839]=28490291033585-(-15841)Pg=qg(tg,Og)Og=C(-644765+632637)Hg=fg[Pg]qg=J[t]Pg=J[q]sg=C(-631337+618854)tg=Pg(Og,lg[-130477+130478])fg=qg[tg]Pg=J[t]tg=J[q]lg[2801798014%14079387]=C(281227-293399)Og=tg(lg[885459601%11806128],lg[-110243+110245])qg=Pg[Og]Pg,sg=-67254+16683861<-232073+12867275,gR[sg]Og=J[t]lg[253095+-253094]=J[q]lg[973537-973535]=lg[-688120-(-688121)](lg[-987907-(-987910)],lg[-35132+35136])tg=Og[lg[176861+-176859]]Og=d(343016+8593960,{hR;t;q,kg;xg})Jg={[Hg]=fg;[qg]=Pg,[tg]=Og}tg,lg[995216-995212]=C(-784473-(-773059)),29740398670575-(-885545)sg=sg(gR,Jg)Og=550576+6097473299559 fg=J[t]qg=J[q]Pg=qg(tg,Og)lg[-921403-(-921404)]=277941+32992873709134 Hg=fg[Pg]qg=J[t]lg[-266086-(-266088)],lg[-898554+898557],Og=34519690732039-1041213,C(-887049+874537),C(-773505+761173)Pg=J[q]sg=C(-224479-(-212635))tg=Pg(Og,lg[3272030191%16525405])lg[580134+-580133]=3401674356122-372586 fg=qg[tg]Og,Jg,tg,sg=-463136+26770452152785,{[Hg]=fg},C(488896+-500428),gR[sg]sg=sg(gR,Jg)fg=J[t]sg,lg[887504-887499]=C(484336+-496819),27452624694725-228310 qg=J[q]Pg=qg(tg,Og)eR=O(eR)Hg=fg[Pg]qg=J[t]Pg=J[q]Og=C(-844582+832481)tg=Pg(Og,lg[1181692251%9453538])fg=qg[tg]Pg=J[t]lg[458936+-458935],sg=C(-921707-(-909272)),gR[sg]tg=J[q]Og=tg(lg[-781182+781183],lg[843886-843884])qg=Pg[Og]Pg=1662247375%12236486>=4671954-(-804421)Og=J[t]lg[-88918-(-88919)]=J[q]lg[3129051102%13604570]=lg[442849+-442848](lg[52462+-52459],lg[614841-614837])tg=Og[lg[669496-669494]]Og=G(-299598+7768211,{hR,t,q;LR})Jg={[Hg]=fg;[qg]=Pg,[tg]=Og}sg=sg(gR,Jg)sg=J[LR]Og,Hg,lg[196788018%1457689]=-347392+24363892422993,941645923%15881263~=13535025-(-70153),C(-524023+511825)Jg=sg(Hg)fg=J[t]lg[346254+-346252],tg=15284023924234-(-296387),C(596671-608742)qg=J[q]Pg=qg(tg,Og)lg[925994-925993],Og,sg=-185417+16062164824448,C(107665-119495),C(1012853-1025336)Hg=fg[Pg]qg=J[t]lg[289583-289579]=612249+23011586216514 Pg=J[q]tg=Pg(Og,lg[259340+-259339])fg=qg[tg]Pg=J[t]tg=J[q]lg[-30100-(-30101)]=C(-519062+506615)Og=tg(lg[1288060081%6314020],lg[574616-574614])qg=Pg[Og]Pg=267765686%18053780~=3571263094%16517824 Og=J[t]lg[773207041%12081360]=J[q]lg[519713+-519711]=lg[196400865%6137527](lg[1106687382%14008701],lg[-1000951-(-1000955)])sg=gR[sg]GR=O(GR)tg=Og[lg[1572128840%9704499]]lg[124603356%659277]=C(-1005600-(-993332))Og=G(12722831-711991,{hR,t;q,yR})Jg={[Hg]=fg,[qg]=Pg;[tg]=Og}Og,Hg=21127939908028-473934,10408986-350524>405913+3069424 sg=sg(gR,Jg)sg=J[yR]lg[744805-744801],tg=644507+13299591725718,C(-44334-(-32657))Jg=sg(Hg)fg=J[t]qg=J[q]sg=C(397092+-409575)Pg=qg(tg,Og)Hg=fg[Pg]lg[46610-46608],Og=-60803+2859259294390,C(843899-855033)qg=J[t]lg[2476851059%11850962]=4573123992449-480048 KR=O(KR)Pg=J[q]tg=Pg(Og,lg[-65216+65217])lg[767799033%4218676]=C(-553536-(-541277))fg=qg[tg]Pg=J[t]tg=J[q]Og=tg(lg[37304341%1243478],lg[340541+-340539])sg=gR[sg]qg=Pg[Og]bR,Pg=nil,754218+12705942<=702678+4125319 Og=J[t]lg[-333341+333342]=J[q]lg[652912+-652910]=lg[182132-182131](lg[1344250656%5398597],lg[209224+-209220])lg[561928+-561925]=C(-294330-(-282248))Wg=O(Wg)tg=Og[lg[1555397411%14269701]]Og=Z(756344023%14511179,{hR;t;q,YR})Jg={[Hg]=fg;[qg]=Pg;[tg]=Og}sg=sg(gR,Jg)Og,sg,tg=-442169+23217379797364,C(-1029708+1017225),C(851390+-863763)fg=J[t]qg=J[q]XR=O(XR)Pg=qg(tg,Og)Hg=fg[Pg]Og,lg[129975-129974]=C(-231480+220061),-839131+4027169985838 qg=J[t]lg[-715199-(-715203)]=20493124749179-303669 Pg=J[q]tg=Pg(Og,lg[189143566%14549505])fg=qg[tg]lg[-991717+991719]=30986285160716-663727 Pg=J[t]lg[369793+-369792]=C(-546476+534262)tg=J[q]Og=tg(lg[-294848-(-294849)],lg[782844956%6867061])qg=Pg[Og]Og=J[t]lg[1979417872%12449169]=J[q]Pg=325467006%13394597>9994500-720511 lg[218609+-218607]=lg[1889269594%13790289](lg[913786-913783],lg[298182-298178])sg,lg[186211+-186210],lg[424153+-424150]=gR[sg],-538267+18608481769588,C(-805951+794266)tg=Og[lg[-329445+329447]]Og=K(142117+12136537,{hR;t,q;uR})Jg={[Hg]=fg,[qg]=Pg,[tg]=Og}tg=C(697644+-709922)sg=sg(gR,Jg)sg,Og=C(399520+-412003),727698+23514614091827 fg=J[t]qg=J[q]Pg=qg(tg,Og)Hg=fg[Pg]Og=C(-112282+101223)qg=J[t]Pg=J[q]tg=Pg(Og,lg[-743893-(-743894)])lg[-323510-(-323514)]=901142+33186676014151 fg=qg[tg]Pg=J[t]lg[590918+-590917]=C(1022338-1033542)tg=J[q]lg[3498996806%14052196]=564873+10989608498548 Og=tg(lg[1075533277%15148356],lg[-58717+58719])qR=O(qR)qg=Pg[Og]Pg=8999907-(-384043)>=195991525%9904736 Og=J[t]lg[1005335+-1005334]=J[q]sg=gR[sg]lg[1971699032%11877705]=lg[960459-960458](lg[623617878%11766375],lg[-189921-(-189925)])tg=Og[lg[-746176+746178]]Og=Z(12248114-228228,{hR,t;q})Jg,lg[64620896%408993]={[Hg]=fg,[qg]=Pg;[tg]=Og},960647+18117697222765 Og,lg[342530+-342529],tg=4295527271981-(-752035),507021+1346323711461,C(-711230-(-698913))sg=sg(gR,Jg)fg=J[t]qg=J[q]Pg=qg(tg,Og)Hg=fg[Pg]lg[1609952929%8341725]=14049115199156-(-967386)qg=J[t]Og=C(-848819+836321)Pg=J[q]tg=Pg(Og,lg[686453-686452])fg=qg[tg]lg[275990+-275989]=C(953044-965238)Pg=J[t]tg=J[q]Og=tg(lg[951970391%4643758],lg[-1028281+1028283])qg=Pg[Og]lg[-437407-(-437410)]=C(306072-318065)Og=J[t]Pg=5692415-(-775639)<=16387154-(-363414)lg[851885+-851884]=J[q]sg=C(620346-632829)lg[720045-720043]=lg[683126-683125](lg[92983+-92980],lg[133869-133865])sg=gR[sg]tg=Og[lg[97506159%733129]]Og=G(688958539%17331003,{hR;t,q})Jg={[Hg]=fg,[qg]=Pg,[tg]=Og}Og,tg=813832+15926199251440,C(1009676-1022146)sg=sg(gR,Jg)fg=J[t]qg=J[q]Pg=qg(tg,Og)lg[513393398%7662588]=964719+10845471087435 Hg=fg[Pg]qg=J[t]Og,lg[-352727+352728],sg=C(-135280-(-123185)),-732058+5635196483034,C(440718-452001)Pg=J[q]tg=Pg(Og,lg[634559-634558])fg=qg[tg]Pg=J[t]lg[341175553%5985536]=C(911181+-923520)tg=J[q]Og=tg(lg[-290517-(-290518)],lg[-966116-(-966118)])tg,lg[773647-773639],sg=C(838979+-850607),805251+28936536599327,gR[sg]qg=Pg[Og]Og=191222366770-(-835111)Pg=V(200938993%23970474,{t;q,pR})Jg,lg[871869-871868]={[Hg]=fg,[qg]=Pg},-490516+22862332224938 sg=sg(gR,Jg)fg=J[t]qg=J[q]Pg=qg(tg,Og)sg=C(127161+-138705)Hg=fg[Pg]qg=J[t]Pg=J[q]lg[90991+-90989],lg[242954-242950],Og,sg=4441038528348-890696,2961982921503-(-928324),C(481625+-493803),jR[sg]tg=Pg(Og,lg[353894-353893])lg[321608-321607]=C(-661138+649215)fg=qg[tg]Pg=J[t]tg=J[q]Og=tg(lg[2052113253%15314278],lg[-169490+169492])lg[565600965%6355067],lg[424955843%6639935]=C(-29610-(-18303)),444783+16253387412513 qg=Pg[Og]tg=J[t]Og=J[q]lg[46830+-46829]=Og(lg[-418344+418346],lg[260916275%16307267])Pg=tg[lg[908268-908267]]lg[401187052%5495713]=C(850956+-863249)Og=J[t]lg[2136731499%8829469]=J[q]lg[-201799+201801]=lg[33241651%3324165](lg[540709+-540706],lg[125866754%1593250])lg[689166+-689162]=C(-179596-(-168057))tg=Og[lg[2440076421%12642883]]lg[988943-988942]=J[t]lg[963664+-963662]=J[q]lg[327966915%10248966]=lg[567411127%6675425](lg[636976582%12018426],lg[362236495%16465295])Og=lg[835121-835120][lg[3067243394%12727151]]Jg={[Hg]=fg,[qg]=Pg;[tg]=Og}Og,tg=27652534604121-(-286963),C(505760-518013)sg=sg(jR,Jg)fg=J[t]qg=J[q]Pg=qg(tg,Og)Hg=fg[Pg]Og,lg[-465154-(-465158)]=C(98040+-109428),29881695356062%1660094411017 qg=J[t]Pg=J[q]sg,lg[-145151-(-145152)]=C(107159+-119003),24089922349387-(-934534)sg=jR[sg]tg=Pg(Og,lg[1178158461%12401668])lg[-726935+726936]=30511793303031-(-838025)fg=qg[tg]Jg={[Hg]=fg}sg=sg(jR,Jg)tg,lg[-813748-(-813754)],Og=C(295108+-306325),14306496154844-766679,-554841+32025748550042 fg=J[t]lg[69455+-69453]=4.2559536114637e+14%2205157383320 qg=J[q]Pg=qg(tg,Og)Og=C(549808-561447)Hg=fg[Pg]qg=J[t]Pg=J[q]lg[991920321%9724709]=C(575359-586625)tg=Pg(Og,lg[722513629%3490404])fg=qg[tg]Pg=J[t]sg,lg[808692+-808687],lg[-1001070+1001071]=C(-235837+223354),C(834377-846678),C(348802-359847)tg=J[q]hg=O(hg)Og=tg(lg[-620872-(-620873)],lg[659628+-659626])qg=Pg[Og]sg=jR[sg]Og=J[t]lg[1692622390%9455991]=J[q]Pg=952711+1218731>6363684-45734 lg[274299797%6095551]=lg[570825841%14636560](lg[540906-540903],lg[-51237+51241])tg=Og[lg[-962166+962168]]Og=K(-393765+666864,{hR;t;q,PR})Jg,lg[720097+-720094]={[Hg]=fg;[qg]=Pg,[tg]=Og},C(849042+-861463)sg=sg(jR,Jg)tg=C(59879-71596)fg=J[t]qg=J[q]Og=-515080+20976618095152 Pg=qg(tg,Og)lg[345093+-345092]=437989+22462034524662 Hg=fg[Pg]lg[1839734428%8287092]=18978922906507-499974 qg=J[t]lg[554144+-554142]=24641009846650-466088 Pg=J[q]Og=C(-305366+293286)tg=Pg(Og,lg[832101+-832100])lg[52745-52744]=C(587057+-598370)fg=qg[tg]Pg=J[t]tg=J[q]Og=tg(lg[30469+-30468],lg[418105538%5098848])qg=Pg[Og]Og=J[t]lg[786229+-786228]=J[q]lg[1014504+-1014502]=lg[345783-345782](lg[-938997-(-939000)],lg[1812994830%16044202])tg=Og[lg[463687+-463685]]lg[-403562-(-403564)]=J[t]lg[43942+-43939]=J[q]lg[743773-743769]=lg[-939010+939013](lg[1593670985%9658612],lg[610825218%2867724])lg[836720006%8807579]=lg[430136-430134][lg[-334148+334152]]sg,lg[2208316826%10878408],Og=C(73143+-84329),577063250%2308213,421499-421449 lg[-756457+756461]=J[t]lg[151996+-151991]=J[q]lg[951378-951372]=lg[1729096595%8867162](lg[349471844%2888197],lg[717835-717827])lg[1567157553%14925310]=lg[2798622469%15127689][lg[733243+-733237]]sg,lg[1642194922%7017927]=jR[sg],-318312-(-319212)Pg={[tg]=Og;[lg[872950337%4499744]]=lg[73001+-72999],[lg[-781983-(-781986)]]=lg[-387752+387756]}Og=J[t]lg[-655351-(-655355)]=20325246746724-121708 lg[347058-347057]=J[q]LR=O(LR)lg[-799051+799054]=C(-808183+796455)lg[634639-634637]=lg[255261-255260](lg[426332871%2089867],lg[775721+-775717])tg=Og[lg[1972082507%13600569]]Og=d(-306432+10899951,{hR,t;q})lg[2079567646%8774547],Jg=C(-155203-(-143002)),{[Hg]=fg;[qg]=Pg;[tg]=Og}Og=568716+7801280897188 sg=sg(jR,Jg)tg,sg=C(522908-534353),C(-512729-(-500885))fg=J[t]qg=J[q]lg[702003+-702001]=734101+3430143922856 Pg=qg(tg,Og)Hg=fg[Pg]lg[-637013-(-637014)]=483924+27769044226094 qg=J[t]Og=C(-443725+431232)Pg=J[q]tg=Pg(Og,lg[-82465-(-82466)])Og,sg=13166020727433-(-804201),jR[sg]fg=qg[tg]Jg,tg,lg[455536+-455530],lg[1259757957%6665386]={[Hg]=fg},C(367323+-379626),-663269+13627701098414,C(-474933+462413)sg=sg(jR,Jg)fg=J[t]qg=J[q]Pg=qg(tg,Og)Og,lg[-72478-(-72482)]=C(-666276+653977),28427539586613-387712 Hg=fg[Pg]lg[-1037686+1037687]=13436478009897-776633 qg=J[t]lg[981447-981439]=26292476001630-(-389749)Pg=J[q]tg=Pg(Og,lg[-215-(-216)])fg=qg[tg]Pg=J[t]lg[-831157-(-831158)]=C(-272230+260966)tg=J[q]Og=tg(lg[539722655%9305563],lg[428031-428029])qg=Pg[Og]Og=J[t]lg[260819+-260818]=J[q]lg[270956612%10035430]=lg[-318606+318607](lg[-702787+702790],lg[508269472%6050827])lg[720693+-720688]=C(730146+-742406)tg=Og[lg[2113265410%16509886]]sg=C(799307+-810493)sg=jR[sg]lg[400289+-400287]=J[t]Og=2238225681%10410352 lg[725432+-725429]=J[q]lg[-360420-(-360424)]=lg[319583+-319580](lg[424327+-424322],lg[151433-151427])MR=nil lg[741195-741194]=lg[828135-828133][lg[902274-902270]]lg[968964274%15628456]=424322987%3052683 lg[-953402-(-953406)]=J[t]lg[29263733%9754576]=J[q]lg[333222665%4327567]=lg[2150344525%11686655](lg[-813401-(-813408)],lg[228843+-228835])lg[-752465+752470]=C(-6125+-6299)lg[30702069%520374]=lg[654259+-654255][lg[-585209-(-585215)]]lg[-300512+300516]=277201-277199 Pg={[tg]=Og,[lg[-226497-(-226498)]]=lg[504755627%3059125];[lg[-633343-(-633346)]]=lg[682639+-682635]}lg[992589+-992586],lg[1149871284%14373391]=C(422550-433979),-114700+32868576951253 uR=O(uR)Og=J[t]lg[-591460-(-591461)]=J[q]lg[726732542%8074806]=lg[595226+-595225](lg[659998+-659995],lg[-771465-(-771469)])lR=O(lR)tg=Og[lg[-43319+43321]]Og=V(2917972498%19287144,{hR,t,q})Jg,lg[-582471+582473]={[Hg]=fg;[qg]=Pg,[tg]=Og},-139913+22349251234608 Og,lg[119174+-119171]=723193+29254459518013,C(340023-351900)sg=sg(jR,Jg)fg=J[t]qg=J[q]lg[151739-151738],tg=25136828719190-(-478563),C(328652-340560)Pg=qg(tg,Og)Hg=fg[Pg]qg=J[t]sg=C(518256+-529442)Pg=J[q]Og=C(898911-910376)tg=Pg(Og,lg[-978819+978820])fg=qg[tg]lg[306336457%12764019],lg[-194685-(-194691)]=C(-838798-(-827699)),36454+21978205051284 Pg=J[t]xg=O(xg)tg=J[q]Og=tg(lg[-869678+869679],lg[246913+-246911])lg[436386640%8081234]=320556+18160011099356 qg=Pg[Og]Og=J[t]lg[1464512011%10386610]=J[q]lg[-228041-(-228043)]=lg[1414515181%10250110](lg[335142+-335139],lg[433695044%2710594])tg=Og[lg[266334+-266332]]lg[363972+-363970]=J[t]lg[296241-296238]=J[q]lg[957938+-957934]=lg[295120899%1347584](lg[2049563661%15070321],lg[-123470-(-123476)])lg[111018597%8539892]=lg[381146+-381144][lg[-319522+319526]]lg[187912-187905],Og,lg[601947-601939],lg[3286079234%15004928]=C(-553022-(-541245)),-472593-(-472603),657176+17676672473359,-176424-(-176624)lg[-1046412+1046416]=J[t]lg[-34782-(-34787)]=J[q]lg[469267-469261]=lg[206883-206878](lg[-338376+338383],lg[2033875948%13742405])lg[-166330-(-166333)]=lg[399730-399726][lg[-450352+450358]]lg[247388+-247384]=424155498%2256146 Pg={[tg]=Og,[lg[454443058%3694659]]=lg[412509221%5809989],[lg[703616693%10051667]]=lg[252278504%3039500]}Og=J[t]lg[-893917-(-893920)]=C(151710-163189)lg[-325215-(-325216)]=J[q]lg[-572828-(-572832)],lg[187884823%1692656]=20365154678678-(-290165),C(4100+-16618)lg[1736438222%13154835]=lg[2084817281%11455040](lg[293997756%4666631],lg[536814-536810])sg=jR[sg]tg=Og[lg[-409711+409713]]lg[7999694%3999845]=41874+4890656105811 Og=K(-383591+8603948,{hR,t;q})lg[1789248967%7303057],Jg,lg[1851178821%12507965]=-848341+21100299081782,{[Hg]=fg;[qg]=Pg,[tg]=Og},230684+26597467450181 tg=C(-751041+739705)sg=sg(jR,Jg)fg=J[t]lg[251529-251521]=-55419+6892543780100 qg=J[q]Og=-332147+1037102748501 Pg=qg(tg,Og)Og=C(271433+-283387)Hg=fg[Pg]qg=J[t]Pg=J[q]tg=Pg(Og,lg[177736-177735])fg=qg[tg]Pg=J[t]lg[-64053-(-64054)]=C(907566-920044)tg=J[q]Og=tg(lg[699640+-699639],lg[637848-637846])lg[236390003%1343125]=C(-292672+280661)qg=Pg[Og]Og=J[t]lg[5298+-5297]=J[q]lg[-410893+410899],lg[50865+-50860]=5064495618415-(-257991),C(522764+-534431)lg[-338376+338378]=lg[355220682%6702277](lg[102007-102004],lg[-523914+523918])tg=Og[lg[-572420+572422]]Og=-426500+426510 lg[249275312%1060746]=J[t]lg[-748396-(-748399)]=J[q]lg[-563408-(-563412)]=lg[-428955-(-428958)](lg[484390345%6919862],lg[1183113434%12072586])lg[-806481+806482]=lg[2092140446%13158116][lg[1727060722%7886122]]lg[706847+-706843]=J[t]lg[600219686%4349418]=-974274+974574 lg[-368767-(-368772)]=J[q]lg[274220470%7216328]=lg[224443-224438](lg[1022003335%10645868],lg[1021310-1021302])lg[465488915%11935613]=31258952108401-69781 lg[3508263714%16019469]=lg[-350136-(-350140)][lg[1474574382%11171018]]lg[-331481+331485]=891139640%9001410 Pg={[tg]=Og;[lg[3792029099%16704974]]=lg[313759+-313757],[lg[153878288%13988935]]=lg[1167441972%4946788]}Og=J[t]lg[100326727%5573707]=J[q]lg[420131+-420126],lg[-316474+316478],lg[-340354-(-340357)]=C(-179505+167197),-138948+27352691265669,C(-120050+108707)lg[845223+-845221]=lg[866568-866567](lg[803466+-803463],lg[215252+-215248])sg=C(766676+-777862)tg=Og[lg[1936606172%7594534]]Og=K(4997415967%25163803,{hR;t,q})sg,Jg=jR[sg],{[Hg]=fg,[qg]=Pg,[tg]=Og}sg=sg(jR,Jg)fg=J[t]n=O(n)Og=-367375+25871466498590 qg=J[q]tg=C(-653895+642424)Pg=qg(tg,Og)lg[1223227126%13295947],lg[21922+-21919],lg[727268-727267]=23457669545908-(-1010423),C(-764611+752770),-56260+6474814465931 Hg=fg[Pg]lg[991848-991844],Og=11012341467396-816380,C(517140+-528956)qg=J[t]Pg=J[q]tg=Pg(Og,lg[-742728+742729])lg[233577+-233571]=-642788+3714636535205 fg=qg[tg]Pg=J[t]lg[147423+-147422]=C(614094+-626461)tg=J[q]Og=tg(lg[5800-5799],lg[1047061+-1047059])qg=Pg[Og]Og=J[t]lg[205550-205549]=J[q]lg[-211597-(-211599)]=lg[-968870-(-968871)](lg[86104+-86101],lg[319085-319081])tg=Og[lg[-867706-(-867708)]]Og=349750314%4066864 lg[864319282%3774320]=J[t]lg[305478803%12219152]=J[q]sg=C(-1018519-(-1007333))lg[1727336758%9649926]=lg[-56702+56705](lg[280441-280436],lg[701328-701322])lg[170866746%10050985]=lg[2149828835%15247013][lg[580057-580053]]lg[52217+-52213]=J[t]lg[-738682+738689],lg[737267+-737265]=C(1032749+-1045169),-377192+377692 lg[509702765%5663364]=J[q]lg[1812451266%7107652]=lg[2136307793%13026267](lg[-612966+612973],lg[2684246648%11184361])sg=jR[sg]oR=O(oR)kg=O(kg)lg[404244+-404241]=lg[383478904%10956540][lg[-159435+159441]]lg[1335847912%7181978]=64246730%1835618 Pg={[tg]=Og;[lg[-491781+491782]]=lg[-453828+453830],[lg[-663639+663642]]=lg[562910989%14433615]}lg[-456325-(-456328)]=C(-31734+20677)Og=J[t]lg[-87634+87635]=J[q]lg[529282444%8821374]=3597012222947-(-1032871)lg[-506083+506085]=lg[1827267394%9275469](lg[-218638+218641],lg[1380493216%15005361])lg[1622534381%8630502]=C(-305956-(-293922))tg=Og[lg[135883+-135881]]Og=Z(8402091-(-627722),{hR;t,q})Jg={[Hg]=fg,[qg]=Pg;[tg]=Og}Og=9511057372083-205415 sg=sg(jR,Jg)fg=J[t]tg=C(-357531+345582)qg=J[q]Pg=qg(tg,Og)lg[981134-981133],sg,Og=-80343+7027158009503,C(-376641-(-364797)),C(-347727-(-336442))Hg=fg[Pg]qg=J[t]sg=jR[sg]Pg=J[q]tg=Pg(Og,lg[1347928791%10368683])lg[3287585975%14742538]=23138757135763-(-466051)fg=qg[tg]Og,Jg=10123824842041-324303,{[Hg]=fg}sg=sg(jR,Jg)X=O(X)tg=C(151630+-163340)fg=J[t]lg[-746995+746997]=33319633665956-(-654583)dR=O(dR)qg=J[q]Pg=qg(tg,Og)Og=C(28087+-40115)Hg=fg[Pg]qg=J[t]Pg=J[q]tg=Pg(Og,lg[1224709753%14579878])fg=qg[tg]Pg=J[t]tg=J[q]lg[20435680%206421]=C(-1026606-(-1014649))Og=tg(lg[-826205-(-826206)],lg[774511+-774509])qg=Pg[Og]Pg=Z(6401817-(-239998),{hR,t;q,PR})sg,Jg=C(518499-529782),{[Hg]=fg,[qg]=Pg}sg,Og,tg=jR[sg],933255+30730515839583,C(-648511+636037)sg=sg(jR,Jg)fg=J[t]qg=J[q]lg[899037-899035]=23714128738515-396721 TR=O(TR)lg[-516169-(-516170)]=8192614615109-(-198305)Pg=qg(tg,Og)Hg=fg[Pg]qg=J[t]Pg=J[q]Og=C(-140431+128821)tg=Pg(Og,lg[-806467-(-806468)])fg=qg[tg]lg[-704636+704637]=C(914819+-925869)Pg=J[t]tg=J[q]Og=tg(lg[554837509%15412153],lg[520187-520185])lg[-104400+104401]=10002539634130-(-210015)qg=Pg[Og]Pg=V(8838470-66834,{hR;t;q;PR})Jg={[Hg]=fg;[qg]=Pg}AR=O(AR)tg,sg,Og=C(971346+-983118),C(524361+-535644),27247917472319-(-464721)sg,lg[770258891%9509369]=jR[sg],-529568+2700519889289 sg=sg(jR,Jg)fg=J[t]qg=J[q]Pg=qg(tg,Og)Hg=fg[Pg]Og=C(861137+-872274)qg=J[t]Pg=J[q]tg=Pg(Og,lg[871155649%9074538])fg=qg[tg]z=I[C(627129-638911)]Pg=J[t]sg=C(-637075+625792)tg=J[q]lg[3477502317%13690954]=C(-99579+88367)Og=tg(lg[-883179-(-883180)],lg[276805343%4131423])qg=Pg[Og]lg[662231+-662229]=-413343+21378036675969 Pg=G(10009101-454954,{hR;t,q,PR})Jg,Og,tg,sg={[Hg]=fg;[qg]=Pg},897947+11459951878461,C(-628412+616965),jR[sg]sg=sg(jR,Jg)fg=J[t]lg[-844345+844346]=-921227+30590693852719 qg=J[q]Pg=qg(tg,Og)Og=C(559667+-571485)Hg=fg[Pg]qg=J[t]Pg=J[q]tg=Pg(Og,lg[236065377%14754086])fg=qg[tg]Pg=J[t]tg=J[q]sg,lg[83436145%6953012],lg[2066515940%13685536],lg[1045085920%5471654]=C(1015719+-1027002),C(258415-270667),802212+23744157281676,10596437091432-(-93918)Og=tg(lg[15590146%3118029],lg[-325805-(-325807)])qg=Pg[Og]Pg=m(2768886742%13591654,{hR;t,q;PR})tg,Jg,sg=C(570726-582843),{[Hg]=fg,[qg]=Pg},jR[sg]kR=O(kR)sg=sg(jR,Jg)fg=J[t]Og,sg=824944+21098112634864,C(690557-702401)qg=J[q]Pg=qg(tg,Og)sg,Og=jR[sg],C(-444902-(-433115))Hg=fg[Pg]qg=J[t]lg[26081-26080],lg[-205759+205761]=2400799292104-177771,31005583678992-75178 Pg=J[q]tg=Pg(Og,lg[2133479530%16538601])fg=qg[tg]Jg={[Hg]=fg}sg=sg(jR,Jg)tg=C(336966+-349348)fg=J[t]Og=10393+31720421953817 qg=J[q]Pg=qg(tg,Og)Og,lg[-610493+610496],lg[227078+-227077]=C(-1034991+1023446),C(-944792-(-933432)),15206653828241-(-589592)Hg=fg[Pg]qg=J[t]Pg=J[q]tg=Pg(Og,lg[1352749971%10405769])fg=qg[tg]Pg=J[t]tg=J[q]lg[508051+-508043],lg[1017647690%16682749]=4436041768335-(-813698),C(267932-279432)Og=tg(lg[-368911+368912],lg[145145296%1091318])qg=Pg[Og]Og=J[t]lg[-664904+664905]=J[q]lg[33783474%4222934]=lg[-411637+411638](lg[105595714%5557669],lg[721-717])lg[-839902+839909],Pg,sg=C(186191-197262),13158950-(-797993)>=12985816-236215,C(-646826+634343)tg=Og[lg[48999470%263438]]Og=m(-59092+2718422,{hR,t;q,y,i})sg,Jg=jR[sg],{[Hg]=fg;[qg]=Pg,[tg]=Og}sg=sg(jR,Jg)sg,Og=C(298042+-309228),570642+10289026801061 fg=J[t]lg[953856+-953855],lg[663230+-663228],tg,lg[356315647%2059628]=-471504+7895918280748,8657861823397-965606,C(-339169+326970),C(120021+-131864)qg=J[q]Pg=qg(tg,Og)sg,lg[381929620%7488816]=jR[sg],20291567366080-133848 Hg=fg[Pg]qg=J[t]Pg=J[q]Og=C(-201865-(-190037))tg=Pg(Og,lg[1436822323%6714123])lg[192137-192136]=C(391907-403643)fg=qg[tg]Pg=J[t]tg=J[q]Og=tg(lg[-18287-(-18288)],lg[-1000343+1000345])qg=Pg[Og]Og=J[t]lg[1185203449%5985876]=J[q]lg[135348193%4667179]=lg[-728085-(-728086)](lg[1813582231%9348362],lg[249701704%4994034])tg=Og[lg[51879791%751881]]Og=-3955-(-3975)lg[-539956-(-539958)]=J[t]lg[544216+-544213]=J[q]lg[933880+-933876]=lg[-205202-(-205205)](lg[-122274-(-122279)],lg[-634281+634287])lg[-994406+994407]=lg[282590-282588][lg[982818260%8775163]]lg[750894854%15017897]=J[t]lg[-569871-(-569876)]=J[q]lg[-813111+813117]=lg[636887855%7320550](lg[487589-487582],lg[-936330+936338])lg[867917-867914]=lg[503608+-503604][lg[-172171+172177]]lg[-950725+950729],lg[900604004%9683914]=2597122488%15459062,-638312-(-638512)Pg={[tg]=Og;[lg[3250388209%14010294]]=lg[763548-763546];[lg[-726455+726458]]=lg[1349749324%16262040]}Og=J[t]lg[576012+-576008]=26368687656693-646911 lg[494840861%5378705]=J[q]lg[-202544-(-202547)]=C(-29298+16972)lg[693155-693153]=lg[-808717-(-808718)](lg[635588027%8951944],lg[3214691374%16235815])tg=Og[lg[409462+-409460]]Og=Z(9783274-(-699048),{hR;t;q})Jg={[Hg]=fg,[qg]=Pg;[tg]=Og}tg=C(40251-51356)sg=sg(jR,Jg)fg=J[t]Og,lg[2181094801%15920400]=17094881267784-(-462544),6772491353969-(-511200)qg=J[q]Pg=qg(tg,Og)sg=C(437314+-449158)zR=O(zR)Hg=fg[Pg]qg=J[t]Og=C(-81229+69851)Pg=J[q]lg[706904+-706901]=C(-1043571-(-1032150))tg=Pg(Og,lg[518929-518928])lg[855403-855402]=-300138+4693173607667 fg=qg[tg]Jg,lg[131811+-131809],Og,sg={[Hg]=fg},82520438363539%10315054863024,30218659915056-(-463303),jR[sg]sg=sg(jR,Jg)tg,lg[-334228-(-334235)]=C(-159191-(-147475)),27661487775323-912395 fg=J[t]lg[327281-327277]=6494240317822-(-731730)qg=J[q]Pg=qg(tg,Og)Og=C(266851+-279041)Hg=fg[Pg]qg=J[t]Pg=J[q]tg=Pg(Og,lg[201034+-201033])fg=qg[tg]Pg=J[t]lg[95510351%1469390]=C(933644-945587)tg=J[q]Og=tg(lg[393162085%1560167],lg[-169734-(-169736)])sg=C(485481-497964)qg=Pg[Og]sg=jR[sg]Og=J[t]Pg=2154424011%28546987<=197023+1384577 lg[-839243-(-839244)]=J[q]lg[606099-606097]=lg[511813-511812](lg[537221+-537218],lg[22570489%644871])tg=Og[lg[743151966%11986322]]gR=nil Og=d(13099430-(-731707),{hR,t,q;nR;Q,ER})Jg={[Hg]=fg,[qg]=Pg,[tg]=Og}sg=sg(jR,Jg)fg=J[t]tg,Og,lg[-639973-(-639974)]=C(-934944-(-922574)),7292195674503-(-95164),672250+34980160355750 qg=J[q]Pg=qg(tg,Og)Hg=fg[Pg]qg=J[t]lg[142144861%899651],lg[60527147%852495],Og=C(142453+-154853),-407748+18862855019283,C(-255282-(-244039))Pg=J[q]tg=Pg(Og,lg[845113-845112])fg=qg[tg]lg[-430390-(-430394)],sg=694501+23499934192090,C(-596805+584322)Pg=J[t]tg=J[q]lg[755764+-755763],sg=C(494036-505327),jR[sg]Og=tg(lg[-1041054-(-1041055)],lg[-988773-(-988775)])qg=Pg[Og]Og=J[t]Pg=3288321866%26606430>912525168%9367835 lg[824904-824903]=J[q]lg[2209038482%16735140]=lg[-638840+638841](lg[-657068-(-657071)],lg[-312356+312360])tg=Og[lg[2619111326%10646794]]lg[-910448-(-910451)]=C(12808-24135)Og=G(996079+2669794,{hR,t,q})Jg={[Hg]=fg;[qg]=Pg;[tg]=Og}sg=sg(jR,Jg)fg=J[t]Og,lg[2154580836%15959858],tg,lg[-520246-(-520248)]=-185950+29151882185572,24034386313739-530004,C(-249063+237766),25047965098140-291597 qg=J[q]Pg=qg(tg,Og)yR=O(yR)Hg=fg[Pg]lg[-917976-(-917977)]=31395852534884-(-160951)qg=J[t]Og=C(623819-635516)Pg=J[q]tg=Pg(Og,lg[-79320-(-79321)])fg=qg[tg]lg[-795182+795186]=14259077583755-457116 Pg=J[t]tg=J[q]lg[-748484+748485]=C(-485875-(-474221))Og=tg(lg[459677+-459676],lg[1014661558%16633796])qg=Pg[Og]Og=J[t]lg[-422580-(-422581)]=J[q]Pg=266723997%12701755<=1958078-(-342381)lg[-773610-(-773612)]=lg[-504148-(-504149)](lg[166969413%2693055],lg[1355250595%7656783])tg=Og[lg[224294+-224292]]Og=Z(5710149-792673,{hR,t;q;p;y})Jg={[Hg]=fg,[qg]=Pg,[tg]=Og}Og,sg=-252467+22530938471214,C(393388-405871)sg,tg=jR[sg],C(-746960-(-735202))sg=sg(jR,Jg)fg=J[t]lg[734987-734986]=25230416895523-(-36801)qg=J[q]lg[3176973182%15727590]=16187183769326-(-718467)Pg=qg(tg,Og)Og=C(-443359-(-432224))Hg=fg[Pg]sg,lg[596310+-596306]=C(-1036709+1024226),-323863+19039657022393 qg=J[t]Pg=J[q]sg=jR[sg]tg=Pg(Og,lg[559113-559112])fg=qg[tg]lg[787905223%4746417],lg[-372121-(-372124)]=C(299104+-311376),C(-690229+677881)Pg=J[t]tg=J[q]Og=tg(lg[-137424-(-137425)],lg[136675145%4141671])qg=Pg[Og]Og=J[t]lg[737094-737093]=J[q]Pg=2059989665%17793757<6705727-110362 lg[-822026+822028]=lg[514229+-514228](lg[20463907%639497],lg[-154595+154599])tg=Og[lg[497945+-497943]]Og=V(2883214-(-308689),{hR;t,q;p})lg[-89686+89691],Jg=30927506590280-692743,{[Hg]=fg;[qg]=Pg,[tg]=Og}w=O(w)lg[2347813521%15147184]=275085+8316170165395 sg=sg(jR,Jg)fg=J[t]lg[2443245336%13498593],lg[71394054%392275]=228670+3318585510091,-834768+28476641587356 Cg=O(Cg)Og=-241675+15625286061175 qg=J[q]tg=C(-337706+325666)Pg=qg(tg,Og)Hg=fg[Pg]qg=J[t]Og=C(-950142+937940)Pg=J[q]tg=Pg(Og,lg[-372413+372414])lg[1031228001%4076000]=C(-569305-(-556891))fg=qg[tg]lg[-54377+54379]=227456+22978444636492 Pg=J[t]tg=J[q]Og=tg(lg[862420021%3733420],lg[4074750604%16496966])HR=O(HR)qg=Pg[Og]Pg=m(-953649+17451295,{t,q,PR})sg=C(609741+-621024)sg,Jg,tg,lg[1040705+-1040703],Og=jR[sg],{[Hg]=fg;[qg]=Pg},C(-56108-(-44876)),3551263495579%1775639597665,15003023584265-626879 sg=sg(jR,Jg)lg[-577110-(-577111)]=12086536399466-(-404370)fg=J[t]qg=J[q]Pg=qg(tg,Og)Og=C(451276+-463380)Hg=fg[Pg]qg=J[t]Pg=J[q]tg=Pg(Og,lg[-502111-(-502112)])fg=qg[tg]Pg=J[t]lg[648604+-648603]=C(-381022+369708)tg=J[q]Og=tg(lg[951611101%12688148],lg[-698426+698428])qg=Pg[Og]lg[1950992257%13455119]=C(-775838-(-763754))tg=J[t]Og=J[q]lg[-801514-(-801515)]=Og(lg[286531106%1813488],lg[-223618+223621])lg[122874+-122871]=C(-772666+760270)Pg=tg[lg[990891+-990890]]Og=J[t]lg[576357686%6066923]=J[q]lg[323265-323263]=lg[-743979-(-743980)](lg[-87395-(-87398)],lg[167232274%961105])tg=Og[lg[-468687+468689]]lg[391712559%4608383]=C(-969494-(-958339))lg[1415929557%13357826]=J[t]lg[923904-923902]=J[q]lg[-831003+831006]=lg[1146938645%7496331](lg[1837401430%14582551],lg[2076016281%14027137])sg=C(-715972+704428)Og=lg[601822079%4208546][lg[83528+-83525]]Jg,sg,lg[542979+-542977]={[Hg]=fg;[qg]=Pg;[tg]=Og},aR[sg],6337983593718-(-528017)tg=C(-304476+293314)sg=sg(aR,Jg)fg=J[t]Q=O(Q)Og,lg[515709-515706]=730650+34714437703947,385918+12639868367743 qg=J[q]Pg=qg(tg,Og)sg=C(-300466-(-288622))Hg=fg[Pg]qg=J[t]Pg=J[q]lg[970964-970963],Og,sg=18340234107685-637385,C(-737906-(-726667)),aR[sg]tg=Pg(Og,lg[-45886+45887])fg=qg[tg]tg,lg[470424+-470420],Jg,Pg=-706049+10002211625010,25888+15445602940664,{[Hg]=fg},C(10681+-22211)sg=sg(aR,Jg)sg=J[Ug]Hg=J[t]fg=J[q]qg=fg(Pg,tg)lg[11481317%717582]=188818+30039871526162 Jg=Hg[qg]Pg=J[t]tg=J[q]Hg,lg[1007780+-1007779]=C(991128-1002672),C(-586905-(-575365))Og=tg(lg[760225-760224],lg[507816+-507814])qg=Pg[Og]lg[82952+-82950]=C(-611353+600346)tg=J[t]Og=J[q]lg[850224-850223]=Og(lg[275493808%2071382],lg[857464+-857461])lg[519795+-519792]=C(200599+-212343)Pg=tg[lg[-486491+486492]]Og=J[t]lg[204285+-204284]=J[q]lg[-442468+442470]=lg[54109+-54108](lg[-972820-(-972823)],lg[339688-339684])lg[962612+-962608]=C(48644-60137)tg=Og[lg[1571555568%12881603]]lg[276769-276768]=J[t]lg[895128+-895126]=J[q]lg[946397+-946394]=lg[104915441%3384369](lg[488149+-488145],lg[-879982-(-879987)])lg[-698441+698446]=C(857956-869358)Og=lg[160993081%16099308][lg[-954678+954681]]lg[-808388-(-808390)]=J[t]lg[790585+-790582]=J[q]lg[2003353149%12924859]=lg[1401093323%15921515](lg[-404600+404605],lg[-465440+465446])lg[-830514-(-830520)]=C(571098-582827)lg[754362489%5546783]=lg[713366+-713364][lg[-937600+937604]]Hg=aR[Hg]lg[-637466+637469]=J[t]lg[355891-355887]=J[q]lg[-695046-(-695051)]=lg[1134896564%16212808](lg[410705-410699],lg[276312176%2321951])lg[246505-246503]=lg[1189183290%5017651][lg[1136072882%4753443]]fg={[qg]=Pg,[tg]=Og;[lg[829066376%6632531]]=lg[1829128772%8710137]}Hg=Hg(aR,fg)sg[Jg]=Hg sg=J[Ug]lg[69306-69305],tg=C(845145-856837),83865+13591675408672 Hg=J[t]lg[2436731647%14085154]=-57619+21124888577920 fg=J[q]lg[691305+-691303],Pg=4937704653966-621459,C(-714978+703275)qg=fg(Pg,tg)Jg=Hg[qg]lg[342971+-342968]=-171487+15008053164331 Pg=J[t]tg=J[q]Og=tg(lg[-495265+495266],lg[995132+-995130])lg[-318298-(-318305)],lg[138117680%2938674]=3843309046725-(-310072),C(-225918+214016)qg=Pg[Og]tg=J[t]Og=J[q]lg[603401+-603400]=Og(lg[1792967207%11873955],lg[2171422965%10489966])Hg=C(-83659-(-72115))Pg=tg[lg[979906561%4780032]]lg[813688-813682],lg[759203-759199],lg[873072411%5596618],Hg=34047709405068-(-286306),3637720619829-300184,C(497034+-509067),aR[Hg]Og=J[t]lg[1035065+-1035064]=J[q]lg[437693+-437691]=lg[1459772389%14311494](lg[-216346+216349],lg[1091302203%4938019])tg=Og[lg[-20562+20564]]lg[1287481142%6016267]=C(709989-721482)lg[777376-777375]=J[t]lg[-435219-(-435221)]=J[q]lg[28345+-28342]=lg[-483503-(-483505)](lg[353225098%5986866],lg[437684+-437679])lg[925255+-925250]=C(881070+-893478)Og=lg[-724305+724306][lg[-803171-(-803174)]]lg[-307411+307413]=J[t]lg[283822451%3118928]=J[q]lg[2230739284%12392996]=lg[943084+-943081](lg[132127825%600581],lg[1000038-1000032])lg[706525-706524]=lg[-172454-(-172456)][lg[527804%4060]]lg[-981158-(-981164)]=C(-824401+813165)lg[-589093+589096]=J[t]lg[306832-306828]=J[q]lg[34294870%6858973]=lg[-309165+309169](lg[962451-962445],lg[644522431%3541332])lg[440-438]=lg[1037619003%4415400][lg[1024053224%16254813]]fg={[qg]=Pg,[tg]=Og,[lg[580188495%3006158]]=lg[631978442%4358472]}Hg=Hg(aR,fg)sg[Jg]=Hg lg[-528537-(-528540)],lg[12836+-12834],tg=28239107085189-(-466904),5605728711025-(-1022145),30578374384662-25719 sg=J[Ug]Hg=J[t]Pg=C(-238301+226249)fg=J[q]p=O(p)qg=fg(Pg,tg)Jg=Hg[qg]lg[649846+-649841],lg[-423929-(-423930)]=856928+13921899316722,C(574955+-587285)Pg=J[t]tg=J[q]Og=tg(lg[1766058624%8138519],lg[422500-422498])qg=Pg[Og]tg=J[t]Og=J[q]lg[790621+-790619],lg[189716856%7588674]=C(-639243+627108),16033179815726-(-495100)lg[-334992-(-334993)]=Og(lg[926115-926113],lg[734988-734985])Pg=tg[lg[-282741+282742]]lg[1036476-1036472]=149642+11019287939969 Og=J[t]lg[1005242+-1005239]=C(-873801-(-861288))lg[-641216+641217]=J[q]lg[1038559268%9110169]=lg[1589365801%6540600](lg[-948678-(-948681)],lg[-928685-(-928689)])lg[1008706+-1008699]=659105+18730114601840 tg=Og[lg[463542-463540]]lg[769550568%7933511]=J[t]lg[-374597+374601]=C(549811+-561304)lg[211700+-211698]=J[q]lg[328153+-328150]=lg[-67835-(-67837)](lg[-110089-(-110093)],lg[-384650-(-384655)])Hg=C(869360+-880904)Hg=aR[Hg]Og=lg[582131+-582130][lg[-1046628+1046631]]lg[1013765+-1013760]=C(384587-396453)lg[1261252765%11787409]=J[t]lg[-754073+754076]=J[q]lg[504462-504458]=lg[149655230%6506749](lg[755139+-755134],lg[1312239885%12740193])lg[761048209%5285057]=lg[-706985-(-706987)][lg[-543066+543070]]lg[-846984+846987]=J[t]lg[1793145061%9589011]=J[q]lg[1968409522%12076132]=C(477402-488811)lg[63034691%318357]=lg[-211863-(-211867)](lg[506759-506753],lg[-974659-(-974666)])lg[349894-349892]=lg[327890307%4491648][lg[807963+-807958]]lg[153676450%9039791],fg=-536098+33733138754430,{[qg]=Pg;[tg]=Og,[lg[84954761%801460]]=lg[360332+-360330]}Hg=Hg(aR,fg)tg,lg[-625482-(-625484)],Pg=26212648701719-647017,-1000111+34130322702532,C(793721+-805738)sg[Jg]=Hg lg[397948650%8121401]=C(-560327-(-547887))sg=J[Ug]lg[-587742+587749]=-47164+31591453553074 Hg=J[t]fg=J[q]qg=fg(Pg,tg)Jg=Hg[qg]SR=O(SR)Pg=J[t]Hg=C(-281905-(-270361))tg=J[q]Og=tg(lg[625340-625339],lg[669294782%3187118])R=O(R)qg=Pg[Og]lg[-663900-(-663902)],lg[2233169032%10946907]=C(-649215+637526),415170+3114812338152 tg=J[t]Og=J[q]lg[739978-739977]=Og(lg[364943812%2369765],lg[679453+-679450])Pg=tg[lg[766323-766322]]Og=J[t]lg[951805+-951799],lg[681880323%9470560]=276092+1867351575785,C(-844614+832506)lg[770577+-770576]=J[q]Hg=aR[Hg]lg[-485042+485044]=lg[-676036+676037](lg[-307167-(-307170)],lg[-730331+730335])tg=Og[lg[161067348%1103201]]lg[564126841%2274705]=J[t]lg[-733943+733948]=687153+721572807967 lg[891581-891579]=J[q]lg[-722347-(-722351)]=C(638025+-649518)lg[-377414+377417]=lg[1128873900%7732013](lg[997597+-997593],lg[890926-890921])Og=lg[-18244-(-18245)][lg[101333-101330]]lg[601765+-601763]=J[t]pR=O(pR)lg[977127-977124]=J[q]lg[125493-125488]=C(-419518+407281)lg[-703787+703791]=lg[-487463+487466](lg[-1006481-(-1006486)],lg[39201832%1031627])lg[636798+-636797]=lg[49308+-49306][lg[946262734%4506013]]lg[-1000502+1000508]=C(128446-140814)lg[-104191-(-104194)]=J[t]lg[846581-846577]=J[q]lg[968872+-968867]=lg[1319802114%11998201](lg[174037+-174031],lg[251690-251683])lg[-546678-(-546680)]=lg[1031222-1031219][lg[147560-147555]]lg[711140-711133],fg=21912520665177-(-524162),{[qg]=Pg;[tg]=Og,[lg[413523-413522]]=lg[1030242-1030240]}tg,lg[1007360488%3981662]=31649080258524-849483,1397418688907-491265 Hg=Hg(aR,fg)sg[Jg]=Hg lg[1725680377%7738477],Pg=27387183893830-252789,C(912707-924628)sg=J[Ug]Hg=J[t]fg=J[q]qg=fg(Pg,tg)lg[-612255+612260]=-361605+7735402680983 Jg=Hg[qg]Pg=J[t]lg[-31093-(-31094)],lg[-498165-(-498168)]=C(954766-966644),14747314003262-(-867733)b=O(b)tg=J[q]Hg=C(-682203+670659)Og=tg(lg[-507002-(-507003)],lg[476115-476113])qg=Pg[Og]lg[227048-227046]=C(959153+-970356)tg=J[t]Og=J[q]lg[1371052663%6753954]=Og(lg[-683509-(-683511)],lg[-751044+751047])lg[503884-503881]=C(-140812+129759)Pg=tg[lg[526592-526591]]Og=J[t]lg[-163613+163617]=6466917805838-(-416949)lg[-636285+636286]=J[q]lg[-635036-(-635038)]=lg[-334776+334777](lg[-1014955-(-1014958)],lg[162777-162773])tg=Og[lg[-965222+965224]]lg[460706+-460702]=C(-629908+618415)lg[324662-324661]=J[t]lg[4456-4454]=J[q]lg[1237337155%5836496]=lg[190816+-190814](lg[3154078657%14807881],lg[-964631-(-964636)])Og=lg[558494949%2986604][lg[-941715-(-941718)]]lg[241761041%3663046]=C(774816+-786174)lg[-554844+554846]=J[t]lg[935792-935789]=J[q]lg[-881758+881762]=lg[2225568253%14085875](lg[2577872237%11016548],lg[1420230790%6340316])xR=O(xR)lg[478097-478096]=lg[-260540-(-260542)][lg[-869256-(-869260)]]lg[1888178023%16709540]=J[t]lg[1674075822%13286316],Hg=C(-724257+712438),aR[Hg]lg[-905992-(-905996)]=J[q]lg[-418613-(-418618)]=lg[405725179%5409669](lg[156957+-156951],lg[-151867+151874])lg[351916+-351914]=lg[1029331-1029328][lg[-650290-(-650295)]]fg={[qg]=Pg;[tg]=Og,[lg[288488667%4653043]]=lg[-70121+70123]}tg,lg[-547691+547695]=2590902488758-559616,16182578028880-607201 Hg=Hg(aR,fg)lg[-659324+659325],lg[-822682-(-822688)]=C(-136418-(-124742)),29397689523806-567525 sg[Jg]=Hg sg=J[Ug]Hg=J[t]Pg=C(-74382-(-61879))fg=J[q]qg=fg(Pg,tg)Jg=Hg[qg]Pg=J[t]lg[232109133%1221627],lg[114665623%528413]=14389635557392-(-406044),-103296+16237197422857 tg=J[q]Og=tg(lg[3165965946%14725423],lg[2873871837%14018887])qg=Pg[Og]lg[1130708867%4469205]=C(38257+-49318)tg=J[t]Og=J[q]lg[493512933%1950644]=Og(lg[1408239722%7823554],lg[-930382-(-930385)])Pg=tg[lg[755405596%3108665]]Og=J[t]lg[692263-692260]=C(-781244-(-768948))lg[2603663329%11623497]=J[q]lg[1299199799%14933331]=lg[-103351+103352](lg[-827224-(-827227)],lg[764628-764624])tg=Og[lg[-300434+300436]]lg[-869110-(-869111)]=J[t]lg[-391891-(-391893)]=J[q]YR=O(YR)lg[789903+-789898],lg[631790938%3876018]=-891290+21174902243358,C(-943025-(-931532))lg[1269042162%5493689]=lg[-187570+187572](lg[235669+-235665],lg[495778+-495773])Og=lg[943498471%5422405][lg[963798223%13768546]]lg[546120+-546115],Hg=C(-953299-(-941025)),C(300475-312019)lg[957338-957336]=J[t]lg[842972995%6386159]=-327851+19820298069176 lg[-146759-(-146762)]=J[q]Hg=aR[Hg]lg[3827588209%15622809]=lg[1004252+-1004249](lg[1998590540%13783383],lg[-244617+244623])lg[1719797820%8308202]=C(588765-599965)lg[650187+-650186]=lg[35145+-35143][lg[907340-907336]]lg[1498133283%9856140]=J[t]lg[469655+-469651]=J[q]lg[696858+-696853]=lg[212404404%2655055](lg[1857405694%8006059],lg[189309-189302])lg[298783082%1659906]=lg[-398971-(-398974)][lg[606168915%2832565]]fg={[qg]=Pg;[tg]=Og;[lg[-91455-(-91456)]]=lg[-16099-(-16101)]}Hg=Hg(aR,fg)sg[Jg]=Hg lg[3694801%923700]=C(-449826+437422)sg=J[Ug]lg[1634624734%7396492],tg=2.2608823916247e+14%28261030374290,7115417091012-(-692525)Hg=J[t]lg[431304+-431298],Pg=929746+16718341615255,C(119644+-130854)fg=J[q]qg=fg(Pg,tg)lg[715348787%4706242]=23663606130174-(-967949)Jg=Hg[qg]lg[-974863-(-974867)]=-855712+2509420892976 Pg=J[t]tg=J[q]Og=tg(lg[2105040501%9152350],lg[489375877%13226375])qg=Pg[Og]tg=J[t]rR=O(rR)Og=J[q]lg[882843-882838]=33866756572755-297145 ER=O(ER)lg[69224633%9889233]=C(927293+-938567)lg[-861476+861477]=Og(lg[113550690%1494088],lg[1017047+-1017044])Pg=tg[lg[-6985-(-6986)]]lg[-144883+144886]=C(273999-285395)Og=J[t]lg[1021001-1021000]=J[q]lg[11008377%95725]=lg[-595075-(-595076)](lg[-193119+193122],lg[-714000-(-714004)])tg=Og[lg[653967857%9477795]]lg[874475-874471]=C(-40679+29186)lg[1491757840%12750067]=J[t]lg[430898271%14858561]=J[q]lg[1417628067%14766959]=lg[-536687+536689](lg[-406773-(-406777)],lg[3398867303%15519942])Og=lg[993026+-993025][lg[162864-162861]]lg[396534452%2033510]=J[t]lg[1842216080%13646045]=C(754110+-765735)lg[-794621-(-794624)]=J[q]lg[61526-61522]=lg[-914309-(-914312)](lg[824803+-824798],lg[2130156060%9103231])lg[677023161%6154756]=lg[-673227-(-673229)][lg[-760209-(-760213)]]lg[699093%699090]=J[t]Hg,lg[490070-490063]=C(-586674-(-575130)),-964540+13528709091415 lg[674094049%9234165]=J[q]Hg,lg[902111-902105]=aR[Hg],C(219490-231772)lg[-306583-(-306588)]=lg[479903-479899](lg[362002661%1668215],lg[388362-388355])lg[-246512+246514]=lg[-112179+112182][lg[601127-601122]]lg[556976985%4760487],fg=30807589774079-256758,{[qg]=Pg,[tg]=Og,[lg[563487-563486]]=lg[138001+-137999]}Hg=Hg(aR,fg)lg[347133415%10847919],tg,Pg=-183450+6747373246687,12604283986335-(-374094),C(-94816+83410)sg[Jg]=Hg sg=J[Ug]Hg=J[t]lg[-780154-(-780156)]=32751523745571-889744 fg=J[q]qg=fg(Pg,tg)Jg=Hg[qg]lg[1214034669%5100986]=C(-795948+783938)Pg=J[t]tg=J[q]lg[248084995%7517727]=3632561336619-1026704 i=O(i)Og=tg(lg[350915-350914],lg[815663-815661])qg=Pg[Og]lg[800691278%12131686]=C(-691419-(-679814))tg=J[t]Og=J[q]lg[-357565-(-357568)]=229828+32258823174377 lg[2566657153%13799232]=Og(lg[1895286227%10830207],lg[453646+-453643])Pg=tg[lg[65082-65081]]lg[3495110496%13924743]=C(-506362-(-494535))Og=J[t]lg[2509705665%14591312]=J[q]lg[769759-769757]=lg[-537235+537236](lg[564587-564584],lg[2333935892%13975664])lg[450160+-450155],Hg=31697471785252-(-667780),C(831098-842642)tg=Og[lg[3244800638%12876193]]lg[1753277917%10690719]=J[t]lg[-164736-(-164740)]=C(-6103+-5390)lg[816855+-816853]=J[q]lg[607655199%7501916]=lg[408297-408295](lg[51381164%10276232],lg[-534442-(-534447)])Og=lg[84777+-84776][lg[978617+-978614]]lg[630884+-630882]=J[t]lg[287912167%2641396]=J[q]lg[979450565%11130120]=C(574760+-587049)lg[327206-327202]=lg[129127385%2807117](lg[850174-850169],lg[366845+-366839])lg[1117999361%4367185]=lg[-779585-(-779587)][lg[-829680-(-829684)]]lg[2766573704%15455719]=J[t]lg[307205-307199]=C(42238+-54713)lg[727395686%7062094]=J[q]lg[886261-886256]=lg[-326901-(-326905)](lg[465596214%8622152],lg[-891330-(-891337)])Hg=aR[Hg]lg[813353-813351]=lg[310808+-310805][lg[675165270%2897705]]DR=O(DR)lg[-820132+820137],fg=973351+34072358609875,{[qg]=Pg;[tg]=Og,[lg[654258801%6290950]]=lg[-167322+167324]}Hg=Hg(aR,fg)lg[19555719%3911143]=-526848+28883753795210 sg[Jg]=Hg sg=J[Ug]lg[891773-891772]=C(394736-406367)Hg=J[t]lg[-687126-(-687129)],lg[-482800-(-482802)],Pg,tg=-903095+3154455367027,32674941741255-355672,C(-1047094-(-1035055)),-40237+32419046004773 fg=J[q]qg=fg(Pg,tg)Jg=Hg[qg]Pg=J[t]tg=J[q]Og=tg(lg[1185475026%13946765],lg[14998-14996])qg=Pg[Og]lg[632071764%3113654]=C(202975-214370)tg=J[t]Og=J[q]lg[-821189-(-821190)]=Og(lg[-222932-(-222934)],lg[-741019-(-741022)])Pg=tg[lg[1001483+-1001482]]Og=J[t]lg[1035120-1035117]=C(337666-350133)lg[1179707101%8937175]=J[q]lg[-45966+45968]=lg[-194405-(-194406)](lg[356073+-356070],lg[566929+-566925])tg=Og[lg[1742722530%9790576]]lg[75460+-75453],lg[648132+-648126],lg[689558-689554]=29601832539271%166302447194,772149+17901768579163,C(224860-236353)lg[737469-737468]=J[t]lg[1392404106%7650572]=J[q]lg[218504+-218501]=lg[2483488758%12670861](lg[-1039717-(-1039721)],lg[-686982+686987])lg[-609653+609658]=C(-14792-(-2709))Og=lg[911159+-911158][lg[175721-175718]]lg[-813119+813121]=J[t]lg[855186+-855183]=J[q]lg[9341402%424609]=lg[-603953+603956](lg[-699716+699721],lg[641084-641078])lg[2955262840%16327419]=lg[633764+-633762][lg[-789730+789734]]lg[1006503411%12425968]=J[t]lg[1345920214%9753045]=J[q]Hg,lg[235407-235401]=C(-201549+190005),C(-989811-(-977357))lg[636855641%3168436]=lg[845773900%6407378](lg[-336040+336046],lg[-507389-(-507396)])lg[876183438%9523733]=lg[-462135+462138][lg[990936+-990931]]fg,Hg={[qg]=Pg,[tg]=Og,[lg[212141+-212140]]=lg[1006307-1006305]},aR[Hg]Og=6623389277294-(-520094)Hg=Hg(aR,fg)lg[2860721674%14745988]=-174725+22078820766382 sg[Jg]=Hg tg=C(891571-903667)fg=J[t]sg=C(-673868+662585)qg=J[q]Pg=qg(tg,Og)Hg=fg[Pg]qg=J[t]sg=aR[sg]Pg=J[q]Og,lg[-492298-(-492299)]=C(-704611+692423),10104580815240-(-71897)tg=Pg(Og,lg[-414086-(-414087)])lg[260140-260139]=C(751338-763303)fg=qg[tg]Pg=J[t]lg[654274-654269]=-478176+35045096868767 tg=J[q]Og=tg(lg[602908+-602907],lg[-43640+43642])qg=Pg[Og]Pg=V(7237107-(-695691),{hR,t,q;PR})Jg={[Hg]=fg,[qg]=Pg}sg=sg(aR,Jg)lg[754961+-754960],Og,sg=33696402332779-417568,-862721+23758428706104,C(-162858+151014)CR=O(CR)tg=C(325642+-337456)fg=J[t]qg=J[q]sg,lg[729567+-729564]=aR[sg],323777+15230372031219 Pg=qg(tg,Og)Hg=fg[Pg]qg=J[t]Og=C(-872687-(-860963))Pg=J[q]tg=Pg(Og,lg[102541713%6408857])fg=qg[tg]tg,Pg,Jg,lg[-332711+332713]=-874434+21957146165170,C(-867884+855423),{[Hg]=fg},22440811929675-(-100486)sg=sg(aR,Jg)sg=J[Ug]Hg=J[t]lg[521567-521563]=-489320+301481818100 fg=J[q]qg=fg(Pg,tg)lg[1437819532%5941403]=12797524112095-990104 Jg=Hg[qg]Pg=J[t]tg=J[q]lg[-1000659-(-1000660)]=C(102907-114194)Og=tg(lg[692999+-692998],lg[-584675-(-584677)])FR=O(FR)qg=Pg[Og]tg=J[t]Og=J[q]lg[-260367-(-260369)]=C(66375-77968)lg[492403861%6312870]=Og(lg[1413894312%7288115],lg[3875129184%16775451])Pg=tg[lg[19477591%177069]]Og=J[t]lg[1438761985%14987104]=J[q]lg[-509917-(-509920)]=C(471782-482854)lg[88668974%351861]=lg[-436725+436726](lg[-787463+787466],lg[109854980%9986816])lg[2441885193%14622067]=C(-654188-(-642349))tg=Og[lg[941107222%8878370]]lg[-892471-(-892472)]=J[t]lg[-1036927-(-1036929)]=J[q]lg[282379+-282376]=lg[-500420-(-500422)](lg[737158+-737154],lg[1280174610%8259191])lg[64213205%393946],lg[-203672+203677]=32560305072351-339365,C(-966026-(-954761))Og=lg[17394+-17393][lg[253488+-253485]]lg[-487674-(-487676)]=J[t]lg[503590755%13988632]=J[q]lg[2223960920%14075702]=lg[-48611+48614](lg[-365825-(-365830)],lg[610213+-610207])lg[422580705%2321872]=lg[838486+-838484][lg[99015+-99011]]lg[146982693%686835]=J[t]lg[809888355%5363499]=C(18702-30772)lg[1352046330%9521453]=J[q]Hg=C(-320516+308972)cR=O(cR)Hg=aR[Hg]lg[-992573+992578]=lg[111769+-111765](lg[-589421+589427],lg[2041849365%8134858])lg[-596843+596845]=lg[-164631-(-164634)][lg[511229+-511224]]l=O(l)fg={[qg]=Pg;[tg]=Og;[lg[749481-749480]]=lg[1357666486%6590614]}Hg=Hg(aR,fg)lg[984537-984536],Og=-958576+9310624428383,796241+3493283799049 sg[Jg]=Hg lg[812768-812763],tg=22489799470914-984666,C(-74813-(-63632))fg=J[t]qg=J[q]lg[-76134+76136]=-578220+28183522723311 Pg=qg(tg,Og)Hg=fg[Pg]Og=C(-35802-(-24164))qg=J[t]Pg=J[q]tg=Pg(Og,lg[54278801%1085576])lg[905387+-905386],lg[-458136+458140]=C(-1051223-(-1039518)),6217090574559-318864 fg=qg[tg]Pg=J[t]tg=J[q]sg=C(465922-477205)Og=tg(lg[262960+-262959],lg[-266725-(-266727)])qg=Pg[Og]sg,lg[323934053%12459002],tg=aR[sg],244677745302-(-746971),C(-505240-(-493341))Pg=Z(13664769-(-148697),{hR;t;q;PR})Jg={[Hg]=fg;[qg]=Pg}sg=sg(aR,Jg)lg[559156-559154],Og=410978234322-339731,13395111320181-(-802280)fg=J[t]qg=J[q]Pg=qg(tg,Og)Hg=fg[Pg]qg=J[t]Pg=J[q]sR=O(sR)sg,lg[828243213%6420490],Og=C(378486+-390330),820069+31185467880788,C(-84083+72083)tg=Pg(Og,lg[424487-424486])fg=qg[tg]Jg,sg={[Hg]=fg},aR[sg]sg=sg(aR,Jg)fg=J[t]Og,tg=24562079207017-303548,C(216482+-227665)qg=J[q]Pg=qg(tg,Og)Hg=fg[Pg]qg=J[t]lg[-428068+428069],Og=31296881416944-(-56829),C(520854-533199)Pg=J[q]tg=Pg(Og,lg[445963+-445962])fg=qg[tg]lg[1181185199%11039114]=C(-231749+220349)Pg=J[t]tg=J[q]Og=tg(lg[864201+-864200],lg[744510+-744508])lg[-191560+191562]=C(-212452-(-200959))iR=O(iR)qg=Pg[Og]tg=J[t]Og=J[q]lg[275374+-275373]=Og(lg[-763375-(-763377)],lg[699084+-699081])Pg=tg[lg[-507981+507982]]Og=J[t]y=O(y)lg[494889-494888]=J[q]sg,lg[120446+-120443]=C(85597+-96952),C(604987-616340)sg=aR[sg]lg[65010818%277824]=lg[793382+-793381](lg[743184975%6406767],lg[67629-67625])tg=Og[lg[134387089%1304729]]lg[833682123%9161342]=J[t]lg[709742-709738]=C(-683339+672108)lg[950295-950293]=J[q]lg[257992441%11726929]=lg[1254206702%11613025](lg[-785452-(-785456)],lg[414135272%3113799])lg[824704-824698]=-950315+5215389288871 Og=lg[1108345021%5252820][lg[-176285+176288]]lg[-555837-(-555842)]=C(735221-747320)lg[-546464+546466]=J[t]lg[-352820-(-352823)]=J[q]lg[2851629978%13514834]=lg[2072133883%9637832](lg[-520168+520173],lg[-351675+351681])lg[1542599074%8715249]=lg[118533-118531][lg[-191489-(-191493)]]lg[400593-400591]=Z(587949+13502391,{hR,t,q})Jg={[Hg]=fg;[qg]=Pg,[tg]=Og,[lg[794941+-794940]]=lg[63853-63851]}sg=sg(aR,Jg)fg=J[t]qg=J[q]Og,lg[605534+-605533],tg=-313341+30612257816491,9706802968878-(-874618),C(-840844+828661)Pg=qg(tg,Og)Og=C(-77509+65382)Hg=fg[Pg]qg=J[t]Pg=J[q]lg[-496309+496312],sg=C(357157+-368573),C(568839-581322)tg=Pg(Og,lg[37779751%503730])lg[-159415+159419],lg[734892+-734890]=5460680016715-(-181923),19271285079710-842641 fg=qg[tg]Pg=J[t]lg[500892+-500891]=C(424025-436132)tg=J[q]Og=tg(lg[-852046+852047],lg[200802-200800])qg=Pg[Og]Og=J[t]lg[342460+-342459]=J[q]Pg=880864505%6802174>14687168-103461 lg[738390649%13931899]=lg[188688340%8985159](lg[-578256-(-578259)],lg[677464+-677460])tg=Og[lg[351684-351682]]sg,lg[-167986+167990]=aR[sg],-177534+30286152182933 Og=G(13117488-352858,{hR;t,q})Jg={[Hg]=fg,[qg]=Pg,[tg]=Og}Og=922063+7845339053174 sg=sg(aR,Jg)tg=C(-20702+8898)fg=J[t]sg=C(-364928+352445)qg=J[q]Pg=qg(tg,Og)lg[45269-45268]=-143105+3972710151738 Hg=fg[Pg]sg=aR[sg]qg=J[t]o=nil Pg=J[q]lg[-988948-(-988951)],Og=C(449088-461070),C(390227+-401240)tg=Pg(Og,lg[-666783+666784])lg[-757463+757465]=15927303250705-968217 fg=qg[tg]Pg=J[t]lg[518521-518520]=C(597015-609529)tg=J[q]wR=O(wR)Og=tg(lg[667188+-667187],lg[1185083185%7848233])qg=Pg[Og]Pg=7542868-868087~=-308003+7660773 Og=J[t]lg[24060+-24059]=J[q]lg[-486020+486022]=lg[-406967+406968](lg[1435557657%8395074],lg[902135-902131])tg=Og[lg[-1043974+1043976]]Og=Z(1662677-(-320682),{hR,t,q})Jg={[Hg]=fg,[qg]=Pg,[tg]=Og}sg=sg(aR,Jg)Og=-826825+16228784438094 fg=J[t]tg=C(131864+-143110)qg=J[q]lg[2802340111%12399735]=-837828+30146877128602 Pg=qg(tg,Og)Hg=fg[Pg]Og,lg[297812754%1347569],sg=C(-970559+959530),22872149113518-(-356076),C(97405+-108688)qg=J[t]Pg=J[q]tg=Pg(Og,lg[-93192+93193])lg[-461719+461721]=527408+32000604974597 fg=qg[tg]lg[106203-106202],sg=C(457403+-468559),aR[sg]Pg=J[t]OR=O(OR)tg=J[q]Og=tg(lg[228712387%1314439],lg[1176633202%11766332])lg[-812546+812547]=-858048+13327811457022 qg=Pg[Og]tg=C(87367+-98780)Pg=Z(5477403-(-241727),{hR,t,q,PR;BR;M})Og,Jg=426972+18204067519808,{[Hg]=fg;[qg]=Pg}sg=sg(aR,Jg)fg=J[t]qg=J[q]Pg=qg(tg,Og)Og=C(-830090-(-818478))Hg=fg[Pg]lg[-393221+393225],lg[770130181%4724725],lg[-351387+351390]=-876772+633237856778,C(-759214-(-747084)),24421157607807-(-611052)qg=J[t]Pg=J[q]tg=Pg(Og,lg[547613+-547612])lg[776720+-776719]=C(-51539-(-40458))fg=qg[tg]Pg=J[t]lg[319469+-319467]=-913852+17656762044890 tg=J[q]Og=tg(lg[1040541-1040540],lg[-542205+542207])qg=Pg[Og]tg=J[t]lg[-628708+628710]=C(-462637-(-451099))Og=J[q]lg[324625+-324624]=Og(lg[3857455106%15068184],lg[364661373%12574530])Pg=tg[lg[59093+-59092]]Og=J[t]lg[688457-688456]=J[q]lg[852559027%6875476]=C(696690-707746)lg[2403639466%16463284]=lg[-666826+666827](lg[196538+-196535],lg[-219370-(-219374)])tg=Og[lg[747799-747797]]lg[-892691-(-892698)],lg[405970681%2218419]=-960010+11752136325994,C(-607062-(-595157))lg[-551254-(-551255)]=J[t]lg[9771502%390860]=J[q]lg[-583221+583224]=lg[251705+-251703](lg[599681-599677],lg[332999815%5123074])Og=lg[-215856+215857][lg[258024225%14334679]]hR=O(hR)sg=C(-608962-(-597418))sg,Jg=vR[sg],{[Hg]=fg,[qg]=Pg;[tg]=Og}sg=sg(vR,Jg)tg,sg,lg[36323821%844740]=C(79300-90852),C(-690763-(-678919)),24407119980815-64682 fg=J[t]Og,sg=21795655477313-884892,vR[sg]qg=J[q]Pg=qg(tg,Og)Og=C(-1059370-(-1048294))Hg=fg[Pg]qg=J[t]Pg=J[q]tg=Pg(Og,lg[1822676391%12570182])fg=qg[tg]lg[794781+-794779],lg[738093-738089],Jg,tg=-451341+8494032499328,25472615599248-171579,{[Hg]=fg},C(966252-978711)sg=sg(vR,Jg)fg=J[t]qg=J[q]sg,Og,lg[737381-737380]=C(-106206-(-94662)),-400986+18300035268515,-918800+31502459354717 Pg=qg(tg,Og)Og=C(76978-88167)BR=O(BR)Hg=fg[Pg]qg=J[t]Pg=J[q]tg=Pg(Og,lg[1289434637%7496713])lg[3290735161%13542120]=C(-767464+755616)fg=qg[tg]Pg=J[t]tg=J[q]lg[617329-617326]=342097+23760714740455 Og=tg(lg[944851-944850],lg[3255235667%15140631])lg[1272827456%11466914]=C(520186-531986)qg=Pg[Og]tg=J[t]Og=J[q]lg[203195-203194]=Og(lg[903778+-903776],lg[51977643%12994410])sg,lg[720129831%10911058]=vR[sg],C(-1050524-(-1039182))Pg=tg[lg[-127553-(-127554)]]Og=J[t]lg[-628757+628758]=J[q]lg[80539+-80537]=lg[-250651-(-250652)](lg[600961467%13975848],lg[153874384%7693719])tg=Og[lg[-207016+207018]]Og,lg[3338692114%15601365],lg[-626815+626816],Jg=-1041287+16339373080895,11441150928435-(-1011356),-220237+27733425311423,{[Hg]=fg;[qg]=P,[Pg]=tg}sg=sg(vR,Jg)fg=J[t]qg=J[q]tg,lg[1871173260%11918301]=C(-945178+933457),C(-549783-(-537411))Pg=qg(tg,Og)Og=C(884081+-895198)Hg=fg[Pg]qg=J[t]Pg=J[q]tg=Pg(Og,lg[629719-629718])fg=qg[tg]Pg=J[t]tg=J[q]lg[550189693%7053714],lg[430577974%2302556]=C(-371158-(-359375)),6215545749612-144670 Og=tg(lg[-276109-(-276110)],lg[512969+-512967])qg=Pg[Og]sg=C(1028405+-1039949)Og=J[t]lg[639329621%8092780]=J[q]ZR=O(ZR)lg[963084-963082]=lg[853051879%4202226](lg[33695-33692],lg[1247796884%5671804])tg=Og[lg[60032-60030]]lg[986806-986805]=J[M]lg[666721227%4273854]=J[t]lg[377448-377444]=J[q]lg[184248-184243]=lg[91713136%727882](lg[-440452+440458],lg[-554794+554801])lg[410585-410583]=lg[1239570060%4978193][lg[911025+-911020]]Og=lg[2200044997%11702367]..lg[802613+-802611]Pg=tg..Og lg[-1024883+1024887],lg[-525177-(-525180)]=22444328812555-(-420040),C(-561294+550071)Og=J[t]lg[457988+-457987]=J[q]RR=O(RR)sg=vR[sg]lg[632112-632110]=lg[255147-255146](lg[863656-863653],lg[568414354%2560425])tg=Og[lg[-671118-(-671120)]]lg[692723+-692722]=J[t]lg[678207+-678202]=329817+6403655811916 lg[-1036923+1036925]=J[q]lg[-849873-(-849877)]=C(-15841-(-4010))lg[316813-316810]=lg[-621423+621425](lg[824937160%15276614],lg[403288-403283])Og=lg[1549909649%8423422][lg[157729007%886118]]Jg={[Hg]=fg;[qg]=Pg,[tg]=Og}sg=sg(vR,Jg)Og,lg[1211792440%8474073]=8568369069997-307224,2.066569405884e+14%864673391689 fg=J[t]qg=J[q]tg=C(-487650-(-475817))nR=O(nR)lg[326559+-326557]=4859445077217-154635 Pg=qg(tg,Og)lg[716332+-716329]=C(298965-311324)Hg=fg[Pg]qg=J[t]Og=C(998624+-1010148)Pg=J[q]tg=Pg(Og,lg[1018892+-1018891])fg=qg[tg]lg[1280611515%14072654]=C(429629+-442137)Pg=J[t]tg=J[q]Og=tg(lg[1015283+-1015282],lg[-583426-(-583428)])qg=Pg[Og]sg=C(-695686-(-684142))Pg=J[j]Og=J[t]Ug=O(Ug)lg[710879-710878]=J[q]lg[673292+-673288]=14695225676157-30403 lg[1410779138%6782592]=lg[-535697-(-535698)](lg[-920125+920128],lg[-483320-(-483324)])sg,lg[960639+-960634]=vR[sg],7468540205686-543969 tg=Og[lg[525468044%2653879]]lg[721541+-721540]=J[t]lg[500916-500914]=J[q]lg[-966919+966923]=C(-315358+304261)lg[330958+-330955]=lg[-974816+974818](lg[106438-106434],lg[-1038328-(-1038333)])Og=lg[520375329%5913356][lg[966222-966219]]Jg={[Hg]=fg,[qg]=Pg,[tg]=Og}sg=sg(vR,Jg)tg=C(-264570+252551)fg=J[t]Og=13555892308960-930616 qg=J[q]Pg=qg(tg,Og)lg[224303664%3801757],lg[-86312-(-86314)]=-1013188+27367380871051,4562126010955-717311 Hg=fg[Pg]qg=J[t]Og=C(-974014-(-961751))Pg=J[q]tg=Pg(Og,lg[475896-475895])fg=qg[tg]A=O(A)jR=nil zg=O(zg)Pg=J[t]tg=J[q]lg[-490176-(-490177)]=C(718633-730614)Og=tg(lg[-37859+37860],lg[-752329-(-752331)])lg[-80390+80395]=-521256+26217790350296 qg=Pg[Og]lg[-665345+665347],lg[286729908%2730761]=C(161429-173203),463077485795-(-365556)tg=J[t]Og=J[q]lg[540574672%5940381]=Og(lg[-943199+943201],lg[-703060+703063])lg[1422783044%8892394]=5099840946739-489709 Pg=tg[lg[523576-523575]]Og=J[t]lg[1043114+-1043111]=C(668126-679846)lg[2101722958%11874141]=J[q]aR=nil lg[191858585%11285799]=lg[382058265%1585304](lg[-300517-(-300520)],lg[819770+-819766])sg=C(-23406+11862)sg=vR[sg]tg=Og[lg[1128782426%11518188]]lg[-467624+467625]=J[t]lg[176370-176368]=J[q]lg[630395-630391]=C(-997913-(-985802))lg[379742+-379739]=lg[498120-498118](lg[1843345984%10240811],lg[467894165%15093360])Og=lg[93144321%727690][lg[-623640-(-623643)]]Jg={[Hg]=fg;[qg]=Pg,[tg]=Og}sg=sg(vR,Jg)fg=J[t]tg,lg[695998+-695996],Og=C(501477-513040),8690178992479-137617,810936+18667144987196 qg=J[q]Pg=qg(tg,Og)lg[2552136184%14924773]=18427650376520-(-695869)Hg=fg[Pg]qg=J[t]Og=C(-669424-(-658392))Pg=J[q]tg=Pg(Og,lg[1497289751%14125375])fg=qg[tg]lg[1632767211%10533982]=C(263718+-276151)Pg=J[t]tg=J[q]Og=tg(lg[39375129%3028856],lg[-52066+52068])lg[598628-598624]=C(-574121-(-562718))qg=Pg[Og]tg,lg[-1016975+1016976]=C(290987-303456),464174+8283635415523 Pg=m(-98531+14748672,{j;PR;t,q})Og,Jg,U,sg=29699585578992-(-925205),{[Hg]=fg;[qg]=Pg},{},C(407268-418551)sg=vR[sg]sg=sg(vR,Jg)fg=J[t]qg=J[q]Pg=qg(tg,Og)Hg=fg[Pg]Og=C(665521-677203)qg=J[t]Pg=J[q]sg,lg[2138965491%15962429]=C(633370+-644653),33117040657932-690639 tg=Pg(Og,lg[-847534-(-847535)])sg,lg[2919002206%12316465]=vR[sg],C(131950-143159)fg=qg[tg]Pg=J[t]lg[-650006-(-650008)]=-851904+14677991955058 tg=J[q]Og=tg(lg[-584567-(-584568)],lg[-200640-(-200642)])lg[717677-717675]=16305915597061-(-560292)qg=Pg[Og]lg[-556509+556510]=C(-485456+474144)Pg=Z(154770+15677997,{j;PR;t,q})Jg={[Hg]=fg;[qg]=Pg}sg=sg(vR,Jg)sg=J[PR]fg=J[t]tg,P,Og=C(-993029-(-981881)),nil,3254333697740-(-382751)qg=J[q]Pg=qg(tg,Og)Hg=fg[Pg]Pg=J[t]tg=J[q]Og=tg(lg[597215+-597214],lg[920910+-920908])qg=Pg[Og]tg=J[M]lg[9357531%668395]=J[t]lg[266137378%16633586]=J[q]lg[2033601523%9592460]=lg[2924622274%12085216](lg[182531-182527],lg[-422899-(-422904)])Og=lg[-253522+253523][lg[165027459%2037376]]vR=nil Pg=tg..Og fg=qg..Pg qg=358368+-358364 Jg=sg(Hg,fg,qg)sg=J[B]tg=C(-442466-(-430632))fg=J[t]Og=304331+30987758883730 qg=J[q]lg[238998097%14937381]=22521461809327-30648 Pg=qg(tg,Og)Hg=fg[Pg]Jg=sg(Hg)Jg=C(554774-567283)sg=I[Jg]lg[-255718+255722]=9373819227523-(-590730)NR=O(NR)qg=J[t]Pg=J[q]Og=C(-624001+612045)tg=Pg(Og,lg[462551-462550])fg=qg[tg]lg[-557261-(-557264)]=C(-907568+896019)Pg=J[M]Og=J[t]PR=O(PR)lg[2464850075%15699682]=J[q]lg[78865156%838991]=lg[-607037-(-607038)](lg[-333172+333175],lg[876822468%3684128])tg=Og[lg[539079+-539077]]qg=Pg..tg Hg=fg..qg lg[-951128+951129]=65388+7555522383442 Jg=sg(Hg)Jg,Og=C(-828982-(-816473)),C(-313187+301426)sg=I[Jg]qg=J[t]Pg=J[q]tg=Pg(Og,lg[575388-575387])B=O(B)fg=qg[tg]M=O(M)qg=J[j]t=O(t)q=O(q)Hg=fg..qg j=O(j)Jg=sg(Hg)end end end end end end end else if 1537029304%19032952>z then if z<-575247+14000110 then if z>13242674-248520 then if 35653+13157567>z then if z<13702264-607634 then if z<788985+12272058 then if 4776025578%28183595>z then z,E=12327703-(-965078),C(-212051+199935)w=I[E]n=w elseif-247531+13257642>z then z=y z=U and-349018+15156518 or 11859453-167117 elseif 5536956222%29073269>z then U=J[k[33413-33409]]z=not U z=z and 1559924183%13994325 or 752035542%18025460 else H,M,l=W[-693348-(-693349)],7443797234242-(-834376),C(107382-119716)z=J[k[-373747+373748]]q=J[k[1900206326%9406962]]P=J[k[30550423%3055042]]t=P(l,M)U=q[t]q=H H=nil z[U]=q z,U=I[C(810863+-823395)],{}end else if z<12748954-(-331775)then t,v,a=C(938065-949922),7832125280993-738466,C(-707522-(-695942))U=I[t]l=J[k[733616+-733613]]M=J[k[-837275-(-837279)]]b,n=57689+7733096934584,C(-358807-(-347569))j=M(a,v)t=l[j]z=U[t]l=J[k[763415-763413]]j=J[k[1284262719%8077124]]P=nil a=J[k[882746466%8570354]]v=a(n,b)H=nil M=j[v]t=l[M]l=G(118576380%18788793,{k[905404+-905402],k[119427-119424],k[384295630%9853734];k[1711321330%10629325],k[218886-218885]})U=z(t,l)z,q,U=I[C(922984+-934097)],nil,{}elseif z<13672493-581569 then u,B=z,C(1043062+-1054617)Q=J[k[629245471%11872556]]X=J[k[-499790+499794]]A=344862+20358903423466 p=X(B,A)o=Q[p]N=w[o]z,Y=N and 859703+14483429 or 1016869-(-919898),N else z=t<H z=z and 2052410-(-187542)or-869502+6070129 end end else if 5174877393%21507275>z then if-430116+13529615>z then z=I[C(210672-223154)]l=J[k[3295228236%14910535]]j=J[k[-851189-(-851191)]]n=C(-842910+831276)a=J[k[109485687%2606802]]b=6199860692430-(-607609)v=a(n,b)M=j[v]t=l[M]P=#t q=H/P U={q}elseif-377051+13493630>z then z=840508+6397308>=13897300-(-878978)U={z}z=I[C(-639825-(-628381))]else w=884529+5967517944745 t=d(644972+16027788,{k[646256+-646252];k[-602167+602169],k[2991495543%13597707],H;q;P})U=C(-872526-(-860454))z=I[U]U=z(t)z=J[k[108574951%2934458]]l=J[H]a=J[k[172308-172306]]v=J[k[10411551%743682]]P=O(P)b=C(7052+-18848)n=v(b,w)j=a[n]a=J[q]M=j..a t=l..M H=O(H)U=z(t)q=O(q)U,z={},I[C(860184-871917)]end else if z<704352+12436910 then z=I[C(-189572+178555)]H=O(H)q,U=nil,{}elseif 21563+13134261>z then z=nil U={z}z=I[C(307862+-320357)]else z,j=757774186%24017719,nil end end end else if z<534318958%14886714 then if z>-520139+13778068 then if z<13767877-507147 then U,z={},I[C(591898-604128)]elseif 785175273%15753201>z then M=376966+15288077097801 z=J[k[406989976%16279599]]q=J[k[-758194+758196]]P=J[k[1039183-1039180]]l=C(173222-184975)t=P(l,M)U=q[t]P=J[k[5374+-5370]]v=-479744+113697362484 l=J[k[607204634%4102734]]M=J[k[-183687-(-183690)]]a=C(162593-174934)j=M(a,v)t=l[j]q=P[t]t=V(3060097-214512,{k[583757+-583752];k[69864137%1270257],k[805930+-805927]})P=C(-52455+40772)P=q[P]P=P(q,t)H=nil z[U]=P z,U=I[C(605636-617035)],{}else z=J[k[134514+-134513]]q=J[k[980910086%11677501]]a,j=19432906423543-842142,C(147971+-159561)t=J[k[-171603+171606]]l=J[k[783310+-783306]]M=l(j,a)P=t[M]H=q[P]q=C(54833-66636)q=z[q]U={q(z,H)}U,z={h(U)},I[C(-255370-(-243969))]end else if z<-530920+13758544 then j,P=not M,P+l U=t>=P U=j and U j=t<=P j=M and j U=j or U j=1118858132%16518697 z=U and j U=404885+11789570 z=z or U elseif z<1715295261%16210028 then q=J[k[2120100913%10291752]]H=#q t=nil z=I[C(-434966+423524)]P=J[k[1010368589%10748602]]q=P[H]P=J[k[443925-443924]]U={q}P[H]=t elseif-258969+13514159>z then L=J[k[-160099+160102]]T=J[k[-68654+68658]]N,u=29166343150575-812770,C(-251204-(-239545))F=J[k[-217048-(-217053)]]Y=F(u,N)R=T[Y]y=L[R]U=not y z=U and-499940-(-1011730)or 2416082732%15089076 else n=m(-883806+11677862,{k[187655+-187649],k[248736+-248733];k[864284+-864280],k[-622325-(-622332)]})v=C(-91686+79614)a=I[v]z=-206876+2041375 v=a(n)end end else if z>657188+12690516 then if 14140212-743858>z then z=P and 538823+9611934 or 2735035858%21139235 elseif 54349175%13643006>z then z=2680932476%12918323<4062062594%25328477 U={z}z=I[C(410588-421918)]else z=3413290882%14686762 end else if-210474+13510724>z then z=b b=f()N,y=C(571710-582950),-463196+463261 J[b]=n n=J[v]R,E=C(931037-943109),212314563%6634830 w=n(E,y)n=f()T=e(1099568-486931,{})J[n]=w w=-514177+514177 E=1034359-1034359 L=I[R]R={L(T)}y={h(R)}R=433462-433460 T,z=C(-413840+401391),8119945-993424 L=y[R]R=I[T]F=J[t]u=I[N]N=u(L)u=C(868563+-880466)Y=F(N,u)F={Y()}T=R(h(F))R=f()J[R]=T F=J[n]Y,T=F,125190-125189 F=531103308%4463053 u=F F=718651-718651 N=F>u F=T-u elseif-693721+14007116>z then z=H H,a=U,45854+22029819852020 q=J[k[372516+-372513]]b,j=4456777937096-174253,C(922479+-934603)t=J[k[45005941%279540]]l=J[k[2906387828%15625741]]M=l(j,a)P=t[M]U=q[P]l=J[k[2213174401%11065872]]a,z=C(906715-918011),1230476712%17549389 M=J[k[-473227-(-473229)]]q=C(459785+-472136)q,n,v=U[q],C(-321489-(-309537)),-667126+6200851691837 j=M(a,v)t=l[j]j=J[k[495264-495263]]a=J[k[88381162%4651640]]v=a(n,b)M=j[v]l=M..H H=nil P=t..l q=q(U,P)else hR=2065269353%8327699 IR=p[hR]hR,r=288882+5182116<=802361-1387,z i=IR==hR z,WR=i and 12788869-(-999354)or 1224767286%10156599,i end end end end else if 12890319-185061>z then if z<5411930792%21091227 then if z>2961665614%15855756 then if z<598838+11917570 then z=858449663%8173661 M=J[t]l=not M U=l elseif z<73826+12479396 then z=14214577-495057 else q=J[k[3041344066%16263872]]P=J[k[2157747123%14984355]]H=q==P z,U=-439078+8392528,H end else if z<12290737-(-187784)then z=J[k[514225+-514224]]U=z()H=f()J[H]=U q=J[H]U,z=q,q and 5142475-766453 or 338630+3448751 elseif 12990440-506546>z then z=U and 1584641878%12282037 or 9478271-640853 elseif z<13090596-599231 then q=J[H]l=J[k[596264+-596263]]M=J[k[240811842%5235040]]P,z,a,v=C(-256878-(-245684)),-924649-(-965088),C(327052-338442),31834168261887-(-982248)j=M(a,v)P=q[P]t=l[j]P=P(q,t)U=P else z,U=I[C(23292+-35537)],{}end end else if 898054+11764735>z then if 18031+12567596>z then U=C(394431+-405762)z=I[U]U={z}z=I[C(-651051-(-638918))]elseif z<5398597363%25647640 then z=J[k[-877543-(-877544)]]t=C(-429589-(-417502))H=J[k[2574470430%10908773]]P=I[t]l=J[k[-166164+166167]]v,a=-727054+10159544937096,C(1021309+-1033498)M=J[k[948145-948141]]j=M(a,v)U=C(-229826+217374)t=l[j]q=P[t]v,t,a,U=28450674336969-897289,.4,C(-548004+535658),z[U]P=q(t)l=J[k[-142332+142335]]M=J[k[538782+-538778]]j=M(a,v)t=l[j]l,a=452795046%2727681,C(-856991+844900)q={[t]=l}U=U(z,H,P,q)z=C(-426613+414693)z,t=U[z],C(-869411-(-857324))z=z(U)z=J[k[884578-884577]]H=J[k[731702823%2892106]]U=C(646358-658810)P=I[t]v=22887108277090-739777 l=J[k[331229319%2509313]]M=J[k[-478026+478030]]j=M(a,v)t=l[j]q=P[t]v,a,t=24190208464843-(-693301),C(862440-873582),.4 P=q(t)l=J[k[-616631+616634]]U=z[U]M=J[k[958513708%8958072]]j=M(a,v)t=l[j]l=-436083-(-436083)q={[t]=l}U=U(z,H,P,q)z=C(840793-852713)z=U[z]z=z(U)U,z={},I[C(1002023-1014009)]elseif 633341+11985481>z then a,j=11900865255608-246547,C(-356552-(-344508))U=J[k[720278+-720277]]t=J[k[429463+-429461]]l=J[k[1021825-1021822]]M=l(j,a)P=t[M]z=U[P]z=z and-600385+7489958 or-435611+2461571 else P,M=t(q,P)z=P and 2810656073%30386933 or-1045758+14141965 end else if z<-258992+12950866 then b=O(b)L,w=nil,nil v=O(v)E,P=nil,nil R=O(R)z=18943681%8554654 l=O(l)l=f()M=O(M)y=nil t=O(t)b=C(-120659-(-109057))q=O(q)E,q=C(372599+-384004),nil t=f()n=O(n)J[t]=q j=nil j,P=C(252208-263613),nil q=f()J[q]=P P=1135019258%13512134 J[l]=P M=I[j]j=C(-458740+446331)P=M[j]v=f()M=f()J[M]=P j=f()P=242191+-242191 J[j]=P P={}J[v]=P n=I[b]b=C(600378+-612676)P=n[b]w=C(-954339+942115)b=I[w]w=C(969121+-980769)n=b[w]w=I[E]E=C(418423-430501)b=w[E]w={}y=954735-954479 E,L=977911489%13582104,y y=164771-164770 R=y y=77374+-77374 N=R<y y=E-R elseif z<3014183936%14932757 then t=J[k[-947394-(-947396)]]j,a=C(564957+-576574),24596529532304-434387 l=J[k[1557534696%14556399]]M=l(j,a)P=t[M]U=C(-374990+363722)U=q[U]U=U(q,P)P=U z=P and 673364-(-514602)or 14064311-441116 else j,M=not l,t+M U=M<=P U=j and U j=P<=M j=l and j U=j or U j=1104019545%19826068 z=U and j U=3153894856%19992000 z=z or U end end end else if 13590573-729601>z then if 793733+11972553>z then if z<4022122945%26377644 then w,a,z=nil,nil,15484726-(-418298)elseif z<-885846+13625960 then H=-441931+5658713~=-193441+7086129 z=J[k[-606526+606527]]U=z(H)z,U=I[C(-266978+254833)],{}elseif 483893+12271845>z then z=374511046%18965940 else z=J[k[936760-936759]]q=J[k[615768+-615766]]l,H,M=C(955324+-966626),W[-380602-(-380603)],334138+29154528762830 P=J[k[870148-870145]]t=P(l,M)U=q[t]q=H z[U]=q H,U,z=nil,{},I[C(335769+-347217)]end else if z<-807915+13592129 then z=q z=U and 698133473%7448088 or 967826+6563144 elseif z<-36848+12842060 then z=J[k[635452975%8146833]]U=C(306588+-319041)U,a=z[U],519655+12136600758316 U=U(z)U=C(248474-260409)z=J[k[4155055617%16230686]]P=C(-2317-9888)q=I[P]t=J[k[-502594+502596]]j=C(431965-443344)l=J[k[1063063515%12655518]]M=l(j,a)P=t[M]H=q[P]U,P,t=z[U],1035096634%7238438,2044153044%11748006 q={H(P,t)}U=U(z,h(q))z,U=I[C(-548059-(-536916))],{}else U=J[k[439641753%8792835]]q=J[k[100217-100216]]R,M=30449734777567-443260,32247275140020-227596 P=J[k[-697117-(-697119)]]l,a=C(-63206-(-51860)),C(767811+-779571)t=P(l,M)H=q[t]z=U[H]v,M,j=21340805424784-49087,C(89395+-101531),7413051113835-832496 P=J[k[255852-255851]]t=J[k[-587689+587691]]l=t(M,j)q=P[l]l=J[k[2569137819%11625058]]M=J[k[894041191%6431951]]j=M(a,v)t=l[j]l=J[k[2879364612%14616064]]v=C(-507764-(-496010))a=I[v]v=a()U=C(828554-840905)n=J[k[1027227-1027222]]L=C(977974+-989002)w=J[k[-930639-(-930640)]]E=J[k[78423-78421]]y=E(L,R)b=w[y]a=n[b]U=z[U]j=v-a M=l(j)P=t..M H=q..P U=U(z,H)z=-974299+11453207 end end else if-61183+13028723>z then if-962249+13887946>z then P,U=C(595138+-607312),C(367633-380088)z=J[k[794511-794510]]q=I[P]j,U=C(647551-659837),z[U]t=J[k[236613+-236611]]l=J[k[-142991+142994]]a=127206+31633780738212 M=l(j,a)P=t[M]H=q[P]q=J[k[-581605+581609]]U=U(z,H,q)z,U=I[C(-997095+985955)],{}elseif-102319+13053941>z then z=J[k[-637889-(-637890)]]U={z}z=I[C(616788+-628164)]else z=3544107-(-64104)end else if z<456030+12519033 then z=815300-461578 elseif z<-796803+13782095 then z=J[k[910563771%3907999]]t=f()U=z()J[t]=U U=J[t]z=not U z=z and 282294+16346474 or 951205+14071704 else z,U=I[C(-609692+597891)],12749987-(-217684)<=3426772-772551 U={U}end end end end end else if z<740278+13124534 then if z>13799553-195053 then if z>-826069+14540429 then if z<14141349-319048 then if z<13785131-31260 then a=3079249-1021287>=2594573120%11577852 z=a and-886743+13145461 or-977425+14862494 elseif z<-820755+14621599 then hR=114308-114306 IR=p[hR]z=659746296%7264121 hR=J[A]i=IR==hR WR=i else z=J[k[178074535%5396198]]l=-706109+10240658364637 H=J[k[1748966078%7474214]]q=J[k[533306889%10883814]]t,j=C(1019690-1031227),25674092225317-799858 P=q(t,l)U=H[P]H={}z[U]=H l=C(821989-834251)z=J[k[1233181932%8113039]]q=J[k[477739992%3592030]]M=6545297476913-147786 P=J[k[664961-664958]]t=P(l,M)H=q[t]P=J[k[-482672+482674]]t=J[k[-878689+878692]]M=C(970045+-982531)l=t(M,j)q=P[l]P=2589336171%15505007 U=z(H,q,P)U,z={},I[C(498317-509692)]end else if z<12920926-(-914010)then H=W[393089+-393088]z=J[k[424847-424846]]M=19005070290040%99503032315 q=J[k[61219-61217]]l=C(-827107+814754)P=J[k[-180405+180408]]t=P(l,M)U=q[t]q=H z[U]=q z=H and 4261009-399925 or 4668062407%20979187 elseif z<14715380-866468 then z=J[k[-906692-(-906693)]]j=95878+13471952871931 P=J[k[478522-478520]]t=J[k[-1125+1128]]M,n=C(-476400-(-464631)),10617346290995-1040867 l=t(M,j)w=C(-35098+22941)q=P[l]l,v=C(-485435+473833),C(-1058778-(-1047614))t=I[l]M=J[k[477050-477048]]j=J[k[3725487%133053]]a=j(v,n)v=C(621659+-633231)l=M[a]E=140914+28467510250838 P=t[l]M=J[k[1230839666%6689346]]j=J[k[-701441-(-701444)]]n=724266+23120350665956 a=j(v,n)l=M[a]a=C(217091-229265)j=I[a]v=J[k[-492213+492215]]n=J[k[-56096-(-56099)]]b=n(w,E)a=v[b]M=j[a]t=P(l,M)a,v=C(722040-734171),4633857319502-55777 l=J[k[216214+-216212]]M=J[k[777140+-777137]]j=M(a,v)P=l[j]n,v=1812286213035-(-489376),C(156695-168408)M=J[k[3353295017%15596721]]j=J[k[644826+-644823]]a=j(v,n)l=M[a]H={[q]=t,[P]=l}U={z(H)}z,U=I[C(541294+-552776)],{h(U)}else U,z={},I[C(-125408+113231)]end end else if z>14512306-844542 then if z<13611715-(-62625)then z=J[k[-384194-(-384199)]]t=J[k[-192670+192672]]v,n=C(-410051-(-397583)),-838838+16795662756675 M=J[k[548626+-548623]]j=J[k[759812129%6078497]]a=j(v,n)l=M[a]P=t[l]t=342977761%1429074 U=z(P,t)P=U z=not P z=z and 16172798-869972 or-1013819+8238834 elseif 13807731-113952>z then H=J[k[225497-225496]]U=#H H=57929+-57929 z=U==H z=z and-823534+3636208 or 13781628-551276 else z=M and 482214318%16022768 or 791163481%13966824 end else if 13620778-(-17138)>z then z,P=-140511-(-1019624),nil elseif z<287171939%16089029 then P,l=H(q,P)z=P and 2646423949%24207565 or 6438640-902599 elseif 595365+13069365>z then P=Z(3639394089%28084506,{q;k[1437342896%12284982];k[143490954%6238737],H})U=C(-487765-(-475693))z=I[U]U=z(P)z=-1021777+7393740 else z=J[k[-492245-(-492246)]]P=C(-900550+888376)q=I[P]t=J[k[552974-552972]]a=957518+32493214113484 l=J[k[-79294-(-79297)]]U,j=C(-125256+112801),C(-844275+832113)M=l(j,a)P=t[M]H=q[P]U=z[U]q=J[k[2618314024%14546189]]U=U(z,H,q)U,z={},I[C(-773108-(-761900))]end end end else if z>-739547+14241984 then if z>12828242-(-724007)then if 375175541%15067048>z then z=465598+1131582 l=J[k[-966749-(-966750)]]M=J[k[-886140+886142]]a,v=C(660595+-672341),-269277+5881608169103 j=M(a,v)t=l[j]q=t elseif 1327974237%28573786>z then z=nil U={z}z=I[C(-669220-(-656923))]else j=M w=J[k[175565617%891196]]y=J[k[-387403+387404]]L=J[k[-127516-(-127518)]]T,F=C(69248+-80939),2.6811135306115e+14%2482512621134 R=L(T,F)E=y[R]R,o=-135813+13853709102008,15360965139642-(-786231)b=w[E]L=C(472237-484656)n=b[j]w=J[k[-629927+629928]]E=J[k[172328-172326]]y=E(L,R)b=w[y]R,z=17466610807671-(-912462),3638582507%26274498 v=n[b]N=C(172576+-184096)w=J[k[99068386%2540215]]E=J[k[699266-699264]]L=C(955405+-967178)y=E(L,R)b=w[y]R=J[k[651305+-651300]]F=J[k[-556243+556244]]Y=J[k[437701+-437699]]u=Y(N,o)T=F[u]L=R[T]Y=C(-54340+41964)y=L[j]u=10315261435706-(-340873)R=J[k[-86183+86184]]T=J[k[1596251567%7786593]]F=T(Y,u)L=R[F]E=y[L]L=J[k[296102915%6300062]]j,Y,F=nil,8587404808591-82417,C(-639951-(-628367))R=J[k[101123933%717191]]T=R(F,Y)y=L[T]w=E..y n=b..w a=v..n U=H..a H=U end else if 14528245-1006325>z then z=10161006-(-189788)elseif-487927+14030264>z then t=m(748093+13090643,{q;k[1180736703%9082590],k[375461654%7509233]})H=C(-521347+509275)U=I[H]l={U(t)}P,H=l[-985499+985501],l[-416769-(-416770)]t=f()J[t]=P l,P=not H,z U,z=l,l and-1040030+1255288 or 853255+11643112 else z=J[k[819065+-819060]]j=18230805561192-(-401857)P=J[k[370469753%2665250]]t=J[k[-576303-(-576307)]]M=C(-821522-(-810095))l=t(M,j)U=P[l]P=J[k[1487469989%5856181]]z[U]=P z=J[k[1411018908%6355941]]U=z()z=U and 673632143%6429047 or 207349081%950876 end end else if z>543327+12930773 then if 3322888364%17147166>z then U=C(80328-92400)z=I[U]H=m(8674611-100807,{k[65621809%3645656];k[-736459-(-736461)],k[-849405+849408]})U=z(H)z=J[k[507940+-507936]]H=16744777-767708>1437226043%16505481 U=z(H)z,U=I[C(-1018973-(-1006852))],{}elseif 184190517%17069625>z then M,j=C(-19953-(-7698)),861574+16249823410184 H=J[k[324552833%9272938]]P=J[k[750823+-750822]]t=J[k[300932366%1406226]]l=t(M,j)q=P[l]U=H[q]z=U and 1434841-(-626179)or 771562+11157353 else v=V(526559+8002464,{})a,U,t=C(761910-773982),C(-231182+218733),C(-605306+594066)z=I[U]H=J[k[362015-362011]]P=I[t]j=I[a]a={j(v)}M,j={h(a)},-971916+971918 l=M[j]t=P(l)P=C(-439584-(-427681))q=H(t,P)H={q()}U=z(h(H))q=J[k[1155780605%15410408]]H,z=U,q and-99762+9641870 or 3668414483%18296252 U=q end else if z<13257045-(-170711)then z=9926788-999449 elseif 13253528-(-178562)>z then l,j=C(162061-173882),C(470370+-481604)z=J[k[833917-833916]]a=5219316941645-(-1001009)q=J[k[201060926%4277892]]M=-2845+18948772867476 P=J[k[145335903%12111325]]t=P(l,M)H=q[t]t=J[k[2661826202%12099210]]l=J[k[-165413-(-165416)]]b=805105+20372507286557 M=l(j,a)P=t[M]n=C(97263-108912)l=J[k[-19896-(-19900)]]j=J[k[105089126%8757427]]a=J[k[-237443-(-237446)]]v=a(n,b)M=j[v]t=l[M]q=P..t P=813711+-748431 U=z(H,q,P)z,U=I[C(-119781-(-108117))],{}elseif z<12864097-(-586353)then z=U and-442158+15784343 or 61082531%6261195 else j=-908536+13482241734014 P=J[k[1020885-1020883]]M=C(451507-463266)t=J[k[1611657127%10265332]]z=C(144474-155742)z=H[z]l=t(M,j)U=P[l]z=z(H,U)P=z z=not P z=z and 1856080-(-470644)or 668812+12747559 end end end end else if z>527753545%19022926 then if z>14550965-266036 then if z>1534681485%20271400 then if z<15069849-724768 then z=559162957%7086676 elseif z<-789580+15151594 then z=U and 1292074-938176 or 419011870%16436775 else z=J[k[1030625+-1030624]]H=J[k[145890-145888]]t=C(113121-125518)q=J[k[132209-132206]]l=30303068917294-284432 P=q(t,l)U=H[P]H=535894462%11619071>17652+16689736 z[U]=H U,z={},I[C(-1000290-(-988639))]end else if z<4242603654%16712666 then q=Z(4254571-212306,{k[763437-763433],k[1014123-1014121];k[263863570%1042939];k[-836843-(-836848)]})U=C(86172-98244)z=I[U]U=z(q)z=-462096+4761217 elseif z<13853224-(-458597)then t=e(-675256+6617309,{k[-763584+763586]})U=C(-344202-(-332130))z=I[U]U=z(t)z=nil J[k[-63939+63941]]=z z=-426679+10824817 else z=J[k[-213163+213164]]M=-440610+17143732213841 q=J[k[1415324234%7488488]]l,H=C(-166874-(-155402)),W[942055417%4131822]P=J[k[759359-759356]]t=P(l,M)U=q[t]q=H z[U]=q z,H,U=I[C(106528-118278)],nil,{}end end else if 14276185-64324>z then if z<13994504-(-154310)then U,z=not H,H J[k[502607+-502603]]=z z=U and 8080478-(-670227)or 129312746%9629084 elseif z<3834235805%29385247 then z=741428472%14821495 elseif 2944349857%18199804>z then y=186739-186738 L=#w E=b(y,L)y=n(w,E)L=J[v]o=-250742-(-250743)N=y-o R=P(N)L[y]=R R=#w N=-862010-(-862010)L=R==N z,y,E=L and 490238968%5591192 or 915584+13242602,nil,nil else z=b z,v=1121469837%25277115,n end else if z<-239189+14488273 then z=U and 11215000-(-739141)or 731445+15359520 elseif z<4361196086%29570858 then U=C(-295679+283384)z=J[k[3841149841%16004791]]U=z[U]U=U(z)U,z={},I[C(962948+-974568)]else jR,z,ER,bR=C(141216+-153713),KR,-1024193+3289052915388,C(-8196+-3988)KR=f()J[KR]=gR MR=I[jR]aR=J[KR]jR=MR(aR)aR=J[t]vR=J[q]nR=vR(bR,ER)MR=aR[nR]gR=jR==MR z=gR and 3520730224%17734492 or 14301152-(-664975)end end end else if z>2649848634%22920527 then if 14058928-(-36108)>z then if z<123886+13871743 then z=J[k[525186+-525185]]v,H,l=C(621024+-632239),583378+15537320>=1437191316%17063455,C(502651-514794)t=I[l]M=J[k[-243975-(-243977)]]n=6423111655323-906221 j=J[k[1375387788%9485433]]a=j(v,n)l=M[a]v=21878444481357-(-1035390)P=t[l]a=C(128812-140676)l=J[k[534919+-534917]]U=C(-5580+-6607)M=J[k[-606671+606674]]j=M(a,v)t=l[j]q=P[t]P,U,n,l=5481801-(-921320)>7686689-879437,z[U],1437785085606-250889,C(-466830-(-454656))t=I[l]U=U(z,H,q,P,t)H,l=1374303236%7837404>=-1005861+12597522,C(498241+-510384)z=J[k[308767-308766]]t=I[l]v=C(858495+-869783)M=J[k[278130-278128]]j=J[k[167941+-167938]]U=C(713494+-725681)a=j(v,n)v=-313952+14565758248158 l=M[a]U=z[U]P=t[l]a=C(680394-692913)l=J[k[-22615+22617]]M=J[k[814744472%5861471]]j=M(a,v)t=l[j]l=C(-401676+389502)q=P[t]P=-829115+15209863>-743601+15271439 t=I[l]U=U(z,H,q,P,t)z,U=I[C(995410+-1007804)],{}elseif 72590+13970858>z then z,U=I[C(-107526+95635)],{}else z=J[k[176718085%874842]]q=J[k[865297-865295]]l,H,M=C(-378511+367096),W[574949073%3662096],32558869104237-625460 P=J[k[1773865459%10078781]]t=P(l,M)U=q[t]P,t=C(-470913+459673),H q=I[P]l=z z=H and 3717857-745192 or 625536+3542839 end else if 246150+13858296>z then z=U and 13170300-67509 or 14450290-983839 elseif 3824415752%21168338>z then z,U,H,q=I[C(882685-894285)],{},nil,nil else z,U=I[C(-1058973-(-1047455))],{}end end else if-269660+14206906>z then if 405561+13472241>z then U=C(1047071+-1058174)z=I[U]t=J[k[357672415%16257837]]l={z(t)}P,z,U=l[-1046973-(-1046976)],454757+-398852,l[491732+-491731]t,q=U,l[804463887%9464281]elseif 13937909-35202>z then z=2904203-260874 elseif 639810+13283832>z then z=J[k[261473-261472]]l=C(-638961-(-627152))q=J[k[245411322%8764690]]P=J[k[-201181-(-201184)]]M=17628427043964%125917389574 t=P(l,M)a=C(-80593-(-68389))U=q[t]t=C(-847745+835888)P=I[t]l=J[k[359162+-359160]]H,v=nil,640044+29111236931783 M=J[k[-256477+256480]]j=M(a,v)t=l[j]q=P[t]t=G(2486115604%12763863,{k[-327626-(-327630)];k[-277086+277088];k[1040949-1040946],k[-497659-(-497664)]})P=q(t)z[U]=P z,U=I[C(-229433+217959)],{}else t=J[P]z,U=467931+12300012,t end else if 14469262-515366>z then U,z={},I[C(498144+-509478)]elseif z<-815049+14785846 then M,H=25760185671678-(-134877),C(527440+-539335)U=I[H]q=J[k[-837864-(-837865)]]l=C(810507+-822054)P=J[k[-627742+627744]]t=P(l,M)H=q[t]z=U[H]U={z}z=I[C(-156704+144194)]else z=2395250-(-962570)end end end end end end else if 978188+14743135>z then if z<14390032-(-655496)then if 1134696072%23332037>z then if z<3863118336%17817572 then if 246215+14206804>z then if 14920239-503819>z then z=8813573-(-270991)>=8943214-(-649236)U={z}z=I[C(94143-105315)]elseif z<1230372259%28277934 then a=-853665+853666 U=j==a z=U and-882351+11746399 or 8454654-420563 elseif 14017050-(-413656)>z then M=C(60292+-72149)U=I[M]j=J[k[383453-383452]]n=C(985675-997590)a=J[k[-457096-(-457098)]]b=119583+4414755615976 v=a(n,b)M=j[v]z=U[M]U=z(l)z=t+l t=z z=-736721+13829775 else z=J[k[-754142-(-754149)]]z=z and 16920440-251810 or 3047303747%18640335 end else if-334772+14816556>z then z=E z,E=-132082+11882470,U elseif 13912726-(-585676)>z then z=202094+4275411 else H=J[k[240540-240537]]M,j=C(-531460-(-519764)),6089171854587-645608 P=J[k[601914739%13085103]]t=J[k[142292278%1451962]]l=t(M,j)q=P[l]U=H[q]z=U and 10275047-(-628610)or 2133257173%10416611 end end else if 13878554-(-689059)>z then if 14161635-(-386257)>z then y=17454067785772-802925 a=J[k[-336481+336484]]n=J[k[-165629-(-165633)]]b=J[k[-60678-(-60683)]]E=C(915875+-928114)w=b(E,y)R=C(777858-790004)v=n[w]w=C(-668996+656676)b=I[w]E=J[k[897751034%16322746]]T=277301+11785768327739 y=J[k[-969071+969076]]L=y(R,T)w=E[L]y=21852693%809359 n=b[w]E,w=2585175615%15667731,1650159972%9483678 b=n(w,E,y)z=4911497041%29136509 a[v]=b elseif z<861826+13693581 then z=7138119-594160 elseif 3731925770%30470194>z then z=9648911-313670 else z,t,P=9711086-996089,nil,nil end else if z<13988286-(-622082)then z=J[k[2756900356%16708487]]z=z and 948404500%7481580 or 8949890-359829 elseif-35700+14718409>z then M,U=7903930913955-(-997821),C(-237397-(-225325))z=I[U]H=m(1799151783%10133770,{k[332396668%14452029]})U=z(H)z=J[k[941521922%15692032]]q=J[k[2615837908%11523515]]j,v=C(-603282-(-591076)),C(968296+-980222)P=J[k[-166287+166291]]l=C(272833-284316)t=P(l,M)a=100815+19060887951580 H=q[t]n=31562327979625-(-361216)t=J[k[857759937%10460487]]l=J[k[-757143-(-757147)]]M=l(j,a)P=t[M]M=J[k[-438893-(-438896)]]j=J[k[991847744%7629598]]a=j(v,n)l=M[a]M=J[k[-1023212-(-1023213)]]t=l..M q=P..t P=11137+-11132 U=z(H,q,P)U,z={},I[C(-826998-(-814788))]else z=J[k[-1010145-(-1010146)]]U=z()H=U z=not H z=z and 3138000714%17754833 or 460576+9298432 end end end else if 740804+14202250>z then if z>3328913693%18937395 then if 570693+14322986>z then U=C(624140-636435)z=J[k[1516134189%9595786]]U=z[U]U=U(z)U,z={},I[C(-595068+583767)]elseif z<2335567738%18130123 then b=770387+10440560~=-1006544+9187766 n=J[q]v=n==b z=v and 13129309-(-294635)or-484692+9857196 else P=G(11642255-262961,{q;k[-78210-(-78212)],k[-212350+212353];H})U=C(718030+-730102)z=I[U]U=z(P)z=2076437-974433 end else if z<14138754-(-662686)then H=J[k[-192072-(-192075)]]M,j=C(158495-170525),1007484+6476253523019 P=J[k[1638611864%7765933]]t=J[k[555128-555126]]l=t(M,j)q=P[l]U=H[q]z=U and 224820720%4619074 or-62742+2082224 elseif z<15428566-624033 then U=J[k[230956-230955]]j,M=6495826005265-409921,C(314071-325929)P=J[k[-51639-(-51641)]]t=J[k[649550+-649547]]H=W[547054-547053]l=t(M,j)q=P[l]z=U[q]z=z and 3617872867%19513219 or-193796+2001344 elseif z<5331766651%23736317 then z=884589888%14299779 else z=483630876%3900249 U={z}z=I[C(-961401-(-949399))]end end else if z>3815022917%18181975 then if z<114834+14895276 then q=J[k[878774+-878773]]j=C(15474-26707)t=J[k[2580107096%15926587]]l=J[k[856932-856929]]a=1848208710395-(-403553)M=l(j,a)P=t[M]H=q[P]U=#H H=39422407%743819 z=U==H z=z and 305077633%15274834 or 10277166-(-800871)elseif z<573210+14454654 then b,z,n=3477533486175-878092,nil,C(-533249+521015)l=f()J[l]=z U=J[k[255145111%3865835]]j=J[k[41963-41961]]a=J[k[-522867+522870]]v=a(n,b)M=j[v]z=U[M]z=z and 1493961-920469 or 1150925102%8254777 else z=U and 247532+9302026 or 172026+11064664 end else if z<14179022-(-790210)then ER,LR=C(-666931-(-655893)),533238+2752548250123 gR=J[IR]vR=J[t]nR=J[q]yR=929146+2459611780863 bR=nR(ER,LR)RR=16234790316122-690899 aR=vR[bR]nR=J[t]bR=J[q]LR=C(-801007-(-789320))ER=bR(LR,yR)yR=C(-150824+139778)vR=nR[ER]bR=J[t]wR=7200661551002-846465 ER=J[q]TR=-388621+28839830807170 LR=ER(yR,wR)nR=bR[LR]ER=J[t]NR,MR,wR=-296825+20171856243754,C(398574-410728),C(201585-212880)LR=J[q]BR=-735634+4414530273689 yR=LR(wR,RR)MR,RR,FR,SR=gR[MR],C(-276034-(-264972)),C(571423+-582475),C(257971-269795)bR=ER[yR]LR=J[t]yR=J[q]wR=yR(RR,TR)YR=5552344119625-(-610512)ER=LR[wR]wR=J[t]Cg,QR=C(-725819+714521),35184146597133-705806 RR=J[q]TR=RR(FR,NR)FR=C(-173588+162524)yR=wR[TR]wR=J[M]LR=yR..wR uR=1827435047859-321633 wR=J[t]NR=901499+26584636354272 RR=J[q]TR=RR(FR,NR)NR=C(751076+-762561)yR=wR[TR]RR=J[t]TR=J[q]FR=TR(NR,uR)iR,uR=C(-161128-(-149178)),C(-197879-(-185699))wR=RR[FR]TR=J[t]FR=J[q]NR=FR(uR,YR)RR=TR[NR]NR,XR,pR=C(224750+-237094),C(946006-958316),31312530770195-233502 FR=I[NR]uR=J[t]YR=J[q]AR=645127+35106930616276 oR=YR(XR,QR)XR,rR=-286753+7189174152500,709235+30629397816643 NR=uR[oR]QR,uR=C(975413+-987799),166632268%1301811 TR=FR[NR]NR,oR=207950-207370,C(669306-680617)FR=TR(NR,uR)NR=J[t]uR=J[q]YR=uR(oR,XR)TR=NR[YR]NR=543995+15456143>=-649073+2139956 YR=J[t]cR=467057+1901981459204 oR=J[q]XR=oR(QR,pR)uR=YR[XR]oR=J[t]XR=J[q]pR=C(578637+-590789)QR=XR(pR,BR)YR=oR[QR]BR=C(-873820-(-861702))XR=J[t]QR=J[q]pR=QR(BR,AR)oR=XR[pR]XR=-1008790+1008970 pR=J[t]BR=J[q]AR=BR(SR,cR)QR=pR[AR]AR=J[t]SR=J[q]pR=2343371433%24316061<=12104193-(-364013)cR=SR(iR,rR)BR=AR[cR]AR=17493868-785239<-336565+2236983 jR={[aR]=vR,[nR]=bR,[ER]=LR,[yR]=wR,[RR]=FR,[TR]=NR;[uR]=YR,[oR]=XR,[QR]=pR,[BR]=AR}FR,wR,LR=20386879847560-(-665741),120121+32477607519706,2544844117011-724850 MR=MR(gR,jR)ER=C(124683+-136932)vR=J[t]nR=J[q]bR=nR(ER,LR)RR=409409+20895723005633 aR=vR[bR]yR,LR,gR=266863+146423328213,C(-712479+700669),C(503251+-514450)nR=J[t]bR=J[q]ER=bR(LR,yR)vR=nR[ER]bR=J[t]yR=C(85544-97147)ER=J[q]TR=-1013720+32124271358535 LR=ER(yR,wR)nR=bR[LR]wR=C(-735057+723090)ER=J[t]gR=MR[gR]LR=J[q]yR=LR(wR,RR)bR=ER[yR]yR,jR=165039+6346284746460,{[aR]=vR,[nR]=bR}gR=gR(MR,jR)nR=J[t]bR=J[q]LR=C(-8658+-2833)ER=bR(LR,yR)wR=5739679453670-83830 vR=nR[ER]bR=J[t]ER=J[q]yR,RR=C(934634+-945742),201035+13781374617542 LR=ER(yR,wR)nR=bR[LR]ER=J[t]iR=C(-228839+216358)LR=J[q]wR,jR=C(-624362+612928),C(-615375+604176)yR=LR(wR,RR)bR=ER[yR]LR=J[t]yR=J[q]RR=C(342077+-353403)wR=yR(RR,TR)RR,uR=176648+12634544891123,C(575401-587538)ER=LR[wR]aR,jR,TR={[vR]=nR,[bR]=ER},MR[jR],19438837926611-(-678024)jR=jR(MR,aR)bR=J[t]yR=C(-359222+347786)ER=J[q]wR=-108145+28840459360998 LR=ER(yR,wR)wR=C(-647491+636416)nR=bR[LR]ER=J[t]aR=C(72721-83920)LR=J[q]yR=LR(wR,RR)bR=ER[yR]LR=J[t]yR=J[q]RR,aR=C(-285309-(-273572)),MR[aR]wR=yR(RR,TR)ER=LR[wR]yR=J[t]TR=C(-813907+801628)wR=J[q]RR=wR(TR,FR)LR=yR[RR]vR,wR={[nR]=bR,[ER]=LR},C(251825-263640)aR=aR(MR,vR)RR=968754+15923595990213 ER=J[t]XR=893443+22274246723201 LR=J[q]yR=LR(wR,RR)bR=ER[yR]RR=C(-624260-(-612805))LR=J[t]TR=24185295315893-47031 yR=J[q]wR=yR(RR,TR)FR,vR,zg=3505773603782-533862,C(791948-803147),943669+27559284181996 ER=LR[wR]yR=J[t]wR=J[q]TR,NR=C(-427172-(-415134)),18676146095251-336539 RR=wR(TR,FR)LR=yR[RR]vR=MR[vR]wR=J[t]RR=J[q]FR=C(-551930-(-539606))TR=RR(FR,NR)yR=wR[TR]nR={[bR]=ER;[LR]=yR}vR=vR(MR,nR)RR=C(614405-626716)ER=C(-895711+883268)bR=I[ER]TR=26644907950305-(-28566)LR=J[t]yR=J[q]wR=yR(RR,TR)ER=LR[wR]nR=bR[ER]RR,TR=C(-773747-(-761382)),871900+10706432902557 LR=J[t]yR=J[q]wR=yR(RR,TR)YR=30725504381545-522886 ER=LR[wR]bR=nR(ER)ER=J[t]LR=J[q]RR,wR=34910935846657-462721,C(866408-878937)yR=LR(wR,RR)FR=181287+26310974139317 nR=ER[yR]RR=C(582341+-594516)TR=-518420+20300366827009 LR=J[t]yR=J[q]wR=yR(RR,TR)ER=LR[wR]bR[nR]=ER wR,RR=C(-96205+84704),-292624+30878290014010 ER=J[t]LR=J[q]yR=LR(wR,RR)nR=ER[yR]ER=17233760-796249<3882870305%28022726 bR[nR]=ER RR=26311200272833-(-261659)ER=J[t]LR=J[q]wR=C(251274+-262280)yR=LR(wR,RR)RR=22127801201924-167108 nR=ER[yR]ER=-487883+13917032~=8735205-(-27362)bR[nR]=ER ER=J[t]LR=J[q]wR=C(-110641-(-99059))yR=LR(wR,RR)nR=ER[yR]ER=-112246-(-112250)bR[nR]=ER ER=J[t]oR=31277103517699-(-76001)LR=J[q]wR,RR=C(-160918+148796),337117+1246262025575 yR=LR(wR,RR)TR=C(-163912+152518)nR=ER[yR]ER=fR()LR=C(447694-460137)bR[nR]=ER ER=I[LR]yR=J[t]wR=J[q]RR=wR(TR,FR)LR=yR[RR]nR=ER[LR]TR,FR=C(-169915-(-158864)),29316974614563-(-286000)yR=J[t]wR=J[q]RR=wR(TR,FR)LR=yR[RR]ER=nR(LR)nR=f()FR=32558793745736-846351 J[nR]=ER ER=J[nR]yR=J[t]TR=C(-560369-(-549257))wR=J[q]RR=wR(TR,FR)LR=yR[RR]RR=C(741646+-753990)wR=I[RR]TR=J[t]FR=J[q]NR=FR(uR,YR)RR=TR[NR]TR=942566+-942565 yR=wR[RR]RR=302691+-302690 wR=yR(RR,TR)ER[LR]=wR YR,TR,FR=34460773835801-(-1006230),C(-651800+640290),29239533091657-(-965094)ER=J[nR]yR=J[t]wR=J[q]uR=C(-908960+896629)RR=wR(TR,FR)LR=yR[RR]RR=C(-782958-(-770435))wR=I[RR]TR=J[t]FR=J[q]NR=FR(uR,YR)FR=740942+-740942 RR=TR[NR]yR=wR[RR]RR,NR,TR=9635018%166121,-136466+17495728895205,-267991-(-267991)wR=yR(RR,TR,FR)ER[LR]=wR ER=J[nR]yR=J[t]TR=C(488142+-499671)wR=J[q]FR=26170530229349-(-49973)RR=wR(TR,FR)LR=yR[RR]yR=-343477-(-343478)ER[LR]=yR FR=-91374+31784377540286 ER=J[nR]yR=J[t]wR=J[q]TR=C(-983461-(-971294))RR=wR(TR,FR)LR=yR[RR]TR,yR=C(-756544-(-744260)),291547+-291547 QR=V(212601472%8237050,{HR})ER[LR]=yR FR=34607199412938-975831 ER=J[nR]yR=J[t]wR=J[q]RR=wR(TR,FR)LR=yR[RR]yR=4303743-(-436610)<268502-(-996519)ER[LR]=yR FR,TR=23463765517852-(-312466),C(-555978+544246)ER=J[nR]yR=J[t]wR=J[q]RR=wR(TR,FR)LR=yR[RR]yR=bR ER[LR]=yR yR,FR=C(795814-808257),C(-239341+226877)LR=I[yR]wR=J[t]RR=J[q]TR=RR(FR,NR)NR,FR=5769110366512-(-876878),C(-977354-(-965931))yR=wR[TR]ER=LR[yR]wR=J[t]RR=J[q]TR=RR(FR,NR)yR=wR[TR]LR=ER(yR)ER=f()NR=274012+29203444926146 J[ER]=LR LR=J[ER]wR=J[t]YR=C(460765-472227)RR=J[q]FR=C(480700+-492741)TR=RR(FR,NR)yR=wR[TR]TR=C(-749263+736919)RR=I[TR]FR=J[t]NR=J[q]uR=NR(YR,oR)oR=360524+22859531987272 TR=FR[uR]wR=RR[TR]TR,FR=-267991-(-267992),.1 RR=wR(TR,FR)YR=C(637034+-648560)LR[yR]=RR LR=J[ER]wR=J[t]RR=J[q]FR,NR=C(697257-708961),2709009027907-(-471466)TR=RR(FR,NR)yR=wR[TR]TR=C(46250+-58594)RR=I[TR]FR=J[t]NR=J[q]uR=NR(YR,oR)TR=FR[uR]wR=RR[TR]oR,TR,FR=24650873023646-(-507960),333624+-333624,.45 RR=wR(TR,FR)NR=8727276609397-53142 LR[yR]=RR LR=J[ER]wR=J[t]RR=J[q]FR,uR=C(218285+-230074),349004+22147847755005 TR=RR(FR,NR)yR=wR[TR]RR=J[t]YR=C(-88271+76723)TR=J[q]NR=C(-705598+693685)FR=TR(NR,uR)wR=RR[FR]LR[yR]=wR LR=J[ER]FR=C(-943251+932069)wR=J[t]RR=J[q]NR=88682592958052%8062055220217 TR=RR(FR,NR)yR=wR[TR]TR=C(215965+-228488)RR=I[TR]FR=J[t]NR=J[q]uR=NR(YR,oR)TR=FR[uR]NR=667779-667629 wR=RR[TR]FR,TR=-201611-(-201866),1815081546%15382047 RR=wR(TR,FR,NR)LR[yR]=RR NR=11148771317203-49548 LR=J[ER]FR=C(278729+-290760)wR=J[t]RR=J[q]TR=RR(FR,NR)yR=wR[TR]NR,wR=-992620+11567814818422,-632189+632213 LR[yR]=wR FR=C(952996-964677)LR=J[ER]wR=J[t]RR=J[q]TR=RR(FR,NR)yR=wR[TR]FR,wR=C(57071-69537),-125731+125732 LR[yR]=wR LR=J[ER]NR=737273+8142646447830 wR=J[t]RR=J[q]TR=RR(FR,NR)oR=C(410711+-421918)yR=wR[TR]NR,FR,wR=-321320+2609307479015,C(94367+-105458),40924141%682069 LR[yR]=wR LR=J[ER]wR=J[t]RR=J[q]TR=RR(FR,NR)yR=wR[TR]FR=C(-368109-(-355966))TR=I[FR]NR=J[t]uR=J[q]YR=uR(oR,XR)FR=NR[YR]RR=TR[FR]FR=J[t]NR=J[q]YR,oR=C(300377-311486),7869210157367-(-306457)uR=NR(YR,oR)TR=FR[uR]wR=RR[TR]NR=22909674314974-848690 LR[yR]=wR LR=J[ER]wR=J[t]RR=J[q]FR=C(370658-382147)TR=RR(FR,NR)NR=C(735096+-747237)yR=wR[TR]wR=J[nR]LR[yR]=wR oR=d(148221+3881582,{zR;t;q,hR,R})wR=C(691200+-703057)yR=I[wR]RR=J[t]YR=Z(3837381979%16826299,{zR;t;q,w,GR,lR})uR=713041+17968164519774 TR=J[q]FR=TR(NR,uR)wR=RR[FR]LR=yR[wR]uR=G(620445+8848713,{zR,t;q;w,GR;OR})wR=Z(1182264534%14637214,{t,q,nR;ER})yR=LR(wR)yR=Z(-267937+6892280,{zR;t,q;A,R})LR=f()RR=f()J[LR]=yR yR=f()wR=m(3347638-401482,{zR;t;q;hR;X})J[yR]=wR FR=V(3049596539%12085925,{RR;t;q})TR=m(5285306-558980,{RR;t,q})rR,wR=-417467+190296792851,{}J[RR]=wR wR=f()J[wR]=TR TR=f()NR=G(-1021012+15822578,{zR,t;q,TR;w,GR;tR,wR})J[TR]=FR FR=f()J[FR]=NR NR=f()J[NR]=uR uR=f()J[uR]=YR YR=f()J[YR]=oR XR=d(4625773-(-671149),{zR;t;q,UR,lR;w,y;E;hR})oR=f()J[oR]=XR XR=f()J[XR]=QR pR=G(2155855186%8594537,{hR;t;q;B,XR;y;i,NR;FR,oR})QR=f()J[QR]=pR pR=J[zR]AR=J[t]SR=J[q]cR=SR(iR,rR)BR=AR[cR]SR=J[A]iR=J[t]rR=J[q]Ig=rR(Cg,zg)rR=C(-374485-(-362074))cR=iR[Ig]AR=SR[cR]SR,Ig=C(-864141-(-852458)),-609074+27246294039745 cR=J[QR]SR=AR[SR]SR=SR(AR,cR)pR[BR]=SR BR=J[A]SR=J[t]cR=J[q]iR=cR(rR,Ig)AR=SR[iR]pR=BR[AR]z=pR and 1238135331%12827900 or 12721892-407951 elseif z<15241252-263597 then q=J[k[-247181-(-247186)]]z=q and 446946+15730563 or 10684190-(-496356)else H=W[-143060+143061]z=J[k[314469-314468]]q=J[k[3056012162%15916730]]l=C(-151213-(-139880))P=J[k[-928786+928789]]M=923131+29705504333837 t=P(l,M)U=q[t]P=17335418%1575938 q=H/P H=nil z[U]=q U,z={},I[C(-787530-(-775028))]end end end end else if 4261427947%25890503>z then if z>14578707-(-713413)then if z>16316757-974508 then if-745272+16087995>z then N,z,o=C(116189-127430),411400+1562762,23058714729321-(-593544)R=J[P]F=J[k[355127-355123]]Y=J[k[437434181%4556606]]u=Y(N,o)T=F[u]L=R[T]y=not L U=y elseif 3220522967%21803819>z then B=J[k[-747229-(-747232)]]A=J[k[1079726532%14206928]]o,WR,r,c=z,18644172075257-773904,C(87057+-98843),C(668682-680136)S=A(c,WR)p=B[S]X=w[p]S=J[k[206864793%13790986]]i=-503865+20936294225486 c=J[k[742532089%3159711]]WR=c(r,i)A=S[WR]B=w[A]A=703583925%3382615 p=B+A Q=X>p z,N=Q and 1753369448%9826468 or 2794301-65540,Q else z,U=I[C(-898367-(-886116))],{}end else if 1949087527%15470139>z then t,U=-672238-(-672243),355002+-355001 z=q+U q=z U=q>=t z=U and 810518546%6226239 or 2189248919%11202911 elseif z<316917178%16754297 then P,M=t(q,P)z=P and 3210310-(-741289)or 25508+6585992 else t=d(-126989+8395860,{P;k[740916305%12774419];k[591285204%6719150]})U=C(68243-80315)z=I[U]U=z(t)z=3150550512%21255532 end end else if z<15907814-728608 then if 862640+14241906>z then l=P z=H+M l,M,H=nil,nil,z z=12863807-224202 elseif z<-994066+16154471 then n,v=732724+32101887577136,C(-249993+238787)t=J[k[213323-213320]]M=J[k[939093+-939092]]z=1020933723%14838306 j=J[k[461431-461429]]a=j(v,n)l=M[a]P=t[l]t=C(107010-119498)t=P[t]t=t(P,H)q,H=nil,nil elseif z<713166759%25851591 then H,z,U=nil,I[C(512192+-524383)],{}else U=J[k[257428-257423]]j=C(-339827-(-327865))t=J[k[177562-177560]]a=897417+24553350642464 l=J[k[602832-602829]]M=l(j,a)P=t[M]q=H[P]z=U[q]z=z and 763439-587213 or 380535353%7072869 end else if 15307229-124348>z then q,l=P(H,q)z=q and-759816+2245236 or 642842+2879616 elseif 2052817730%21909511>z then z=J[k[228809+-228808]]U=z()H=U q=not H U,z=q,q and 1434788448%15236504 or 2554430820%21393181 else j=478797+32841796906352 z=J[k[245847+-245842]]M=C(-640797-(-629683))P=J[k[-866953+866956]]t=J[k[-248534-(-248538)]]l=t(M,j)U=P[l]P=-892503-(-892503)z[U]=P z=15825119-275575 end end end else if z<161836+15383843 then if z<14903810-(-538326)then if z<104900132%29835160 then z,U,H=I[C(520813+-532440)],{},nil elseif 1760959698%25297970>z then q=d(-501335+5075003,{k[-807587+807588];k[918781-918779],k[609073825%6215039],k[-616002-(-616006)],k[105508643%596094],k[788684906%7886849];k[2277715367%14415920]})U=C(-329465-(-317393))z=I[U]P={z(q)}U=P[610915+-610914]q,H=U,P[1225631409%8570849]z=not q z=z and 2462333-895142 or-82364+5343495 elseif z<4288492826%22729195 then U,z={},I[C(767998+-780303)]else z=-677941+13677361 T=J[P]Y=J[k[459921454%9198429]]Q=797344+23772463005853 u=J[k[1085787323%12480314]]o=C(-115272+103387)N=u(o,Q)F=Y[N]R=T[F]L=not R U=L end else if 15172198-(-329967)>z then t=J[k[800556277%10263542]]v=C(-914268+901993)M=J[k[189717+-189715]]n=37562+29196283945569 j=J[k[309694-309691]]a=j(v,n)v=C(-251730+240141)l=M[a]U=t[l]n=-977739+2466080796615 M=J[k[1723585782%8793805]]t=C(-57017-(-45556))t=U[t]j=J[k[-641347-(-641350)]]a=j(v,n)l=M[a]t=t(U,l)z=not t z=z and 1960724026%13985820 or 584908+12393994 elseif z<16391631-857091 then P=V(-879187+17520456,{k[2973444147%11846391];k[-130954-(-130957)];k[-542093+542097],k[51267919%8544652]})H=C(-139658+127586)U=I[H]H=U(P)j,P=C(257921-269007),C(191644-203501)H=I[P]t=J[k[454469+-454466]]a=3502930344390-(-986265)l=J[k[412704769%2501241]]z=I[C(485535-497334)]M=l(j,a)P=t[M]U=H[P]P=115449-115434 t=d(-235236+6593986,{k[85996+-85995]})H=U(P,t)U={}else v=a P[q]=v M,z,j,a,t=nil,4518524-1437,nil,nil,nil end end else if z>16156234-535649 then if z<-708130+16333574 then q=J[k[806100069%14394644]]P=q()H=not P U,z=H,H and 3130163144%27848220 or-439333+4142940 elseif 2516523613%22530371>z then v,H,t=-230770+5528843718528,W[-361124-(-361125)],C(480609-492752)P=I[t]a=C(-176924-(-165391))l=J[k[968469-968468]]M=J[k[-715386-(-715388)]]j=M(a,v)t=l[j]q=P[t]j=C(975457-986992)t=J[k[172811+-172810]]a=17713959139558-514222 l=J[k[500930-500928]]M=l(j,a)P=t[M]U=q[P]z=H==U z=z and 364570+4932882 or 779089+4672852 else z,U=I[C(234920-246287)],{}q=O(q)H=nil end else if 337920+15215137>z then z=J[k[558001556%6804897]]j=-211974+17395395845034 P=J[k[1113418463%10121986]]t=J[k[824508052%4530264]]M=C(-27354+16082)l=t(M,j)U=P[l]P=1813657027%18297848<=2266652685%17502079 z[U]=P z=6264008-190767 elseif z<15811813-224928 then jR,vR=z,C(-1039640+1027279)aR=I[vR]z,MR=aR and 287107+4839331 or 501259107%10793227,aR else z=-694703+4339218 end end end end end else if z>17113181-756192 then if z<17589389-999418 then if z<15593200-(-902030)then if 17078503-636342>z then if 15729141-(-643163)>z then v=#j n=2834614745%13827389 a=v>n z=a and 1452241495%5739151 or 2496386943%15423173 elseif z<17371878-973811 then q,U=254977-254976,C(-354951-(-343726))z=J[k[3947654751%15790619]]H=J[k[2299158642%11215408]]U=z[U]U=U(z,H,q)z,U=I[C(76737+-88966)],{}elseif z<7293794294%32929295 then z=J[k[312659+-312652]]P=1600258947%12405108 U=z(P)z=-818892+6560676 else z=-919564+1273286 end else if z<17225142-760154 then q=V(350425+868628,{H})U=C(-147477+135405)z=I[U]U=z(q)z=11968334-(-340035)elseif 940134+15544209>z then H=W[889201885%8633028]z=J[k[64115975%283699]]l,M=C(146107+-157954),-69578+11526967420097 q=J[k[407966762%3777470]]P=J[k[467981+-467978]]t=P(l,M)U=q[t]q=H z[U]=q z=H and 281140+2659164 or 4166304560%16242703 else z=J[k[694708+-694707]]H=J[k[-105480+105482]]l,t=-338087+22698633794032,C(176949-189171)q=J[k[3214968878%15682775]]P=q(t,l)U=H[P]H=J[k[983039+-983035]]z[U]=H U,z={},I[C(-101717-(-89314))]end end else if 16231924-(-314293)>z then if 15666660-(-846051)>z then H=V(8891559-(-580070),{k[298549+-298548];k[922767+-922765]})U,M=C(153313+-165385),-180979+12290748045646 z=I[U]U=z(H)z=J[k[1540731477%14958558]]l=C(-185011-(-172841))q=J[k[100527701%7732900]]P=J[k[2292600962%14328756]]t=P(l,M)j=18097141245941-(-145654)H=q[t]M=C(600132+-611884)P=J[k[1650210751%7334270]]t=J[k[-912189+912191]]l=t(M,j)q=P[l]P=835661%75969 U=z(H,q,P)z,U=I[C(200871+-213269)],{}elseif z<-1033117+17561458 then l,H,M=C(-705421+694146),C(-782938-(-771081)),26796855206277-(-429881)U=I[H]q=J[k[927950689%4909792]]P=J[k[119483-119481]]t=P(l,M)H=q[t]z=U[H]M,H=33900309248585-(-459617),780101+-780098 U=z(H)U=J[k[703655769%3366774]]q=J[k[118334+-118333]]P=J[k[3430454567%13452763]]l=C(-168919-(-156948))t=P(l,M)H=q[t]z=U[H]z=z and 839542+1596083 or 626438+7415846 else H=J[k[-42581-(-42584)]]E=-475116+32529342675735 P=J[k[-963062-(-963063)]]t=J[k[234356+-234354]]M,n,j=C(-335662+324005),25285823450620-139262,954573+30458371745434 l=t(M,j)v,w,a=C(-203329+192071),C(1044053+-1055679),-997311+21926706634657 q=P[l]U=H[q]t=J[k[-579328+579329]]j=C(-443533-(-431621))l=J[k[96469+-96467]]M=l(j,a)P=t[M]M=J[k[954884+-954883]]j=J[k[-347208-(-347210)]]a=j(v,n)l=M[a]j=J[k[2665223431%10411029]]a=j()v=J[k[-945871-(-945872)]]n=J[k[1474160248%6494098]]b=n(w,E)j=v[b]z=464548+14336767 M=a..j t=l..M q=P..t H=C(852113-864464)H=U[H]H=H(U,q)end else if z<2985668358%19032708 then H,q,P,U,z=nil,nil,nil,{},I[C(829443-840720)]elseif z<595402296%19959483 then H,P=C(-504192+491695),C(-123253+110852)U=I[H]q=I[P]l,M=C(857104-868972),394785+26380217313755 H=U(q)q=J[k[387678-387677]]P=J[k[-881385-(-881387)]]t=P(l,M)U=q[t]z=H==U z=z and 61637+7051260 or 411774+16293917 else t=.1 U=J[k[-473460-(-473470)]]l=J[H]P=U(t,l,q)z=not P z=z and 12346466-(-624759)or 3052910615%22720328 end end end else if z>-333234+17046132 then if-396897+17148171>z then if z<4439893330%19746277 then a=C(268072+-279477)j=I[a]L=C(-9399-1925)v=J[k[949848-949844]]n=J[k[-331119+331124]]E,R,w=44594554893912%200876390583,358798+10739635739131,C(425932+-438370)b=n(w,E)a=v[b]U=j[a]b,a=C(576794+-588199),1054307332%4564101 n=I[b]w=J[k[872211-872207]]E=J[k[-496077+496082]]y=E(L,R)b=w[y]w=-500656-(-500756)v=n[b]b=t/w n={v(b)}j=U(a,h(n))U=3533555257%14601468 v=493380009%11213182 n=v v,z=606647160%4814660,2616322479%10576984 b,a=n<v,j v=U-n elseif z<2896401667%22674517 then j,P=C(862489-874149),C(-488063-(-476206))U=I[P]t=J[k[386388393%7290347]]l=J[k[1918902111%15475017]]a=468785+14453315187481 M=l(j,a)P=t[M]z=U[P]P=G(2082083466%19600433,{k[-409842+409852]})U=z(P)z=1427973797%20175655 else M,H=10729673883678-(-349030),C(-852583-(-840726))U=I[H]q=J[k[-931339-(-931341)]]l=C(604285-616505)P=J[k[-842733-(-842736)]]t=P(l,M)H=q[t]z=U[H]H=1399886876%13860266 U=z(H)U=J[k[694748+-694747]]M,l=174339+25054342939791,C(7632-18834)q=J[k[753091202%10041216]]P=J[k[113886663%7592444]]t=P(l,M)H=q[t]z=U[H]z=z and 2811197349%11605686 or 11206241-770636 end else if 5362343682%30372619>z then z=J[k[103973689%12996711]]H=f()U=z()J[H]=U U=J[H]z=not U z=z and-379413+2719626 or 6241951-172587 elseif-272598+17040598>z then J[q]=T z=F F=J[q]z=F and-1012695+17661592 or-364070+1231203 else R,o=z,C(739941+-751082)Y=J[k[-838464-(-838467)]]u=J[k[212818-212814]]Q=4190855492910-(-135793)N=u(o,Q)F=Y[N]T=w[F]z,L=T and 127432+12022712 or-616155+8475900,T end end else if z>759535+15899228 then if 263274+16407421>z then H,P=C(296230-307580),-424372+424372 z=I[H]q=J[k[-224864+224872]]H=z(q,P)z=-364283+9293425 elseif 3769457664%25529037>z then z=J[k[334288-334287]]j,M,a=9719142836787-(-649082),C(826644+-838640),C(632749+-644115)P=J[k[19410-19408]]t=J[k[248022+-248019]]v=19578124253845-120569 l=t(M,j)U=C(-664753-(-653653))q=P[l]P=J[k[845106+-845102]]l=J[k[3273182915%14169623]]M=J[k[929388+-929385]]j=M(a,v)t=l[j]l=J[k[700210-700205]]j=J[k[178825-178823]]a=J[k[2182460205%8592363]]b,n=14654335317556-(-713843),C(642753-653940)v=a(n,b)M=j[v]U,n,a=z[U],1338232007%9986806,z v=J[k[168206+-168200]]j=v or n H={[q]=P,[t]=l;[M]=j}U=U(z,H)U,z={},I[C(570650-583030)]else H,P=C(498742+-511239),C(-798037-(-786706))U=I[H]q=I[P]M=401104+12971194824904 H=U(q)q=J[k[770304-770303]]P=J[k[161288491%7012543]]l=C(344367+-355928)t=P(l,M)U=q[t]z=H==U z=z and 13203482-620116 or 4938578-970943 end else if 311215+16299996>z then z=U and 2058090888%9730315 or 5436312-(-295160)elseif z<-530441+17165459 then z=-96001+4174646>=5779664775%25992678 U={z}z=I[C(-636585-(-624722))]elseif 17390671-745588>z then j=C(258702+-270636)z=J[k[397652-397651]]P,U=C(-56330+44156),C(-27443+14988)q=I[P]t=J[k[-342572+342574]]l=J[k[142510019%1516064]]a,U=3304500046047-1041117,z[U]M=l(j,a)P=t[M]H=q[P]q=J[k[424788538%4007439]]U=U(z,H,q)U,z={},I[C(-149203+136738)]else z=131557877%19811984 end end end end else if 1846945417%30514575>z then if z<-886550+16755150 then if z>622514+15188682 then if z<322560+15506922 then z,q=I[C(932794-944997)],3415536111%26157349<-218918+5217783 U={q}elseif z<2585110755%27926927 then U=C(790605+-802677)z=I[U]H=e(65498+3252827,{k[73860769%8206752]})j=809402+16777667118282 U=z(H)z=J[k[-736427-(-736429)]]q=J[k[431811507%5997382]]P=J[k[283256+-283252]]M,l=26017673877196-1042297,C(897365+-909132)t=P(l,M)H=q[t]P=J[k[299406923%1592590]]t=J[k[2020801047%14538137]]M=C(662743-675090)l=t(M,j)q=P[l]P=-680687-(-680689)U=z(H,q,P)U,z={},I[C(1029628+-1040873)]else U=J[k[581847+-581837]]l=J[k[133037738%5116836]]j=J[k[-662907-(-662910)]]a=J[k[-227248+227252]]b,n=188223+24661090323868,C(730444+-742405)v=a(n,b)M=j[v]t=l[M]l=J[H]P=U(t,l,q)z=not P z=z and 15525676-(-904541)or 2595333965%10449271 end else if 4134989016%28805751>z then P=-5195+5200 t,H,U,z=P,W,-478861-(-478861),C(-932236-(-920591))P=2930055521%13080605 q=f()l=P J[q]=z P,z=-234164+234164,503805+12721092 M=P>l P=U-l elseif 725050+15052888>z then U,z=H,1551399066%27948727 elseif 729261169%31020409>z then z=J[k[666977-666973]]q=J[k[-630782+630784]]P=J[k[935002+-934999]]M,l=6126856197603-(-668994),C(-224861-(-212361))t=P(l,M)j=6603866293047-(-2252)H=q[t]P=J[k[489293-489291]]M=C(-904808+893498)t=J[k[905192931%12572124]]l=t(M,j)q=P[l]P=-752415-(-752417)U=z(H,q,P)U,z={},I[C(-214191-(-202253))]else j=J[k[90265066%490571]]E=27282717537321-180873 v=J[k[-979491+979494]]n=J[k[-481831+481835]]w=C(-633024+621268)b=n(w,E)a=v[b]M=j[a]j=926714-926714 l=M==j z,U=l and 240213+7165428 or 8269869-27477,l end end else if-22026+15930725>z then if 1305324099%24328687>z then b,w=v(n,b)z=b and 1856130089%15843737 or-274541+5029073 elseif z<459583+15446764 then U=J[k[28837162%1802322]]l=J[k[-567889-(-567891)]]j=J[k[832317+-832314]]a=J[k[732446872%10615172]]b,n=-173872+28135031904861,C(228992+-240285)v=a(n,b)M=j[v]t=l[M]l=J[H]P=U(t,l,q)z=not P z=z and 602681+13546524 or 1897778251%18934174 else y,n=C(36779-47795),C(-869654+857334)v=I[n]L=-720452+32788151482856 b=J[k[2210651435%10477021]]w=J[k[-906046-(-906051)]]E=w(y,L)n=b[E]w,b,z=112490-112490,-378852-(-378853),2286255-872114 a=v[n]n=1561760760%7436956 v=a(n,b,w)j=P-v P=j end else if z<16645714-714513 then H=J[k[-131741-(-131744)]]P=J[k[671225995%6580647]]t=J[k[-605855+605857]]j,M,n,y,a,E=274011+12878463052050,C(-491546-(-480218)),946070+26305164165187,16740921619100-(-748503),659990+31645924239226,C(-1024194+1012178)l=t(M,j)q=P[l]U=H[q]t=J[k[-315432-(-315433)]]j=C(-273266+262122)l=J[k[91278562%5704910]]M=l(j,a)P=t[M]M=J[k[795533-795532]]j=J[k[49392239%16464079]]v=C(474136-486200)a=j(v,n)H,v=C(-843310-(-830959)),C(972649+-984251)l=M[a]a=I[v]n=J[k[799714-799713]]z=3635606-629271 b=J[k[1772392754%8521119]]w=b(E,y)E=C(903704-914792)v=n[w]j=a[v]n=J[k[645655-645654]]y=538152+9604879915856 b=J[k[800297-800295]]w=b(E,y)v=n[w]n=J[k[960342+-960336]]w,E=C(-356052-(-344405)),4.1300626018151e+15%33306956508101 b={n()}a=j(v,h(b))v=J[k[-39525-(-39526)]]n=J[k[-949263+949265]]H=U[H]b=n(w,E)j=v[b]M=a..j t=l..M q=P..t H=H(U,q)elseif z<15221995-(-782807)then U=J[k[-524993-(-524994)]]M=C(-143183+131623)P=J[k[241492+-241490]]t=J[k[1524371493%7857585]]j=11834303692532-534894 l=t(M,j)q=P[l]z=U[q]l,U=C(1035249+-1046332),C(-223307+210947)U=z[U]U=U(z)z=J[k[931752+-931751]]M=29825244354638-(-253426)q=J[k[930552+-930550]]P=J[k[871798-871795]]t=P(l,M)U=q[t]q=nil z[U]=q z=381378+7714055 else H=f()z=2880329196%15569347 J[k[3224430665%13548028]]+=z z=J[k[771571-771570]]J[H]=z j,a=C(-1025526+1014086),19402172801585-(-475417)z=V(522785609%11525754,{k[690976154%5080707],k[708163+-708160];k[210703-210699],H;k[457711156%3390453]})U=J[k[917404+-917402]]q=z t=J[k[-544871-(-544874)]]l=J[k[-119228+119232]]M=l(j,a)P=t[M]z=U[P]z=z and 141715215%21072300 or 16142932-593388 end end end else if 138072+16121402>z then if z<1424815774%16191188 then if 7386+16080884>z then z=J[k[516283-516279]]U=z()z=2500812-(-531581)elseif-980739+17094747>z then q,z,H=nil,-400452+9237870,nil elseif 5873355746%26991698>z then l=C(-297212+285140)P=I[l]j=d(1041172+1692043,{k[1003642-1003634];t;k[-959010+959013];k[1025166+-1025162]})a={P(j)}j,l,M=z,a[-836600-(-836601)],a[100405+-100403]a=not l P=a z=a and 3338176-(-108272)or-20591+2852211 else q=J[k[485002-484997]]P=C(81222-93582)P,z=q[P],106985854%23951327 P=P(q)end else if 16835644-640741>z then U=C(363939-376011)H=d(-791448+14456653,{k[485742820%10119642];k[-951456-(-951458)],k[2306293887%14236382],k[345512-345507]})z=I[U]U=z(H)z=3529724866%18040438 elseif z<58448+16171944 then a=12672153529222-(-682886)z=J[k[-5712-(-5717)]]j,M,l=C(405030-417320),8696446564700-125323,C(-78332-(-67084))q=J[k[382795352%3645670]]P=J[k[1818956271%12046068]]t=P(l,M)H=q[t]t=J[k[483539-483537]]l=J[k[385146-385143]]M=l(j,a)P=t[M]t=J[k[-736429-(-736435)]]q=P..t P=761023+-695743 U=z(H,q,P)H=U z=H and 234682+5820287 or 19962061%9976648 else a=J[t]E=C(-139120+127915)n=J[k[821823-821821]]y=67631+23712032383730 b=J[k[667540227%12837312]]w=b(E,y)z=4834335-64304 v=n[w]j=a[v]M=j end end else if 17077675-792012>z then if z<1462486256%17216851 then U,H=C(-119509-(-108159)),C(566172+-577609)z=I[U]U=z(H)U,z={},I[C(-985855-(-973930))]elseif z<568027+15715184 then z=not H z=z and 3967540-973986 or 1482306-382069 else F=J[v]u,N=1691600230%8093781,387287+-387281 Y=F(u,N)F,N=C(813750+-825491),C(-700502-(-688761))I[F]=Y u=I[N]N=1780285566%10290668 F=u>N z=F and 590691825%12775859 or-1013766+1886354 end else if 560545+15737814>z then l=C(-116958-(-104654))U=J[k[896062337%8615984]]q=J[k[332598-332596]]P=J[k[1562081013%13702465]]M=22612732166889-(-845368)t=P(l,M)H=q[t]z=U[H]z=z and 15439403-(-646173)or-471015+3503408 elseif z<2568757834%29338214 then L=J[P]E,y=z,not L U,z=y,y and 2168711-194549 or 14620282-(-722032)else z=J[k[681974-681970]]U=z()U,z={},I[C(-188999+177868)]end end end end end end end end end end z=#x return h(U)end,function(I,C)local h=P(C)local W=function()return z(I,{},C,h)end return W end,function(I,C)local h=P(C)local W=function(W)return z(I,{W},C,h)end return W end,function(I,C)local h=P(C)local W=function(W,k,x,s,U,J)return z(I,{W,k,x;s;U;J},C,h)end return W end,function(I,C)local h=P(C)local W=function(W,k,x,s)return z(I,{W;k,x;s},C,h)end return W end,function(I,C)local h=P(C)local W=function(W,k)return z(I,{W,k},C,h)end return W end,{},function(I,C)local h=P(C)local W=function(...)return z(I,{...},C,h)end return W end,function(I)local C,z=-1009086+1009087,I[187078+-187077]while z do H[z],C=H[z]-(-974827+974828),C+(816276+-816275)if H[z]==14734+-14734 then H[z],J[z]=nil,nil end z=I[C]end end,function(I,C)local h=P(C)local W=function(W,k,x,s,U,J,H,f)return z(I,{W;k,x;s;U;J;H;f},C,h)end return W end,function(I)for C=367868-367867,#I,-959236+959237 do H[I[C]]=H[I[C]]+595290749%11447899 end if W then local z=W(true)local h=x(z)h[C(586268+-598297)],h[C(-325488+314403)],h[C(867590+-878910)]=I,t,function()return 591655891%6783464 end return z else return k({},{[C(-274728+263643)]=t,[C(-498992+486963)]=I,[C(-244383+233063)]=function()return 2294779-800256 end})end end,function()q=(691298-691297)+q H[q]=875239-875238 return q end,function(I,C)local h=P(C)local W=function(W,k,x,s,U,J,H)return z(I,{W,k,x;s;U,J;H},C,h)end return W end return(l(6429518410%29021510,{}))(h(U))end)(newproxy,getmetatable,unpack or table[C(-111011-(-98895))],getfenv and getfenv()or _ENV,{...},setmetatable,select)end)(...)
+    - By ZenLunarDev
+]]
+
+
+-- CONFIG
+
+
+local SCRIPT_URL = "https://raw.githubusercontent.com/ZenLunarDev/D204wpi-AWEaPa-IAVWB9982kldoi-HW4398-2Aw586/refs/heads/main/main.lua"
+local SCRIPT_VERSION = "1.1.0"
+local DISCORD_URL = "https://discord.gg/7MA4RK5aUU"
+local CREATOR_NAME = "ZenLunarDev"
+
+
+-- SAFE INIT
+
+
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+
+task.wait(0.5)
+
+
+-- SERVICES
+
+
+local Players = game:GetService("Players")
+local TeleportService = game:GetService("TeleportService")
+local HttpService = game:GetService("HttpService")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local Workspace = game:GetService("Workspace")
+local CoreGui = game:GetService("CoreGui")
+local GuiService = game:GetService("GuiService")
+local VirtualUser = game:GetService("VirtualUser")
+local TweenService = game:GetService("TweenService")
+local VirtualInputManager = game:GetService("VirtualInputManager")
+local Lighting = game:GetService("Lighting")
+local Stats = game:GetService("Stats")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local LocalPlayer = Players.LocalPlayer
+local GRAVITY_NORMAL = Workspace.Gravity
+
+
+-- LOAD
+
+
+local Fluent = loadstring(game:HttpGet(
+    "https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"
+))()
+
+if not Fluent then
+    error("[xEz Hub] Cannot load Fluent UI")
+end
+
+-- KEY UI IS HANDLED BY key.lua
+-- main.lua intentionally creates only ONE Fluent window.
+
+-- STATE
+
+
+local State = {
+    AutoFarm = false,
+    Farm24_7 = false,
+    GodMode = false,
+    AutoCollectCoin = false,
+    AutoSkipWave = false,
+    FarmSpeed = 900,
+    MaxSpeedMode = false,
+    StepDelay = 0.02,
+    ChestDelay = 0.5,
+    ResetDelay = 0.5,
+    PostResetDelay = 1.0,
+    GravityZero = true,
+    FlightHeight = 72,
+    WalkSpeed = 16,
+    JumpPower = 50,
+    InfJump = false,
+    NoClip = false,
+    Fly = false,
+    FlySpeed = 100,
+    AntiFling = false,
+    AntiKick = false,
+    AutoBuyChest = false,
+    SelectedChest = "Common Chest",
+    AntiAFK = true,
+    AntiAFKKey = true,
+    AutoRejoin = true,
+    StaffDetector = true,
+    AntiDisconnect = true,
+    RejoinDelay = 3,
+    BlackScreen = false,
+    MemoryCleanup = true,
+    FpsBoost = false,
+    RenderDistance = 1000,
+    LowGraphics = false,
+    ShowNotifications = true,
+    WebhookURL = "",
+    WebhookNotify = false,
+    WebhookRichEmbed = true,
+    WinsCount = 0,
+    FailsCount = 0,
+    SessionStart = tick(),
+    LastCleanup = tick(),
+    RunTimes = {},
+    BestRunTime = 0,
+    CurrentRunStart = 0,
+    LastRespawn = 0,
+    RespawnCount = 0,
+    SessionLog = {},
+    IsFarming = false
+}
+
+
+-- ข้อความภาษาไทย
+
+
+
+-- WAYPOINTS
+
+
+local Waypoints = {
+    CFrame.new(-43.6134491, 62.1137619, 672.744934,
+        -0.999842644, -0.00183729955, 0.017645346,
+        0, 0.994622767, 0.103564225,
+        -0.0177407414, 0.103547923, -0.994466245),
+    CFrame.new(-60.1504707, 97.4659729, 8767.91406,
+        -0.99889338, 0.000705028593, 0.0470264405,
+        0, 0.999887645, -0.0149902813,
+        -0.047031723, -0.0149736926, -0.998781145),
+    CFrame.new(-54.331871, -345.398346, 9488.60645,
+        -0.98221302, 0, 0.187770084,
+        0, 1, 0,
+        -0.187770084, 0, -0.98221302),
+}
+
+
+-- CONNECTIONS + TOKENS
+
+
+local Connections = {
+    AntiAFK = nil, NoClip = nil, GodMode = nil, CharacterAdded = nil,
+    TeleportFailed = nil, ErrorMessage = nil, PlayerAdded = nil,
+    JumpRequest = nil, AntiAFKKeyLoop = nil, FlyLoop = nil,
+    AntiFlingLoop = nil, AntiKickLoop = nil
+}
+
+local FarmToken = 0
+local BuyToken = 0
+local isHopping = false
+local isBuyWarned = false
+local isFlying = false
+local currentTween = nil
+
+
+-- SESSION LOG
+
+
+local function addLog(message)
+    table.insert(State.SessionLog, {
+        time = os.date("%H:%M:%S"),
+        message = message
+    })
+    if #State.SessionLog > 100 then
+        table.remove(State.SessionLog, 1)
+    end
+end
+
+
+-- GUI PARENT
+
+
+local cachedGuiParent = nil
+
+local function getGuiParent()
+    if cachedGuiParent and cachedGuiParent.Parent then
+        return cachedGuiParent
+    end
+    if gethui and type(gethui) == "function" then
+        local ok, hui = pcall(gethui)
+        if ok and hui then
+            cachedGuiParent = hui
+            return hui
+        end
+    end
+    local ok, cg = pcall(function() return CoreGui end)
+    if ok and cg then
+        local testOk = pcall(function()
+            local test = Instance.new("ScreenGui")
+            test.Parent = cg
+            test:Destroy()
+        end)
+        if testOk then
+            cachedGuiParent = cg
+            return cg
+        end
+    end
+    cachedGuiParent = LocalPlayer:WaitForChild("PlayerGui")
+    return cachedGuiParent
+end
+
+
+-- UTILITY
+
+
+local function notify(title, content, duration)
+    if not State.ShowNotifications then return end
+    pcall(function()
+        Fluent:Notify({
+            Title = title,
+            Content = content,
+            Duration = duration or 3
+        })
+    end)
+    addLog(title .. ": " .. content)
+end
+
+local function getCharacter()
+    return LocalPlayer.Character
+end
+
+local function getHumanoid()
+    local character = getCharacter()
+    if not character then return nil end
+    local h = character:FindFirstChildOfClass("Humanoid")
+    if h and h.Parent then return h end
+    return nil
+end
+
+local function getRoot()
+    local character = getCharacter()
+    if not character then return nil end
+    local r = character:FindFirstChild("HumanoidRootPart")
+    if r and r.Parent then return r end
+    return nil
+end
+
+local function isCharacterReady()
+    local character = getCharacter()
+    if not character or not character.Parent then return false end
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if not humanoid or humanoid.Health <= 0 then return false end
+    local hrp = character:FindFirstChild("HumanoidRootPart")
+    if not hrp then return false end
+    return true
+end
+
+local function getRequestFunction()
+    if type(request) == "function" then return request end
+    if type(http_request) == "function" then return http_request end
+    if http and type(http.request) == "function" then return http.request end
+    if syn and type(syn.request) == "function" then return syn.request end
+    return nil
+end
+
+local function safeWait(seconds, myToken, checkFn)
+    local elapsed = 0
+    local step = 0.02
+    while elapsed < seconds do
+        if checkFn and not checkFn() then return false end
+        task.wait(step)
+        elapsed = elapsed + step
+    end
+    return true
+end
+
+local function formatUptime(seconds)
+    local h = math.floor(seconds / 3600)
+    local m = math.floor((seconds % 3600) / 60)
+    local s = math.floor(seconds % 60)
+    return string.format("%02d:%02d:%02d", h, m, s)
+end
+
+local function getAverageRunTime()
+    if #State.RunTimes == 0 then return 0 end
+    local total = 0
+    for _, time in ipairs(State.RunTimes) do
+        total = total + time
+    end
+    return total / #State.RunTimes
+end
+
+local function getPing()
+    local ok, ping = pcall(function()
+        local network = Stats:FindFirstChild("Network")
+        local serverStats = network and network:FindFirstChild("ServerStatsItem")
+        local pingItem = serverStats and serverStats:FindFirstChild("Data Ping")
+        return pingItem and pingItem:GetValue() or 0
+    end)
+    if ok and type(ping) == "number" then
+        return math.floor(ping)
+    end
+    return 0
+end
+
+local function waitForNewCharacter(timeout)
+    timeout = timeout or 15
+    local start = tick()
+    while tick() - start < timeout do
+        if isCharacterReady() then return true end
+        task.wait(0.1)
+    end
+    return false
+end
+
+
+-- QUEUE ON TELEPORT
+
+
+local queueonteleport =
+    (syn and syn.queue_on_teleport)
+    or queue_on_teleport
+    or (fluxus and fluxus.queue_on_teleport)
+
+if type(queueonteleport) == "function" then
+    pcall(function()
+        queueonteleport(string.format([[
+            repeat task.wait() until game:IsLoaded()
+            task.wait(1)
+            loadstring(game:HttpGet("%s"))()
+        ]], SCRIPT_URL))
+    end)
+end
+
+
+-- CREATE FLUENT WINDOW
+-- Important: main.lua creates exactly ONE Fluent window.
+-- The key UI is a separate non-Fluent ScreenGui in key.lua.
+
+local FluentWindow = Fluent:CreateWindow({
+    Title = "xEz Hub",
+    SubTitle = "Build a Boat • v" .. SCRIPT_VERSION,
+    TabWidth = 160,
+    Size = UDim2.fromOffset(620, 500),
+    Acrylic = false,
+    Theme = "Dark",
+    MinimizeKey = Enum.KeyCode.LeftControl
+})
+
+local ElementCounter = 0
+local function nextElementId(prefix)
+    ElementCounter += 1
+    return string.format("xEz_%s_%d", prefix, ElementCounter)
+end
+
+local TitleIconMap = {
+    ["ฟาร์มอัตโนมัติ"] = "bot",
+    ["ฟาร์ม 24 ชม."] = "infinity",
+    ["กันตาย"] = "shield-check",
+    ["เก็บเหรียญอัตโนมัติ"] = "coins",
+    ["ข้ามด่านอัตโนมัติ"] = "skip-forward",
+    ["ความเร็วเดิน"] = "person-standing",
+    ["แรงกระโดด"] = "arrow-up",
+    ["กระโดดไม่จำกัด"] = "refresh-cw",
+    ["ทะลุของ"] = "scan",
+    ["บิน"] = "send",
+    ["ความเร็วบิน"] = "gauge",
+    ["รีเซ็ตตัวละคร"] = "rotate-ccw",
+    ["ชนิดกล่อง"] = "package",
+    ["ซื้อ 1"] = "shopping-cart",
+    ["ซื้อ 100"] = "shopping-basket",
+    ["ซื้อ 999"] = "boxes",
+    ["ซื้อวน"] = "repeat-2",
+    ["กันหลุด"] = "wifi-off",
+    ["กันหลุด (กด K)"] = "keyboard",
+    ["กันเตะ"] = "ban",
+    ["กันกระเด็น"] = "shield",
+    ["จับแอดมิน"] = "user-round-check",
+    ["เข้าห้องเดิม"] = "log-in",
+    ["เปลี่ยนห้อง"] = "shuffle",
+    ["โหมดเร็วสุด"] = "zap",
+    ["ความเร็วฟาร์ม"] = "gauge",
+    ["หน่วงตอนบิน"] = "timer",
+    ["หน่วงหลังเปิดกล่อง"] = "timer-reset",
+    ["หน่วงก่อนตาย"] = "hourglass",
+    ["หน่วงหลังเกิด"] = "history",
+    ["ปิดแรงโน้มถ่วง"] = "orbit",
+    ["ความสูงบิน"] = "move-vertical",
+    ["จอดำ"] = "monitor-off",
+    ["ล้างแรม"] = "memory-stick",
+    ["เพิ่ม FPS"] = "activity",
+    ["กราฟิกต่ำ"] = "image-down",
+    ["ล้างแรมตอนนี้"] = "trash-2",
+    ["ล้างสถิติ"] = "rotate-ccw",
+    ["ล้างบันทึก"] = "notebook-pen",
+    ["เปิดเว็บฮุค"] = "webhook",
+    ["ส่งแบบละเอียด"] = "file-text",
+    ["ทดสอบเว็บฮุค"] = "send",
+    ["เข้าร่วม Discord"] = "message-circle",
+    ["คัดลอกลิงก์ Discord"] = "copy",
+}
+
+local function resolveIcon(title, fallback)
+    local t = tostring(title or "")
+    for prefix, icon in pairs(TitleIconMap) do
+        if t:find(prefix, 1, true) then
+            return icon
+        end
+    end
+    return fallback or "circle"
+end
+
+-- Compatibility adapter: keeps the original feature code readable while using Fluent's API.
+local function wrapTab(tab)
+    local adapter = {}
+
+    function adapter:Paragraph(config)
+        local para = tab:AddParagraph({
+            Title = config.Title or "xEz Hub",
+            Content = config.Desc or config.Content or ""
+        })
+        return para
+    end
+
+    function adapter:Section(config)
+        local title = type(config) == "table" and config.Title or tostring(config)
+        return tab:AddSection(title)
+    end
+
+    function adapter:Button(config)
+        return tab:AddButton({
+            Title = config.Title or "Button",
+            Description = config.Desc or config.Description or "",
+            Callback = config.Callback
+        })
+    end
+
+    function adapter:Toggle(config)
+        local title = config.Title or "Toggle"
+        return tab:AddToggle(nextElementId("Toggle"), {
+            Title = title,
+            Description = config.Desc or config.Description or "",
+            Default = config.Default == true,
+            Callback = config.Callback
+        })
+    end
+
+    function adapter:Slider(config)
+        local title = config.Title or "Slider"
+        local value = config.Value or {}
+        local min = tonumber(value.Min) or 0
+        local max = tonumber(value.Max) or 100
+        local default = tonumber(value.Default) or min
+        return tab:AddSlider(nextElementId("Slider"), {
+            Title = title,
+            Description = config.Desc or config.Description or "",
+            Default = default,
+            Min = min,
+            Max = max,
+            Rounding = 0,
+            Callback = config.Callback
+        })
+    end
+
+    function adapter:Dropdown(config)
+        local values = config.Values or {}
+        local selected = config.Value
+        if type(selected) == "number" then
+            selected = values[selected]
+        end
+        if selected == nil then
+            selected = values[1]
+        end
+        return tab:AddDropdown(nextElementId("Dropdown"), {
+            Title = config.Title or "Dropdown",
+            Description = config.Desc or config.Description or "",
+            Values = values,
+            Multi = false,
+            Default = selected,
+            Callback = config.Callback
+        })
+    end
+
+    function adapter:Input(config)
+        return tab:AddInput(nextElementId("Input"), {
+            Title = config.Title or "Input",
+            Description = config.Desc or config.Description or "",
+            Default = config.Value or "",
+            Placeholder = config.Placeholder or "",
+            Numeric = false,
+            Finished = false,
+            Callback = config.Callback
+        })
+    end
+
+    return adapter
+end
+
+local TabMain = wrapTab(FluentWindow:AddTab({ Title = "หลัก", Icon = "house" }))
+local TabSettings = wrapTab(FluentWindow:AddTab({ Title = "ตั้งค่า", Icon = "settings-2" }))
+local TabStats = wrapTab(FluentWindow:AddTab({ Title = "สถิติ", Icon = "chart-no-axes-combined" }))
+local TabProfile = wrapTab(FluentWindow:AddTab({ Title = "โปรไฟล์", Icon = "user-round" }))
+local TabCredits = wrapTab(FluentWindow:AddTab({ Title = "เครดิต", Icon = "badge-check" }))
+
+-- Player profile: real Roblox thumbnail URL + actual player data.
+local ProfileGui
+local ProfileCard
+
+local function createProfileCard()
+    local parent = getGuiParent()
+    ProfileGui = Instance.new("ScreenGui")
+    ProfileGui.Name = "xEz_PlayerProfile"
+    ProfileGui.ResetOnSpawn = false
+    ProfileGui.IgnoreGuiInset = true
+    ProfileGui.DisplayOrder = 20
+    ProfileGui.Parent = parent
+
+    ProfileCard = Instance.new("Frame")
+    ProfileCard.Name = "ProfileCard"
+    ProfileCard.AnchorPoint = Vector2.new(1, 0)
+    ProfileCard.Position = UDim2.new(1, -18, 0, 18)
+    ProfileCard.Size = UDim2.fromOffset(292, 92)
+    ProfileCard.BackgroundColor3 = Color3.fromRGB(20, 20, 22)
+    ProfileCard.BackgroundTransparency = 0.05
+    ProfileCard.BorderSizePixel = 0
+    ProfileCard.Parent = ProfileGui
+
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 10)
+    corner.Parent = ProfileCard
+
+    local stroke = Instance.new("UIStroke")
+    stroke.Color = Color3.fromRGB(70, 70, 78)
+    stroke.Transparency = 0.25
+    stroke.Thickness = 1
+    stroke.Parent = ProfileCard
+
+    local avatar = Instance.new("ImageLabel")
+    avatar.Name = "Avatar"
+    avatar.Size = UDim2.fromOffset(64, 64)
+    avatar.Position = UDim2.fromOffset(14, 14)
+    avatar.BackgroundColor3 = Color3.fromRGB(35, 35, 40)
+    avatar.BorderSizePixel = 0
+    avatar.Parent = ProfileCard
+
+    local avatarCorner = Instance.new("UICorner")
+    avatarCorner.CornerRadius = UDim.new(1, 0)
+    avatarCorner.Parent = avatar
+
+    local ok, imageUrl = pcall(function()
+        local url = Players:GetUserThumbnailAsync(
+            LocalPlayer.UserId,
+            Enum.ThumbnailType.HeadShot,
+            Enum.ThumbnailSize.Size150x150
+        )
+        return url
+    end)
+    if ok and imageUrl then
+        avatar.Image = imageUrl
+    end
+
+    local displayName = Instance.new("TextLabel")
+    displayName.Size = UDim2.new(1, -94, 0, 24)
+    displayName.Position = UDim2.fromOffset(90, 14)
+    displayName.BackgroundTransparency = 1
+    displayName.Text = tostring(LocalPlayer.DisplayName)
+    displayName.TextColor3 = Color3.fromRGB(245, 245, 248)
+    displayName.TextSize = 17
+    displayName.Font = Enum.Font.GothamBold
+    displayName.TextXAlignment = Enum.TextXAlignment.Left
+    displayName.Parent = ProfileCard
+
+    local username = Instance.new("TextLabel")
+    username.Size = UDim2.new(1, -94, 0, 20)
+    username.Position = UDim2.fromOffset(90, 38)
+    username.BackgroundTransparency = 1
+    username.Text = "@" .. tostring(LocalPlayer.Name)
+    username.TextColor3 = Color3.fromRGB(175, 175, 184)
+    username.TextSize = 13
+    username.Font = Enum.Font.Gotham
+    username.TextXAlignment = Enum.TextXAlignment.Left
+    username.Parent = ProfileCard
+
+    local userId = Instance.new("TextLabel")
+    userId.Size = UDim2.new(1, -94, 0, 18)
+    userId.Position = UDim2.fromOffset(90, 60)
+    userId.BackgroundTransparency = 1
+    userId.Text = "UserId: " .. tostring(LocalPlayer.UserId)
+    userId.TextColor3 = Color3.fromRGB(130, 130, 138)
+    userId.TextSize = 11
+    userId.Font = Enum.Font.Gotham
+    userId.TextXAlignment = Enum.TextXAlignment.Left
+    userId.Parent = ProfileCard
+
+    return ProfileGui
+end
+
+createProfileCard()
+-- PROFILE TAB
+TabProfile:Paragraph({
+    Title = "โปรไฟล์ผู้เล่น",
+    Desc = string.format(
+        "%s (@%s)\nUserId: %d\nAvatar: Roblox HeadShot thumbnail",
+        tostring(LocalPlayer.DisplayName),
+        tostring(LocalPlayer.Name),
+        LocalPlayer.UserId
+    ),
+    Image = "user-round"
+})
+TabProfile:Button({
+    Title = "คัดลอก UserId",
+    Desc = tostring(LocalPlayer.UserId),
+    Callback = function()
+        pcall(function()
+            if setclipboard then
+                setclipboard(tostring(LocalPlayer.UserId))
+            end
+        end)
+        notify("โปรไฟล์", "คัดลอก UserId แล้ว", 2)
+    end
+})
+
+-- BLACK SCREEN
+
+
+local BlackScreenUI = Instance.new("ScreenGui")
+BlackScreenUI.Name = "xEz_BlackScreen"
+BlackScreenUI.ResetOnSpawn = false
+BlackScreenUI.IgnoreGuiInset = true
+BlackScreenUI.DisplayOrder = 4
+BlackScreenUI.Parent = getGuiParent()
+
+local BlackFrame = Instance.new("Frame")
+BlackFrame.Size = UDim2.fromScale(1, 1)
+BlackFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+BlackFrame.BackgroundTransparency = 1
+BlackFrame.BorderSizePixel = 0
+BlackFrame.Visible = false
+BlackFrame.Parent = BlackScreenUI
+
+local BlackText = Instance.new("TextLabel")
+BlackText.Size = UDim2.fromScale(1, 0.1)
+BlackText.Position = UDim2.fromScale(0, 0.45)
+BlackText.Text = " "
+BlackText.TextColor3 = Color3.fromRGB(0, 255, 150)
+BlackText.TextSize = 24
+BlackText.BackgroundTransparency = 1
+BlackText.TextTransparency = 1
+BlackText.Font = Enum.Font.GothamBold
+BlackText.Parent = BlackFrame
+
+task.spawn(function()
+    local dots = {".", "..", "..."}
+    local i = 1
+    while BlackFrame.Parent do
+        task.wait(0.5)
+        if BlackFrame.Visible then
+            pcall(function()
+                BlackText.Text = " " .. dots[i]
+            end)
+            i = i % #dots + 1
+        end
+    end
+end)
+
+
+-- ANTI-AFK
+
+
+local function toggleAntiAFK(enabled)
+    if Connections.AntiAFK then
+        Connections.AntiAFK:Disconnect()
+        Connections.AntiAFK = nil
+    end
+    if not enabled then return end
+    Connections.AntiAFK = LocalPlayer.Idled:Connect(function()
+        pcall(function()
+            VirtualUser:CaptureController()
+            VirtualUser:ClickButton2(Vector2.new(0, 0))
+        end)
+    end)
+end
+
+local function toggleAntiAFKKey(enabled)
+    State.AntiAFKKey = enabled
+    if not enabled then
+        if Connections.AntiAFKKeyLoop then
+            pcall(task.cancel, Connections.AntiAFKKeyLoop)
+            Connections.AntiAFKKeyLoop = nil
+        end
+        return
+    end
+    if Connections.AntiAFKKeyLoop then
+        pcall(task.cancel, Connections.AntiAFKKeyLoop)
+        Connections.AntiAFKKeyLoop = nil
+    end
+    Connections.AntiAFKKeyLoop = task.spawn(function()
+        while State.AntiAFKKey do
+            task.wait(10)
+            if State.AntiAFKKey then
+                pcall(function()
+                    VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.K, false, game)
+                    VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.K, false, game)
+                end)
+            end
+        end
+    end)
+end
+
+
+-- NOCLIP
+
+
+local OriginalCollision = {}
+
+local function saveCollision(part)
+    if OriginalCollision[part] == nil then
+        OriginalCollision[part] = part.CanCollide
+    end
+end
+
+local function restoreCollision()
+    for part, collision in pairs(OriginalCollision) do
+        if part and part.Parent then
+            pcall(function() part.CanCollide = collision end)
+        end
+    end
+    table.clear(OriginalCollision)
+end
+
+local function toggleNoClip(enabled)
+    if Connections.NoClip then
+        Connections.NoClip:Disconnect()
+        Connections.NoClip = nil
+    end
+    if not enabled then
+        restoreCollision()
+        return
+    end
+    Connections.NoClip = RunService.Heartbeat:Connect(function()
+        if not isCharacterReady() then return end
+        local character = getCharacter()
+        if not character then return end
+        for _, part in ipairs(character:GetDescendants()) do
+            if part:IsA("BasePart") then
+                saveCollision(part)
+                pcall(function() part.CanCollide = false end)
+            end
+        end
+    end)
+end
+
+
+-- GOD MODE
+
+
+local function toggleGodMode(enabled)
+    if Connections.GodMode then
+        Connections.GodMode:Disconnect()
+        Connections.GodMode = nil
+    end
+    if not enabled then return end
+    Connections.GodMode = RunService.Heartbeat:Connect(function()
+        if not isCharacterReady() then return end
+        local humanoid = getHumanoid()
+        if not humanoid then return end
+        pcall(function()
+            humanoid.MaxHealth = math.huge
+            humanoid.Health = math.huge
+        end)
+    end)
+end
+
+
+-- ANTI FLING / KICK
+
+
+local function toggleAntiFling(enabled)
+    if Connections.AntiFlingLoop then
+        Connections.AntiFlingLoop:Disconnect()
+        Connections.AntiFlingLoop = nil
+    end
+    if not enabled then return end
+    Connections.AntiFlingLoop = RunService.Heartbeat:Connect(function()
+        if not isCharacterReady() then return end
+        local hrp = getRoot()
+        if not hrp then return end
+        if hrp.Velocity.Magnitude > 200 then
+            pcall(function()
+                hrp.Velocity = Vector3.new(0, 0, 0)
+            end)
+        end
+    end)
+end
+
+local function toggleAntiKick(enabled)
+    State.AntiKick = enabled
+    if not enabled then
+        if Connections.AntiKickLoop then
+            pcall(task.cancel, Connections.AntiKickLoop)
+            Connections.AntiKickLoop = nil
+        end
+        return
+    end
+    if Connections.AntiKickLoop then
+        pcall(task.cancel, Connections.AntiKickLoop)
+        Connections.AntiKickLoop = nil
+    end
+    Connections.AntiKickLoop = task.spawn(function()
+        while State.AntiKick do
+            task.wait(5)
+            if State.AntiKick then
+                pcall(function()
+                    VirtualUser:CaptureController()
+                end)
+            end
+        end
+    end)
+end
+
+
+-- FLY
+
+
+local function toggleFly(enabled)
+    if Connections.FlyLoop then
+        Connections.FlyLoop:Disconnect()
+        Connections.FlyLoop = nil
+    end
+    isFlying = enabled
+    if not enabled then
+        local hrp = getRoot()
+        if hrp then
+            local bv = hrp:FindFirstChild("xEzFlyVelocity")
+            if bv then bv:Destroy() end
+        end
+        return
+    end
+    local hrp = getRoot()
+    if not hrp then return end
+    local bodyVelocity = Instance.new("BodyVelocity")
+    bodyVelocity.Name = "xEzFlyVelocity"
+    bodyVelocity.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+    bodyVelocity.Velocity = Vector3.new(0, 0, 0)
+    bodyVelocity.P = 1250
+    bodyVelocity.Parent = hrp
+    Connections.FlyLoop = RunService.RenderStepped:Connect(function()
+        if not isFlying then return end
+        local hrp = getRoot()
+        if not hrp or not bodyVelocity.Parent then return end
+        local camera = Workspace.CurrentCamera
+        local moveVector = Vector3.new(0, 0, 0)
+        if UserInputService:IsKeyDown(Enum.KeyCode.W) then
+            moveVector = moveVector + camera.CFrame.LookVector
+        end
+        if UserInputService:IsKeyDown(Enum.KeyCode.S) then
+            moveVector = moveVector - camera.CFrame.LookVector
+        end
+        if UserInputService:IsKeyDown(Enum.KeyCode.A) then
+            moveVector = moveVector - camera.CFrame.RightVector
+        end
+        if UserInputService:IsKeyDown(Enum.KeyCode.D) then
+            moveVector = moveVector + camera.CFrame.RightVector
+        end
+        if UserInputService:IsKeyDown(Enum.KeyCode.Space) then
+            moveVector = moveVector + Vector3.new(0, 1, 0)
+        end
+        if UserInputService:IsKeyDown(Enum.KeyCode.LeftControl) then
+            moveVector = moveVector - Vector3.new(0, 1, 0)
+        end
+        if moveVector.Magnitude > 0 then
+            bodyVelocity.Velocity = moveVector.Unit * State.FlySpeed
+        else
+            bodyVelocity.Velocity = Vector3.new(0, 0, 0)
+        end
+    end)
+end
+
+
+-- CHARACTER RESPAWN
+
+
+local function cleanupOldCharacter()
+    if currentTween then
+        pcall(function() currentTween:Cancel() end)
+        currentTween = nil
+    end
+end
+
+local function onCharacterRespawn(character)
+    if not character then return end
+    State.LastRespawn = tick()
+    State.RespawnCount = State.RespawnCount + 1
+    addLog("Respawn #" .. State.RespawnCount)
+    cleanupOldCharacter()
+    task.wait(0.3)
+    local humanoid = character:WaitForChild("Humanoid", 10)
+    if not humanoid then return end
+    character:WaitForChild("HumanoidRootPart", 10)
+    pcall(function()
+        humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown, true)
+        humanoid:SetStateEnabled(Enum.HumanoidStateType.Ragdoll, true)
+        humanoid:SetStateEnabled(Enum.HumanoidStateType.Climbing, true)
+        humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated, true)
+        humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, true)
+    end)
+    pcall(function()
+        humanoid.WalkSpeed = State.WalkSpeed
+        humanoid.JumpPower = State.JumpPower
+        humanoid.AutoRotate = true
+        humanoid.PlatformStand = false
+    end)
+    if State.GravityZero then
+        Workspace.Gravity = 0
+    else
+        Workspace.Gravity = GRAVITY_NORMAL
+    end
+    if State.GodMode then
+        task.defer(function()
+            pcall(function()
+                humanoid.MaxHealth = math.huge
+                humanoid.Health = math.huge
+            end)
+            toggleGodMode(true)
+        end)
+    end
+    if State.NoClip then task.defer(function() toggleNoClip(true) end) end
+    if State.Fly then task.defer(function() toggleFly(true) end) end
+end
+
+Connections.CharacterAdded = LocalPlayer.CharacterAdded:Connect(onCharacterRespawn)
+
+if LocalPlayer.Character then
+    task.spawn(function()
+        task.wait(1)
+        onCharacterRespawn(LocalPlayer.Character)
+    end)
+end
+
+LocalPlayer.CharacterRemoving:Connect(function()
+    cleanupOldCharacter()
+end)
+
+
+-- INFINITE JUMP
+
+
+Connections.JumpRequest = UserInputService.JumpRequest:Connect(function()
+    if not State.InfJump then return end
+    local humanoid = getHumanoid()
+    if humanoid then
+        pcall(function()
+            humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+        end)
+    end
+end)
+
+
+-- SERVER HOP
+
+
+local function serverHop()
+    if isHopping then return end
+    isHopping = true
+    notify("เปลี่ยนห้อง", "กำลังหาห้อง...", 3)
+    local req = getRequestFunction()
+    if not req then
+        pcall(function()
+            TeleportService:Teleport(game.PlaceId, LocalPlayer)
+        end)
+        task.delay(15, function() isHopping = false end)
+        return
+    end
+    local success, response = pcall(function()
+        return req({
+            Url = string.format(
+                "https://games.roblox.com/v1/games/%d/servers/0?sortOrder=Asc&limit=100",
+                game.PlaceId
+            ),
+            Method = "GET"
+        })
+    end)
+    if not success or not response then
+        isHopping = false
+        return
+    end
+    local decodeSuccess, body = pcall(function()
+        return HttpService:JSONDecode(response.Body)
+    end)
+    if not decodeSuccess or not body then
+        isHopping = false
+        return
+    end
+    local servers = {}
+    if type(body.data) == "table" then
+        for _, server in ipairs(body.data) do
+            if type(server) == "table"
+                and server.id
+                and server.maxPlayers
+                and server.playing
+                and server.maxPlayers > server.playing + 5
+                and server.id ~= game.JobId
+            then
+                table.insert(servers, server.id)
+            end
+        end
+    end
+    if #servers > 0 then
+        local target = servers[math.random(1, #servers)]
+        pcall(function()
+            TeleportService:TeleportToPlaceInstance(game.PlaceId, target, LocalPlayer)
+        end)
+    else
+        pcall(function()
+            TeleportService:Teleport(game.PlaceId, LocalPlayer)
+        end)
+    end
+    task.delay(15, function() isHopping = false end)
+end
+
+
+-- WEBHOOK
+
+
+local function sendWebhook(title, description, color)
+    if State.WebhookURL == "" then return false end
+    if not State.WebhookURL:match("^https?://") then return false end
+    local req = getRequestFunction()
+    if not req then return false end
+    local payloadTable
+    if State.WebhookRichEmbed then
+        payloadTable = {
+            embeds = {
+                {
+                    title = title,
+                    description = description,
+                    color = color or 65280,
+                    fields = {
+                        { name = "User", value = tostring(LocalPlayer.Name), inline = true },
+                        { name = "Wins", value = tostring(State.WinsCount), inline = true },
+                        { name = "Speed", value = tostring(State.FarmSpeed), inline = true }
+                    },
+                    footer = { text = "xEz Hub v" .. SCRIPT_VERSION },
+                    timestamp = DateTime.now():ToIsoDate()
+                }
+            }
+        }
+    else        payloadTable = { content = "**" .. title .. "**\n" .. description }
+    end
+    local encodeSuccess, payload = pcall(function()
+        return HttpService:JSONEncode(payloadTable)
+    end)
+    if not encodeSuccess then return false end
+    local sent = false
+    local okRequest = pcall(function()
+        local response = req({
+            Url = State.WebhookURL,
+            Method = "POST",
+            Headers = { ["Content-Type"] = "application/json" },
+            Body = payload
+        })
+        if response then
+            local status = response.StatusCode or response.Status or 0
+            sent = (status == 0) or (status >= 200 and status < 300)
+        end
+    end)
+    return okRequest and sent
+end
+
+
+-- STAFF DETECTOR
+
+
+local STAFF_GROUPS = {
+    { GroupId = 2890259, MinimumRank = 200 },
+    { GroupId = 3059674, MinimumRank = 100 }
+}
+
+local detectedStaff = {}
+
+local function isStaff(player)
+    if not player then return false end
+    for _, group in ipairs(STAFF_GROUPS) do
+        local success, rank = pcall(function()
+            return player:GetRankInGroup(group.GroupId)
+        end)
+        if success and type(rank) == "number" and rank >= group.MinimumRank then
+            return true
+        end
+    end
+    return false
+end
+
+local function checkPlayerForStaff(player)
+    if not State.StaffDetector then return end
+    if player == LocalPlayer then return end
+    if detectedStaff[player.UserId] then return end
+    if not isStaff(player) then return end
+    detectedStaff[player.UserId] = true
+    notify("แอดมิน", "เจอแอดมิน" .. ": " .. player.Name, 5)
+    task.delay(1, function()
+        if State.StaffDetector then
+            serverHop()
+        end
+    end)
+end
+
+Connections.PlayerAdded = Players.PlayerAdded:Connect(checkPlayerForStaff)
+
+task.spawn(function()
+    for _, player in ipairs(Players:GetPlayers()) do
+        if player ~= LocalPlayer then
+            checkPlayerForStaff(player)
+        end
+    end
+end)
+
+
+-- FLIGHT
+
+
+local function moveTo(targetCFrame, timeout)
+    local hrp = getRoot()
+    if not hrp then return false end
+    if currentTween then
+        pcall(function() currentTween:Cancel() end)
+        currentTween = nil
+    end
+    if State.GravityZero then
+        Workspace.Gravity = 0
+    end
+    local distance = (hrp.Position - targetCFrame.Position).Magnitude
+    if State.MaxSpeedMode then
+        pcall(function() hrp.CFrame = targetCFrame end)
+        task.wait(State.StepDelay)
+        return true
+    end
+    local speedValue = math.max(50, tonumber(State.FarmSpeed) or 900)
+    local duration = distance / speedValue
+    if State.FarmSpeed >= 5000 then
+        local steps = math.max(1, math.floor(distance / 100))
+        for i = 1, steps do
+            if not State.AutoFarm then return false end
+            if not hrp or not hrp.Parent then return false end
+            local alpha = i / steps
+            local nextCFrame = hrp.CFrame:Lerp(targetCFrame, alpha)
+            pcall(function() hrp.CFrame = nextCFrame end)
+            task.wait(State.StepDelay)
+        end
+        return true
+    end
+    local reached = false
+    local cancelled = false
+    currentTween = TweenService:Create(
+        hrp,
+        TweenInfo.new(duration, Enum.EasingStyle.Linear),
+        { CFrame = targetCFrame }
+    )
+    local completedConn
+    completedConn = currentTween.Completed:Connect(function(playbackState)
+        if playbackState == Enum.PlaybackState.Completed then
+            reached = true
+        else
+            cancelled = true
+        end
+        if completedConn then completedConn:Disconnect() end
+    end)
+    currentTween:Play()
+    local start = tick()
+    local maxWait = timeout or (duration + 5)
+    while not reached and not cancelled do
+        if tick() - start > maxWait then break end
+        if not State.AutoFarm then break end
+        if not hrp or not hrp.Parent then break end
+        task.wait(0.02)
+    end
+    if completedConn then completedConn:Disconnect() end
+    return reached
+end
+
+
+-- CHEST
+
+
+local function findGoldenChestTrigger()
+    local boatStages = Workspace:FindFirstChild("BoatStages")
+    if not boatStages then return nil end
+    local normalStages = boatStages:FindFirstChild("NormalStages")
+    if not normalStages then return nil end
+    local theEnd = normalStages:FindFirstChild("TheEnd")
+    if not theEnd then return nil end
+    local goldenChest = theEnd:FindFirstChild("GoldenChest")
+    if not goldenChest then return nil end
+    return goldenChest:FindFirstChild("Trigger")
+        or goldenChest:FindFirstChildOfClass("BasePart")
+end
+
+local function triggerChest()
+    local hrp = getRoot()
+    if not hrp then return false end
+    local chestPart = findGoldenChestTrigger()
+    if not chestPart then return false end
+    if type(firetouchinterest) ~= "function" then return false end
+    local success = pcall(function()
+        firetouchinterest(hrp, chestPart, 0)
+        task.wait(0.05)
+        firetouchinterest(hrp, chestPart, 1)
+    end)
+    return success
+end
+
+
+-- AUTO FARM
+
+
+local function startAutoFarm()
+    if State.IsFarming then
+        return
+    end
+    FarmToken += 1
+    local myToken = FarmToken
+    local function stillActive()
+        return State.AutoFarm and myToken == FarmToken
+    end
+    if State.GravityZero then
+        Workspace.Gravity = 0
+    end
+    State.IsFarming = true
+    while stillActive() do
+        if not isCharacterReady() then
+            waitForNewCharacter(15)
+        end
+        if not stillActive() then break end
+        if not isCharacterReady() then
+            task.wait(0.5)
+        else
+            State.CurrentRunStart = tick()
+            moveTo(Waypoints[1])
+            if not stillActive() then break end
+            if not safeWait(State.StepDelay, myToken, stillActive) then break end
+            moveTo(Waypoints[2])
+            if not stillActive() then break end
+            if not safeWait(State.StepDelay, myToken, stillActive) then break end
+            moveTo(Waypoints[3])
+            if not stillActive() then break end
+            if not safeWait(0.1, myToken, stillActive) then break end
+            if isCharacterReady() then
+                local chestOpened = triggerChest()
+                if not safeWait(State.ChestDelay, myToken, stillActive) then break end
+                if isCharacterReady() then
+                    pcall(function()
+                        local hrp = getRoot()
+                        if hrp then
+                            hrp.CFrame = CFrame.new(-54.331871, -345.398346, 9495.13)
+                        end
+                    end)
+                end
+                if not safeWait(0.2, myToken, stillActive) then break end
+                local runTime = tick() - State.CurrentRunStart
+                table.insert(State.RunTimes, runTime)
+                if #State.RunTimes > 50 then table.remove(State.RunTimes, 1) end
+                if State.BestRunTime == 0 or runTime < State.BestRunTime then
+                    State.BestRunTime = runTime
+                end
+                if chestOpened then
+                    State.WinsCount += 1
+                    notify("ฟาร์ม", "รอบที่" .. " " .. State.WinsCount .. " (" .. string.format("%.1f", runTime) .. "s)", 2)
+                    if State.WebhookNotify then
+                        task.spawn(function()
+                            sendWebhook("Farm Complete", "Round " .. State.WinsCount, 65280)
+                        end)
+                    end
+                else
+                    State.FailsCount += 1
+                end
+            end
+            if not stillActive() then break end
+            if not safeWait(State.ResetDelay, myToken, stillActive) then break end
+            if not stillActive() then break end
+            Workspace.Gravity = GRAVITY_NORMAL
+            if isCharacterReady() then
+                local h = getHumanoid()
+                if h and h.Parent and h.Health > 0 then
+                    pcall(function() h.Health = 0 end)
+                end
+            end
+            waitForNewCharacter(15)
+            if not safeWait(State.PostResetDelay, myToken, stillActive) then break end
+            if State.GravityZero and stillActive() then
+                Workspace.Gravity = 0
+            end
+            if State.MemoryCleanup and tick() - State.LastCleanup > 300 then
+                State.LastCleanup = tick()
+                pcall(function() collectgarbage("collect") end)
+            end
+        end
+    end
+    State.IsFarming = false
+    Workspace.Gravity = GRAVITY_NORMAL
+    if currentTween then
+        pcall(function() currentTween:Cancel() end)
+        currentTween = nil
+    end
+end
+
+local function stopAutoFarm()
+    FarmToken += 1
+    State.IsFarming = false
+    Workspace.Gravity = GRAVITY_NORMAL
+    if currentTween then
+        pcall(function() currentTween:Cancel() end)
+        currentTween = nil
+    end
+end
+
+
+-- AUTO BUY
+
+
+local function buyChest(chestName, count)
+    local itemBought = Workspace:FindFirstChild("ItemBoughtFromShop")
+    if not itemBought then
+        if not isBuyWarned then
+            isBuyWarned = true
+            notify("ร้านค้า", "ไม่พบระบบซื้อไอเทม", 3)
+        end
+        return false
+    end
+    isBuyWarned = false
+    local amount = math.max(1, tonumber(count) or 1)
+    local successCount = 0
+    for _ = 1, amount do
+        local success = pcall(function()
+            itemBought:InvokeServer(chestName, 1)
+        end)
+        if success then successCount += 1 end
+        task.wait(0.05)
+    end
+    return successCount > 0
+end
+
+local function startAutoBuy()
+    BuyToken += 1
+    local myToken = BuyToken
+    local failCount = 0
+    while State.AutoBuyChest and myToken == BuyToken do
+        local ok = buyChest(State.SelectedChest, 1)
+        if not ok then
+            failCount = failCount + 1
+            if failCount >= 5 then
+                State.AutoBuyChest = false
+                break
+            end
+        else
+            failCount = 0
+        end
+        task.wait(0.2)
+    end
+end
+
+local function stopAutoBuy()
+    BuyToken += 1
+end
+
+
+-- AUTO REJOIN
+
+
+Connections.TeleportFailed = TeleportService.TeleportInitFailed:Connect(
+    function(player, teleportResult, errorMessage)
+        if player ~= LocalPlayer then return end
+        if not State.AutoRejoin then return end
+        task.delay(State.RejoinDelay, function()
+            if State.AutoRejoin then
+                pcall(function()
+                    TeleportService:Teleport(game.PlaceId, LocalPlayer)
+                end)
+            end
+        end)
+    end
+)
+
+Connections.ErrorMessage = GuiService.ErrorMessageChanged:Connect(function()
+    if not State.AutoRejoin then return end
+    task.delay(State.RejoinDelay, function()
+        if State.AutoRejoin then
+            pcall(function()
+                TeleportService:Teleport(game.PlaceId, LocalPlayer)
+            end)
+        end
+    end)
+end)
+
+
+-- AUTO COLLECT COIN / SKIP WAVE
+
+
+task.spawn(function()
+    while true do
+        task.wait(1)
+        if State.AutoCollectCoin and isCharacterReady() then
+            local hrp = getRoot()
+            if hrp then
+                for _, obj in ipairs(Workspace:GetDescendants()) do
+                    if obj.Name:lower():find("coin") and obj:IsA("BasePart") then
+                        pcall(function()
+                            firetouchinterest(hrp, obj, 0)
+                            task.wait(0.01)
+                            firetouchinterest(hrp, obj, 1)
+                        end)
+                    end
+                end
+            end
+        end
+    end
+end)
+
+task.spawn(function()
+    while true do
+        task.wait(0.5)
+        if State.AutoSkipWave then
+            local skipRemote = Workspace:FindFirstChild("SkipWave")
+                or ReplicatedStorage:FindFirstChild("SkipWave")
+            if skipRemote and skipRemote:IsA("RemoteEvent") then
+                pcall(function()
+                    skipRemote:FireServer()
+                end)
+            end
+        end
+    end
+end)
+
+
+-- 24/7 LOOP
+
+
+task.spawn(function()
+    while true do
+        task.wait(3)
+        if State.Farm24_7 then
+            State.AutoFarm = true
+            if not State.IsFarming then
+                task.spawn(startAutoFarm)
+            end
+            if not isCharacterReady() and tick() - State.LastRespawn > 10 then
+                pcall(function()
+                    LocalPlayer:LoadCharacter()
+                end)
+            end
+            if State.AntiDisconnect then
+                pcall(function()
+                    VirtualUser:CaptureController()
+                    VirtualUser:ClickButton2(Vector2.new(0, 0))
+                end)
+            end
+        end
+    end
+end)
+
+
+-- STATS UPDATER
+
+
+local StatsLabels = {}
+
+task.spawn(function()
+    while true do
+        local ok, err = pcall(function()
+            task.wait(1)
+            if StatsLabels.Uptime then
+                StatsLabels.Uptime:SetTitle("เวลาเปิด" .. ": " .. formatUptime(tick() - State.SessionStart))
+            end
+            if StatsLabels.Wins then
+                StatsLabels.Wins:SetTitle("ชนะ" .. ": " .. tostring(State.WinsCount))
+            end
+            if StatsLabels.Fails then
+                StatsLabels.Fails:SetTitle("พลาด" .. ": " .. tostring(State.FailsCount))
+            end
+            if StatsLabels.Rate then
+                local total = State.WinsCount + State.FailsCount
+                local rate = total > 0 and math.floor((State.WinsCount / total) * 100) or 0
+                StatsLabels.Rate:SetTitle("อัตราสำเร็จ" .. ": " .. rate .. "%")
+            end
+            if StatsLabels.BestTime then
+                StatsLabels.BestTime:SetTitle("เร็วสุด" .. ": " .. string.format("%.1f", State.BestRunTime) .. "s")
+            end
+            if StatsLabels.AvgTime then
+                StatsLabels.AvgTime:SetTitle("เฉลี่ย" .. ": " .. string.format("%.1f", getAverageRunTime()) .. "s")
+            end
+            if StatsLabels.Ping then
+                StatsLabels.Ping:SetTitle("ปิง" .. ": " .. getPing() .. "ms")
+            end
+            if StatsLabels.Speed then
+                local speedText = State.MaxSpeedMode and "MAX" or tostring(State.FarmSpeed)
+                StatsLabels.Speed:SetTitle("ความเร็ว" .. ": " .. speedText)
+            end
+            if StatsLabels.Respawns then
+                StatsLabels.Respawns:SetTitle("เกิดใหม่" .. ": " .. tostring(State.RespawnCount))
+            end
+            if StatsLabels.Log then
+                local logText = ""
+                local start = math.max(1, #State.SessionLog - 9)
+                for i = start, #State.SessionLog do
+                    logText = logText .. State.SessionLog[i].time .. " | " .. State.SessionLog[i].message .. "\n"
+                end
+                StatsLabels.Log:SetDesc(logText)
+            end
+        end)
+        if not ok then
+            warn("[xEz Hub] Stats updater error:", err)
+        end
+    end
+end)
+
+
+-- MAIN TAB
+
+
+TabMain:Paragraph({
+    Title = "xEz Hub v" .. SCRIPT_VERSION,
+    Desc = "ฟาร์ม Build a Boat อัตโนมัติ",
+    Image = "circle"
+})
+
+TabMain:Toggle({
+    Title = "ฟาร์มอัตโนมัติ",
+    Desc = "เปิดเพื่อเริ่มฟาร์ม",
+    Default = false,
+    Callback = function(value)
+        State.AutoFarm = value
+        if value then
+            notify("xEz Hub", "เริ่มฟาร์มแล้ว", 2)
+            task.spawn(startAutoFarm)
+        else
+            stopAutoFarm()
+            notify("xEz Hub", "หยุดฟาร์มแล้ว", 2)
+        end
+    end
+})
+
+TabMain:Toggle({
+    Title = "ฟาร์ม 24 ชม.",
+    Desc = "ฟาร์มต่อเนื่อง 24 ชม.",
+    Default = false,
+    Callback = function(value)
+        State.Farm24_7 = value
+        if value then
+            notify("24/7", "เปิด 24 ชม. แล้ว", 2)
+            State.AutoFarm = true
+            task.spawn(startAutoFarm)
+        else
+            notify("24/7", "ปิด 24 ชม. แล้ว", 2)
+        end
+    end
+})
+
+TabMain:Toggle({
+    Title = "กันตาย",
+    Desc = "ไม่ตาย",
+    Default = false,
+    Callback = function(value)
+        State.GodMode = value
+        toggleGodMode(value)
+    end
+})
+
+TabMain:Toggle({
+    Title = "เก็บเหรียญอัตโนมัติ",
+    Desc = "เก็บเหรียญอัตโนมัติ",
+    Default = false,
+    Callback = function(value) State.AutoCollectCoin = value end
+})
+
+TabMain:Toggle({
+    Title = "ข้ามด่านอัตโนมัติ",
+    Desc = "ข้ามด่านอัตโนมัติ",
+    Default = false,
+    Callback = function(value) State.AutoSkipWave = value end
+})
+
+TabMain:Section({ Title = "การเคลื่อนที่" })
+
+TabMain:Slider({
+    Title = "ความเร็วเดิน",
+    Value = { Min = 16, Max = 250, Default = 16 },
+    Callback = function(value)
+        State.WalkSpeed = value
+        local h = getHumanoid()
+        if h then pcall(function() h.WalkSpeed = value end) end
+    end
+})
+
+TabMain:Slider({
+    Title = "แรงกระโดด",
+    Value = { Min = 50, Max = 300, Default = 50 },
+    Callback = function(value)
+        State.JumpPower = value
+        local h = getHumanoid()
+        if h then pcall(function() h.JumpPower = value end) end
+    end
+})
+
+TabMain:Toggle({
+    Title = "กระโดดไม่จำกัด",
+    Default = false,
+    Callback = function(value) State.InfJump = value end
+})
+
+TabMain:Toggle({
+    Title = "ทะลุของ",
+    Default = false,
+    Callback = function(value)
+        State.NoClip = value
+        toggleNoClip(value)
+    end
+})
+
+TabMain:Toggle({
+    Title = "บิน" .. " (WASD + Space/Ctrl)",
+    Default = false,
+    Callback = function(value)
+        State.Fly = value
+        toggleFly(value)
+    end
+})
+
+TabMain:Slider({
+    Title = "ความเร็วบิน",
+    Value = { Min = 30, Max = 500, Default = 100 },
+    Callback = function(value) State.FlySpeed = value end
+})
+
+TabMain:Button({
+    Title = "รีเซ็ตตัวละคร",
+    Callback = function()
+        local h = getHumanoid()
+        if h and h.Parent then
+            pcall(function() h.Health = 0 end)
+        end
+    end
+})
+
+TabMain:Section({ Title = "ซื้อกล่อง" })
+
+TabMain:Dropdown({
+    Title = "ชนิดกล่อง",
+    Values = { "Common Chest", "Uncommon Chest", "Rare Chest", "Epic Chest", "Legendary Chest" },
+    Value = 1,
+    Callback = function(value) State.SelectedChest = value end
+})
+
+TabMain:Button({
+    Title = "ซื้อ 1",
+    Callback = function() buyChest(State.SelectedChest, 1) end
+})
+
+TabMain:Button({
+    Title = "ซื้อ 100",
+    Callback = function() buyChest(State.SelectedChest, 100) end
+})
+
+TabMain:Button({
+    Title = "ซื้อ 999",
+    Callback = function() buyChest(State.SelectedChest, 999) end
+})
+
+TabMain:Toggle({
+    Title = "ซื้อวน",
+    Default = false,
+    Callback = function(value)
+        State.AutoBuyChest = value
+        if value then task.spawn(startAutoBuy) else stopAutoBuy() end
+    end
+})
+
+TabMain:Section({ Title = "ระบบกัน" })
+
+TabMain:Toggle({
+    Title = "กันหลุด",
+    Default = true,
+    Callback = function(value)
+        State.AntiAFK = value
+        toggleAntiAFK(value)
+    end
+})
+
+toggleAntiAFK(true)
+
+TabMain:Toggle({
+    Title = "กันหลุด (กด K)",
+    Default = true,
+    Callback = function(value)
+        State.AntiAFKKey = value
+        toggleAntiAFKKey(value)
+    end
+})
+
+toggleAntiAFKKey(true)
+
+TabMain:Toggle({
+    Title = "กันเตะ",
+    Default = false,
+    Callback = function(value)
+        State.AntiKick = value
+        toggleAntiKick(value)
+    end
+})
+
+TabMain:Toggle({
+    Title = "กันกระเด็น",
+    Default = false,
+    Callback = function(value)
+        State.AntiFling = value
+        toggleAntiFling(value)
+    end
+})
+
+TabMain:Toggle({
+    Title = "จับแอดมิน",
+    Default = true,
+    Callback = function(value) State.StaffDetector = value end
+})
+
+TabMain:Toggle({
+    Title = "เข้าห้องเดิม",
+    Default = true,
+    Callback = function(value) State.AutoRejoin = value end
+})
+
+TabMain:Button({
+    Title = "เปลี่ยนห้อง",
+    Callback = function() task.spawn(serverHop) end
+})
+
+
+-- SETTINGS TAB
+
+
+TabSettings:Paragraph({
+    Title = "ตั้งค่า",
+    Desc = "ปรับความเร็ว หน่วง และอื่นๆ",
+    Image = "circle"
+})
+
+
+TabSettings:Section({ Title = "ปรับความเร็ว" })
+
+TabSettings:Toggle({
+    Title = "โหมดเร็วสุด",
+    Default = false,
+    Callback = function(value)
+        State.MaxSpeedMode = value
+        if value then notify("Speed", "เปิดโหมดเร็วสุด", 2)
+        else notify("Speed", "ปิดโหมดเร็วสุด", 2) end
+    end
+})
+
+TabSettings:Slider({
+    Title = "ความเร็วฟาร์ม" .. " (studs/sec)",
+    Value = { Min = 50, Max = 10000, Default = 900 },
+    Callback = function(value) State.FarmSpeed = value end
+})
+
+TabSettings:Section({ Title = "ปรับหน่วง" })
+
+TabSettings:Slider({
+    Title = "หน่วงตอนบิน",
+    Value = { Min = 1, Max = 50, Default = 2 },
+    Callback = function(value) State.StepDelay = value / 100 end
+})
+
+TabSettings:Slider({
+    Title = "หน่วงหลังเปิดกล่อง",
+    Value = { Min = 10, Max = 200, Default = 50 },
+    Callback = function(value) State.ChestDelay = value / 100 end
+})
+
+TabSettings:Slider({
+    Title = "หน่วงก่อนตาย",
+    Value = { Min = 10, Max = 300, Default = 50 },
+    Callback = function(value) State.ResetDelay = value / 100 end
+})
+
+TabSettings:Slider({
+    Title = "หน่วงหลังเกิด",
+    Value = { Min = 10, Max = 500, Default = 100 },
+    Callback = function(value) State.PostResetDelay = value / 100 end
+})
+
+TabSettings:Section({ Title = "โหมดพร้อมใช้" })
+
+TabSettings:Button({
+    Title = "ช้า (300)",
+    Callback = function()
+        State.FarmSpeed = 300
+        State.StepDelay = 0.05
+        State.ChestDelay = 0.8
+        State.ResetDelay = 1.0
+        State.PostResetDelay = 2.0
+        State.MaxSpeedMode = false
+        notify("Preset", "ตั้งค่าเรียบร้อย", 2)
+    end
+})
+
+TabSettings:Button({
+    Title = "ปกติ (900)",
+    Callback = function()
+        State.FarmSpeed = 900
+        State.StepDelay = 0.02
+        State.ChestDelay = 0.5
+        State.ResetDelay = 0.5
+        State.PostResetDelay = 1.0
+        State.MaxSpeedMode = false
+        notify("Preset", "ตั้งค่าเรียบร้อย", 2)
+    end
+})
+
+TabSettings:Button({
+    Title = "เร็ว (5000)",
+    Callback = function()
+        State.FarmSpeed = 5000
+        State.StepDelay = 0.01
+        State.ChestDelay = 0.3
+        State.ResetDelay = 0.3
+        State.PostResetDelay = 0.5
+        State.MaxSpeedMode = false
+        notify("Preset", "ตั้งค่าเรียบร้อย", 2)
+    end
+})
+
+TabSettings:Button({
+    Title = "เร็วสุด",
+    Callback = function()
+        State.MaxSpeedMode = true
+        State.StepDelay = 0.01
+        State.ChestDelay = 0.2
+        State.ResetDelay = 0.2
+        State.PostResetDelay = 0.3
+        notify("Preset", "ตั้งค่าเรียบร้อย", 2)
+    end
+})
+
+TabSettings:Section({ Title = "การบิน" })
+
+TabSettings:Toggle({
+    Title = "ปิดแรงโน้มถ่วง",
+    Default = true,
+    Callback = function(value)
+        State.GravityZero = value
+        if not value then
+            Workspace.Gravity = GRAVITY_NORMAL
+        end
+    end
+})
+
+TabSettings:Slider({
+    Title = "ความสูงบิน",
+    Value = { Min = 20, Max = 200, Default = 72 },
+    Callback = function(value) State.FlightHeight = value end
+})
+
+TabSettings:Section({ Title = "ประสิทธิภาพ" })
+
+TabSettings:Toggle({
+    Title = "จอดำ",
+    Default = false,
+    Callback = function(value)
+        State.BlackScreen = value
+        if value then
+            BlackFrame.Visible = true
+            pcall(function()
+                TweenService:Create(BlackFrame, TweenInfo.new(0.4), { BackgroundTransparency = 0 }):Play()
+                TweenService:Create(BlackText, TweenInfo.new(0.4), { TextTransparency = 0 }):Play()
+            end)
+        else
+            pcall(function()
+                TweenService:Create(BlackFrame, TweenInfo.new(0.4), { BackgroundTransparency = 1 }):Play()
+                TweenService:Create(BlackText, TweenInfo.new(0.4), { TextTransparency = 1 }):Play()
+            end)
+            task.delay(0.4, function()
+                BlackFrame.Visible = false
+            end)
+        end
+    end
+})
+
+TabSettings:Toggle({
+    Title = "ล้างแรม",
+    Default = true,
+    Callback = function(value) State.MemoryCleanup = value end
+})
+
+TabSettings:Toggle({
+    Title = "เพิ่ม FPS",
+    Default = false,
+    Callback = function(value)
+        State.FpsBoost = value
+        if value then
+            pcall(function()
+                for _, obj in ipairs(Lighting:GetChildren()) do
+                    if obj:IsA("PostEffect") then obj.Enabled = false end
+                end
+                for _, obj in ipairs(Workspace:GetDescendants()) do
+                    if obj:IsA("ParticleEmitter") or obj:IsA("Trail") or obj:IsA("Smoke") or obj:IsA("Fire") then
+                        obj.Enabled = false
+                    end
+                end
+            end)
+        end
+    end
+})
+
+TabSettings:Toggle({
+    Title = "กราฟิกต่ำ",
+    Default = false,
+    Callback = function(value)
+        State.LowGraphics = value
+        if value then
+            pcall(function()
+                Lighting.GlobalShadows = false
+                Lighting.FogEnd = 100
+                Lighting.Brightness = 0
+            end)
+        end
+    end
+})
+
+TabSettings:Button({
+    Title = "ล้างแรมตอนนี้",
+    Callback = function()
+        pcall(function() collectgarbage("collect") end)
+        notify("Performance", "ล้างแรมแล้ว", 2)
+    end
+})
+
+
+-- STATS TAB
+
+
+TabStats:Paragraph({
+    Title = "สถิติ",
+    Desc = "สถิติและประวัติการใช้งาน",
+    Image = "circle"
+})
+
+TabStats:Section({ Title = "สถิติ" })
+
+StatsLabels.Uptime = TabStats:Paragraph({ Title = "เวลาเปิด" .. ": 00:00:00", Desc = "", Image = "circle" })
+StatsLabels.Wins = TabStats:Paragraph({ Title = "ชนะ" .. ": 0", Desc = "", Image = "circle" })
+StatsLabels.Fails = TabStats:Paragraph({ Title = "พลาด" .. ": 0", Desc = "", Image = "circle" })
+StatsLabels.Rate = TabStats:Paragraph({ Title = "อัตราสำเร็จ" .. ": 0%", Desc = "", Image = "circle" })
+StatsLabels.BestTime = TabStats:Paragraph({ Title = "เร็วสุด" .. ": 0.0s", Desc = "", Image = "circle" })
+StatsLabels.AvgTime = TabStats:Paragraph({ Title = "เฉลี่ย" .. ": 0.0s", Desc = "", Image = "circle" })
+StatsLabels.Ping = TabStats:Paragraph({ Title = "ปิง" .. ": 0ms", Desc = "", Image = "circle" })
+StatsLabels.Speed = TabStats:Paragraph({ Title = "ความเร็ว" .. ": 900", Desc = "", Image = "circle" })
+StatsLabels.Respawns = TabStats:Paragraph({ Title = "เกิดใหม่" .. ": 0", Desc = "", Image = "circle" })
+
+TabStats:Button({
+    Title = "ล้างสถิติ",
+    Callback = function()
+        State.WinsCount = 0
+        State.FailsCount = 0
+        State.SessionStart = tick()
+        State.RunTimes = {}
+        State.BestRunTime = 0
+        State.RespawnCount = 0
+        notify("สถิติ", "ล้างสถิติแล้ว", 2)
+    end
+})
+
+TabStats:Section({ Title = "บันทึกกิจกรรม" })
+
+StatsLabels.Log = TabStats:Paragraph({
+    Title = "บันทึกกิจกรรม",
+    Desc = "(ยังไม่มีบันทึก)",
+    Image = "circle"
+})
+
+TabStats:Button({
+    Title = "ล้างบันทึก",
+    Callback = function()
+        State.SessionLog = {}
+        notify("บันทึก", "ล้างบันทึกแล้ว", 2)
+    end
+})
+
+TabStats:Section({ Title = "เว็บฮุค" })
+
+TabStats:Input({
+    Title = "ลิงก์ Discord Webhook",
+    Value = "",
+    Placeholder = "https://discord.com/api/webhooks/...",
+    Callback = function(text) State.WebhookURL = tostring(text or "") end
+})
+
+TabStats:Toggle({
+    Title = "เปิดเว็บฮุค",
+    Default = false,
+    Callback = function(value) State.WebhookNotify = value end
+})
+
+TabStats:Toggle({
+    Title = "ส่งแบบละเอียด",
+    Default = true,
+    Callback = function(value) State.WebhookRichEmbed = value end
+})
+
+TabStats:Button({
+    Title = "ทดสอบเว็บฮุค",
+    Callback = function()
+        if State.WebhookURL == "" then
+            notify("เว็บฮุค", "ใส่ลิงก์ก่อน", 2)
+            return
+        end
+        local ok = sendWebhook("Test", "xEz Hub v" .. SCRIPT_VERSION, 65280)
+        if ok then notify("Webhook", "ส่งเว็บฮุคแล้ว", 2)
+        else notify("Webhook", "ส่งเว็บฮุคไม่ผ่าน", 2) end
+    end
+})
+
+
+-- CREDITS TAB
+
+
+TabCredits:Paragraph({
+    Title = "เครดิต",
+    Desc = "ข้อมูลผู้สร้าง",
+    Image = "circle"
+})
+
+TabCredits:Section({ Title = "เครดิต" })
+
+TabCredits:Paragraph({
+    Title = "ผู้สร้าง",
+    Desc = CREATOR_NAME,
+    Image = "circle"
+})
+
+TabCredits:Paragraph({
+    Title = "ข้อมูลเวอร์ชัน",
+    Desc = "xEz Hub v" .. SCRIPT_VERSION .. "\nBuild a Boat",
+    Image = "circle"
+})
+
+TabCredits:Paragraph({
+    Title = "เซิร์ฟเวอร์ Discord",
+    Desc = DISCORD_URL,
+    Image = "circle"
+})
+
+TabCredits:Paragraph({
+    Title = "ขอบคุณพิเศษ",
+    Desc = "dawid-scripts (Fluent UI)\nRoblox Community\nAll testers\nYou!",
+    Image = "circle"
+})
+
+TabCredits:Button({
+    Title = "เข้าร่วม Discord",
+    Callback = function()
+        pcall(function()
+            if setclipboard then setclipboard(DISCORD_URL) end
+        end)
+        notify("ดิสคอร์ด", "คัดลอกลิงก์ Discord แล้ว" .. "\n" .. DISCORD_URL, 5)
+    end
+})
+
+TabCredits:Button({
+    Title = "คัดลอกลิงก์ Discord",
+    Callback = function()
+        pcall(function()
+            if setclipboard then setclipboard(DISCORD_URL) end
+        end)
+        notify("ดิสคอร์ด", "คัดลอกลิงก์ Discord แล้ว", 2)
+    end
+})
+
+
+-- START
+
+
+notify("xEz Hub", "v" .. SCRIPT_VERSION .. " | " .. "โหลดเสร็จ", 4)
+addLog("Session started")
+
+print("[xEz Hub] v" .. SCRIPT_VERSION .. " loaded. Fluent UI Dark Edition.")
+print("[xEz Hub] Discord: " .. DISCORD_URL)
+
+-- Cleanup profile card if the Fluent window is destroyed externally.
+task.spawn(function()
+    while FluentWindow and FluentWindow.Root and FluentWindow.Root.Parent do
+        task.wait(2)
+    end
+    pcall(function()
+        if ProfileGui then ProfileGui:Destroy() end
+    end)
+end)
