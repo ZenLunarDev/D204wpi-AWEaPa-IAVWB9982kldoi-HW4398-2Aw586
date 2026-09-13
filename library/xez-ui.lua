@@ -1,23 +1,3 @@
---[[
-    xEz UI Library v2.3
-    Minimal UI
-    Author: ZenLunarDev
-
-    Features:
-      • Minimal flat design with accent lines
-      • Animated: hover, click, ripple, slide
-      • 6 Themes: Dark, Light, Midnight, Ocean, Sunset, Rose
-      • Cross-platform: PC / Mobile / Console
-      • Every popular element + Config system
-
-    Usage:
-      local UI = loadstring(game:HttpGet("..."))()
-      local Win = UI:Window({ Title = "My Hub", Subtitle = "v1.0" })
-      local Tab = Win:Tab({ Name = "Main", Icon = "◇" })
-      local Sec = Tab:Section({ Name = "General", Side = "Left" })
-      Sec:Button({ Name = "Click", Callback = function() print("hi") end })
-]]
-
 local xEz = {
     Version  = "2.3.0",
     Folder   = "xEzUI",
@@ -26,9 +6,12 @@ local xEz = {
     Theme    = "Dark",
 }
 
---==========================================================================
+if xEz then xEz = nil end
+if getgenv().xEz then getgenv().xEz = nil end
+
+
 -- SERVICES
---==========================================================================
+
 local function getService(name)
     local ok, s = pcall(function()
         if cloneref then return cloneref(game:GetService(name)) end
@@ -47,9 +30,9 @@ local Players      = getService("Players")
 local LP = Players.LocalPlayer
 local isStudio = RunService:IsStudio()
 
---==========================================================================
+
 -- PARENT (PlayerGui only)
---==========================================================================
+
 local function getGuiParent()
     local pg = LP:FindFirstChildOfClass("PlayerGui")
     if pg then return pg end
@@ -60,9 +43,9 @@ local function getGuiParent()
     return nil
 end
 
---==========================================================================
+
 -- THEMES
---==========================================================================
+
 xEz.Themes = {
     Dark = {
         Background = Color3.fromRGB(17, 17, 20), Surface = Color3.fromRGB(24, 24, 28),
@@ -118,9 +101,9 @@ function xEz:GetTheme()
     return self.Themes[self.Theme] or self.Themes.Dark
 end
 
---==========================================================================
+
 -- HELPERS
---==========================================================================
+
 local function mk(class, props)
     local o = Instance.new(class)
     for k, v in pairs(props or {}) do
@@ -189,9 +172,9 @@ local function fmtNumber(n, precision)
     return string.format("%.2f", n)
 end
 
---==========================================================================
+
 -- UI OBJECT
---==========================================================================
+
 local UI = {}
 
 function UI:Notify(cfg)
@@ -420,9 +403,9 @@ function UI:Window(cfg)
     root.Size = UDim2.fromOffset(winSize.X.Offset * 0.85, winSize.Y.Offset * 0.85)
     tween(root, TweenInfo.new(0.28, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Size = winSize })
 
-    --==========================================================================
+    
     -- WINDOW API
-    --==========================================================================
+    
     win.Root = root
     win.Screen = screen
 
@@ -1286,9 +1269,9 @@ function UI:Window(cfg)
         return tab
     end
 
-    --==========================================================================
+    
     -- WINDOW CONTROLS
-    --==========================================================================
+    
     local minimized = false
     local cachedSize = winSize
 
@@ -1323,9 +1306,9 @@ function UI:Window(cfg)
         end
     end)
 
-    --==========================================================================
+    
     -- NOTIFY
-    --==========================================================================
+    
     function win:Notify(ncfg)
         ncfg = ncfg or {}
         local n = mk("Frame", {
@@ -1380,9 +1363,9 @@ function UI:Window(cfg)
     return win
 end
 
---==========================================================================
+
 -- CONFIG
---==========================================================================
+
 function xEz:SaveConfig(name)
     if isStudio or not writefile then return false, "No filesystem" end
     if not isfolder(self.Folder) then makefolder(self.Folder) end
@@ -1426,9 +1409,9 @@ function xEz:ListConfigs()
     return out
 end
 
---==========================================================================
+
 -- DEMO
---==========================================================================
+
 function xEz:Demo()
     local Win = xEz:Window({
         Title = "xEz UI",
